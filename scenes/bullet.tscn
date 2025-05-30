@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://scripts/bullet.gd" id="1_l5glv"]
 [ext_resource type="Texture2D" uid="uid://pm35mx6eiioi" path="res://textures/bullet.svg" id="2_eoqba"]
-[ext_resource type="Script" uid="uid://226dr4418du7" path="res://scripts/HitBoxComponent.gd" id="3_qncy5"]
+[ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_l5glv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ambd"]
-size = Vector2(190, 112)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
+size = Vector2(192, 112)
 
 [node name="bullet" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -15,10 +15,7 @@ script = ExtResource("1_l5glv")
 rotation = 1.5708
 texture = ExtResource("2_eoqba")
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("3_qncy5")
+[node name="Hitbox" parent="." instance=ExtResource("3_l5glv")]
 
-[node name="area" type="CollisionShape2D" parent="Hitbox"]
-shape = SubResource("RectangleShape2D_4ambd")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_l5glv")
