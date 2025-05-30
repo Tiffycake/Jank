@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://chxkv23icrdpd"]
+[gd_scene load_steps=4 format=3 uid="uid://chxkv23icrdpd"]
 
 [ext_resource type="Texture2D" uid="uid://baybfxrih4sra" path="res://textures/Gold_Chest.png" id="1_oii8l"]
+[ext_resource type="Script" uid="uid://b6gdq7f87rvda" path="res://scripts/HealthComponent.gd" id="1_sy5e1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f043s"]
 size = Vector2(182, 113)
 
 [node name="Chest" type="StaticBody2D"]
+
+[node name="Health" type="Node2D" parent="."]
+script = ExtResource("1_sy5e1")
+MaxHealth = null
+metadata/Health = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
