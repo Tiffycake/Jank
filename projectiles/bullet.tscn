@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd73n5hd0n1qh"]
+
+[ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://projectiles/bullet.gd" id="1_4ambd"]
+[ext_resource type="Texture2D" uid="uid://dwl4qykig1pms" path="res://textures/hands.svg" id="2_cqswp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4ambd"]
+radius = 1.0
+height = 4.0
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_4ambd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.164295, 0.0321689)
+texture = ExtResource("2_cqswp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4ambd")

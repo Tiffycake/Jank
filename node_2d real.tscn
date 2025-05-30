@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2rxa47i7gy0x"]
+
+[ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://player.gd" id="1_1xral"]
+[ext_resource type="Texture2D" uid="uid://b2vtigjutecgg" path="res://textures/balls.svg" id="2_f043s"]
+[ext_resource type="Texture2D" uid="uid://dwl4qykig1pms" path="res://textures/hands.svg" id="3_cj2sr"]
+[ext_resource type="Texture2D" uid="uid://baybfxrih4sra" path="res://textures/Gold_Chest.png" id="3_f043s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1xral"]
+radius = 54.0093
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f043s"]
+size = Vector2(182, 113)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_1xral")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="HitBox" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_1xral")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_f043s")
+
+[node name="hand1" type="Sprite2D" parent="Player/Sprite2D"]
+z_index = -1
+position = Vector2(-99, -128)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_cj2sr")
+
+[node name="hand2" type="Sprite2D" parent="Player/Sprite2D"]
+z_index = -1
+position = Vector2(98.9995, -128)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_cj2sr")
+
+[node name="Eyes" type="Node2D" parent="Player"]
+position = Vector2(70, 0)
+
+[node name="Chest" type="StaticBody2D" parent="."]
+position = Vector2(-377, -130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_f043s")
+
+[node name="Chest" type="Sprite2D" parent="Chest"]
+texture = ExtResource("3_f043s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-754, -260)
