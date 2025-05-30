@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd73n5hd0n1qh"]
+
+[ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://scripts/bullet.gd" id="1_l5glv"]
+[ext_resource type="Texture2D" uid="uid://djxje5whutd4q" path="res://textures/bullet.svg" id="2_eoqba"]
+[ext_resource type="Script" uid="uid://226dr4418du7" path="res://scripts/hitbox.gd" id="3_qncy5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ambd"]
+size = Vector2(190, 112)
+
+[node name="bullet" type="CharacterBody2D"]
+script = ExtResource("1_l5glv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_eoqba")
+
+[node name="Hitbox" type="Area2D" parent="."]
+script = ExtResource("3_qncy5")
+
+[node name="area" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_4ambd")
