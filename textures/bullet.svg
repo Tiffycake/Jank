@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   sodipodi:docname="bolot (1).svg"
+   sodipodi:docname="bullet.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@
        d="M 0,50 C 0,15 15,0 15,0 15,0 30,15 30,50 Z"
        id="path2" />
     <path
-       style="fill:#deac67;stroke-width:0.242441;fill-opacity:1"
+       style="fill:#241c1c;stroke-width:0.242441;fill-opacity:1"
        d="M 1.5,48.5 C 1.5,15.95 15,2 15,2 15,2 28.5,15.95 28.5,48.5 Z"
        id="path3" />
   </g>
