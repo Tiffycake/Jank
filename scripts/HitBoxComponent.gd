@@ -1,6 +1,7 @@
 extends Area2D
 class_name HitboxComponent
-@export var healthComponent : HealthComponent
+#@export var healthComponent : HealthComponent 
+@onready var healthComponent : HealthComponent = $"../HealthComponent"
 
 func damage(attack: Attack):
 	if healthComponent:
