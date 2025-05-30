@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://chxkv23icrdpd"]
+
+[ext_resource type="Texture2D" uid="uid://baybfxrih4sra" path="res://textures/Gold_Chest.png" id="1_oii8l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f043s"]
+size = Vector2(182, 113)
+
+[node name="Chest" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_f043s")
+
+[node name="Chest" type="Sprite2D" parent="."]
+texture = ExtResource("1_oii8l")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_f043s")
