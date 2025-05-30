@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="70mm"
-   height="161mm"
-   viewBox="0 0 70 161"
+   width="30mm"
+   height="50mm"
+   viewBox="0 0 30 50"
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
-   sodipodi:docname="bolot.svg"
+   sodipodi:docname="bolot (1).svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="1.0645786"
-     inkscape:cx="30.058842"
-     inkscape:cy="256.90916"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="33.410796"
+     inkscape:cy="54.977553"
      inkscape:window-width="1920"
      inkscape:window-height="1048"
      inkscape:window-x="0"
@@ -34,6 +34,12 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <rect
+       x="65.092857"
+       y="51.144386"
+       width="106.93827"
+       height="123.54359"
+       id="rect1" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath11">
@@ -72,44 +78,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <g
-       id="g2">
-      <g
-         id="g12"
-         transform="translate(-54.999995,-40)"
-         clip-path="url(#clipPath15)">
-        <ellipse
-           style="display:inline;fill:#000000;fill-rule:nonzero;stroke-width:0.243459"
-           id="path6-0"
-           cx="110"
-           cy="140"
-           rx="50"
-           ry="100"
-           clip-path="url(#clipPath11-0)"
-           transform="matrix(1.1666667,0,0,1.1,-15,-13)" />
-        <ellipse
-           style="display:inline;fill:#deac67;fill-rule:nonzero;stroke-width:0.243459"
-           id="path6"
-           cx="110"
-           cy="140"
-           rx="50"
-           ry="100"
-           clip-path="url(#clipPath11)" />
-      </g>
-      <rect
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke-width:0.319885"
-         id="rect16"
-         height="60"
-         x="8.8817842e-16"
-         y="101"
-         width="69.999992" />
-      <rect
-         style="fill:#008000;fill-opacity:1;fill-rule:nonzero;stroke-width:0.320919"
-         id="rect17"
-         width="59.999992"
-         height="50"
-         x="4.9999995"
-         y="106" />
-    </g>
+    <path
+       style="fill:#000000;stroke-width:0.264999"
+       d="M 0,50 C 0,15 15,0 15,0 15,0 30,15 30,50 Z"
+       id="path2" />
+    <path
+       style="fill:#deac67;stroke-width:0.242441;fill-opacity:1"
+       d="M 1.5,48.5 C 1.5,15.95 15,2 15,2 15,2 28.5,15.95 28.5,48.5 Z"
+       id="path3" />
   </g>
 </svg>
