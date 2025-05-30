@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://scripts/bullet.gd" id="1_l5glv"]
 [ext_resource type="Texture2D" uid="uid://pm35mx6eiioi" path="res://textures/bullet.svg" id="2_eoqba"]
-[ext_resource type="Script" uid="uid://226dr4418du7" path="res://scripts/HitBox.gd" id="3_qncy5"]
+[ext_resource type="Script" uid="uid://226dr4418du7" path="res://scripts/HitBoxComponent.gd" id="3_qncy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ambd"]
 size = Vector2(190, 112)

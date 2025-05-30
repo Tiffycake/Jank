@@ -1,17 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://chxkv23icrdpd"]
+[gd_scene load_steps=5 format=3 uid="uid://chxkv23icrdpd"]
 
+[ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="1_gqd3d"]
 [ext_resource type="Texture2D" uid="uid://baybfxrih4sra" path="res://textures/Gold_Chest.png" id="1_oii8l"]
-[ext_resource type="Script" uid="uid://b6gdq7f87rvda" path="res://scripts/HealthComponent.gd" id="1_sy5e1"]
+[ext_resource type="Script" uid="uid://226dr4418du7" path="res://scripts/HitBoxComponent.gd" id="3_gqd3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f043s"]
 size = Vector2(182, 113)
 
 [node name="Chest" type="StaticBody2D"]
 
-[node name="Health" type="Node2D" parent="."]
-script = ExtResource("1_sy5e1")
-MaxHealth = null
-metadata/Health = 10
+[node name="HealthComponent" parent="." instance=ExtResource("1_gqd3d")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
@@ -20,10 +18,12 @@ shape = SubResource("RectangleShape2D_f043s")
 [node name="Chest" type="Sprite2D" parent="."]
 texture = ExtResource("1_oii8l")
 
-[node name="HurtBox" type="Area2D" parent="."]
+[node name="HitBoxComponent" type="Area2D" parent="." node_paths=PackedStringArray("healthComponent")]
 collision_layer = 0
 collision_mask = 2
+script = ExtResource("3_gqd3d")
+healthComponent = NodePath("")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_f043s")
