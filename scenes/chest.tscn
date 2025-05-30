@@ -22,7 +22,7 @@ texture = ExtResource("1_oii8l")
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_gqd3d")
-healthComponent = NodePath("")
+healthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
 position = Vector2(0, -2.5)
