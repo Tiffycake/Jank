@@ -1,17 +1,18 @@
 extends CharacterBody2D 
 
 @export var speed = 600
-var bullet_path=preload("res://scenes/bullet.tscn")
+var bullet_path = preload("res://scenes/bullet.tscn")
 @onready var eyes: Node2D = $Eyes
+@onready var bulletList: Node = Node.new()
+
 
 func fire():
 	var bullet=bullet_path.instantiate()
 	bullet.dir = rotation
 	bullet.pos = eyes.global_position
 	bullet.rota = global_rotation
-	get_parent().add_child(bullet)
 
-
+	bulletList.add_child(bullet)
 
 func get_input():
 	look_at(get_global_mouse_position())
@@ -21,7 +22,7 @@ func get_input():
 	if attack == true:
 		fire()
 	 
-	
+
 func _physics_process(delta: float) -> void: 
 	get_input()
 	move_and_slide()
@@ -29,6 +30,8 @@ func _physics_process(delta: float) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	bulletList.name = "bulletList"
+	self.add_child(bulletList)
 	pass # Replace with function body.
 
 
