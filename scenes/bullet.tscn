@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd73n5hd0n1qh"]
+[gd_scene load_steps=6 format=3 uid="uid://dd73n5hd0n1qh"]
 
 [ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://scripts/bullet.gd" id="1_l5glv"]
 [ext_resource type="Texture2D" uid="uid://pm35mx6eiioi" path="res://textures/bullet.svg" id="2_eoqba"]
+[ext_resource type="PackedScene" uid="uid://ccy36qcnbo0dk" path="res://scenes/Components/AttackComponent.tscn" id="2_qncy5"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_l5glv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
@@ -10,6 +11,8 @@ size = Vector2(192, 112)
 [node name="bullet" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_l5glv")
+
+[node name="AttackComponent" parent="." instance=ExtResource("2_qncy5")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708

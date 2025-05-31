@@ -1,7 +1,7 @@
 extends Node2D
 class_name AttackComponent
 
-var attackDamage : int
+@export var attackDamage : int
 
 
 
