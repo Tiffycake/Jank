@@ -2,8 +2,17 @@ extends Node2D
 var bullet_path = preload("res://scenes/bullet.tscn") 
 @onready var sprite_2d: Sprite2D = $"Sprite2D"
 @onready var player: CharacterBody2D = $".." 
-@onready var timer: Timer = $"Timer"
+@onready var timer: Timer = $Timer
 @onready var bulletList: Node = Node.new()
+
+var atackSpeed := 10.0
+
+func _ready() -> void:
+	timer.wait_time = 1/atackSpeed
+	timer.one_shot = true	
+	bulletList.name = "bulletList"
+	self.add_child(bulletList)
+	pass # Replace with function body.
 
 
 func fire():
@@ -17,13 +26,8 @@ func fire():
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	timer.one_shot = true	
-	bulletList.name = "bulletList"
-	self.add_child(bulletList)
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
