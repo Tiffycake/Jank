@@ -38,4 +38,3 @@ position = Vector2(70, 0)
 script = ExtResource("4_dqkch")
 
 [node name="Timer" type="Timer" parent="Weapon"]
-wait_time = 0.1

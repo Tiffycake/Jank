@@ -1,11 +1,10 @@
 extends Node2D
-var bullet_path = preload("res://scenes/bullet.tscn") 
-@onready var sprite_2d: Sprite2D = $"Sprite2D"
+var bullet_path = preload("res://scenes/bullet.tscn")  
 @onready var player: CharacterBody2D = $".." 
 @onready var timer: Timer = $Timer
 @onready var bulletList: Node = Node.new()
 
-var atackSpeed := 10.0
+var atackSpeed : float = 20  # attacks per second
 
 func _ready() -> void:
 	timer.wait_time = 1/atackSpeed

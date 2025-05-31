@@ -3,7 +3,7 @@ var pos:Vector2
 var rota:float
 var dir:float
 
-var speed := 400
+var speed := 600
 var attackDamage := 1
 var lifetime := 600
 
