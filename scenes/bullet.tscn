@@ -8,7 +8,7 @@
 size = Vector2(63.9996, 104)
 
 [node name="bullet" type="CharacterBody2D"]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.24164, 0.26359)
 script = ExtResource("1_l5glv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

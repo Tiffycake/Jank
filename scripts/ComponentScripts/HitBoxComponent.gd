@@ -19,7 +19,7 @@ func _init() -> void:
 
 func _on_body_entered(attack: AttackComponent) -> void:
 	#when an attack component collides with the hitbox comp
-	print("is this real", attack)
+	#print("is this real", attack)
 	healthComponent.damage(attack)
 	attack.get_parent().queue_free()
 	
