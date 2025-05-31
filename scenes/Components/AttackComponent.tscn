@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://owt3wcbjjgfp" path="res://scripts/AttackComponent.gd" id="1_bl78e"]
 
-[node name="AttackComponent" type="Area2D"]
+[node name="AttackComponent" type="Node2D"]
 script = ExtResource("1_bl78e")
 attackDamage = 2
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
