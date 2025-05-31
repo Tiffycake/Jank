@@ -17,8 +17,8 @@ func _ready() -> void:
 func fire():
 	if timer.time_left == 0:
 		var bullet = bullet_path.instantiate()
-		bullet.dir = player.rotation
 		bullet.pos = self.global_position
+		bullet.dir = player.rotation
 		bullet.rota = self.global_rotation
 		timer.start()
 		bulletList.add_child(bullet)
