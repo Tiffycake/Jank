@@ -5,3 +5,5 @@
 [node name="AttackComponent" type="Area2D"]
 script = ExtResource("1_bl78e")
 attackDamage = 2
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -8,15 +8,7 @@ var attackDamage := 1
 var lifetime := 600
 
 
-func _on_hitbox_area_entered(area):
-	print(area, "entered")
-	if area is HitboxComponent:
-		var hitbox : HitboxComponent = area
-		var attack = AttackComponent.new()
-		attack.attackDamage = attackDamage
-		attack.attackPosition = global_position
-		hitbox.damage(attack)
-	
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	global_position=pos
