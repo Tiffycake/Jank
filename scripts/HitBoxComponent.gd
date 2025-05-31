@@ -11,5 +11,8 @@ func damage(attack: AttackComponent):
 
 
 func _init() -> void:
+	# uhhh add sibling CollisionShape2D copy as child 
+	
+	
 	collision_layer = 2
 	collision_mask = 0
