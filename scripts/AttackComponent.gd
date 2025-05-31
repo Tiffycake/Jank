@@ -15,13 +15,4 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_entered(area: HitboxComponent) -> void:
-	print("not real")
-	if area is HitboxComponent:
-		print(area, "entered")
-		var hitbox : HitboxComponent = area
-		var attack = AttackComponent.new()
-		attack.attackDamage = attackDamage
-		attack.attackPosition = global_position
-		hitbox.damage(attack)
  

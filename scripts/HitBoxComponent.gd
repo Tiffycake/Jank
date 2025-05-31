@@ -4,9 +4,8 @@ class_name HitboxComponent
 @onready var healthComponent : HealthComponent = $"../HealthComponent"
 
 func damage(attack: AttackComponent):
-	if healthComponent:
-		healthComponent.damage(attack)
-
+	healthComponent.damage(attack)
+	
 
 
 
@@ -14,5 +13,5 @@ func _init() -> void:
 	# uhhh add sibling CollisionShape2D copy as child 
 	
 	
-	collision_layer = 2
-	collision_mask = 0
+	#collision_layer = 2
+	#collision_mask = 0
