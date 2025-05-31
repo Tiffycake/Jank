@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://3higeki8udsa"]
+[gd_scene load_steps=8 format=3 uid="uid://3higeki8udsa"]
 
 [ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b2vtigjutecgg" path="res://textures/balls.svg" id="2_hqtel"]
+[ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="2_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dwl4qykig1pms" path="res://textures/hands.svg" id="3_sweqy"]
 [ext_resource type="Script" uid="uid://um2tckmdvn3" path="res://scripts/weapon.gd" id="4_dqkch"]
 
@@ -11,10 +13,18 @@ radius = 54.0093
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_i3pqv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1xral")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
+maxHealth = 100
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_fjrip")]
+
+[node name="CollisionBox2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_1xral")
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
