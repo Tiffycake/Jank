@@ -9,21 +9,11 @@ var lifetime := 600
 
 
 
-func _on_area_entered(area: HitboxComponent) -> void:
-	if area is HitboxComponent:
-		print(area, "entered")
-		var hitbox : HitboxComponent = area
-		var attack = AttackComponent.new()
-		attack.attackDamage = attackDamage
-		attack.attackPosition = global_position
-		hitbox.damage(attack)
-
  
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	global_position=pos
 	global_rotation=rota
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
