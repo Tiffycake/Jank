@@ -5,17 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://ccy36qcnbo0dk" path="res://scenes/Components/AttackComponent.tscn" id="2_qncy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
-size = Vector2(192, 112)
+size = Vector2(95.9994, 160)
 
 [node name="bullet" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
 script = ExtResource("1_l5glv")
 
-[node name="AttackComponent" parent="." instance=ExtResource("2_qncy5")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
-shape = SubResource("RectangleShape2D_l5glv")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("2_eoqba")
+
+[node name="AttackComponent" parent="." instance=ExtResource("2_qncy5")]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
+scale = Vector2(1.15998, 1.15998)
+shape = SubResource("RectangleShape2D_l5glv")
