@@ -1,12 +1,11 @@
 extends Area2D
 class_name HitboxComponent
-@export var healthComponent : HealthComponent 
-#@onready var healthComponent : HealthComponent = $"../HealthComponent"
+#@export var healthComponent : HealthComponent 
+@onready var healthComponent : HealthComponent = $"../HealthComponent"
 
 
 
 func _ready() -> void:
-	#var hitbox2 = get_node(".")
 	self.area_entered.connect(_on_body_entered)
 	
 func _init() -> void:
@@ -19,8 +18,10 @@ func _init() -> void:
 
 
 func _on_body_entered(attack: AttackComponent) -> void:
+	#when an attack component collides with the hitbox comp
 	print("is this real", attack)
 	healthComponent.damage(attack)
+	attack.get_parent().queue_free()
 	
 	
 	
@@ -29,7 +30,7 @@ func _on_body_entered(attack: AttackComponent) -> void:
 	
 	
 #region New Code Region
-func _damage_does_nothing(attack: AttackComponent):
+func damage_fake(attack: AttackComponent):
 	print(attack, " triggered")
 	if healthComponent:
 		print(attack, " triggered", healthComponent)

@@ -14,8 +14,7 @@ size = Vector2(182, 113)
 [node name="Chest" type="Sprite2D" parent="."]
 texture = ExtResource("1_oii8l")
 
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("3_gqd3d")]
-healthComponent = NodePath("../HealthComponent")
+[node name="HitboxComponent" parent="." instance=ExtResource("3_gqd3d")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(0, -2.5)

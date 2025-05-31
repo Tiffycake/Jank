@@ -18,7 +18,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-
+	
 	velocity=Vector2(speed,0).rotated(dir)
 	move_and_slide()
 	if lifetime <= 0:
