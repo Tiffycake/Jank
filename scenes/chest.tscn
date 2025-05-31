@@ -10,7 +10,6 @@ size = Vector2(182, 113)
 [node name="Chest" type="StaticBody2D"]
 
 [node name="HealthComponent" parent="." instance=ExtResource("1_gqd3d")]
-maxHealth = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
@@ -21,6 +20,6 @@ texture = ExtResource("1_oii8l")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("3_gqd3d")]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_f043s")

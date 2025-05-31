@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Zombs2"
-run/main_scene="uid://b2rxa47i7gy0x"
+run/main_scene="uid://b0xvbxopa5yrf"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

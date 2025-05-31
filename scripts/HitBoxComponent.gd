@@ -3,7 +3,7 @@ class_name HitboxComponent
 #@export var healthComponent : HealthComponent 
 @onready var healthComponent : HealthComponent = $"../HealthComponent"
 
-func damage(attack: Attack):
+func damage(attack: AttackComponent):
 	if healthComponent:
 		healthComponent.damage(attack)
 

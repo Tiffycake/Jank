@@ -9,7 +9,7 @@ func _ready() -> void:
 	health = maxHealth
 
 
-func damage(attack: Attack):
+func damage(attack: AttackComponent):
 	health -= attack.attackDamage
 	if health <= 0:
 		get_parent().queue_free()
