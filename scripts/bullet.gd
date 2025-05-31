@@ -9,6 +9,7 @@ var lifetime := 600
 
 
 func _on_hitbox_area_entered(area):
+	print(area, "entered")
 	if area is HitboxComponent:
 		var hitbox : HitboxComponent = area
 		var attack = AttackComponent.new()
