@@ -12,12 +12,14 @@ func _ready() -> void:
 	joinButton.pressed.connect(joinButtonPressed)
 
 func hostButtonPressed():
+	print("hostButtonPressed")
 	peer.create_server(135)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(spawnPlayer)
 	spawnPlayer()
 	
 func joinButtonPressed():
+	print("joinButtonPressed")
 	peer.create_client("localhost",135)
 	multiplayer.multiplayer_peer = peer
 
