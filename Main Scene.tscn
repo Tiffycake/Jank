@@ -1,13 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0xvbxopa5yrf"]
+[gd_scene load_steps=3 format=3 uid="uid://b0xvbxopa5yrf"]
 
-[ext_resource type="PackedScene" uid="uid://chxkv23icrdpd" path="res://scenes/chest.tscn" id="2_nxxrv"]
 [ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://spawner.gd" id="3_2uwcf"]
 [ext_resource type="Script" uid="uid://hlx383i5ekvg" path="res://mainMenu.gd" id="3_ww3rf"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Chest" parent="." instance=ExtResource("2_nxxrv")]
-position = Vector2(482, 266)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-754, -260)
