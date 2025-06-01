@@ -14,10 +14,13 @@ func get_input():
 		weapon.fire()
 	 
 
-func _physics_process(_delta: float) -> void: 
-	get_input()
+func _physics_process(_delta: float) -> void:
+	if is_multiplayer_authority():
+		get_input()
 	move_and_slide()
 
+func _enter_tree() -> void:
+	set_multiplayer_authority(name.to_int())
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

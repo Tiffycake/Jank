@@ -1,12 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0xvbxopa5yrf"]
 
-[ext_resource type="PackedScene" uid="uid://3higeki8udsa" path="res://scenes/player.tscn" id="1_nxxrv"]
 [ext_resource type="PackedScene" uid="uid://chxkv23icrdpd" path="res://scenes/chest.tscn" id="2_nxxrv"]
 [ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://spawner.gd" id="3_2uwcf"]
+[ext_resource type="Script" uid="uid://hlx383i5ekvg" path="res://mainMenu.gd" id="3_ww3rf"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_nxxrv")]
 
 [node name="Chest" parent="." instance=ExtResource("2_nxxrv")]
 position = Vector2(482, 266)
@@ -23,10 +21,37 @@ offset_right = 502.0
 offset_bottom = 170.0
 metadata/_edit_use_anchors_ = true
 
-[node name="spawner" type="Button" parent="Control"]
+[node name="chestSpawner" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_2uwcf")
 metadata/_edit_use_anchors_ = true
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 300.0
+offset_right = 171.0
+offset_bottom = 494.0
+script = ExtResource("3_ww3rf")
+
+[node name="hostButton" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 95.0
+text = "host"
+
+[node name="joinButton" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 170.0
+offset_bottom = 195.0
+text = "join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="MainMenu"]
+_spawnable_scenes = PackedStringArray("uid://3higeki8udsa")
+spawn_path = NodePath("../../playerList")
+
+[node name="playerList" type="Node" parent="."]
