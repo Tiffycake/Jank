@@ -29,4 +29,3 @@ func spawnPlayer(id = 1):
 	call_deferred("add_child",player)
 	
 	
-	
