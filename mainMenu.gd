@@ -19,19 +19,18 @@ func hostButtonPressed():
 	multiplayer.peer_connected.connect(spawnPlayer)
 	spawnPlayer()
 
+func spawnPlayer(id = 1):
+	var player = playerScene.instantiate()
+	#self.add_child(player)
+	player.name = str(id)
+	call_deferred("add_child",player)
+	player.add_child(playerList)
+	
 
 func playerJoin(id = 1):
-	spawnPlayer(id)
+	spawnPlayer()
 
 func joinButtonPressed():
 	print("joinButtonPressed")
 	peer.create_client("localhost",port)
 	multiplayer.multiplayer_peer = peer
-	
-
-func spawnPlayer(id = 1):
-	var player = playerScene.instantiate()
-	#self.add_child(player)
-	player.name = str(id)
-	player.add_child(playerList)
-	
