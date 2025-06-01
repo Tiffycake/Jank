@@ -15,6 +15,4 @@ func _on_hitbox_entered(area: Area2D) -> void:
 
 
 func _ready() -> void:
-	pass 
-func _process(delta: float) -> void:
-	pass
+	pass  
