@@ -11,7 +11,7 @@ var playerScene : PackedScene = preload("res://scenes/player.tscn")
 func _ready() -> void:
 	hostButton.pressed.connect(hostButtonPressed)
 	joinButton.pressed.connect(joinButtonPressed)
-	hide()
+	#hide()
 	
 func hostButtonPressed():
 	print("hostButtonPressed")

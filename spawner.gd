@@ -14,5 +14,5 @@ func spawnerTrigger() -> void:
 
 func spawnChest() -> void:
 	var chest1 = chest.instantiate()
-	chest1.position = control.position #+ Vector2(20,136)
+	chest1.position = Vector2(20,136) #+ control.global_position 
 	self.add_child(chest1)

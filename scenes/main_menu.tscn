@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://c205q7lke0i56"]
+
+[ext_resource type="Script" uid="uid://hlx383i5ekvg" path="res://mainMenu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 300.0
+offset_right = 171.0
+offset_bottom = 494.0
+script = ExtResource("1_l6cm7")
+
+[node name="hostButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 95.0
+text = "host"
+
+[node name="joinButton" type="Button" parent="."]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 170.0
+offset_bottom = 195.0
+text = "join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://3higeki8udsa")
+spawn_path = NodePath("../../playerList")
