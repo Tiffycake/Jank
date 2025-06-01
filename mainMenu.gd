@@ -11,7 +11,8 @@ var playerScene : PackedScene = preload("res://scenes/player.tscn")
 func _ready() -> void:
 	hostButton.pressed.connect(hostButtonPressed)
 	joinButton.pressed.connect(joinButtonPressed)
-
+	hide()
+	
 func hostButtonPressed():
 	print("hostButtonPressed")
 	peer.create_server(port)
@@ -23,8 +24,8 @@ func spawnPlayer(id = 1):
 	var player = playerScene.instantiate()
 	#self.add_child(player)
 	player.name = str(id)
-	call_deferred("add_child",player)
-	player.add_child(playerList)
+	playerList.call_deferred("add_child",player)
+	#player.add_child(playerList)
 	
 
 func playerJoin(id = 1):

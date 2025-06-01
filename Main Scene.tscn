@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0xvbxopa5yrf"]
+[gd_scene load_steps=4 format=3 uid="uid://b0xvbxopa5yrf"]
 
 [ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://spawner.gd" id="3_2uwcf"]
+[ext_resource type="PackedScene" uid="uid://3higeki8udsa" path="res://scenes/player.tscn" id="3_t0tp6"]
 [ext_resource type="Script" uid="uid://hlx383i5ekvg" path="res://mainMenu.gd" id="3_ww3rf"]
 
 [node name="Node2D" type="Node2D"]
@@ -55,3 +56,6 @@ _spawnable_scenes = PackedStringArray("uid://3higeki8udsa")
 spawn_path = NodePath("../../playerList")
 
 [node name="playerList" type="Node" parent="."]
+
+[node name="1" parent="playerList" instance=ExtResource("3_t0tp6")]
+position = Vector2(576, 324)
