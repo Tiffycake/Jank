@@ -1,5 +1,6 @@
 extends Node2D
-var bullet_path = preload("res://scenes/bullet.tscn")  
+var bullet_path = preload("res://scenes/bullet.tscn")
+
 @onready var player: CharacterBody2D = $".." 
 @onready var timer: Timer = $Timer
 @onready var bulletList: Node = Node.new()

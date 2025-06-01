@@ -3,7 +3,10 @@ var pos:Vector2
 var rota:float
 var dir:float
 
-var speed := 600
+#@onready var player : CharacterBody2D = $"../../.."
+
+
+var speed := 1200
 var attackDamage := 1
 var lifetime := 600
 
@@ -18,8 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	
-	velocity=Vector2(speed,0).rotated(dir)
+	velocity = Vector2(speed,0).rotated(dir) #+ player.velocity
 	move_and_slide()
 	if lifetime <= 0:
 		self.queue_free() 
