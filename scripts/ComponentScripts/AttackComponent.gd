@@ -9,9 +9,7 @@ var freeze : int # time frozen
 var burn : int   # burn time (burn is 3dmg/s)
 
 
-
-func _on_hitbox_entered(area: Area2D) -> void:
-	print(area,"attack")
+ 
 
 
 func _ready() -> void:

@@ -6,18 +6,18 @@ class_name HitboxComponent
 
 
 func _ready() -> void:
-	self.area_entered.connect(_on_body_entered)
-	
+	self.area_entered.connect(onBodyEntered)
+
+
 func _init() -> void:
-	#uhhh add sibling CollisionShape2D copy as child 
-	
+	#uhhh add sibling CollisionShape2D copy as child (or not)
 	#collision_layer = 2
 	#collision_mask = 0
 	pass
  
 
 
-func _on_body_entered(attack: AttackComponent) -> void:
+func onBodyEntered(attack: AttackComponent) -> void:
 	#when an attack component collides with the hitbox comp
 	#print("is this real", attack)
 	healthComponent.damage(attack)

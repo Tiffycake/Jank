@@ -11,13 +11,13 @@ size = Vector2(63.9996, 104)
 scale = Vector2(0.24164, 0.26359)
 script = ExtResource("1_l5glv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-scale = Vector2(0.55, 0.55)
-texture = ExtResource("2_eoqba")
-
 [node name="AttackComponent" parent="." instance=ExtResource("2_qncy5")]
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
 shape = SubResource("RectangleShape2D_l5glv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_eoqba")

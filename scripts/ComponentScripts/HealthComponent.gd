@@ -14,4 +14,5 @@ func damage(attack: AttackComponent):
 	if health <= 0:
 		get_parent().queue_free()
 
+
  
