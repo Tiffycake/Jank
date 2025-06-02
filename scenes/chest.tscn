@@ -10,6 +10,8 @@ size = Vector2(182, 113)
 
 [node name="Chest" type="StaticBody2D"]
 script = ExtResource("4_yue2o")
+metadata/_edit_vertical_guides_ = [-150.0]
+metadata/_edit_horizontal_guides_ = [-140.0]
 
 [node name="HealthComponent" parent="." instance=ExtResource("1_gqd3d")]
 
