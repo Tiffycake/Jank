@@ -7,7 +7,5 @@ extends StaticBody2D
 
 
 func _ready() -> void:
-	var collisionShape2 := collisionShape.duplicate()
-	#collisionShape2.name = collisionShape.name
-	collisionShape2.reparent(hitboxComponent) 
-	collisionShape2.add_child(hitboxComponent) 
+	var collisionShape2 := collisionShape.duplicate(1) 
+	hitboxComponent.add_child(collisionShape2)
