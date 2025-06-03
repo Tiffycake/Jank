@@ -1,7 +1,7 @@
 extends CharacterBody2D 
 
 var speed: = 600
-@onready var weapon: Node2D = $Weapon
+@onready var weapon: Node2D = $"Inventory/Weapon"
 @onready var objectList: Node = $"../../objectList"
 
 

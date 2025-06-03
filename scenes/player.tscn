@@ -15,6 +15,14 @@ radius = 54.0093
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_i3pqv")
 
+[node name="Inventory" type="Node2D" parent="."]
+
+[node name="Weapon" type="Node2D" parent="Inventory"]
+position = Vector2(80, 0)
+script = ExtResource("4_dqkch")
+
+[node name="Timer" type="Timer" parent="Inventory/Weapon"]
+
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1xral")
 
@@ -44,12 +52,6 @@ z_index = -1
 position = Vector2(98.9995, -128)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_sweqy")
-
-[node name="Weapon" type="Node2D" parent="."]
-position = Vector2(80, 0)
-script = ExtResource("4_dqkch")
-
-[node name="Timer" type="Timer" parent="Weapon"]
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_tuyoq")
