@@ -1,18 +1,31 @@
 extends CharacterBody2D 
 
-@export var speed = 600
+var speed: = 600
 @onready var weapon: Node2D = $Weapon
+@onready var objectList: Node = $"../../objectList"
 
+
+var wall = preload("res://scenes/basic_wall.tscn")
 
 
 func get_input():
 	look_at(get_global_mouse_position())
-	var attack = Input.is_action_pressed("click")
+	var attack = Input.is_action_pressed("leftClick")
+	var use = Input.is_action_pressed("rightClick")
 	var input_dir = Input.get_vector("left","right","up","down")
 	velocity = input_dir * speed
+
+	if use == true:
+		spawnWall()
+
 	if attack == true:
 		weapon.fire()
 	 
+
+func spawnWall() -> void:
+	var wall1 : StaticBody2D = wall.instantiate()
+	objectList.add_child(wall1)
+	wall1.global_position = get_global_mouse_position()
 
 func _physics_process(_delta: float) -> void:
 	if is_multiplayer_authority():

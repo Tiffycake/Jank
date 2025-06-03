@@ -26,3 +26,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="1" parent="playerList" instance=ExtResource("3_t0tp6")]
 position = Vector2(576, 324)
+
+[node name="objectList" type="Node" parent="."]

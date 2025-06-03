@@ -6,7 +6,7 @@ class_name HitboxComponent
 
 
 func _ready() -> void:
-	self.area_entered.connect(onBodyEntered)
+	self.area_entered.connect(onBodyEntered) #
 
 
 func _init() -> void:
@@ -16,7 +16,7 @@ func _init() -> void:
 	pass
  
 
-
+# acts as a 
 func onBodyEntered(attack: AttackComponent) -> void:
 	#when an attack component collides with the hitbox comp
 	#print("is this real", attack)
