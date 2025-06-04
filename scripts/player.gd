@@ -10,7 +10,8 @@ var wall = preload("res://scenes/basic_wall.tscn")
 
 
 func get_input():
-	look_at(get_global_mouse_position())
+	if DisplayServer.window_is_focused():
+		look_at(get_global_mouse_position())
 	var attack = Input.is_action_pressed("leftClick")
 	var use = Input.is_action_pressed("rightClick")
 	var input_dir = Input.get_vector("left","right","up","down")
