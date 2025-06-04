@@ -21,10 +21,10 @@ func joinButtonPressed():
  
 func spawnPlayer(id = 1):
 	var player = playerScene.instantiate()
-	#self.add_child(player)
 	player.name = str(id)
-	call_deferred("add_child",player) # playerList.
-	player.add_child(playerList)
+	var mainScene = get_parent()
+	mainScene.call_deferred("add_child", player)
+	#player.add_child(playerList)
 
 func _ready() -> void:
 	#connects signals
