@@ -30,4 +30,4 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://3higeki8udsa")
-spawn_path = NodePath("..")
+spawn_path = NodePath("../playerList")

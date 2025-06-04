@@ -23,7 +23,7 @@ func spawnPlayer(id = 1):
 	var player = playerScene.instantiate()
 	player.name = str(id)
 	var mainScene = get_parent()
-	mainScene.call_deferred("add_child", player)
+	playerList.call_deferred("add_child", player)  #mainScene
 	#player.add_child(playerList)
 
 func _ready() -> void:
