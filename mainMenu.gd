@@ -1,18 +1,12 @@
 extends Control
 
-var port := 4631
+var port := 25565 # minecraft port lmao
 var peer := ENetMultiplayerPeer.new()
 var playerScene : PackedScene = preload("res://scenes/player.tscn")
 @onready var hostButton := $"hostButton"
 @onready var joinButton := $"joinButton"
 @onready var playerList := $"../playerList"
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	hostButton.pressed.connect(hostButtonPressed)
-	joinButton.pressed.connect(joinButtonPressed)
-	#hide()
-	
 func hostButtonPressed():
 	print("hostButtonPressed")
 	peer.create_server(port)
@@ -20,18 +14,20 @@ func hostButtonPressed():
 	multiplayer.peer_connected.connect(spawnPlayer)
 	spawnPlayer()
 
-func spawnPlayer(id = 1):
-	var player = playerScene.instantiate()
-	#self.add_child(player)
-	player.name = str(id)
-	playerList.call_deferred("add_child",player)
-	#player.add_child(playerList)
-	
-
-func playerJoin(id = 1):
-	spawnPlayer()
-
 func joinButtonPressed():
 	print("joinButtonPressed")
 	peer.create_client("localhost",port)
 	multiplayer.multiplayer_peer = peer
+ 
+func spawnPlayer(id = 1):
+	var player = playerScene.instantiate()
+	#self.add_child(player)
+	player.name = str(id)
+	call_deferred("add_child",player) # playerList.
+	player.add_child(playerList)
+
+func _ready() -> void:
+	#connects signals
+	hostButton.pressed.connect(hostButtonPressed)
+	joinButton.pressed.connect(joinButtonPressed)
+	#hide()

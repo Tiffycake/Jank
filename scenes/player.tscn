@@ -23,9 +23,6 @@ script = ExtResource("4_dqkch")
 
 [node name="Timer" type="Timer" parent="Inventory/Weapon"]
 
-[node name="CollisionBox2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_1xral")
-
 [node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
 maxHealth = 100
 
