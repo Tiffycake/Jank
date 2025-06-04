@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed: = 600
 @onready var weapon: Node2D = $"Inventory/Weapon"
 @onready var objectList: Node = $"../../objectList"
+var camera : Camera2D = Camera2D.new()
 
 
 var wall = preload("res://scenes/basic_wall.tscn")
@@ -37,7 +38,8 @@ func _enter_tree() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if is_multiplayer_authority():
+		add_child(camera)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
