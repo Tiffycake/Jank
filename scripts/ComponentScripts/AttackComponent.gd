@@ -10,7 +10,8 @@ var burn : int   # burn time (burn is 3dmg/s)
 
 
 func killSelf(area) -> void:
-	print(area)
+	pass
+	#print(area)
 
 
 func _ready() -> void:
