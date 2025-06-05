@@ -17,11 +17,13 @@ func _init() -> void:
  
 
 # acts as a 
-func onBodyEntered(attack: AttackComponent) -> void:
+
+func onBodyEntered(attack) -> void:
+	if attack is AttackComponent:
+		healthComponent.damage(attack)
+		attack.get_parent().queue_free()
 	#when an attack component collides with the hitbox comp
 	#print("is this real", attack)
-	healthComponent.damage(attack)
-	attack.get_parent().queue_free()
 	
 	
 	

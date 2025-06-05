@@ -41,6 +41,10 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if is_multiplayer_authority():
 		add_child(camera)
+	self.tree_exited.connect(die)
+
+func die() -> void:
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
