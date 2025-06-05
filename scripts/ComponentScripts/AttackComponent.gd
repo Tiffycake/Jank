@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 class_name AttackComponent
 # this is essentialy a hurbox lol
 @export var attackDamage : int = 5
@@ -9,8 +9,9 @@ var freeze : int # time frozen
 var burn : int   # burn time (burn is 3dmg/s)
 
 
- 
+func killSelf(area) -> void:
+	print(area)
 
 
 func _ready() -> void:
-	pass  
+	self.area_entered.connect(killSelf)

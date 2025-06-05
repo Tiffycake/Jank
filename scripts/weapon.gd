@@ -5,6 +5,7 @@ var bullet_path = preload("res://scenes/bullet.tscn")
 @onready var timer: Timer = $Timer
 var bulletList := Node.new()
 
+
 var weaponAtackDamage : int = 25
 var atackSpeed : float = 4  # attacks per second
 
