@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjmk4lde75guu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_omh4v"]
+
+[node name="ParticleComponent" type="Node2D"]
+position = Vector2(579, 335)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+local_coords = true
+process_material = SubResource("ShaderMaterial_omh4v")

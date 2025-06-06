@@ -5,7 +5,7 @@ var peer := ENetMultiplayerPeer.new()
 var playerScene : PackedScene = preload("res://scenes/player.tscn")
 @onready var hostButton := $"hostButton"
 @onready var joinButton := $"joinButton"
-@onready var playerList := $"../playerList"
+@onready var objectList := $"../objectList"
 
 func hostButtonPressed():
 	print("hostButtonPressed")
@@ -23,7 +23,7 @@ func spawnPlayer(id = 1):
 	var player = playerScene.instantiate()
 	player.name = str(id)
 	var mainScene = get_parent()
-	playerList.call_deferred("add_child", player)  #mainScene
+	objectList.call_deferred("add_child", player)  #mainScene
 	#player.add_child(playerList)
 
 func _ready() -> void:

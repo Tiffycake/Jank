@@ -22,12 +22,12 @@ offset_bottom = 40.0
 script = ExtResource("3_2uwcf")
 metadata/_edit_use_anchors_ = true
 
-[node name="playerList" type="Node" parent="."]
-
 [node name="objectList" type="Node" parent="."]
+
+[node name="playerList" type="Node" parent="."]
 
 [node name="MainMenu" parent="." instance=ExtResource("3_ww3rf")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://3higeki8udsa")
-spawn_path = NodePath("../playerList")
+_spawnable_scenes = PackedStringArray("uid://3higeki8udsa", "uid://dd73n5hd0n1qh")
+spawn_path = NodePath("../objectList")

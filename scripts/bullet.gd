@@ -2,7 +2,6 @@ extends CharacterBody2D
 var pos:Vector2
 var rota:float
 var dir:float
-
 #@onready var player : CharacterBody2D = $"../../.."
 
 
@@ -11,8 +10,6 @@ var attackDamage :int #= 1
 var lifetime     :int #= 600
 
 
-
- 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	global_position=pos

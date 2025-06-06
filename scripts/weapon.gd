@@ -2,23 +2,24 @@ extends Node2D
 var bullet_path = preload("res://scenes/bullet.tscn")
 
 @onready var player: CharacterBody2D = $"../.."
-@onready var timer: Timer = $Timer
-var bulletList := Node.new()
+@onready var objectList: Node = $"../../../.."
+@onready var timer: Timer = $Timer 
 
+
+#var bulletList := Node.new() 
+	#bulletList.name = "bulletList"
+	#self.add_child(bulletList)
 
 var bulletLifetime		: int = 600
 var bulletSpeed			: int = 1200 #projectile
-var atackDamage	: int = 25 # weaponAtackDamage
-var atackSpeed : float = 4  # attacks per second
+var atackDamage			: int = 25 # weaponAtackDamage
+var atackSpeed			: float = 4  # attacks per second
 
 func _ready() -> void:
 	
 	timer.wait_time = 1/atackSpeed
 	timer.one_shot = true	
-	 
-	bulletList.name = "bulletList"
-	self.add_child(bulletList)
-
+	
 func fire():
 	if timer.time_left == 0:
 		var bullet = bullet_path.instantiate()
@@ -30,7 +31,7 @@ func fire():
 		bullet.speed = bulletSpeed
 		bullet.lifetime = bulletLifetime
 		timer.start()
-		bulletList.add_child(bullet)
+		objectList.add_child(bullet)
 
 
 # Called when the node enters the scene tree for the first time.
