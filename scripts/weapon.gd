@@ -3,9 +3,10 @@ var bullet_path = preload("res://scenes/bullet.tscn")
 
 @onready var player: CharacterBody2D = $"../.."
 @onready var objectList: Node = $"../../../../objectList"
-@onready var timer: Timer = $Timer 
+@onready var timer: Timer = $Timer
 
 
+var bulletNumber : int = 0
 #var bulletList := Node.new() 
 	#bulletList.name = "bulletList"
 	#self.add_child(bulletList)
@@ -31,6 +32,8 @@ func fire():
 		bullet.speed = bulletSpeed
 		bullet.lifetime = bulletLifetime
 		timer.start()
+		bullet.name = "bullet " + str(bulletNumber)
+		bulletNumber+=1
 		objectList.add_child(bullet)
 
 
