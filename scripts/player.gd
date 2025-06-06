@@ -41,24 +41,27 @@ func spawnWall() -> void:
 	objectList.add_child(wall1)
 	wall1.global_position = get_global_mouse_position()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
 		get_input()
-	
+	squish(delta) 
+	move_and_slide()
+
+func squish(delta) -> void:
 	if (is_on_wall()):
 		var angle_to_wall = rad_to_deg(inputDir.angle_to(get_wall_normal()))
 		if (angle_to_wall < 0): angle_to_wall = angle_to_wall * -1
 		if(angle_to_wall > 130 and angle_to_wall < 230 and inputDir != Vector2(0,0)):
 			if(coolBox.scale.x > minScale):
-				coolBox.scale = Vector2(coolBox.scale.x - _delta * scale_factor, coolBox.scale.y - _delta * scale_factor)
+				coolBox.scale = Vector2(coolBox.scale.x - delta * scale_factor, coolBox.scale.y - delta * scale_factor)
 		else:
 			if(coolBox.scale.x < maxScale):
-				coolBox.scale = Vector2(coolBox.scale.x + _delta * scale_factor, coolBox.scale.y + _delta * scale_factor)
+				coolBox.scale = Vector2(coolBox.scale.x + delta * scale_factor, coolBox.scale.y + delta * scale_factor)
 	else:
 		if(coolBox.scale.x < maxScale):
-			coolBox.scale = Vector2(coolBox.scale.x + _delta * scale_factor, coolBox.scale.y + _delta * scale_factor)
+			coolBox.scale = Vector2(coolBox.scale.x + delta * scale_factor, coolBox.scale.y + delta * scale_factor)
 	
-	move_and_slide()
+	
 
 
 func _enter_tree() -> void:
