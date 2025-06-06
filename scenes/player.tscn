@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="2_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dwl4qykig1pms" path="res://textures/hands.svg" id="3_sweqy"]
-[ext_resource type="Script" uid="uid://um2tckmdvn3" path="res://scripts/weapon.gd" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/weapon.tscn" id="4_tuyoq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xral"]
 radius = 54.0
@@ -41,11 +41,8 @@ texture = ExtResource("3_sweqy")
 
 [node name="Inventory" type="Node2D" parent="."]
 
-[node name="Weapon" type="Node2D" parent="Inventory"]
+[node name="Weapon" parent="Inventory" instance=ExtResource("4_tuyoq")]
 position = Vector2(80, 0)
-script = ExtResource("4_dqkch")
-
-[node name="Timer" type="Timer" parent="Inventory/Weapon"]
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
 maxHealth = 100

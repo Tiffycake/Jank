@@ -6,9 +6,9 @@ var dir:float
 #@onready var player : CharacterBody2D = $"../../.."
 
 
-var speed := 1200
-var attackDamage := 1
-var lifetime := 600
+var speed        :int #= 1200
+var attackDamage :int #= 1
+var lifetime     :int #= 600
 
 
 

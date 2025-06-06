@@ -14,11 +14,11 @@ const scale_factor := 3.5
 
 var inputDir : Vector2
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	if is_multiplayer_authority():
 		add_child(camera)
-	self.tree_exited.connect(die)
+	self.tree_exited.connect(_die)
 	
 
 func get_input():
@@ -67,9 +67,9 @@ func squish(delta) -> void:
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
-func die() -> void:
-	pass
 
+func _die() -> void:
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
