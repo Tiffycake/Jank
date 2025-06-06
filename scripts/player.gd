@@ -7,9 +7,12 @@ var camera : Camera2D = Camera2D.new()
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
 
 const wall = preload("res://scenes/basic_wall.tscn")
-var growSpeed : int = 60
-var counter1 : int = growSpeed
-var counterdelta : int = -1
+
+const maxScale := 1.0
+const minScale := 0.75
+const scale_factor := 3.5
+
+var inputDir : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +26,7 @@ func get_input():
 		look_at(get_global_mouse_position())
 	var attack = Input.is_action_pressed("leftClick")
 	var use = Input.is_action_pressed("rightClick")
-	var inputDir = Input.get_vector("left","right","up","down")
+	inputDir = Input.get_vector("left","right","up","down")
 	velocity = inputDir * speed
 
 	if use == true:
@@ -41,15 +44,22 @@ func spawnWall() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_multiplayer_authority():
 		get_input()
+	
+	if (is_on_wall()):
+		var angle_to_wall = rad_to_deg(inputDir.angle_to(get_wall_normal()))
+		if (angle_to_wall < 0): angle_to_wall = angle_to_wall * -1
+		if(angle_to_wall > 130 and angle_to_wall < 230 and inputDir != Vector2(0,0)):
+			if(coolBox.scale.x > minScale):
+				coolBox.scale = Vector2(coolBox.scale.x - _delta * scale_factor, coolBox.scale.y - _delta * scale_factor)
+		else:
+			if(coolBox.scale.x < maxScale):
+				coolBox.scale = Vector2(coolBox.scale.x + _delta * scale_factor, coolBox.scale.y + _delta * scale_factor)
+	else:
+		if(coolBox.scale.x < maxScale):
+			coolBox.scale = Vector2(coolBox.scale.x + _delta * scale_factor, coolBox.scale.y + _delta * scale_factor)
+	
 	move_and_slide()
 
-	
-	coolBox.set_scale(Vector2(counter1/float(growSpeed),counter1/float(growSpeed)))
-	
-	counter1+=counterdelta
-	
-	if counter1 < 0 or  counter1 > 100:
-		counterdelta *= -1
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
