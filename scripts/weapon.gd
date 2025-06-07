@@ -23,18 +23,22 @@ func _ready() -> void:
 	
 func fire():
 	if timer.time_left == 0:
-		var bullet = bullet_path.instantiate()
-		var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
-		attackComponent.attackDamage = atackDamage
-		bullet.pos = self.global_position
-		bullet.dir = player.rotation
-		bullet.rota = self.global_rotation
-		bullet.speed = bulletSpeed
-		bullet.lifetime = bulletLifetime
-		timer.start()
-		bullet.name = "bullet " + str(bulletNumber)
-		bulletNumber+=1
-		objectList.add_child(bullet)
+		spawn_bullet.rpc()
+		
+@rpc("any_peer", "call_local")
+func spawn_bullet():
+	var bullet = bullet_path.instantiate()
+	var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
+	attackComponent.attackDamage = atackDamage
+	bullet.pos = self.global_position
+	bullet.dir = player.rotation
+	bullet.rota = self.global_rotation
+	bullet.speed = bulletSpeed
+	bullet.lifetime = bulletLifetime
+	timer.start()
+	bullet.name = "bullet " + str(bulletNumber)
+	bulletNumber+=1
+	objectList.add_child(bullet)
 
 
 # Called when the node enters the scene tree for the first time.
