@@ -18,6 +18,8 @@ var inputDir : Vector2
 func _ready() -> void:
 	if is_multiplayer_authority():
 		add_child(camera)
+	else:
+		coolBox.disabled = true
 	self.tree_exited.connect(_die)
 	
 
