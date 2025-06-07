@@ -2,18 +2,18 @@ extends CharacterBody2D
 
 var speed: = 600
 @onready var weapon: Node2D = $"Inventory/Weapon"
+@onready var wallPlacer: Node2D = $"Inventory/wallPlacer"
+
 @onready var objectList: Node = $"../../objectList"
 var camera : Camera2D = Camera2D.new()
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
 
-const wall = preload("res://scenes/basic_wall.tscn")
 
 const maxScale := 1.0
 const minScale := 0.75
 const scale_factor := 3.5
 
 var inputDir : Vector2
-
 
 func _ready() -> void:
 	if is_multiplayer_authority():
@@ -30,16 +30,11 @@ func get_input():
 	velocity = inputDir * speed
 
 	if use == true:
-		spawnWall()
+		wallPlacer.fire()
 
 	if attack == true:
 		weapon.fire()
 	 
-
-func spawnWall() -> void:
-	var wall1 : StaticBody2D = wall.instantiate()
-	objectList.add_child(wall1)
-	wall1.global_position = get_global_mouse_position()
 
 func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():

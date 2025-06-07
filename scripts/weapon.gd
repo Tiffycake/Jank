@@ -1,9 +1,12 @@
 extends Node2D
+class_name Weapon
+
 var bullet_path = preload("res://scenes/bullet.tscn")
 
-@onready var player: CharacterBody2D = $"../.."
 @onready var objectList: Node = $"../../../../objectList"
 @onready var timer: Timer = $Timer
+@onready var player: CharacterBody2D = $"../.."
+@onready var playerSprite:  = $"../../Sprite2D"
 
 
 var bulletNumber : int = 0
@@ -17,14 +20,15 @@ var atackDamage			: int = 25 # weaponAtackDamage
 var atackSpeed			: float = 4  # attacks per second
 
 func _ready() -> void:
-	
 	timer.wait_time = 1/atackSpeed
 	timer.one_shot = true	
+	#playerSprite.gunEquiped()
 	
 func fire():
 	if timer.time_left == 0:
 		spawn_bullet.rpc()
-		
+
+
 @rpc("any_peer", "call_local")
 func spawn_bullet():
 	var bullet = bullet_path.instantiate()
@@ -40,10 +44,5 @@ func spawn_bullet():
 	bulletNumber+=1
 	objectList.add_child(bullet)
 
-
-# Called when the node enters the scene tree for the first time.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass

@@ -24,7 +24,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="objectList" type="Node" parent="."]
 
-[node name="playerList" type="Node" parent="."]
+[node name="playerList" type="Node" parent="objectList"]
 
 [node name="MainMenu" parent="." instance=ExtResource("3_ww3rf")]
 
