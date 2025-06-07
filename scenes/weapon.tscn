@@ -9,5 +9,7 @@ script = ExtResource("1_xasec")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, 0)
 rotation = 1.57079
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_uxn4k")
