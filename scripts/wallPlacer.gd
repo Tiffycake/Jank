@@ -8,15 +8,15 @@ const wallPath = preload("res://scenes/basic_wall.tscn")
 
 func fire():
 	if timer.time_left == 0:
-		spawnWall.rpc()
+		spawnWall.rpc(get_global_mouse_position())
 
 
 
 @rpc("any_peer", "call_local")
-func spawnWall() -> void:
+func spawnWall(balls) -> void:
 	var wall : StaticBody2D = wallPath.instantiate()
 	objectList.add_child(wall)
-	wall.position = get_global_mouse_position()
+	wall.position = balls# get_global_mouse_position()
 	timer.start()
 
 
