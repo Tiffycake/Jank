@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="50mm"
+   width="25mm"
    height="50mm"
-   viewBox="0 0 50 50"
+   viewBox="0 0 25 50"
    version="1.1"
    id="svg1"
    xml:space="preserve"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="1.4142136"
-     inkscape:cx="-31.466252"
-     inkscape:cy="179.95868"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="5.4800776"
+     inkscape:cy="107.30345"
      inkscape:window-width="1920"
      inkscape:window-height="1048"
      inkscape:window-x="0"
@@ -154,13 +154,13 @@
        id="path1-7"
        inkscape:path-effect="#path-effect1-9"
        inkscape:original-d="M 0,0 H 50 V 50 H 0 Z"
-       transform="matrix(0.42,0,0,0.42,2,-3.5)" /><path
+       transform="matrix(0.42,0,0,0.42,2,-4)" /><path
        style="fill:#dadfdb;fill-opacity:1;stroke-width:0.264999"
        d="M 2.3007246,0 H 97.699275 A 2.3007246,2.3007246 45 0 1 100,2.3007246 l 0,45.3985504 A 2.3007246,2.3007246 135 0 1 97.699275,50 L 2.3007246,50 A 2.3007246,2.3007246 45 0 1 0,47.699275 V 2.3007246 A 2.3007246,2.3007246 135 0 1 2.3007246,0 Z"
        id="path1-1-5"
        inkscape:path-effect="#path-effect1-6-7"
        inkscape:original-d="M 0,0 H 100 V 50 H 0 Z"
-       transform="matrix(0,0.36000002,-0.35999999,0,21.5,-2)" /><path
+       transform="matrix(0,0.36000002,-0.35999999,0,21.5,-2.5)" /><path
        style="fill:#241c1c;stroke-width:0.264999"
        d="M 2.9104166,0 H 47.089583 A 2.9104166,2.9104166 45 0 1 50,2.9104166 V 47.089583 A 2.9104166,2.9104166 135 0 1 47.089583,50 H 2.9104166 A 2.9104166,2.9104166 45 0 1 0,47.089583 V 2.9104166 A 2.9104166,2.9104166 135 0 1 2.9104166,0 Z"
        id="path1"
