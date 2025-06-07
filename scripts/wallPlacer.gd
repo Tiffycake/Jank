@@ -6,17 +6,17 @@ const wallPath = preload("res://scenes/basic_wall.tscn")
 @onready var timer: Timer = $Timer
 
 
-@rpc("any_peer", "call_local")
 func fire():
 	if timer.time_left == 0:
 		spawnWall.rpc()
 
 
 
+@rpc("any_peer", "call_local")
 func spawnWall() -> void:
 	var wall : StaticBody2D = wallPath.instantiate()
 	objectList.add_child(wall)
-	wall.global_position = get_global_mouse_position()
+	wall.position = get_global_mouse_position()
 	timer.start()
 
 
