@@ -12,7 +12,7 @@ var bulletNumber : int = 0
 	#self.add_child(bulletList)
 
 var bulletLifetime		: int = 600
-var bulletSpeed			: int = 1200 #projectile
+var bulletSpeed			: int = 1600 # projectile speed
 var atackDamage			: int = 25 # weaponAtackDamage
 var atackSpeed			: float = 4  # attacks per second
 
