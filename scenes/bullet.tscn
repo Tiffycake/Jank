@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd73n5hd0n1qh"]
+[gd_scene load_steps=5 format=3 uid="uid://dd73n5hd0n1qh"]
 
 [ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://scripts/bullet.gd" id="1_l5glv"]
 [ext_resource type="Texture2D" uid="uid://pm35mx6eiioi" path="res://textures/bullet.svg" id="2_eoqba"]
@@ -6,14 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
 size = Vector2(63.9996, 104)
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l5glv"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:rotation")
-properties/1/spawn = true
-properties/1/replication_mode = 1
 
 [node name="bullet" type="CharacterBody2D"]
 scale = Vector2(0.24164, 0.26359)
@@ -29,6 +21,3 @@ shape = SubResource("RectangleShape2D_l5glv")
 rotation = 1.5708
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("2_eoqba")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_l5glv")
