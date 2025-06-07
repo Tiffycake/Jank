@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://hml8qyu1fbw4"]
+[gd_scene load_steps=3 format=3 uid="uid://hml8qyu1fbw4"]
 
 [ext_resource type="Script" uid="uid://um2tckmdvn3" path="res://scripts/weapon.gd" id="1_xasec"]
+[ext_resource type="Texture2D" uid="uid://b0beevi77dsmn" path="res://textures/gun.svg" id="2_uxn4k"]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_xasec")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57079
+texture = ExtResource("2_uxn4k")
