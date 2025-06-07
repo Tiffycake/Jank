@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkqiic16r3hwr"]
+[gd_scene load_steps=3 format=3 uid="uid://dkqiic16r3hwr"]
+
+[ext_resource type="PackedScene" uid="uid://ccy36qcnbo0dk" path="res://scenes/Components/AttackComponent.tscn" id="1_h4iky"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wbc1"]
 radius = 64.0078
 
 [node name="uhhh" type="CharacterBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="AttackComponent" parent="." instance=ExtResource("1_h4iky")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
 shape = SubResource("CircleShape2D_6wbc1")
