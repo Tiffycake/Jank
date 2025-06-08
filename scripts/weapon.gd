@@ -22,7 +22,7 @@ var atackSpeed			: float = 4  # attacks per second
 func _ready() -> void:
 	timer.wait_time = 1/atackSpeed
 	timer.one_shot = true	
-	#playerSprite.gunEquiped()
+	playerSprite.gunEquiped()
 	
 func fire():
 	if timer.time_left == 0:

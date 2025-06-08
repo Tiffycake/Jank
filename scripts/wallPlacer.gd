@@ -5,6 +5,7 @@ const wallPath = preload("res://scenes/basic_wall.tscn")
 @onready var objectList: Node = $"../../../.."
 @onready var timer: Timer = $Timer
 
+var atackSpeed : float = 2  # attacks per second
 
 func fire():
 	if timer.time_left == 0:
@@ -22,7 +23,7 @@ func spawnWall(balls) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.wait_time = 1/2
+	timer.wait_time = 1/atackSpeed
 	timer.one_shot = true	
 
 
