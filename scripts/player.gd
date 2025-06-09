@@ -21,7 +21,7 @@ func _ready() -> void:
 		add_child(camera)
 	self.tree_exited.connect(_die)
 	
-	sprite.gunEquiped1() 
+	sprite.gunEquiped() 
 
 func get_input():
 	if DisplayServer.window_is_focused():

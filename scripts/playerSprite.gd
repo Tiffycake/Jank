@@ -10,7 +10,7 @@ extends Sprite2D
 var gunEquipedState : = Vector2(-60.0,-150.0)
 var unarmedState : = Vector2(-99.0,-128.0)
 
-func gunEquiped1() -> void:
+func gunEquiped() -> void:
 	#hand1.set_position(gunEquipedState)
 	hand1.position = gunEquipedState
 	hand2.position = gunEquipedState * Vector2(-1,1)
