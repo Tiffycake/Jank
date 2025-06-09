@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends CharacterBody2D # change this to RigidBody2D one day
 var pos:Vector2
 var rota:float
 var dir:float
