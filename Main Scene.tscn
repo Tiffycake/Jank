@@ -6,7 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(1000, 175)
+position = Vector2(401, 164)
 
 [node name="chestSpawner" type="Button" parent="Node2D"]
 anchors_preset = -1
@@ -24,6 +24,7 @@ metadata/_edit_use_anchors_ = true
 [node name="playerList" type="Node" parent="objectList"]
 
 [node name="MainMenu" parent="." instance=ExtResource("3_ww3rf")]
+z_index = 5
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://3higeki8udsa")

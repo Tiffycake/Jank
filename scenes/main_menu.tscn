@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c205q7lke0i56"]
+[gd_scene load_steps=6 format=3 uid="uid://c205q7lke0i56"]
 
 [ext_resource type="Script" uid="uid://hlx383i5ekvg" path="res://mainMenu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://2btt66s8xcn6" path="res://textures/background.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://c7vv1n2fattvj" path="res://textures/grid.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://cqtw7o52saff0" path="res://textures/hostButton.png" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://xqc6w116rtot" path="res://textures/joinButton.png" id="5_8ln24"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,15 +14,39 @@ offset_right = 171.0
 offset_bottom = 494.0
 script = ExtResource("1_l6cm7")
 
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576, 24)
+texture = ExtResource("2_ekxnf")
+
+[node name="grid" type="Parallax2D" parent="."]
+repeat_size = Vector2(1152, 648)
+autoscroll = Vector2(50, 50)
+repeat_times = 2
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="grid"]
+position = Vector2(576, 24)
+texture = ExtResource("3_bqqt6")
+
 [node name="hostButton" type="Button" parent="."]
 layout_mode = 0
-offset_right = 170.0
-offset_bottom = 95.0
-text = "host"
+offset_left = 147.0
+offset_top = -117.0
+offset_right = 924.0
+offset_bottom = 271.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(388.889, 193.951)
+icon = ExtResource("4_wu84c")
+flat = true
 
 [node name="joinButton" type="Button" parent="."]
 layout_mode = 0
-offset_top = 100.0
-offset_right = 170.0
-offset_bottom = 195.0
-text = "join"
+offset_left = 147.0
+offset_top = 19.0
+offset_right = 924.0
+offset_bottom = 407.0
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(390, 193.333)
+icon = ExtResource("5_8ln24")
+flat = true
