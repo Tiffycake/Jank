@@ -20,6 +20,7 @@ func _ready() -> void:
 	if is_multiplayer_authority():
 		add_child(camera)
 	self.tree_exited.connect(_die)
+	
 	sprite.gunEquiped1() 
 
 func get_input():

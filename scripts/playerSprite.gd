@@ -17,13 +17,9 @@ func gunEquiped1() -> void:
 	#hand2.set_position(gunEquipedState * Vector2(-1,1)) 
 	pass
 
-func gunEquiped() -> void: 
-	pass
-
 
 func _ready() -> void:
-	print("za hando 2",hand2)
-	print("za hando 1",hand1)
+	pass
  
 func _process(delta: float) -> void:
 	pass
