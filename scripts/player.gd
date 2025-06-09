@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed: = 600
 @onready var weapon: Node2D = $"Inventory/Weapon"
 @onready var wallPlacer: Node2D = $"Inventory/wallPlacer"
+@onready var sprite: Sprite2D = $"Sprite2D"
 
 @onready var objectList: Node = $"../../objectList"
 var camera : Camera2D = Camera2D.new()
@@ -19,7 +20,7 @@ func _ready() -> void:
 	if is_multiplayer_authority():
 		add_child(camera)
 	self.tree_exited.connect(_die)
-	
+	sprite.gunEquiped1() 
 
 func get_input():
 	if DisplayServer.window_is_focused():
