@@ -9,12 +9,12 @@ var unarmedState : = Vector2(-99.0,-128.0)
 
 func gunEquiped1() -> void:
 	#hand1.set_position(gunEquipedState)
-	hand1.position = gunEquipedState
-	hand2.position = gunEquipedState * Vector2(-1,1)
+	hand1.global_position = gunEquipedState
+	hand2.global_position = gunEquipedState * Vector2(-1,1)
 	#hand2.set_position(gunEquipedState * Vector2(-1,1)) 
 	pass
 
-func gunEquiped() -> void:
+func gunEquiped() -> void: 
 	pass
 
 func skibidi(b) -> int:
