@@ -15,26 +15,34 @@ offset_bottom = 494.0
 script = ExtResource("1_l6cm7")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(576, 24)
+position = Vector2(960, 240)
+scale = Vector2(1.66667, 1.66667)
 texture = ExtResource("2_ekxnf")
 
 [node name="grid" type="Parallax2D" parent="."]
-repeat_size = Vector2(1152, 648)
+repeat_size = Vector2(2304, 1296)
 autoscroll = Vector2(50, 50)
-repeat_times = 2
 follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="grid"]
-position = Vector2(576, 24)
+position = Vector2(1152, 349)
+scale = Vector2(2, 2)
 texture = ExtResource("3_bqqt6")
 
 [node name="hostButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 147.0
-offset_top = -117.0
-offset_right = 924.0
-offset_bottom = 271.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 440.5
+offset_top = 97.0
+offset_right = 1217.5
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(388.889, 193.951)
 icon = ExtResource("4_wu84c")
@@ -42,10 +50,10 @@ flat = true
 
 [node name="joinButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 19.0
-offset_right = 924.0
-offset_bottom = 407.0
+offset_left = 527.0
+offset_top = 364.0
+offset_right = 1304.0
+offset_bottom = 752.0
 scale = Vector2(0.3, 0.3)
 pivot_offset = Vector2(390, 193.333)
 icon = ExtResource("5_8ln24")
