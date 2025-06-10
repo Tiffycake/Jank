@@ -20,8 +20,10 @@ const scale_factor := 3.5
 var inputDir : Vector2
 
 func _ready() -> void:
+	
 	if is_multiplayer_authority():
 		add_child(camera)
+		
 	self.tree_exited.connect(_die)
 	
 	sprite.gunEquiped() 

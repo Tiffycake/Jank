@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=3 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
+[ext_resource type="Texture2D" uid="uid://bdrpkqh4kbx2v" path="res://textures/HUD elements/a/Screenshot_20250606_182749.png" id="1_qefu1"]
 
 [node name="HUD" type="CanvasLayer"]
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("1_qefu1")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(174, 1009)
+texture_filter = 5
+position = Vector2(205, 1032)
+texture = ExtResource("1_bxty2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 5
+position = Vector2(410, 2064)
 texture = ExtResource("1_bxty2")
