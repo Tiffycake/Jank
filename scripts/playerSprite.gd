@@ -17,6 +17,9 @@ func gunEquiped() -> void:
 	#hand2.set_position(gunEquipedState * Vector2(-1,1)) 
 	pass
 
+func unarmed() -> void:
+	hand1.position = unarmedState
+	hand2.position = unarmedState * Vector2(-1,1)
 
 func _ready() -> void:
 	pass
