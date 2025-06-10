@@ -1,5 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://3higeki8udsa"]
 
+[ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://scripts/player.gd" id="1_smehm"]
 [ext_resource type="Texture2D" uid="uid://b2vtigjutecgg" path="res://textures/balls.svg" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="2_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
@@ -7,10 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dwl4qykig1pms" path="res://textures/hands.svg" id="3_sweqy"]
 [ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/weapon.tscn" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://b1oc161a3c6uo" path="res://scripts/playerSprite.gd" id="6_fjrip"]
-
-[sub_resource type="GDScript" id="GDScript_fjrip"]
-script/source = "extends \"res://scripts/player.gd\"
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xral"]
 radius = 54.0
@@ -28,8 +25,7 @@ properties/2/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
-script = SubResource("GDScript_fjrip")
-metadata/_edit_group_ = true
+script = ExtResource("1_smehm")
 
 [node name="Inventory" type="Node2D" parent="."]
 
@@ -73,6 +69,4 @@ texture = ExtResource("3_sweqy")
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1xral")
 
-[node name="Node" type="Node" parent="."]
-
-[node name="Node2" type="Node" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

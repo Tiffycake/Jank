@@ -1,9 +1,10 @@
 extends CharacterBody2D 
 
 var speed: = 600
-@onready var weapon: Node2D = $"Inventory/Weapon"
-@onready var wallPlacer: Node2D = $"Inventory/wallPlacer"
 @onready var sprite: Sprite2D = $"Sprite2D"
+@onready var inventory: Node2D = $Inventory
+@onready var weapon: Node2D = inventory.get_child(0)
+@onready var wallPlacer: Node2D = inventory.get_child(1)
 
 @onready var objectList: Node = $"../../objectList"
 var camera : Camera2D = Camera2D.new()
