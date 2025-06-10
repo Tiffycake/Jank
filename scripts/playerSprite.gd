@@ -1,14 +1,14 @@
 extends Sprite2D
 
 
-@onready var hand1: Sprite2D = get_child(0)
-@onready var hand2: Sprite2D = get_child(1)
+@onready var hand1: Sprite2D = $"hand1"
+@onready var hand2: Sprite2D = $"hand2"
 
 
 
 
-var gunEquipedState : = Vector2(-60.0,-150.0)
-var unarmedState : = Vector2(-99.0,-128.0)
+var gunEquipedState	: = Vector2(-60.0,-150.0)
+var unarmedState		: = Vector2(-99.0,-128.0)
 
 func gunEquiped() -> void:
 	#hand1.set_position(gunEquipedState)
@@ -21,7 +21,7 @@ func gunEquiped() -> void:
 func _ready() -> void:
 	pass
  
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 # uneq	
 # -99.0 -128.0
@@ -30,10 +30,3 @@ func _process(delta: float) -> void:
 # eq
 #-60.0 -155.0
 # + -
-
-
-
-
-func skibidi(b) -> int:
-	var o = b 
-	return b

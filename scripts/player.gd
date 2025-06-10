@@ -7,7 +7,9 @@ var speed: = 600
 @onready var wallPlacer: Node2D = inventory.get_child(1)
 
 @onready var objectList: Node = $"../../objectList"
+
 var camera : Camera2D = Camera2D.new()
+
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
 
 

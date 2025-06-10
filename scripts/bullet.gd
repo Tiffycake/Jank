@@ -1,4 +1,6 @@
 extends CharacterBody2D # change this to RigidBody2D one day
+
+@onready var atkComp : AttackComponent = $"AttackComponent"
 var pos:Vector2
 var rota:float
 var dir:float
@@ -6,14 +8,17 @@ var dir:float
 
 
 var speed        :int #= 1200
-var attackDamage :int #= 1
+var attackDamage :int  # = atkComp.attackDamage #= 1
 var lifetime     :int #= 600
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	attackDamage = atkComp.attackDamage
 	global_position=pos
 	global_rotation=rota
+	#print(str(atkComp.get_property_list()).replace("}","}\n") )
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

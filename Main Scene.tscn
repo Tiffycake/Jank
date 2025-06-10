@@ -25,6 +25,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MainMenu" parent="." instance=ExtResource("3_ww3rf")]
 z_index = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://3higeki8udsa")

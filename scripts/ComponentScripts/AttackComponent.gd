@@ -1,7 +1,7 @@
 extends Area2D
 class_name AttackComponent
 # this is essentialy a hurbox lol
-@export var attackDamage : int = 5
+@export var attackDamage : int 
 
 var attackPosition : Vector2 = Vector2(0,0)
 var poison : int # poison dmg (posion is x dmg for 4 seconds)

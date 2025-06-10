@@ -27,6 +27,12 @@ properties/2/replication_mode = 1
 motion_mode = 1
 script = ExtResource("1_smehm")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(-181, 158)
+texture = ExtResource("3_sweqy")
+
 [node name="Inventory" type="Node2D" parent="."]
 
 [node name="Weapon" parent="Inventory" instance=ExtResource("4_tuyoq")]
@@ -68,5 +74,3 @@ texture = ExtResource("3_sweqy")
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1xral")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
