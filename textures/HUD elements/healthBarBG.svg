@@ -4,7 +4,7 @@
    viewBox="0 0 370 57.5"
    width="370"
    height="57.5"
-   id="svg1"
+   id="svg2"
    sodipodi:docname="healthBarBG.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -12,7 +12,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview1"
+     id="namedview2"
      pagecolor="#505050"
      bordercolor="#eeeeee"
      borderopacity="1"
@@ -20,15 +20,15 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="2.6891892"
-     inkscape:cx="185"
-     inkscape:cy="28.819095"
+     inkscape:zoom="0.95077196"
+     inkscape:cx="249.79702"
+     inkscape:cy="82.564488"
      inkscape:window-width="1920"
      inkscape:window-height="1048"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
+     inkscape:current-layer="g2" />
   <!-- svg-source:excalidraw -->
   <defs
      id="defs1">
@@ -37,14 +37,23 @@
        id="style1" />
   </defs>
   <g
+     stroke-opacity="0.6"
+     fill-opacity="0.6"
      stroke-linecap="round"
      transform="translate(10 10) rotate(0 175 18.75)"
-     id="g1">
+     id="g2">
     <path
-       d="M9.38 0 C81.5 0, 153.63 0, 340.63 0 M9.38 0 C88.83 0, 168.28 0, 340.63 0 M340.63 0 C346.88 0, 350 3.13, 350 9.38 M340.63 0 C346.88 0, 350 3.13, 350 9.38 M350 9.38 C350 14.38, 350 19.39, 350 28.13 M350 9.38 C350 15.58, 350 21.78, 350 28.13 M350 28.13 C350 34.38, 346.88 37.5, 340.63 37.5 M350 28.13 C350 34.38, 346.88 37.5, 340.63 37.5 M340.63 37.5 C237.41 37.5, 134.2 37.5, 9.38 37.5 M340.63 37.5 C231.03 37.5, 121.44 37.5, 9.38 37.5 M9.38 37.5 C3.13 37.5, 0 34.38, 0 28.13 M9.38 37.5 C3.13 37.5, 0 34.38, 0 28.13 M0 28.13 C0 21.19, 0 14.26, 0 9.38 M0 28.13 C0 23.04, 0 17.96, 0 9.38 M0 9.38 C0 3.13, 3.13 0, 9.38 0 M0 9.38 C0 3.13, 3.13 0, 9.38 0"
+       d="M 9 0 C 120 0, 231 0, 341 0 C 347 0, 350 3, 350 9 C 350 16, 350 22, 350 28 C 350 34, 347 38, 341 38 C 259 38, 178 38, 9 38 C 3 38, 0 34, 0 28 C 0 24, 0 19, 0 9 C 0 3, 3 0, 9 0"
+       stroke="none"
+       stroke-width="0"
+       fill="#1e1e1e"
+       id="path1" />
+    <path
+       d="M 9 0 C 82 0, 154 0, 341 0 M 9 0 C 89 0, 168 0, 341 0 M 341 0 C 347 0, 350 3, 350 9 M 341 0 C 347 0, 350 3, 350 9 M 350 9 C 350 14, 350 19, 350 28 M 350 9 C 350 16, 350 22, 350 28 M 350 28 C 350 34, 347 38, 341 38 M 350 28 C 350 34, 347 38, 341 38 M 341 38 C 237 38, 134 38, 9 38 M 341 38 C 231 38, 121 38, 9 38 M 9 38 C 3 38, 0 34, 0 28 M 9 38 C 3 38, 0 34, 0 28 M 0 28 C 0 21, 0 14, 0 9 M 0 28 C 0 23, 0 18, 0 9 M 0 9 C 0 3, 3 0, 9 0 M 0 9 C 0 3, 3 0, 9 0"
        stroke="#1e1e1e"
        stroke-width="4"
        fill="none"
-       id="path1" />
+       id="path2"
+       style="stroke:#1e1e1e;stroke-opacity:1" />
   </g>
 </svg>
