@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    version="1.1"
-   viewBox="0 0 270 70"
-   width="270"
-   height="70"
+   viewBox="0 0 370 57.5"
+   width="370"
+   height="57.5"
    id="svg1"
    sodipodi:docname="healthBarBG.svg"
    inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
@@ -20,9 +20,9 @@
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
-     inkscape:zoom="3.6851852"
-     inkscape:cx="135"
-     inkscape:cy="99.994975"
+     inkscape:zoom="2.6891892"
+     inkscape:cx="185"
+     inkscape:cy="28.819095"
      inkscape:window-width="1920"
      inkscape:window-height="1048"
      inkscape:window-x="0"
@@ -38,10 +38,10 @@
   </defs>
   <g
      stroke-linecap="round"
-     transform="translate(10 10) rotate(0 125 25)"
+     transform="translate(10 10) rotate(0 175 18.75)"
      id="g1">
     <path
-       d="M0 0 C94.86 0, 189.71 0, 250 0 M0 0 C55.45 0, 110.91 0, 250 0 M250 0 C250 16.85, 250 33.7, 250 50 M250 0 C250 12.09, 250 24.17, 250 50 M250 50 C194.77 50, 139.54 50, 0 50 M250 50 C191.17 50, 132.34 50, 0 50 M0 50 C0 31.45, 0 12.9, 0 0 M0 50 C0 34.55, 0 19.11, 0 0"
+       d="M9.38 0 C81.5 0, 153.63 0, 340.63 0 M9.38 0 C88.83 0, 168.28 0, 340.63 0 M340.63 0 C346.88 0, 350 3.13, 350 9.38 M340.63 0 C346.88 0, 350 3.13, 350 9.38 M350 9.38 C350 14.38, 350 19.39, 350 28.13 M350 9.38 C350 15.58, 350 21.78, 350 28.13 M350 28.13 C350 34.38, 346.88 37.5, 340.63 37.5 M350 28.13 C350 34.38, 346.88 37.5, 340.63 37.5 M340.63 37.5 C237.41 37.5, 134.2 37.5, 9.38 37.5 M340.63 37.5 C231.03 37.5, 121.44 37.5, 9.38 37.5 M9.38 37.5 C3.13 37.5, 0 34.38, 0 28.13 M9.38 37.5 C3.13 37.5, 0 34.38, 0 28.13 M0 28.13 C0 21.19, 0 14.26, 0 9.38 M0 28.13 C0 23.04, 0 17.96, 0 9.38 M0 9.38 C0 3.13, 3.13 0, 9.38 0 M0 9.38 C0 3.13, 3.13 0, 9.38 0"
        stroke="#1e1e1e"
        stroke-width="4"
        fill="none"
