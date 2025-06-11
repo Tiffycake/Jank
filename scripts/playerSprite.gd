@@ -3,7 +3,7 @@ extends Sprite2D
 
 @onready var hand1: Sprite2D = $"hand1"
 @onready var hand2: Sprite2D = $"hand2"
-const skinPath : String = "res://textures/Player Skins/"
+const skinPath : = "res://textures/Player Skins/"
 
 
 var gunEquipedState	: = Vector2(-60.0,-150.0)
