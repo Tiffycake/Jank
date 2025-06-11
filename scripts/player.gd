@@ -23,13 +23,13 @@ const scale_factor := 3.5
 var inputDir : Vector2
 
 func _ready() -> void:
-	sprite.setSkin(1)
-	
+	#sprite.setSkin(1)
+
 	if is_multiplayer_authority():
 		add_child(camera)
 		HUD.visible = true
 		
-	self.tree_exited.connect(_die)
+	self.tree_exited.connect(die)
 	
 	sprite.gunEquiped() 
 
@@ -75,7 +75,7 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
 
-func _die() -> void:
+func die() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -29,9 +29,11 @@ offset_bottom = 40.0
 [node name="healthBarBG" type="Sprite2D" parent="Control"]
 texture_filter = 5
 position = Vector2(205, 1031)
+scale = Vector2(1.11552, 1.17511)
 texture = ExtResource("1_bxty2")
 
 [node name="healthBar2" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 1004.0
 offset_right = 392.0
