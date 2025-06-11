@@ -14,10 +14,10 @@ func fire():
 
 
 @rpc("any_peer", "call_local")
-func spawnWall(balls) -> void:
+func spawnWall(mousePos) -> void:
 	var wall : StaticBody2D = wallPath.instantiate()
 	objectList.add_child(wall)
-	wall.position = balls# get_global_mouse_position()
+	wall.position = mousePos # get_global_mouse_position()
 	timer.start()
 
 

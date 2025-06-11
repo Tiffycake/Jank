@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://hlx383i5ekvg" path="res://mainMenu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://2btt66s8xcn6" path="res://textures/background.png" id="2_ekxnf"]
-[ext_resource type="Texture2D" uid="uid://c7vv1n2fattvj" path="res://textures/grid.png" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://b2tq2hcgw0uhu" path="res://textures/background.svg" id="3_8ln24"]
 [ext_resource type="Texture2D" uid="uid://cqtw7o52saff0" path="res://textures/hostButton.png" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://xqc6w116rtot" path="res://textures/joinButton.png" id="5_8ln24"]
 
 [node name="MainMenu" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_top = 300.0
@@ -15,6 +16,7 @@ offset_bottom = 494.0
 script = ExtResource("1_l6cm7")
 
 [node name="background" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(960, 240)
 scale = Vector2(1.66667, 1.66667)
 texture = ExtResource("2_ekxnf")
@@ -26,9 +28,8 @@ follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="grid"]
-position = Vector2(1152, 349)
 scale = Vector2(2, 2)
-texture = ExtResource("3_bqqt6")
+texture = ExtResource("3_8ln24")
 
 [node name="hostButton" type="Button" parent="."]
 layout_mode = 1
