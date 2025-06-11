@@ -29,6 +29,7 @@ motion_mode = 1
 script = ExtResource("1_smehm")
 
 [node name="HUD" parent="." instance=ExtResource("2_ur7pv")]
+visible = false
 
 [node name="Inventory" type="Node2D" parent="."]
 
