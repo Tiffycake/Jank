@@ -1,7 +1,7 @@
 extends Node2D
 class_name Weapon
 
-var bullet_path = preload("res://scenes/bullet.tscn")
+var bulletPath = preload("res://scenes/bullet.tscn")
 
 @onready var objectList: Node = $"../../../../objectList"
 @onready var timer: Timer = $Timer
@@ -15,7 +15,7 @@ var bulletId : int = 0
 	#self.add_child(bulletList)
 
 var bulletLifetime		: int = 600
-var bulletSpeed			: int = 1600 # projectile speed
+var bulletSpeed			: int = 2000 # projectile speed
 var atackDamage			: int = 1 # weaponAtackDamage
 var atackSpeed			: float = 90  # attacks per second
 
@@ -31,7 +31,7 @@ func fire():
 
 @rpc("any_peer", "call_local")
 func spawn_bullet():
-	var bullet = bullet_path.instantiate()
+	var bullet = bulletPath.instantiate()
 	var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
 	attackComponent.attackDamage = atackDamage
 	bullet.pos = self.global_position

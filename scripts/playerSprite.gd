@@ -4,10 +4,13 @@ extends Sprite2D
 @onready var hand1: Sprite2D = $"hand1"
 @onready var hand2: Sprite2D = $"hand2"
 const skinPath : = "res://textures/Player Skins/"
+const skin1 : = preload("res://textures/balls.svg")
+const skin2 : = preload("res://textures/Player Skins/balls 1.svg")
 
+var skinList : = Array()
 
 var gunEquipedState	: = Vector2(-60.0,-150.0)
-var unarmedState		: = Vector2(-99.0,-128.0)
+var unarmedState	: = Vector2(-99.0,-128.0)
 
 func gunEquiped() -> void:
 	#hand1.set_position(gunEquipedState)
@@ -21,14 +24,23 @@ func unarmed() -> void:
 	hand2.position = unarmedState * Vector2(-1,1)
 
 
-func changeSkin(a: String) -> void:
-	pass
+
+
+
+
+func setSkin(a1):
+	if is_multiplayer_authority():
+		changeSkin.rpc(a1)
+
+@rpc("any_peer", "call_local")
+func changeSkin(a2: int) -> void:
+
+	set_texture(skinList[a2])
 
 func _ready() -> void:
-	pass
- 
-func _process(_delta: float) -> void:
-	pass
+	skinList.append(skin1)
+	skinList.append(skin2)
+	
 # uneq	
 # -99.0 -128.0
 #  99.0 -128.0

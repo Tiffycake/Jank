@@ -12,6 +12,7 @@ var camera : Camera2D = Camera2D.new()
 
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
 
+var counter : int = 0
 
 const maxScale := 1.0
 const minScale := 0.75
@@ -75,4 +76,9 @@ func _die() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if counter == 60:
+		sprite.setSkin(1)
+	elif counter == 120:
+		sprite.setSkin(0)
+		counter = 0
+	counter+=1
