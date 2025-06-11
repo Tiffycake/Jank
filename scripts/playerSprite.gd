@@ -22,7 +22,7 @@ func unarmed() -> void:
 
 
 func changeSkin(a: String) -> void:
-	skinPath.instan
+	pass
 
 func _ready() -> void:
 	pass
