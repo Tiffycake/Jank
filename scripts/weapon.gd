@@ -9,15 +9,15 @@ var bullet_path = preload("res://scenes/bullet.tscn")
 @onready var playerSprite:  = $"../../Sprite2D"
 
 
-var bulletNumber : int = 0
+var bulletId : int = 0
 #var bulletList := Node.new() 
 	#bulletList.name = "bulletList"
 	#self.add_child(bulletList)
 
 var bulletLifetime		: int = 600
 var bulletSpeed			: int = 1600 # projectile speed
-var atackDamage			: int = 25 # weaponAtackDamage
-var atackSpeed			: float = 4  # attacks per second
+var atackDamage			: int = 1 # weaponAtackDamage
+var atackSpeed			: float = 90  # attacks per second
 
 func _ready() -> void:
 	timer.wait_time = 1/atackSpeed
@@ -40,8 +40,8 @@ func spawn_bullet():
 	bullet.speed = bulletSpeed
 	bullet.lifetime = bulletLifetime
 	timer.start()
-	bullet.name = "bullet " + str(bulletNumber)
-	bulletNumber+=1
+	bullet.name = "bullet " + str(bulletId)
+	bulletId+=1
 	objectList.add_child(bullet)
 
 func _process(_delta: float) -> void:
