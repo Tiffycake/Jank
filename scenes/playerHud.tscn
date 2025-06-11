@@ -7,20 +7,6 @@
 
 [node name="HUD" type="CanvasLayer"]
 
-[node name="healthBarBG" type="Sprite2D" parent="."]
-texture_filter = 5
-position = Vector2(205, 1031)
-texture = ExtResource("1_bxty2")
-
-[node name="healthBar2" type="TextureProgressBar" parent="."]
-offset_left = 22.0
-offset_top = 1004.0
-offset_right = 392.0
-offset_bottom = 1062.0
-value = 100.0
-texture_progress = ExtResource("3_ryf3e")
-script = ExtResource("4_0p7im")
-
 [node name="Unused" type="Node2D" parent="."]
 visible = false
 
@@ -31,6 +17,33 @@ texture = ExtResource("3_ryf3e")
 offset = Vector2(205, 0)
 
 [node name="refpic" type="Sprite2D" parent="Unused"]
-visible = false
 position = Vector2(960, 540)
 texture = ExtResource("1_qefu1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="healthBarBG" type="Sprite2D" parent="Control"]
+texture_filter = 5
+position = Vector2(205, 1031)
+texture = ExtResource("1_bxty2")
+
+[node name="healthBar2" type="TextureProgressBar" parent="Control"]
+offset_left = 22.0
+offset_top = 1004.0
+offset_right = 392.0
+offset_bottom = 1062.0
+value = 100.0
+texture_progress = ExtResource("3_ryf3e")
+script = ExtResource("4_0p7im")
+
+[node name="healthNum" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 1019.0
+offset_right = 113.0
+offset_bottom = 1042.0
+text = "100 / 100"
