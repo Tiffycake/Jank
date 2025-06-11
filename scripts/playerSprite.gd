@@ -3,8 +3,7 @@ extends Sprite2D
 
 @onready var hand1: Sprite2D = $"hand1"
 @onready var hand2: Sprite2D = $"hand2"
-
-
+const skinPath : String = "res://textures/Player Skins/"
 
 
 var gunEquipedState	: = Vector2(-60.0,-150.0)
@@ -20,6 +19,10 @@ func gunEquiped() -> void:
 func unarmed() -> void:
 	hand1.position = unarmedState
 	hand2.position = unarmedState * Vector2(-1,1)
+
+
+func changeSkin(a: String) -> void:
+	skinPath.instan
 
 func _ready() -> void:
 	pass

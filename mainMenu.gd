@@ -27,7 +27,7 @@ func joinButtonPressed():
 	hide()
  
 func spawnPlayer(id = 1):
-	var player = playerScene.instantiate()
+	var player = playerScene.instantiate(1)
 	player.name = str(id)
 	#var mainScene = get_parent()  ||| !!! |||
 	objectList.call_deferred("add_child", player)  #mainScene
