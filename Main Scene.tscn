@@ -8,11 +8,14 @@
 script = ExtResource("1_2uwcf")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1900, 1045)
+repeat_times = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 z_index = -1
 texture = ExtResource("3_t0tp6")
-offset = Vector2(950, 522.5)
+centered = false
+offset = Vector2(1, 1)
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(401, 164)
