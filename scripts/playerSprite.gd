@@ -16,10 +16,13 @@ var gunEquipedState	: = Vector2(-60.0,-150.0)
 var unarmedState	: = Vector2(-99.0,-128.0)
 
 
-func _skinLoad() -> void:
+func _skinLoad() -> Array:
 	var a : Resource
-	for i in range(10):
-		a = load(skinPath+"balls "+str(i)+".svg")
+	var b : Array
+	for i in range(4):
+		a = load(skinPath+"balls "+str(i+1)+".svg")
+		b.append(a)
+	return b
 
 func gunEquiped() -> void:
 	#hand1.set_position(gunEquipedState)
