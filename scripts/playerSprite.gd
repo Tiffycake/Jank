@@ -17,14 +17,15 @@ func gunEquiped() -> void:
 	hand1.position = gunEquipedState
 	hand2.position = gunEquipedState * Vector2(-1,1)
 	#hand2.set_position(gunEquipedState * Vector2(-1,1)) 
-	pass
+
 
 func unarmed() -> void:
 	hand1.position = unarmedState
 	hand2.position = unarmedState * Vector2(-1,1)
+	
 
-
-
+func setColor(a2) -> void:
+	modulate.v
 
 
 
