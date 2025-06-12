@@ -20,6 +20,7 @@ kanban-plugin: board
 ## tiffy doing
 
 - [ ] revamping playertexture
+- [ ] Hud slots
 
 
 ## milla doing

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 80 80"
+   width="80"
+   height="80"
+   id="svg1"
+   sodipodi:docname="slotBG.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="5.6568543"
+     inkscape:cx="33.852737"
+     inkscape:cy="35.974057"
+     inkscape:window-width="1920"
+     inkscape:window-height="1048"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <!-- svg-source:excalidraw -->
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <style
+       class="style-fonts"
+       id="style1" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Layer 1">
+    <path
+       style="fill:none;stroke:#b6c4ba;stroke-width:4.09867;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0.28276104"
+       id="rect1"
+       width="80"
+       height="80"
+       x="0.98039222"
+       y="0.98039222"
+       inkscape:path-effect="#path-effect1"
+       sodipodi:type="rect"
+       d="M 5.9803922,0.98039222 H 75.980392 c 2.77,0 5,2.22999998 5,4.99999998 V 75.980392 c 0,2.77 -2.23,5 -5,5 H 5.9803922 c -2.77,0 -4.99999998,-2.23 -4.99999998,-5 V 5.9803922 c 0,-2.77 2.22999998,-4.99999998 4.99999998,-4.99999998 z"
+       rx="5"
+       ry="5"
+       transform="matrix(0.95126398,0,0,0.95062359,1.0168293,1.016175)" />
+  </g>
+</svg>

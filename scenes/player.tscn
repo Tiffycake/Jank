@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://ba2comoj2jbjy" path="res://scenes/playerHud.tscn" id="2_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
 [ext_resource type="Script" uid="uid://brgpga4x72raw" path="res://scripts/wallPlacer.gd" id="3_smehm"]
-[ext_resource type="Texture2D" path="res://textures/hands.svg" id="3_sweqy"]
 [ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/weapon.tscn" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://b1oc161a3c6uo" path="res://scripts/playerSprite.gd" id="6_fjrip"]
 [ext_resource type="Texture2D" uid="uid://dskc1io3aita2" path="res://textures/Player Skins/balls.svg" id="7_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://dpi8wvyewkrgb" path="res://textures/Player Skins/hands.svg" id="9_ur7pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xral"]
 radius = 54.0
@@ -62,13 +62,13 @@ script = ExtResource("6_fjrip")
 z_index = -1
 position = Vector2(-60, -150)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_sweqy")
+texture = ExtResource("9_ur7pv")
 
 [node name="hand2" type="Sprite2D" parent="Sprite2D"]
 z_index = -1
 position = Vector2(60, -150)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_sweqy")
+texture = ExtResource("9_ur7pv")
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1xral")

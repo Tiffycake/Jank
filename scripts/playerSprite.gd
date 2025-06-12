@@ -13,13 +13,13 @@ var unarmedState	: = Vector2(99.0,-128.0)
 
 var real : bool = true
 
-func _skinLoad() -> Array:
-	var a : Resource
-	var b : Array
-	for i in range(4):
-		a = load(skinPath+"balls "+str(i+1)+".svg")
-		b.append(a)
-	return b
+#func _skinLoad() -> Array:
+	#var a : Resource
+	#var b : Array
+	#for i in range(4):
+		#a = load(skinPath+"balls "+str(i+1)+".svg")
+		#b.append(a)
+	#return b
 
 func gunEquiped() -> void: 
 	hand1.position = gunEquipedState * Vector2(-1,1)
@@ -31,7 +31,7 @@ func unarmed() -> void:
 	
 
 func setColor(a2) -> void:
-	modulate 
+	modulate = a2
 
 
 func setSkin(a1):
@@ -58,12 +58,12 @@ func _ready() -> void:
 # eq
 #-60.0 -155.0
 # + -
-
-func setc(a1):
-	if is_multiplayer_authority():
-		changec.rpc(a1)
-
-@rpc("any_peer", "call_local")
-func changec(a2: int) -> void:
-
-	set_texture(ballGeneric)
+#
+#func setc(a1):
+	#if is_multiplayer_authority():
+		#changec.rpc(a1)
+#
+#@rpc("any_peer", "call_local")
+#func changec(_a2: int) -> void:
+#
+	#set_texture(ballGeneric)

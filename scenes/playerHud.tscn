@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=7 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Texture2D" uid="uid://bdrpkqh4kbx2v" path="res://textures/HUD elements/a/Screenshot_20250606_182749.png" id="1_qefu1"]
 [ext_resource type="Texture2D" uid="uid://bwoyg0dwj6e2b" path="res://textures/HUD elements/healthBar.svg" id="3_ryf3e"]
 [ext_resource type="Script" uid="uid://dawos4du4vbi1" path="res://scripts/healthBar.gd" id="4_0p7im"]
 [ext_resource type="PackedScene" uid="uid://chf34ya77hulb" path="res://scenes/hudSlot.tscn" id="5_rxypr"]
+[ext_resource type="Texture2D" uid="uid://kvpss2onfgii" path="res://textures/random textures/UncommonContainment.png" id="6_maspd"]
 
 [node name="HUD" type="CanvasLayer"]
 
 [node name="Unused" type="Node2D" parent="."]
+visible = false
 
 [node name="healthBar" type="Sprite2D" parent="Unused"]
 visible = false
@@ -50,9 +52,33 @@ offset_right = 113.0
 offset_bottom = 1042.0
 text = "100 / 100"
 
-[node name="HUDSlot" parent="Control" instance=ExtResource("5_rxypr")]
-layout_mode = 0
+[node name="Slots" type="Control" parent="Control"]
+anchors_preset = 0
 offset_left = 1464.0
 offset_top = 948.0
-offset_right = 1544.0
+offset_right = 1894.0
 offset_bottom = 1028.0
+
+[node name="HUDSlot1" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+layout_mode = 0
+
+[node name="HUDSlot2" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+layout_mode = 0
+offset_left = 86.0
+offset_right = 166.0
+texture = ExtResource("6_maspd")
+
+[node name="HUDSlot3" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+layout_mode = 0
+offset_left = 174.0
+offset_right = 254.0
+
+[node name="HUDSlot4" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+layout_mode = 0
+offset_left = 261.0
+offset_right = 341.0
+
+[node name="HUDSlot5" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+layout_mode = 0
+offset_left = 347.0
+offset_right = 427.0

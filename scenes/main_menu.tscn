@@ -22,13 +22,15 @@ scale = Vector2(1.66667, 1.66667)
 texture = ExtResource("2_ekxnf")
 
 [node name="grid" type="Parallax2D" parent="."]
-repeat_size = Vector2(2304, 1296)
+scroll_offset = Vector2(-13, -316)
+repeat_size = Vector2(1900, 1045)
 autoscroll = Vector2(50, 50)
+repeat_times = 2
 follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="grid"]
-scale = Vector2(2, 2)
+position = Vector2(1594, 720)
 texture = ExtResource("3_8ln24")
 
 [node name="hostButton" type="Button" parent="."]
@@ -45,7 +47,7 @@ offset_bottom = 485.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
-pivot_offset = Vector2(388.889, 193.951)
+pivot_offset = Vector2(388.5, 193.951)
 icon = ExtResource("4_wu84c")
 flat = true
 
@@ -56,6 +58,6 @@ offset_top = 364.0
 offset_right = 1304.0
 offset_bottom = 752.0
 scale = Vector2(0.3, 0.3)
-pivot_offset = Vector2(390, 193.333)
+pivot_offset = Vector2(388.5, 193.333)
 icon = ExtResource("5_8ln24")
 flat = true

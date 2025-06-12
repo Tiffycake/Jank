@@ -30,8 +30,6 @@ func spawnPlayer(id = 1):
 	var player = playerScene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)  # 1
 	# GEN_EDIT_STATE_INSTANCE
 	# PackedScene.GenEditState
-	var a = PackedScene.GEN_EDIT_STATE_INSTANCE
-	print(a)
 	player.name = str(id)
 	#var mainScene = get_parent()  ||| !!! |||
 	objectList.call_deferred("add_child", player)  #mainScene
