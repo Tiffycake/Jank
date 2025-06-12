@@ -1,11 +1,12 @@
 ---
+
 kanban-plugin: board
+
 ---
 
 ## To-Do
 
 - [ ] skibidi
-- [ ] me :JunoShy: ^nionpu
 - [ ] amongus
 - [ ] Me
 - [ ] amongus 2
@@ -17,6 +18,7 @@ kanban-plugin: board
 
 ## milla doing
 
+- [ ] me :JunoShy: ^nionpu
 
 
 ## Done
