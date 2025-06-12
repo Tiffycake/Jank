@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://3higeki8udsa"]
 
 [ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://scripts/player.gd" id="1_smehm"]
-[ext_resource type="Texture2D" uid="uid://b2vtigjutecgg" path="res://textures/balls.svg" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="2_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://ba2comoj2jbjy" path="res://scenes/playerHud.tscn" id="2_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
 [ext_resource type="Script" uid="uid://brgpga4x72raw" path="res://scripts/wallPlacer.gd" id="3_smehm"]
-[ext_resource type="Texture2D" uid="uid://dwl4qykig1pms" path="res://textures/hands.svg" id="3_sweqy"]
+[ext_resource type="Texture2D" path="res://textures/hands.svg" id="3_sweqy"]
 [ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/weapon.tscn" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://b1oc161a3c6uo" path="res://scripts/playerSprite.gd" id="6_fjrip"]
+[ext_resource type="Texture2D" uid="uid://dskc1io3aita2" path="res://textures/Player Skins/balls.svg" id="7_ur7pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xral"]
 radius = 54.0
@@ -55,7 +55,7 @@ replication_config = SubResource("SceneReplicationConfig_tuyoq")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_hqtel")
+texture = ExtResource("7_ur7pv")
 script = ExtResource("6_fjrip")
 
 [node name="hand1" type="Sprite2D" parent="Sprite2D"]

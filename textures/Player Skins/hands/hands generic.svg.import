@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxqu1bk4emtpk"
-path="res://.godot/imported/hands 4.svg-30f33cf0de47c3b82c6985863be09796.ctex"
+uid="uid://c6bvhyawqa7ck"
+path="res://.godot/imported/hands generic.svg-d5e85f3948fea5bf1013c223e2e171f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Player Skins/hands 4.svg"
-dest_files=["res://.godot/imported/hands 4.svg-30f33cf0de47c3b82c6985863be09796.ctex"]
+source_file="res://textures/Player Skins/hands/hands generic.svg"
+dest_files=["res://.godot/imported/hands generic.svg-d5e85f3948fea5bf1013c223e2e171f4.ctex"]
 
 [params]
 
