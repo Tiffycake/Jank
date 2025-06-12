@@ -33,7 +33,7 @@ func _ready() -> void:
 	
 	sprite.gunEquiped() 
 
-func get_input():
+func getInput():
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
 	var attack = Input.is_action_pressed("leftClick")
@@ -50,7 +50,7 @@ func get_input():
 
 func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
-		get_input()
+		getInput()
 	squish(delta) 
 	move_and_slide()
 
@@ -80,13 +80,13 @@ func die() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	balls()
 
 
-func balls():
+func balls() -> void:
 	if counter == 60:
-		sprite.setSkin(1)
+		sprite.setSkin(Color(255,255,0))
 	elif counter == 120:
-		sprite.setSkin(0)
+		sprite.setSkin(Color(0,0,255))
 		counter = 0
 	counter+=1
