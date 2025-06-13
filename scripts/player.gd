@@ -23,7 +23,7 @@ const scale_factor := 3.5
 var inputDir : Vector2
 
 func _ready() -> void:
-	#sprite.setSkin(1)
+	sprite.setSkin(Globals.playerColor)
 
 	if is_multiplayer_authority():
 		add_child(camera)
@@ -80,7 +80,8 @@ func die() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	balls()
+	#balls()
+	pass
 
 
 func balls() -> void:
