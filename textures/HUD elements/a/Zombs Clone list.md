@@ -4,7 +4,7 @@ kanban-plugin: board
 
 ---
 
-## bad tiffy ideas
+## peak tiffy ideas
 
 - [ ] skin color picker (outer/inner layer + hands)
 
