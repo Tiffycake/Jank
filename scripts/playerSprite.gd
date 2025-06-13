@@ -36,9 +36,9 @@ func setColor(a2) -> void:
 
 func setSkin(a1):
 	if is_multiplayer_authority():
-		changeSkin.rpc(a1)
+		changeSkin(a1)
 
-@rpc("any_peer", "call_local")
+
 func changeSkin(a2: Color) -> void:
 	if real:
 		set_texture(ballGeneric)
