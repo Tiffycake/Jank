@@ -11,7 +11,7 @@ func _get_drag_data(_atPosition: Vector2) -> Variant:
 	var preview = Control.new()
 
 	preview.add_child(prevTexture)
-	
+
 	set_drag_preview(preview)
 	prevTexture.position-=Vector2(40,40)
 	texture = null
@@ -20,6 +20,7 @@ func _get_drag_data(_atPosition: Vector2) -> Variant:
 
 # when hovering with a dropable Variant
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	
 	return data is Texture2D
 	
 # on drop
