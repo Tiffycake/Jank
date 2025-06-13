@@ -64,6 +64,11 @@ flat = true
 
 [node name="ColorPicker" type="ColorPicker" parent="."]
 layout_mode = 0
-offset_left = 87.0
-offset_right = 385.0
+offset_left = 154.0
+offset_right = 452.0
 offset_bottom = 572.0
+alignment = 1
+edit_alpha = false
+picker_shape = 1
+color_modes_visible = false
+presets_visible = false
