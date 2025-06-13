@@ -23,7 +23,8 @@ const scale_factor := 3.5
 var inputDir : Vector2
 
 func _ready() -> void:
-	sprite.setSkin(Globals.playerColor)
+	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
+	
 
 	if is_multiplayer_authority():
 		add_child(camera)

@@ -6,13 +6,15 @@ var playerScene : PackedScene = preload("res://scenes/player.tscn")
 @onready var hostButton := $"hostButton"
 @onready var joinButton := $"joinButton"
 @onready var objectList := $"../objectList"
-@onready var color_picker: ColorPicker = $ColorPicker
+@onready var body_color: ColorPicker = $bodyColor
+@onready var hands_color: ColorPicker = $handsColor
 
 const buttonScale := Vector2(0.3, 0.3)
 const buttonHoverScale := Vector2(0.32, 0.32)
 
 func hostButtonPressed():
-	Globals.playerColor = color_picker.color
+	Globals.bodyColor = body_color.color
+	Globals.handsColor = hands_color.color
 	print("hostButtonPressed")
 	peer.create_server(port)
 	multiplayer.multiplayer_peer = peer
@@ -22,7 +24,8 @@ func hostButtonPressed():
 	hide()
 
 func joinButtonPressed():
-	Globals.playerColor = color_picker.color
+	Globals.bodyColor = body_color.color
+	Globals.handsColor = hands_color.color
 	print("joinButtonPressed")
 	peer.create_client("localhost",port)
 	multiplayer.multiplayer_peer = peer

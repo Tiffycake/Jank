@@ -62,13 +62,50 @@ pivot_offset = Vector2(388.5, 193.333)
 icon = ExtResource("5_8ln24")
 flat = true
 
-[node name="ColorPicker" type="ColorPicker" parent="."]
+[node name="bodyColor" type="ColorPicker" parent="."]
 layout_mode = 0
-offset_left = 154.0
-offset_right = 452.0
+offset_left = 36.0
+offset_top = 65.0
+offset_right = 300.0
 offset_bottom = 572.0
 alignment = 1
 edit_alpha = false
 picker_shape = 1
 color_modes_visible = false
 presets_visible = false
+
+[node name="handsColor" type="ColorPicker" parent="."]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 65.0
+offset_right = 625.0
+offset_bottom = 572.0
+alignment = 1
+edit_alpha = false
+picker_shape = 1
+color_modes_visible = false
+presets_visible = false
+
+[node name="bodyText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 41.0
+offset_right = 241.0
+offset_bottom = 99.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1]Body Color[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="handsText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 41.0
+offset_right = 573.0
+offset_bottom = 99.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave amp=20.0 freq=5.0 connected=1]Hands Color[/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1

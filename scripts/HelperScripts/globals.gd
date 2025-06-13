@@ -1,3 +1,4 @@
 extends Node
 
-var playerColor : Color
+var bodyColor : Color
+var handsColor : Color

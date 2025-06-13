@@ -5,8 +5,8 @@ extends Sprite2D
 @onready var hand2: Sprite2D = $"hand2"
 const skinPath : = "res://textures/Player Skins/" 
 
-const handGeneric : = preload("res://textures/Player Skins/hands/hands generic.svg")
-const ballGeneric : = preload("res://textures/Player Skins/balls/balls generic.svg")
+#const handGeneric : = preload("res://textures/Player Skins/hands/hands generic.svg")
+#const ballGeneric : = preload("res://textures/Player Skins/balls/balls generic.svg")
 
 var gunEquipedState	: = Vector2(60.0,-150.0)
 var unarmedState	: = Vector2(99.0,-128.0)
@@ -34,20 +34,28 @@ func setColor(a2) -> void:
 	modulate = a2
 
 
-func setSkin(a1):
+func setSkin(body: Color, hands: Color):
 	if is_multiplayer_authority():
-		changeSkin(a1)
+		changeBody(body)
+		changeHands(hands)
 
 
 func changeSkin(a2: Color) -> void:
-	if real:
-		set_texture(ballGeneric)
-		hand1.set_texture(handGeneric)
-		hand2.set_texture(handGeneric)
-		real = false
+	#if real:
+		#set_texture(ballGeneric)
+		#hand1.set_texture(handGeneric)
+		#hand2.set_texture(handGeneric)
+		#real = false
 	
 	modulate = a2
 
+func changeBody(a2: Color) -> void:
+	self_modulate = a2
+
+func changeHands(a2: Color) -> void:
+	hand1.self_modulate = a2
+	hand2.self_modulate = a2
+	
 func _ready() -> void:
 	pass
 	
