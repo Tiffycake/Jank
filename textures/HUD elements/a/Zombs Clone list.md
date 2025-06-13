@@ -6,7 +6,6 @@ kanban-plugin: board
 
 ## peak tiffy ideas
 
-- [ ] skin color picker (outer/inner layer + hands)
 
 
 ## To-Do
@@ -19,6 +18,7 @@ kanban-plugin: board
 
 ## tiffy doing
 
+- [ ] me :JunoShy:
 - [ ] revamping playertexture
 - [ ] Hud slots
 
@@ -26,6 +26,7 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
+- [ ] skin color picker (outer/inner layer + hands)
 
 
 ## Done
