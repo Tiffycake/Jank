@@ -31,6 +31,9 @@ func fire():
 func equiped():
 	playerSprite.gunEquiped()
 
+func unEquiped():
+	playerSprite.unarmed()
+
 @rpc("any_peer", "call_local")
 func spawn_bullet():
 	var bullet = bulletPath.instantiate()

@@ -15,7 +15,9 @@ func fire():
 
 func equiped():
 	playerSprite.unarmed()
-	
+
+func unEquiped():
+	playerSprite.unarmed()
 
 @rpc("any_peer", "call_local")
 func spawnWall(mousePos) -> void:

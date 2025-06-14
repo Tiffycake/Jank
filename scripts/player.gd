@@ -24,6 +24,7 @@ var inputDir : Vector2
 var attack   : bool
 var use      : bool
 #endregion
+
 func _ready() -> void:
 	
 	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
@@ -32,6 +33,7 @@ func _ready() -> void:
 		if str(i.name).contains("Slot"):
 			slotList.append(i)
 		
+	
 	selectItem(currentSlot)
 	if is_multiplayer_authority():
 		add_child(camera)
