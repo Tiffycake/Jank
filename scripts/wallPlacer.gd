@@ -4,6 +4,7 @@ const wallPath = preload("res://scenes/basic_wall.tscn")
 
 @onready var objectList: Node = $"../../../.."
 @onready var timer: Timer = $Timer
+@onready var playerSprite:  = $"../../Sprite2D"
 
 var atackSpeed : float = 2  # attacks per second
 
@@ -12,6 +13,9 @@ func fire():
 		spawnWall.rpc(get_global_mouse_position())
 
 
+func equiped():
+	playerSprite.unarmed()
+	
 
 @rpc("any_peer", "call_local")
 func spawnWall(mousePos) -> void:

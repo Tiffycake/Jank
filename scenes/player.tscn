@@ -37,18 +37,26 @@ properties/5/replication_mode = 1
 motion_mode = 1
 script = ExtResource("1_smehm")
 
-[node name="HUD" parent="." instance=ExtResource("2_ur7pv")]
-visible = false
+[node name="Slot1" type="Node2D" parent="."]
 
-[node name="Inventory" type="Node2D" parent="."]
-
-[node name="Weapon" parent="Inventory" instance=ExtResource("4_tuyoq")]
+[node name="Weapon" parent="Slot1" instance=ExtResource("4_tuyoq")]
 position = Vector2(80, 0)
 
-[node name="wallPlacer" type="Node2D" parent="Inventory"]
+[node name="Slot2" type="Node2D" parent="."]
+
+[node name="wallPlacer" type="Node2D" parent="Slot2"]
 script = ExtResource("3_smehm")
 
-[node name="Timer" type="Timer" parent="Inventory/wallPlacer"]
+[node name="Timer" type="Timer" parent="Slot2/wallPlacer"]
+
+[node name="Slot3" type="Node2D" parent="."]
+
+[node name="Slot4" type="Node2D" parent="."]
+
+[node name="Slot5" type="Node2D" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("2_ur7pv")]
+visible = false
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
 maxHealth = 100

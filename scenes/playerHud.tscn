@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=6 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Texture2D" uid="uid://bdrpkqh4kbx2v" path="res://textures/HUD elements/a/Screenshot_20250606_182749.png" id="1_qefu1"]
 [ext_resource type="Texture2D" uid="uid://bwoyg0dwj6e2b" path="res://textures/HUD elements/healthBar.svg" id="3_ryf3e"]
 [ext_resource type="Script" uid="uid://dawos4du4vbi1" path="res://scripts/healthBar.gd" id="4_0p7im"]
 [ext_resource type="PackedScene" uid="uid://chf34ya77hulb" path="res://scenes/hudSlot.tscn" id="5_rxypr"]
-[ext_resource type="Texture2D" uid="uid://kvpss2onfgii" path="res://textures/random textures/UncommonContainment.png" id="6_maspd"]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -66,7 +65,6 @@ layout_mode = 0
 layout_mode = 0
 offset_left = 86.0
 offset_right = 166.0
-texture = ExtResource("6_maspd")
 
 [node name="HUDSlot3" parent="Control/Slots" instance=ExtResource("5_rxypr")]
 layout_mode = 0

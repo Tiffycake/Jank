@@ -8,9 +8,15 @@ kanban-plugin: board
 
 
 
+## To-Do long term
+
+- [ ] grid for building
+
+
 ## To-Do
 
 - [ ] player pushing
+- [ ] ammo count
 
 
 ## tiffy doing
@@ -18,6 +24,7 @@ kanban-plugin: board
 - [ ] me :JunoShy:
 - [ ] inventory system
 - [ ] make a generic item component
+- [ ] make hud interact correctly with player
 
 
 ## milla doing
@@ -43,6 +50,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false]}
 ```
 %%

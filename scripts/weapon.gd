@@ -28,6 +28,8 @@ func fire():
 	if timer.time_left == 0:
 		spawn_bullet.rpc()
 
+func equiped():
+	playerSprite.gunEquiped()
 
 @rpc("any_peer", "call_local")
 func spawn_bullet():

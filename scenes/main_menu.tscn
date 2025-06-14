@@ -30,8 +30,8 @@ follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="grid"]
-position = Vector2(1594, 720)
 texture = ExtResource("3_8ln24")
+centered = false
 
 [node name="hostButton" type="Button" parent="."]
 layout_mode = 1
