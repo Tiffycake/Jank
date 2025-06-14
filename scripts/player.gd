@@ -35,6 +35,7 @@ func _ready() -> void:
 		
 	
 	selectItem(currentSlot)
+	
 	if is_multiplayer_authority():
 		add_child(camera)
 		HUD.visible = true
@@ -60,8 +61,9 @@ func getInput():
 		selectItem(currentSlot-1)
 
 
-	if attack == true:
-		selectedItem.fire()
+	if attack == true and selectedItem != null :
+		if selectedItem.has_method("fire"):
+			selectedItem.fire()
 
 	#if attack == true:
 		#weapon.fire()
