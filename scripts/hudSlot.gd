@@ -9,7 +9,7 @@ var slotId : int
  		#slots / controll / HUD / player
 # when draging ?
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player.currentSlot == slotId:
 		slotOutline.show()
 	else:

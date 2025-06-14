@@ -5,6 +5,7 @@ var bulletPath = preload("res://scenes/bullet.tscn")
 
 @onready var objectList: Node = $"../../../../objectList"
 @onready var timer: Timer = $Timer
+@onready var sound : AudioStreamPlayer2D = $sound
 @onready var player: CharacterBody2D = $"../.."
 @onready var playerSprite:  = $"../../Sprite2D"
 
@@ -38,6 +39,7 @@ func unEquiped():
 
 @rpc("any_peer", "call_local")
 func spawn_bullet():
+	sound.play()
 	var bullet = bulletPath.instantiate()
 	var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
 	attackComponent.attackDamage = atackDamage

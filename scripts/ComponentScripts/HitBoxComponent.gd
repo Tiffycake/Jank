@@ -18,7 +18,6 @@ func _init() -> void:
 	pass
  
 
-# acts as a 
 
 func onBodyEntered(body):
 	if body is Player:
