@@ -6,7 +6,8 @@ class_name HitboxComponent
 
 
 func _ready() -> void:
-	self.area_entered.connect(onBodyEntered) #
+	self.area_entered.connect(onAreaEntered)
+	self.body_entered.connect(onBodyEntered)
 	
 	healthComponent = $"../HealthComponent"
 
@@ -19,7 +20,11 @@ func _init() -> void:
 
 # acts as a 
 
-func onBodyEntered(attack) -> void:
+func onBodyEntered(body):
+	if body is Player:
+		print("plap plap plap")
+
+func onAreaEntered(attack) -> void:
 
 	if attack is AttackComponent:
 		attack.get_parent().queue_free()

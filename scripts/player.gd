@@ -1,4 +1,5 @@
 extends CharacterBody2D 
+class_name Player
 
 var speed: = 600
 @onready var sprite: Sprite2D = $"Sprite2D"
