@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chf34ya77hulb"]
+[gd_scene load_steps=5 format=3 uid="uid://chf34ya77hulb"]
 
 [ext_resource type="Script" uid="uid://df6w2w60dtmpe" path="res://scripts/hudSlot.gd" id="2_1kd0n"]
 [ext_resource type="Texture2D" uid="uid://caslns0t8axbv" path="res://textures/HUD elements/slotBG.svg" id="2_qrk5s"]
+[ext_resource type="Texture2D" uid="uid://l80lpy44k3s2" path="res://textures/HUD elements/slotBGOutline.svg" id="2_votag"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2s5s"]
 
@@ -20,8 +21,14 @@ offset_bottom = 80.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_r2s5s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Slot" type="Sprite2D" parent="."]
 texture = ExtResource("2_qrk5s")
+centered = false
+
+[node name="SlotOutline" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-4, -4)
+texture = ExtResource("2_votag")
 centered = false
 
 [node name="TextureRect" type="TextureRect" parent="."]

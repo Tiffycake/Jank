@@ -4,7 +4,7 @@ class_name Player
 var speed: = 600
 @onready var sprite: Sprite2D = $"Sprite2D"
 @onready var HUD : = $HUD
-var currentSlot : = 1
+var currentSlot : = 0
 var selectedItem : Node2D
 var slotList : Dictionary
 #@onready var inventory: Node2D = $Inventory
@@ -33,7 +33,6 @@ func _ready() -> void:
 	
 	for i in get_children().slice(0,5):
 		slotList.set(int(str(i.name)[-1]),i)
-	
 	
 	selectItem(currentSlot)
 	
@@ -92,14 +91,18 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
  
 func selectItem(n) -> void:
-	if n > 0 and slotList.size() > n:  # true: # n > 1 : # or n < slotList.size()+1    :
+	if n >= 0 and slotList.size() > n:  # true: # n > 1 : # or n < slotList.size()+1    :
 		print("selecting #",n," slot")
 		currentSlot = n
-		selectedItem = slotList[n].get_child(0)
-		
+		#selectedItem = slotList[n].get_child(0)
+
 		if selectedItem != null:
 			selectedItem.unEquiped()
+		
+		if slotList[n].find_child("*",false):
 			selectedItem = slotList[n].get_child(0)
+		
+		if selectedItem != null:
 			selectedItem.equiped()
 		#if selectedItem != null: #if  i == currentSlot and selectedItem != null: # str(slotList[i].name) == "Slot"+ str(currentSlot) 
 

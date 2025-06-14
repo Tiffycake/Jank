@@ -1,5 +1,5 @@
 extends Node2D
-class_name Weapon
+#class_name Weapon
 
 var bulletPath = preload("res://scenes/bullet.tscn")
 

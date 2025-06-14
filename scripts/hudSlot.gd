@@ -1,13 +1,23 @@
 extends Control
 @onready var textureRect: TextureRect = $TextureRect
-
+var slotList : Dictionary
 var slot : Node2D
- #slots / controll / HUD / player
+var slotId : int
+@onready var slotOutline: Sprite2D = $SlotOutline
+
+@onready var player : = $"../../../.."
+ 		#slots / controll / HUD / player
 # when draging ?
 
-
+func _process(delta: float) -> void:
+	if player.currentSlot == slotId:
+		slotOutline.show()
+	else:
+		slotOutline.hide()
 
 func _ready() -> void:
+	slotId = int(str(name)[-1])
+	slotList = player.slotList
 	pass
 	#this is such jank what am i doing
 	#var slotList = get_parent().get_parent().get_parent().get_parent().get_children()

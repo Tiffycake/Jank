@@ -58,25 +58,25 @@ offset_top = 948.0
 offset_right = 1894.0
 offset_bottom = 1028.0
 
-[node name="HUDSlot1" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+[node name="HUDSlot0" parent="Control/Slots" instance=ExtResource("5_rxypr")]
 layout_mode = 0
 
-[node name="HUDSlot2" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+[node name="HUDSlot1" parent="Control/Slots" instance=ExtResource("5_rxypr")]
 layout_mode = 0
 offset_left = 86.0
 offset_right = 166.0
 
-[node name="HUDSlot3" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+[node name="HUDSlot2" parent="Control/Slots" instance=ExtResource("5_rxypr")]
 layout_mode = 0
 offset_left = 174.0
 offset_right = 254.0
 
-[node name="HUDSlot4" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+[node name="HUDSlot3" parent="Control/Slots" instance=ExtResource("5_rxypr")]
 layout_mode = 0
 offset_left = 261.0
 offset_right = 341.0
 
-[node name="HUDSlot5" parent="Control/Slots" instance=ExtResource("5_rxypr")]
+[node name="HUDSlot4" parent="Control/Slots" instance=ExtResource("5_rxypr")]
 layout_mode = 0
 offset_left = 347.0
 offset_right = 427.0
