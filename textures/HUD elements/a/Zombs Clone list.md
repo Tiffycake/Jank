@@ -11,31 +11,33 @@ kanban-plugin: board
 ## To-Do
 
 - [ ] make a generic item component
-- [ ] skibidi
-- [ ] amongus
-- [ ] amongus 2
 
 
 ## tiffy doing
 
 - [ ] me :JunoShy:
-- [ ] revamping playertexture
 - [ ] Hud slots
 
 
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
-- [ ] skin color picker (outer/inner layer + hands)
 
 
 ## Done
 
 **Complete**
-- [x] Me
+- [x] skin color picker (outer/inner layer + hands)
+- [x] revamping playertexture
 
 
+***
 
+## Archive
+
+- [ ] skibidi
+- [ ] amongus 2
+- [ ] amongus
 
 %% kanban:settings
 ```
