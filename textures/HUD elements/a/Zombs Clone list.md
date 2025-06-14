@@ -10,13 +10,13 @@ kanban-plugin: board
 
 ## To-Do
 
-- [ ] make a generic item component
 
 
 ## tiffy doing
 
 - [ ] me :JunoShy:
-- [ ] Hud slots
+- [ ] inventory system
+- [ ] make a generic item component
 
 
 ## milla doing
@@ -29,6 +29,7 @@ kanban-plugin: board
 **Complete**
 - [x] skin color picker (outer/inner layer + hands)
 - [x] revamping playertexture
+- [x] Hud slots
 
 
 ***
