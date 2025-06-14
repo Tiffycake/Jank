@@ -5,7 +5,7 @@ var speed: = 600
 @onready var HUD : = $HUD
 var currentSlot : = 1
 var selectedItem : Node2D
-var slotList : Array
+var slotList : Dictionary
 #@onready var inventory: Node2D = $Inventory
 #@onready var weapon: Node2D = inventory.get_child(0)
 #@onready var wallPlacer: Node2D = inventory.get_child(1)
@@ -29,10 +29,10 @@ func _ready() -> void:
 	
 	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
 	
-	for i in get_children():
-		if str(i.name).contains("Slot"):
-			slotList.append(i)
-		
+	
+	for i in get_children().slice(0,5):
+		slotList.set(str(i.name)[-1],i)
+	
 	
 	selectItem(currentSlot)
 	
@@ -42,8 +42,6 @@ func _ready() -> void:
 		
 	self.tree_exited.connect(die)
 	
-	sprite.gunEquiped() 
-
 func getInput():
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
@@ -93,17 +91,18 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
  
 func selectItem(n) -> void:
-	if n > 1 and slotList.size() > n:  # true: # n > 1 : # or n < slotList.size()+1    :
+	if n > 0 and slotList.size() > n:  # true: # n > 1 : # or n < slotList.size()+1    :
 		print("selecting #",n," slot")
 		currentSlot = n
-		for i in slotList:
-			if str(i.name) == "Slot"+ str(currentSlot) :
-				selectedItem.unEquiped()
-				selectedItem = i.get_child(0)
-				selectedItem.equiped()
-				print(i)
-				print(i.get_child(0))
-	
+		selectedItem = slotList[n].get_child(0)
+		
+		if selectedItem != null:
+			selectedItem.unEquiped()
+			selectedItem = slotList[n].get_child(0)
+			selectedItem.equiped()
+		#if selectedItem != null: #if  i == currentSlot and selectedItem != null: # str(slotList[i].name) == "Slot"+ str(currentSlot) 
+
+
 
 
 func _process(_delta: float) -> void:
