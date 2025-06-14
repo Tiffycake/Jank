@@ -9,6 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
 	max_value = healthComponent1.maxHealth
 	value = healthComponent1.health
 	healthNum.text = str(healthComponent1.health)+" / "+str(healthComponent1.maxHealth)

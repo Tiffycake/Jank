@@ -31,7 +31,7 @@ func _ready() -> void:
 	
 	
 	for i in get_children().slice(0,5):
-		slotList.set(str(i.name)[-1],i)
+		slotList.set(int(str(i.name)[-1]),i)
 	
 	
 	selectItem(currentSlot)

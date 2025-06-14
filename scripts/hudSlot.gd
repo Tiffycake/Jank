@@ -2,17 +2,19 @@ extends Control
 @onready var textureRect: TextureRect = $TextureRect
 
 var slot : Node2D
-					  #slots / controll / HUD / player
+ #slots / controll / HUD / player
 # when draging ?
 
 
+
 func _ready() -> void:
+	pass
 	#this is such jank what am i doing
-	var slotList = self.get_parent().get_parent().get_parent().get_parent().get_children()
-	for i in slotList:
-		if str(i.name) == "Slot"+ str(self.name)[-1] :
-			slot = i # .get_child(0)
-			break
+	#var slotList = get_parent().get_parent().get_parent().get_parent().get_children()
+	#for i in slotList:
+		#if str(i.name) == "Slot"+ str(self.name)[-1] :
+			#slot = i # .get_child(0)
+			#break
 	
 func _get_drag_data(_atPosition: Vector2) -> Variant:
 	
