@@ -10,6 +10,7 @@ kanban-plugin: board
 
 ## To-Do
 
+- [ ] player pushing
 
 
 ## tiffy doing

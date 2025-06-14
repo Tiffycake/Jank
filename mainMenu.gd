@@ -15,7 +15,7 @@ const buttonHoverScale := Vector2(0.32, 0.32)
 func hostButtonPressed():
 	Globals.bodyColor = body_color.color
 	Globals.handsColor = hands_color.color
-	print("hostButtonPressed")
+	#print("hostButtonPressed")
 	peer.create_server(port)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(spawnPlayer)
@@ -26,7 +26,7 @@ func hostButtonPressed():
 func joinButtonPressed():
 	Globals.bodyColor = body_color.color
 	Globals.handsColor = hands_color.color
-	print("joinButtonPressed")
+	#print("joinButtonPressed")
 	peer.create_client("localhost",port)
 	multiplayer.multiplayer_peer = peer
 	process_mode = Node.PROCESS_MODE_DISABLED
@@ -41,28 +41,18 @@ func spawnPlayer(id = 1):
 	objectList.call_deferred("add_child", player)  #mainScene
 	#player.add_child(playerList)
 
-func hostHover():
-	var tween = get_tree().create_tween()
-	tween.tween_property(hostButton, "scale", buttonHoverScale, 0.1)
+func tweenMaker(object,variant) -> Callable:
+	var outputFunc = func outputFunc():
+		var tween = get_tree().create_tween()
+		tween.tween_property(object, "scale", variant, 0.1)
+	return outputFunc
 
-func joinHover():
-	var tween = get_tree().create_tween()
-	tween.tween_property(joinButton, "scale", buttonHoverScale, 0.1)
-
-func hostReset():
-	var tween = get_tree().create_tween()
-	tween.tween_property(hostButton, "scale", buttonScale, 0.1)
-
-func joinReset():
-	var tween = get_tree().create_tween()
-	tween.tween_property(joinButton, "scale", buttonScale, 0.1)
 
 func _ready() -> void:
-	#connects signals
 	hostButton.pressed.connect(hostButtonPressed)
 	joinButton.pressed.connect(joinButtonPressed)
-	hostButton.mouse_entered.connect(hostHover)
-	joinButton.mouse_entered.connect(joinHover)
-	hostButton.mouse_exited.connect(hostReset)
-	joinButton.mouse_exited.connect(joinReset)
-	#hide()
+
+	hostButton.mouse_entered.connect(tweenMaker(hostButton,buttonHoverScale))
+	joinButton.mouse_entered.connect(tweenMaker(joinButton,buttonHoverScale))
+	hostButton.mouse_exited.connect(tweenMaker(hostButton,buttonScale))
+	joinButton.mouse_exited.connect(tweenMaker(joinButton,buttonScale))

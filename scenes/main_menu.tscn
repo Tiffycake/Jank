@@ -22,7 +22,7 @@ scale = Vector2(1.66667, 1.66667)
 texture = ExtResource("2_ekxnf")
 
 [node name="grid" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-13, -316)
+scroll_offset = Vector2(-1991, -372)
 repeat_size = Vector2(1900, 1045)
 autoscroll = Vector2(50, 50)
 repeat_times = 2
@@ -69,6 +69,7 @@ offset_top = 65.0
 offset_right = 300.0
 offset_bottom = 572.0
 alignment = 1
+color = Color(0.870588, 0.67451, 0.403922, 1)
 edit_alpha = false
 picker_shape = 1
 color_modes_visible = false
@@ -81,6 +82,7 @@ offset_top = 65.0
 offset_right = 625.0
 offset_bottom = 572.0
 alignment = 1
+color = Color(0.870588, 0.67451, 0.403922, 1)
 edit_alpha = false
 picker_shape = 1
 color_modes_visible = false
