@@ -7,7 +7,7 @@ extends Control
 
 
 var slotList : Dictionary
-var slotContent : Item = player
+var slotContent : Item 
 var slotId : int
 
 						#slots / controll / HUD / player
@@ -48,6 +48,7 @@ func _ready() -> void:
 	slotId = int(str(name)[-1])
 	slotList = player.slotList
 	slotContent = player.selectedItem
+	
 	#this is such jank what am i doing
 	#var slotList = get_parent().get_parent().get_parent().get_parent().get_children()
 	#for i in slotList:
