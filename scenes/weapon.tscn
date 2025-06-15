@@ -16,6 +16,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_uxn4k")
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("3_bmw2d")
 volume_db = -15.127
 pitch_scale = 2.98

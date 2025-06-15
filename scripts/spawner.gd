@@ -7,10 +7,10 @@ var chest = preload("res://scenes/chest.tscn")
 
 func _ready() -> void:
 	self.pressed.connect(spawnerTrigger)
-	spawnChest()
+	spawnChest.rpc()
 
 func spawnerTrigger() -> void:
-	spawnChest()
+	spawnChest.rpc()
 
 
 @rpc("any_peer", "call_local")

@@ -39,7 +39,7 @@ func unEquiped():
 
 @rpc("any_peer", "call_local")
 func spawn_bullet():
-	sound.play()
+	#sound.play()
 	var bullet = bulletPath.instantiate()
 	var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
 	attackComponent.attackDamage = atackDamage
