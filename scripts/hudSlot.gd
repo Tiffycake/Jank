@@ -1,11 +1,15 @@
 extends Control
-@onready var textureRect: TextureRect = $TextureRect
-var slotList : Dictionary
-var slotContent : Item
-var slotId : int
-@onready var slotOutline: Sprite2D = $SlotOutline
-
 @onready var player : = $"../../../.." # wow wtf is this
+
+@onready var slot: Sprite2D = $Slot
+@onready var slotOutline: Sprite2D = $SlotOutline
+@onready var textureRect: TextureRect = $TextureRect
+
+
+var slotList : Dictionary
+var slotContent : Item = player
+var slotId : int
+
 						#slots / controll / HUD / player
 # when draging ?
 
@@ -55,6 +59,8 @@ func _ready() -> void:
 
 func slotHighlight() -> void:
 	if player.currentSlot == slotId:
+		slot.hide()
 		slotOutline.show()
 	else:
+		slot.show()
 		slotOutline.hide()

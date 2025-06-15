@@ -3,13 +3,6 @@ class_name Player
 
 var speed: = 600
 
-#region
-var camera : Camera2D = Camera2D.new()
-@onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
-@onready var objectList: Node = $"../../objectList"
-@onready var sprite: Sprite2D = $"Sprite2D"
-@onready var HUD : = $HUD
-#endregion
 
 #region Nodes
 var camera : Camera2D = Camera2D.new()
