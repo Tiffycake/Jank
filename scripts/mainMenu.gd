@@ -5,12 +5,14 @@ var peer := ENetMultiplayerPeer.new()
 var playerScene : PackedScene = preload("res://scenes/player.tscn")
 @onready var hostButton := $"hostButton"
 @onready var joinButton := $"joinButton"
-@onready var objectList := $"../objectList"
 @onready var body_color: ColorPicker = $bodyColor
 @onready var hands_color: ColorPicker = $handsColor
+var objectList : Node
 
 const buttonScale := Vector2(0.3, 0.3)
 const buttonHoverScale := Vector2(0.32, 0.32)
+ 
+	
 
 func hostButtonPressed():
 	Globals.bodyColor = body_color.color
@@ -33,11 +35,8 @@ func joinButtonPressed():
 	hide()
  
 func spawnPlayer(id = 1):
-	var player = playerScene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)  # 1
-	# GEN_EDIT_STATE_INSTANCE
-	# PackedScene.GenEditState
+	var player = playerScene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	player.name = str(id)
-	#var mainScene = get_parent()  ||| !!! |||
 	objectList.call_deferred("add_child", player)  #mainScene
 	#player.add_child(playerList)
 
@@ -47,10 +46,11 @@ func tweenMaker(object,variant) -> Callable:
 		tween.tween_property(object, "scale", variant, 0.1)
 	return outputFunc
 
-
 func _ready() -> void:
 	hostButton.pressed.connect(hostButtonPressed)
 	joinButton.pressed.connect(joinButtonPressed)
+	
+	objectList = $"../WorldMap/objectList"
 
 	hostButton.mouse_entered.connect(tweenMaker(hostButton,buttonHoverScale))
 	joinButton.mouse_entered.connect(tweenMaker(joinButton,buttonHoverScale))

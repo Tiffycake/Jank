@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0xvbxopa5yrf"]
+
+[ext_resource type="Texture2D" uid="uid://b2tq2hcgw0uhu" path="res://textures/background.svg" id="1_fgl0d"]
+[ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://scripts/spawner.gd" id="2_8rtnk"]
+
+[node name="WorldMap" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1900, 1045)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+z_index = -10
+texture = ExtResource("1_fgl0d")
+centered = false
+offset = Vector2(1, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(401, 164)
+
+[node name="chestSpawner" type="Button" parent="Node2D"]
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = -0.025
+anchor_right = 0.025
+anchor_bottom = -0.025
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_8rtnk")
+metadata/_edit_use_anchors_ = true
+
+[node name="objectList" type="Node" parent="."]
+
+[node name="playerList" type="Node" parent="objectList"]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://3higeki8udsa")
+spawn_path = NodePath("../objectList")
