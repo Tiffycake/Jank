@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="2_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://ba2comoj2jbjy" path="res://scenes/playerHud.tscn" id="2_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
-[ext_resource type="Script" uid="uid://brgpga4x72raw" path="res://scripts/wallPlacer.gd" id="3_smehm"]
+[ext_resource type="PackedScene" uid="uid://rprte4yhjl7p" path="res://scenes/items/wallPlacer.tscn" id="3_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/weapon.tscn" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://b1oc161a3c6uo" path="res://scripts/playerSprite.gd" id="6_fjrip"]
 [ext_resource type="Texture2D" uid="uid://bs3hgkqylvrf7" path="res://textures/Player Skins/balls/balls generic.svg" id="7_ur7pv"]
@@ -45,11 +45,8 @@ position = Vector2(80, 0)
 
 [node name="Slot1" type="Node2D" parent="."]
 
-[node name="wallPlacer" type="Node2D" parent="Slot1"]
+[node name="wallPlacer" parent="Slot1" instance=ExtResource("3_ur7pv")]
 visible = false
-script = ExtResource("3_smehm")
-
-[node name="Timer" type="Timer" parent="Slot1/wallPlacer"]
 
 [node name="Slot2" type="Node2D" parent="."]
 

@@ -15,15 +15,18 @@ func fire():
 
 func equiped():
 	playerSprite.unarmed()
+	show()
 
 func unEquiped():
 	playerSprite.unarmed()
+	hide()
+	
 
 @rpc("any_peer", "call_local")
 func spawnWall(mousePos) -> void:
 	var wall : StaticBody2D = wallPath.instantiate()
-	objectList.add_child(wall)
 	wall.position = mousePos # get_global_mouse_position()
+	objectList.add_child(wall)
 	timer.start()
 
 

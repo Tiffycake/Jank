@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://rprte4yhjl7p"]
+
+[ext_resource type="Script" uid="uid://brgpga4x72raw" path="res://scripts/wallPlacer.gd" id="1_q0jkr"]
+[ext_resource type="Texture2D" uid="uid://da2bhtdfgh6i7" path="res://textures/random textures/blueprintbase_512-893892667.png" id="2_7iwla"]
+
+[node name="wallPlacer" type="Node2D"]
+script = ExtResource("1_q0jkr")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(85, 0)
+rotation = 1.5708
+scale = Vector2(0.2, 0.15)
+texture = ExtResource("2_7iwla")

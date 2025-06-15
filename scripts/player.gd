@@ -38,8 +38,7 @@ func _ready() -> void:
 		add_child(camera)
 		HUD.visible = true
 		
-	self.tree_exited.connect(die)
-
+	
 func getInput():
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
@@ -105,13 +104,16 @@ func selectItem(n: int) -> void:
 		#if selectedItem != null: #if  i == currentSlot and selectedItem != null: # str(slotList[i].name) == "Slot"+ str(currentSlot) 
 
 
+func die() -> void:
+	queue_free()
+	#self.tree_exited
+	#self.tree_exited.connect(die)
 
 
 func _process(_delta: float) -> void:
 	pass
 
-func die() -> void:
-	pass
+
 
 
 """
