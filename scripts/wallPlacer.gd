@@ -1,12 +1,12 @@
-extends Node2D
+extends Item
 
 const wallPath = preload("res://scenes/basic_wall.tscn")
 
-@onready var objectList: Node = $"../../../.."
-@onready var timer: Timer = $Timer
+@onready var objectList: Node = $"../../../../objectList"
 @onready var playerSprite:  = $"../../Sprite2D"
+@onready var timer: Timer = $Timer
 
-var atackSpeed : float = 2  # attacks per second
+var atackSpeed : float = 1  # attacks per second
 
 func fire():
 	if timer.time_left == 0:

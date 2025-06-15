@@ -1,12 +1,12 @@
-extends Node
-class_name Item 
+extends Node2D
+class_name Item
 
-@export var texture : TextureRect
+@export var texture : Texture2D
 @export var id : int
 
 
 func _ready() -> void:
-	add_child(texture)
+	pass
 
 func _process(_delta: float) -> void:
 	pass

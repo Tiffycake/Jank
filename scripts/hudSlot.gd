@@ -1,19 +1,37 @@
 extends Control
 @onready var textureRect: TextureRect = $TextureRect
 var slotList : Dictionary
-var slot : Node2D
+var slotContent : Item
 var slotId : int
 @onready var slotOutline: Sprite2D = $SlotOutline
 
-@onready var player : = $"../../../.."
- 		#slots / controll / HUD / player
+@onready var player : = $"../../../.." # wow wtf is this
+						#slots / controll / HUD / player
 # when draging ?
 
+
+
+func _get_drag_data(at_position: Vector2) -> Variant:
+	var previewTexture := TextureRect.new()
+	
+	previewTexture.texture = Texture2D.new()
+	
+	return slotContent
+
+func _drop_data(at_position: Vector2, data: Variant) -> void:
+	if data is Item:
+		slotContent = data
+	
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	return data is Item
+
+	
+
+
 func _process(_delta: float) -> void:
-	if player.currentSlot == slotId:
-		slotOutline.show()
-	else:
-		slotOutline.hide()
+	#slotList[slotId] = slotContent
+	
+	slotHighlight()
 
 func _ready() -> void:
 	slotId = int(str(name)[-1])
@@ -26,29 +44,10 @@ func _ready() -> void:
 			#slot = i # .get_child(0)
 			#break
 	
-func _get_drag_data(_atPosition: Vector2) -> Variant:
-	
-	var slotItem = Item.new()
-	var preview = Control.new()
-	
-	#self.
-	#slotItem.texture.texture = textureRect.texture
-	slotItem.texture.expand_mode = 1
-	slotItem.texture.size = Vector2(80,80)
-	
 
-	preview.add_child(slotItem)
 
-	set_drag_preview(preview)
-	slotItem.position-=Vector2(40,40)
-	textureRect.texture = null
-	
-	return slotItem
-
-# when hovering with a dropable Variant
-func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
-	return data is Item
-	
-# on drop
-func _drop_data(_at_position: Vector2, data: Variant) -> void:
-	textureRect.texture = data.texture
+func slotHighlight() -> void:
+	if player.currentSlot == slotId:
+		slotOutline.show()
+	else:
+		slotOutline.hide()

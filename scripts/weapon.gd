@@ -1,19 +1,17 @@
-extends Node2D
+extends Item
 #class_name Weapon
 
 var bulletPath = preload("res://scenes/bullet.tscn")
 
 @onready var objectList: Node = $"../../../../objectList"
-@onready var timer: Timer = $Timer
-@onready var sound : AudioStreamPlayer2D = $sound
 @onready var player: CharacterBody2D = $"../.."
 @onready var playerSprite:  = $"../../Sprite2D"
 
+@onready var timer: Timer = $Timer
+@onready var sound : AudioStreamPlayer2D = $sound
 
-var bulletId : int = 0
-#var bulletList := Node.new() 
-	#bulletList.name = "bulletList"
-	#self.add_child(bulletList)
+var bulletId : int
+
 
 var bulletLifetime		: int = 600
 var bulletSpeed			: int = 2000 # projectile speed
