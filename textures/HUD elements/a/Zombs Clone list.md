@@ -6,11 +6,12 @@ kanban-plugin: board
 
 ## peak tiffy ideas
 
-
-
-## To-Do long term
-
 - [ ] grid for building
+
+
+## peak milla ideas
+
+- [ ] coin gun :trolla:
 
 
 ## To-Do

@@ -91,12 +91,8 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
  
 func selectItem(n: int) -> void:
-	if n >= 0 and slotList.size() > n:  # true: # n > 1 : # or n < slotList.size()+1    :
-		#print("selecting #",n," slot")
-		#selectedItem = slotList[n].get_child(0)
-		
+	if n >= 0 and slotList.size() > n:# if slot is in range
 		currentSlot = n
-
 		if selectedItem != null:
 			selectedItem.unEquiped()
 		

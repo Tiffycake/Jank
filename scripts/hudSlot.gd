@@ -27,11 +27,13 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	preview.add_child(previewTexture)
 	
 	slotContent = slotList[slotId].get_child(0)  # 
+	var balls : = slotContent.duplicate()
 	
 	set_drag_preview(preview)
-	slotList[slotId].get_child(0).queue_free() 
 	
-	return slotContent
+	slotContent.queue_free() 
+	
+	return balls
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if data is Item:
@@ -51,7 +53,7 @@ func _process(_delta: float) -> void:
 	slotHighlight()
 
 func _ready() -> void:
-	slotId = int(str(name)[-1])
+	slotId = int(str(name)[-1]) # const
 	slotList = player.slotList
 	slotContent = player.selectedItem
 	
