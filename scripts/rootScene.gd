@@ -3,6 +3,7 @@ extends Node2D
 const mainMenu = preload("res://scenes/main_menu.tscn")
 const WorldMap = preload("res://scenes/WorldMap.tscn")
 var tempInstance
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawnNode(WorldMap)
@@ -15,7 +16,8 @@ func _process(_delta: float) -> void:
 
 
 
-func spawnNode(a) -> void:
-	tempInstance = a.instantiate() # instance_from_id()
+func spawnNode(resource) -> void:
+	tempInstance = resource.instantiate() # instance_from_id()
 	add_child(tempInstance,false,InternalMode.INTERNAL_MODE_BACK) # INTERNAL_MODE_BACK
 	
+ 

@@ -11,18 +11,25 @@ var slotId : int
 
 
 
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	var previewTexture := TextureRect.new()
+	var preview 	   := Control.new()
 	
-	previewTexture.texture = Texture2D.new()
+	previewTexture.texture = slotContent.texture
+	previewTexture.expand_mode = TextureRect.EXPAND_KEEP_SIZE 
+	previewTexture.size = Vector2(80,80)
+	
+	preview.add_child(previewTexture)
+	
+	set_drag_preview(preview)
 	
 	return slotContent
 
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if data is Item:
 		slotContent = data
 	
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is Item
 
 	
@@ -36,7 +43,7 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	slotId = int(str(name)[-1])
 	slotList = player.slotList
-	
+	slotContent = player.selectedItem
 	#this is such jank what am i doing
 	#var slotList = get_parent().get_parent().get_parent().get_parent().get_children()
 	#for i in slotList:

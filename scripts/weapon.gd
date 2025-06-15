@@ -12,15 +12,18 @@ var bulletPath = preload("res://scenes/bullet.tscn")
 
 var bulletId : int
 
+var textureTemp = preload("res://icon.svg")
 
-var bulletLifetime		: int = 600
+var bulletLifetime		: int = 60
 var bulletSpeed			: int = 2000 # projectile speed
-var atackDamage			: int = 1 # weaponAtackDamage
-var atackSpeed			: float = 90  # attacks per second
+var atackDamage			: int = 10 # weaponAtackDamage
+var atackSpeed			: float = 5  # attacks per second
 
 func _ready() -> void:
 	timer.wait_time = 1/atackSpeed
 	timer.one_shot = true
+	texture = textureTemp
+	
 	#playerSprite.gunEquiped()
 	
 func fire():

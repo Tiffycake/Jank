@@ -2,6 +2,15 @@ extends CharacterBody2D
 class_name Player
 
 var speed: = 600
+
+#region
+var camera : Camera2D = Camera2D.new()
+@onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
+@onready var objectList: Node = $"../../objectList"
+@onready var sprite: Sprite2D = $"Sprite2D"
+@onready var HUD : = $HUD
+#endregion
+
 #region Nodes
 var camera : Camera2D = Camera2D.new()
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
@@ -20,10 +29,13 @@ var attack   : bool
 var use      : bool
 #endregion
 #region slots
+
 var currentSlot : = 0
-var selectedItem : Node2D
+var selectedItem : Item
 var slotList : Dictionary
 #endregion
+
+
 func _ready() -> void:
 	
 	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
@@ -46,13 +58,12 @@ func getInput():
 	use    = Input.is_action_pressed("rightClick")
 	inputDir = Input.get_vector("left","right","up","down")
 	velocity = inputDir * speed
-
- 
+	
 	if Input.is_action_just_released("srollUp") :
-		print("srollUp")
+		#print("srollUp")
 		selectItem(currentSlot-1)
 	elif Input.is_action_just_released("srollDown"):
-		print("srollDown")
+		#print("srollDown")
 		selectItem(currentSlot+1)
 
 
@@ -88,9 +99,10 @@ func _enter_tree() -> void:
  
 func selectItem(n: int) -> void:
 	if n >= 0 and slotList.size() > n:  # true: # n > 1 : # or n < slotList.size()+1    :
-		print("selecting #",n," slot")
-		currentSlot = n
+		#print("selecting #",n," slot")
 		#selectedItem = slotList[n].get_child(0)
+		
+		currentSlot = n
 
 		if selectedItem != null:
 			selectedItem.unEquiped()

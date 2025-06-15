@@ -19,6 +19,7 @@ offset = Vector2(1, 1)
 position = Vector2(401, 164)
 
 [node name="chestSpawner" type="Button" parent="Node2D"]
+z_index = 1
 anchors_preset = -1
 anchor_left = 0.025
 anchor_top = -0.025
