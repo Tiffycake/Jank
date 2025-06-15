@@ -22,7 +22,7 @@ kanban-plugin: board
 ## tiffy doing
 
 - [ ] me :JunoShy:
-- [x] inventory system
+- [ ] inventory system
 - [ ] make a generic item component
 - [ ] make hud interact correctly with player
 
