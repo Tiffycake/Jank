@@ -15,6 +15,7 @@ const buttonHoverScale := Vector2(0.32, 0.32)
 	
 
 func hostButtonPressed():
+	print(peer, " peer ")
 	Globals.bodyColor = body_color.color
 	Globals.handsColor = hands_color.color
 	#print("hostButtonPressed")

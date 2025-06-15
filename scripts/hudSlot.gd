@@ -19,13 +19,17 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	var previewTexture := TextureRect.new()
 	var preview 	   := Control.new()
 	
-	previewTexture.texture = slotContent.texture
+	previewTexture.texture  = slotContent.texture
 	previewTexture.expand_mode = TextureRect.EXPAND_KEEP_SIZE 
 	previewTexture.size = Vector2(80,80)
+	previewTexture.position-= Vector2(40,40)
 	
 	preview.add_child(previewTexture)
 	
+	slotContent = slotList[slotId].get_child(0)  # 
+	
 	set_drag_preview(preview)
+	slotList[slotId].get_child(0).queue_free() 
 	
 	return slotContent
 
@@ -40,7 +44,9 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 
 
 func _process(_delta: float) -> void:
-	#slotList[slotId] = slotContent
+	pass
+	#if slotList[slotId].get_child(0) != null and slotList[slotId].get_child(0) != slotContent :
+	#	slotContent = slotList[slotId].get_child(0) 
 	
 	slotHighlight()
 

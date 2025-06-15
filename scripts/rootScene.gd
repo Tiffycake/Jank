@@ -18,6 +18,6 @@ func _process(_delta: float) -> void:
 
 func spawnNode(resource) -> void:
 	tempInstance = resource.instantiate() # instance_from_id()
-	add_child(tempInstance,false,InternalMode.INTERNAL_MODE_BACK) # INTERNAL_MODE_BACK
+	self.add_child(tempInstance,false,InternalMode.INTERNAL_MODE_BACK) # INTERNAL_MODE_BACK
 	
  

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ba2comoj2jbjy" path="res://scenes/playerHud.tscn" id="2_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
 [ext_resource type="PackedScene" uid="uid://rprte4yhjl7p" path="res://scenes/items/wallPlacer.tscn" id="3_ur7pv"]
-[ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/weapon.tscn" id="4_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/items/weapon.tscn" id="4_tuyoq"]
 [ext_resource type="Script" uid="uid://b1oc161a3c6uo" path="res://scripts/playerSprite.gd" id="6_fjrip"]
 [ext_resource type="Texture2D" uid="uid://bs3hgkqylvrf7" path="res://textures/Player Skins/balls/balls generic.svg" id="7_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://c6bvhyawqa7ck" path="res://textures/Player Skins/hands/hands generic.svg" id="9_y4r1p"]
