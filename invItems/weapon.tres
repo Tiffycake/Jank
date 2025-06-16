@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="invItem" load_steps=3 format=3 uid="uid://dpp708tku67u"]
+
+[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://scripts/ComponentScripts/ItemComponent.gd" id="1_yt2tg"]
+[ext_resource type="Texture2D" uid="uid://b0beevi77dsmn" path="res://textures/gun.svg" id="2_3an2l"]
+
+[resource]
+script = ExtResource("1_yt2tg")
+texture = ExtResource("2_3an2l")
+name = "Gun real"
+metadata/_custom_type_script = "uid://i0ebpvahkca5"

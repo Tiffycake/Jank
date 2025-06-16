@@ -21,7 +21,8 @@ func _init() -> void:
 
 func onBodyEntered(body):
 	if body is Player and $".." is Player:
-		print("pretend its being pushed :3")
+		pass
+		#print("pretend its being pushed :3")
 
 func onAreaEntered(attack) -> void:
 

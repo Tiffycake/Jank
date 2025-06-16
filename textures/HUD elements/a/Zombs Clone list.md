@@ -7,6 +7,7 @@ kanban-plugin: board
 ## peak tiffy ideas
 
 - [ ] grid for building
+- [ ] work on particle component
 
 
 ## peak milla ideas
@@ -16,8 +17,8 @@ kanban-plugin: board
 
 ## To-Do
 
-- [ ] player pushing
 - [ ] ammo count
+- [ ] handling player deaths
 
 
 ## tiffy doing
@@ -31,6 +32,7 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
+- [ ] player pushing
 
 
 ## Done

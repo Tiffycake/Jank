@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://scripts/HUD.gd" id="1_maspd"]
 [ext_resource type="Texture2D" uid="uid://bdrpkqh4kbx2v" path="res://textures/HUD elements/a/Screenshot_20250606_182749.png" id="1_qefu1"]
 [ext_resource type="Texture2D" uid="uid://bwoyg0dwj6e2b" path="res://textures/HUD elements/healthBar.svg" id="3_ryf3e"]
-[ext_resource type="Script" uid="uid://dawos4du4vbi1" path="res://scripts/healthBar.gd" id="4_0p7im"]
+[ext_resource type="Script" uid="uid://b0jv1id6kh0fg" path="res://scripts/InventoryUI.gd" id="4_4es50"]
 [ext_resource type="PackedScene" uid="uid://chf34ya77hulb" path="res://scenes/hudSlot.tscn" id="5_rxypr"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -14,7 +14,6 @@ script = ExtResource("1_maspd")
 visible = false
 
 [node name="healthBar" type="Sprite2D" parent="Unused"]
-visible = false
 position = Vector2(-13, 1023)
 texture = ExtResource("3_ryf3e")
 offset = Vector2(205, 0)
@@ -26,8 +25,8 @@ texture = ExtResource("1_qefu1")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+mouse_filter = 1
+script = ExtResource("4_4es50")
 
 [node name="healthBarBG" type="Sprite2D" parent="Control"]
 texture_filter = 5
@@ -35,7 +34,7 @@ position = Vector2(205, 1031)
 scale = Vector2(1.11552, 1.17511)
 texture = ExtResource("1_bxty2")
 
-[node name="healthBar2" type="TextureProgressBar" parent="Control"]
+[node name="healthBar" type="TextureProgressBar" parent="Control"]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 1004.0
@@ -43,7 +42,6 @@ offset_right = 392.0
 offset_bottom = 1062.0
 value = 100.0
 texture_progress = ExtResource("3_ryf3e")
-script = ExtResource("4_0p7im")
 
 [node name="healthNum" type="Label" parent="Control"]
 layout_mode = 0
@@ -53,32 +51,32 @@ offset_right = 113.0
 offset_bottom = 1042.0
 text = "100 / 100"
 
-[node name="Slots" type="Control" parent="Control"]
-anchors_preset = 0
+[node name="Slots" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.051
 offset_left = 1464.0
 offset_top = 948.0
-offset_right = 1894.0
+offset_right = 1796.08
 offset_bottom = 1028.0
+columns = 100
 
 [node name="HUDSlot0" parent="Control/Slots" instance=ExtResource("5_rxypr")]
-layout_mode = 0
+custom_minimum_size = Vector2(82, 82)
+layout_mode = 2
 
 [node name="HUDSlot1" parent="Control/Slots" instance=ExtResource("5_rxypr")]
-layout_mode = 0
-offset_left = 86.0
-offset_right = 166.0
+custom_minimum_size = Vector2(82, 82)
+layout_mode = 2
 
 [node name="HUDSlot2" parent="Control/Slots" instance=ExtResource("5_rxypr")]
-layout_mode = 0
-offset_left = 174.0
-offset_right = 254.0
+custom_minimum_size = Vector2(82, 82)
+layout_mode = 2
 
 [node name="HUDSlot3" parent="Control/Slots" instance=ExtResource("5_rxypr")]
-layout_mode = 0
-offset_left = 261.0
-offset_right = 341.0
+custom_minimum_size = Vector2(82, 82)
+layout_mode = 2
 
 [node name="HUDSlot4" parent="Control/Slots" instance=ExtResource("5_rxypr")]
-layout_mode = 0
-offset_left = 347.0
-offset_right = 427.0
+custom_minimum_size = Vector2(82, 82)
+layout_mode = 2

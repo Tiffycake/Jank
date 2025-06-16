@@ -16,7 +16,7 @@ centered = false
 offset = Vector2(1, 1)
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(401, 164)
+position = Vector2(99, 292)
 
 [node name="chestSpawner" type="Button" parent="Node2D"]
 z_index = 1

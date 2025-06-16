@@ -1,12 +1,13 @@
-extends Item
+extends invItem
 
 const wallPath = preload("res://scenes/basic_wall.tscn")
 
-@onready var objectList: Node = $"../../../../objectList"
-@onready var playerSprite:  = $"../../Sprite2D"
+@onready var objectList: Node = $"../../../../../objectList"
 @onready var timer: Timer = $Timer
-@onready var player: = $"../.."
+@onready var player: = $"../../.."
 
+#@onready var objectList: Node = $"../../../../objectList"
+#@onready var playerSprite:  = $"../../../Sprite2D"
 
 
 var atackSpeed : float = 1  # attacks per second
@@ -18,15 +19,6 @@ func fire():
 	if timer.time_left == 0:
 		spawnWall.rpc(get_global_mouse_position())
 
-
-func equiped():
-	playerSprite.unarmed()
-	show()
-
-func unEquiped():
-	playerSprite.unarmed()
-	hide()
-	
 
 @rpc("any_peer", "call_local")
 func spawnWall(mousePos) -> void:

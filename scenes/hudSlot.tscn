@@ -13,14 +13,6 @@ offset_right = 80.0
 offset_bottom = 80.0
 script = ExtResource("2_1kd0n")
 
-[node name="Panel" type="Panel" parent="."]
-show_behind_parent = true
-layout_mode = 0
-offset_right = 80.0
-offset_bottom = 80.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_r2s5s")
-
 [node name="Slot" type="Sprite2D" parent="."]
 texture = ExtResource("2_qrk5s")
 centered = false
@@ -31,7 +23,15 @@ position = Vector2(-4, -4)
 texture = ExtResource("2_votag")
 centered = false
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r2s5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer/Panel"]

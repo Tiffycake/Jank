@@ -1,12 +1,13 @@
 extends Node2D
-class_name Item
+class_name invItem
+ 
+@export var texture : Texture2D 
+@export var nameId : String 
 
-@export var texture : Texture2D
-@export var id : int
-
-
-func _ready() -> void:
-	pass
-
-func _process(_delta: float) -> void:
-	pass
+func equiped():
+	show()
+	process_mode = Node.PROCESS_MODE_INHERIT
+	
+func unEquiped():
+	hide() 
+	process_mode = Node.PROCESS_MODE_DISABLED
