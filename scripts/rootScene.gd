@@ -8,6 +8,12 @@ var tempInstance
 func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
+	var a : int = 6
+	print(6%a)
+	print(4%a)
+	print(1%a)
+	print(0%a)
+	print(10%a)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
