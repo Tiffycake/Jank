@@ -1,0 +1,90 @@
+
+
+hudSlot
+"""
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	#slotContent = slotNode.get_child(0)
+	var previewTexture := TextureRect.new()
+	#var preview 	   := Control.new()
+	
+	if inventory.selectedItem != null:
+		previewTexture.texture  = inventory.slots[slotId].texture
+		previewTexture.expand_mode = TextureRect.EXPAND_KEEP_SIZE 
+		previewTexture.size = Vector2(80,80)
+		previewTexture.position-= Vector2(40,40)
+	
+	#preview.add_child(previewTexture)
+	set_drag_preview(previewTexture)
+	
+	# var balls : = slotNode.get_child(0).duplicate()
+	var balls = inventory[str(slotId)]
+	
+	#slotNode.get_child(0).unEquiped()
+	#slotNode.get_child(0).queue_free() 
+	
+	return balls
+
+"""
+"""
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	#slotContent = slotNode.get_child(0)
+	var previewTexture := TextureRect.new()
+	#var preview 	   := Control.new()
+	
+	if inventory[str(slotId)] != null:
+		previewTexture.texture  = inventory[str(slotId)].texture
+		previewTexture.expand_mode = TextureRect.EXPAND_KEEP_SIZE 
+		previewTexture.size = Vector2(80,80)
+		previewTexture.position-= Vector2(40,40)
+	
+	#preview.add_child(previewTexture)
+	set_drag_preview(previewTexture)
+	
+	# var balls : = slotNode.get_child(0).duplicate()
+	var balls = inventory[str(slotId)]
+	
+	#slotNode.get_child(0).unEquiped()
+	#slotNode.get_child(0).queue_free() 
+	
+	return balls
+
+
+
+"""
+		
+"""
+
+
+func textureUpdate(item: invItem):
+	if item != null: 
+		pass
+		texture1.visible = true
+		texture1.texture = item.texture
+	else:
+		texture1.visible = false
+		
+		
+"""
+
+
+	#if slotList[slotId].get_child(0) != null and slotList[slotId].get_child(0) != slotContent :
+	#	slotContent = slotList[slotId].get_child(0) 
+	
+
+	#this is such jank what am i doing
+	#var slotList = get_parent().get_parent().get_parent().get_parent().get_children()
+	#for i in slotList:
+		#if str(i.name) == "Slot"+ str(self.name)[-1] :
+			#slot = i # .get_child(0)
+			#break
+
+	
+	
+	
+#var done : bool = true
+	# jank 
+	#if player.is_node_ready() and done :
+		#done = false
+		#slotList = player.slotList
+		#slotNode = slotList[slotId]
+		#print("slots gambla",player.slotList) 

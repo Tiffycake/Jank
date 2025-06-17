@@ -3,19 +3,17 @@ extends Node2D
 const mainMenu = preload("res://scenes/main_menu.tscn")
 const WorldMap = preload("res://scenes/WorldMap.tscn")
 var tempInstance
-
-# Called when the node enters the scene tree for the first time.
+ 
 func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
-	var a : int = 6
-	print(6%a)
-	print(4%a)
-	print(1%a)
-	print(0%a)
-	print(10%a)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	#var a : int = 6
+	#print(6%a)
+	#print(4%a)
+	#print(1%a)
+	#print(0%a)
+	#print(-10%a)
+ 
 func _process(_delta: float) -> void:
 	pass
 

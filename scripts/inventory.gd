@@ -22,23 +22,23 @@ func _ready() -> void:
 	
 	selectItem(0)
 	#selectedItem = slots[0].get_child(0)
-	
+
 func selectItem(n: int) -> void:
 	# inventory.items.size() > n:# if slot is in range
 	# this is harcoded to 5 but it doesnt matter lol
 	
-	#if n >= 0 and invSize > n:  
-	n = n%5
-	selectedSlot = n
-	
-	if selectedItem != null:
-		selectedItem.unEquiped()
-	
-	if slots[n].find_child("*",false):
-		selectedItem = slots[n].get_child(0)
-		selectedItem.equiped()
-	else:
-		selectedItem = null
+	if n >= 0 and invSize > n:  
+	#n = n%5
+		selectedSlot = n
+		
+		if selectedItem != null:
+			selectedItem.unEquiped()
+		
+		if slots[n].find_child("*",false):
+			selectedItem = slots[n].get_child(0)
+			selectedItem.equiped()
+		else:
+			selectedItem = null
 		
 
 
