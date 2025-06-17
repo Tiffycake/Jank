@@ -32,7 +32,7 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
-- [ ] player pushing
+- [ ] player pushing :despair:
 
 
 ## Done
