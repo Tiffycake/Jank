@@ -7,8 +7,8 @@ var textureTemp = preload("res://textures/gun.svg")
 @onready var objectList: Node = $"../../../../../objectList"
 @onready var player: CharacterBody2D = $"../../.."
 @onready var playerSprite:  = $"../../../Sprite2D"
-
 @onready var timer: Timer = $Timer
+
 @onready var sound : AudioStreamPlayer2D = $sound
 
 var bulletId : int

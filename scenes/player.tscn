@@ -87,7 +87,6 @@ visible = false
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
 maxHealth = 100
-unbreakable = true
 
 [node name="HitboxComponent" parent="." instance=ExtResource("3_fjrip")]
 

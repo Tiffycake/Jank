@@ -10,8 +10,8 @@ var slotId : int
 #var inventory : Inventory
 #var slotList : Dictionary
 var slotContent : invItem 
-var slotNode : Node2D
-var slotParent : Node2D
+#var slotNode : Node2D  
+var slotParent : Node2D 
 
 
 
@@ -55,7 +55,6 @@ func slotHighlight() -> void:
 		slotOutline.hide()
 
 
-
 func _drop_data(_at_position: Vector2, data: Variant) -> void: # runs on release
 	
 	if data is invItem:
@@ -64,10 +63,13 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void: # runs on release
 		slotParent = data.get_parent() # slot node of the input slot
 		get_slot() # slotContent = inventory.slots[slotId].get_child(0) # item on the current slot id
 		 
+		#cursed_reparent.rpc(data,inventory.slots[slotId])
 		data.reparent(inventory.slots[slotId])
 		
 		if slotContent != null:
+			#cursed_reparent.rpc(slotContent,slotParent)
 			slotContent.reparent(slotParent) 
+			
 			#spawn texture on this slot
 		inventory.selectItem(int(str(slotParent.name)[-1]))
 
@@ -85,7 +87,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:  # runs on press
 	
 	slotContent = inventory.slots[slotId].get_child(0)
 	
-	if slotNode != null:
+	if slotContent != null:
 		previewTexture.texture = slotContent.texture 
 		previewTexture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE 
 		previewTexture.size = Vector2(80,80)
@@ -94,5 +96,5 @@ func _get_drag_data(_at_position: Vector2) -> Variant:  # runs on press
 	set_drag_preview(preview) 
 	#var balls = 
 	 
-	return slotNode
+	return slotContent
 	

@@ -19,14 +19,15 @@ kanban-plugin: board
 
 - [ ] ammo count
 - [ ] handling player deaths
+- [ ] make inventory slot movement rpc call
 
 
 ## tiffy doing
 
 - [ ] me :JunoShy:
-- [ ] inventory system
-- [ ] make a generic item component
+- [x] inventory system
 - [ ] make hud interact correctly with player
+- [ ] make generic item component better
 
 
 ## milla doing
@@ -41,6 +42,7 @@ kanban-plugin: board
 - [x] skin color picker (outer/inner layer + hands)
 - [x] revamping playertexture
 - [x] Hud slots
+- [x] make a generic item component
 
 
 ***

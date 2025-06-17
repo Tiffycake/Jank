@@ -1,9 +1,9 @@
 extends CharacterBody2D # change this to RigidBody2D one day
 
 @onready var atkComp : AttackComponent = $"AttackComponent"
-var pos:Vector2
+var pos :Vector2
 var rota:float
-var dir:float
+var dir :float
 #@onready var player : CharacterBody2D = $"../../.."
 
 

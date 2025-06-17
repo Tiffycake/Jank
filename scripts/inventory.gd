@@ -23,6 +23,13 @@ func _ready() -> void:
 	selectItem(0)
 	#selectedItem = slots[0].get_child(0)
 
+
+
+
+func selectItem3(n: int) -> void:
+	selectItem.rpc(n)
+
+@rpc("any_peer", "call_local")
 func selectItem(n: int) -> void:
 	# inventory.items.size() > n:# if slot is in range
 	# this is harcoded to 5 but it doesnt matter lol

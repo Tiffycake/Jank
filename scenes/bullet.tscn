@@ -13,6 +13,7 @@ script = ExtResource("1_l5glv")
 
 [node name="AttackComponent" parent="." instance=ExtResource("2_qncy5")]
 rotation = 1.5708
+attackDamage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
 shape = SubResource("RectangleShape2D_l5glv")
