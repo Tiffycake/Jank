@@ -26,15 +26,15 @@ func _ready() -> void:
 	
 	#playerSprite.gunEquiped()
 	
-func fire():
+func fire() -> void:
 	if timer.time_left == 0   :
 		spawn_bullet.rpc()
 
-func equiped():
+func equiped() -> void:
 	super()
 	playerSprite.gunEquiped()
 	
-func unEquiped():
+func unEquiped() -> void:
 	super()
 	playerSprite.unarmed()
 	

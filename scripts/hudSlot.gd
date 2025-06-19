@@ -38,7 +38,6 @@ func set_slot_texture():
 
 
 func slotHighlight() -> void:
-	
 	if inventory.selectedSlot == slotId:
 		slot.hide()
 		slotOutline.show()
