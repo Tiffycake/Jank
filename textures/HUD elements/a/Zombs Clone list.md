@@ -20,14 +20,15 @@ kanban-plugin: board
 - [ ] ammo count
 - [ ] handling player deaths
 - [ ] make inventory slot movement rpc call
+- [ ] player nametag
 
 
 ## tiffy doing
 
 - [ ] me :JunoShy:
 - [x] inventory system
-- [ ] make hud interact correctly with player
 - [ ] make generic item component better
+- [ ] make hud slots display texture
 
 
 ## milla doing

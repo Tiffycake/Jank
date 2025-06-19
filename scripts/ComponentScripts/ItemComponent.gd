@@ -1,7 +1,7 @@
 extends Node2D
 class_name invItem
  
-@export var texture : Texture2D 
+@export var texture : Texture2D
 @export var nameId : String 
 
 func equiped():

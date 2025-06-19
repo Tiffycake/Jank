@@ -16,21 +16,23 @@ func _process(_delta: float) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slots = get_children()
+	
+	
+	#this unequips everything and then equips slot 0
 	for i in slots:
 		if i.find_child("*",false):
 			i.get_child(0).unEquiped()
 	
-	selectItem(0)
-	#selectedItem = slots[0].get_child(0)
+	selectItem(0) 
 
 
 
 
-func selectItem3(n: int) -> void:
-	selectItem.rpc(n)
+func selectItem(n: int) -> void:
+	selectItem1.rpc(n)
 
 @rpc("any_peer", "call_local")
-func selectItem(n: int) -> void:
+func selectItem1(n: int) -> void:
 	# inventory.items.size() > n:# if slot is in range
 	# this is harcoded to 5 but it doesnt matter lol
 	

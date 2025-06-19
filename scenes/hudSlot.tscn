@@ -34,4 +34,10 @@ layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_r2s5s")
 
-[node name="Sprite2D" type="Sprite2D" parent="CenterContainer/Panel"]
+[node name="slotTexture" type="TextureRect" parent="CenterContainer/Panel"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 2

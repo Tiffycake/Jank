@@ -34,10 +34,8 @@ var use      : bool
 
 
 func _ready() -> void: 
-	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
-	 
 	#inventory.selectItem(0)
-	
+	sprite.setSkin(Globals.bodyColor, Globals.handsColor) 
 	if is_multiplayer_authority():
 		add_child(camera)
 		HUD.visible = true
