@@ -4,6 +4,9 @@ class_name Player
 
 var speed: = 600
 var id : int
+@export var inputVel := Vector2.ZERO
+@export var pushVel := Vector2.ZERO
+const pushResetScale := 0.000000001
 
 #region
 var camera : Camera2D = Camera2D.new()
@@ -46,7 +49,7 @@ func getInput():
 	attack = Input.is_action_pressed("leftClick")
 	use    = Input.is_action_pressed("rightClick")
 	inputDir = Input.get_vector("left","right","up","down")
-	velocity = inputDir * speed
+	inputVel = inputDir * speed
 	
 	if Input.is_action_just_released("srollUp") : 
 		#print("srollUp")
@@ -60,13 +63,26 @@ func getInput():
 		if inventory.selectedItem.has_method("fire"):
 			inventory.selectedItem.fire()
 
+func handlePush():
+	for index in get_slide_collision_count():
+		var collision := get_slide_collision(index)
+		if(collision.get_collider() is Player):
+			collision.get_collider().pushVel = velocity
+
 func _physics_process(delta: float) -> void:
+	pushVel = lerp(pushVel, Vector2.ZERO, 1 - pow(pushResetScale, delta))
 	if is_multiplayer_authority():
 		getInput()
+	handlePush()
 	squish(delta)
+	velocity = inputVel + pushVel
 	move_and_slide()
 
 func squish(delta: float) -> void:
+	for index in get_slide_collision_count():
+		var collision := get_slide_collision(index)
+		if(collision.get_collider() is Player):
+			return
 	if is_on_wall():
 		var angle_to_wall = rad_to_deg(inputDir.angle_to(get_wall_normal()))
 		if (angle_to_wall < 0): angle_to_wall = angle_to_wall * -1

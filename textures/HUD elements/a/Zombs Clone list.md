@@ -34,7 +34,6 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
-- [ ] player pushing :despair:
 
 
 ## Done
@@ -44,6 +43,7 @@ kanban-plugin: board
 - [x] revamping playertexture
 - [x] Hud slots
 - [x] make a generic item component
+- [x] player pushing :despair:
 
 
 ***
