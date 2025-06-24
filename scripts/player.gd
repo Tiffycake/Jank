@@ -83,6 +83,8 @@ func squish(delta: float) -> void:
 		var collision := get_slide_collision(index)
 		if(collision.get_collider() is Player):
 			return
+			
+
 	if is_on_wall():
 		var angle_to_wall = rad_to_deg(inputDir.angle_to(get_wall_normal()))
 		if (angle_to_wall < 0): angle_to_wall = angle_to_wall * -1
