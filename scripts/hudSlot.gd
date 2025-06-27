@@ -1,11 +1,12 @@
 extends Control
+
+var slota: Node2D
+
+
 @onready var inventory : = $"../../../../Inventory" # wow wtf is this
 						#slots / controll / HUD / player
-
-@onready var slot: Sprite2D = $Slot
 @onready var slotOutline: Sprite2D = $SlotOutline
-@onready var Slots: Control = $".." #Slots
-
+@onready var slot: Sprite2D = $Slot
 @onready var textureSprite: TextureRect = $"CenterContainer/Panel/slotTexture"
 
 #var inventory : Inventory
@@ -20,22 +21,30 @@ var marker : bool = true
 
 func _ready() -> void:
 	slotId = int(str(name)[-1]) # const
+	slota = inventory.get_child(slotId)
 	get_slot()
-	if slotContent != null:
-		set_slot_texture(slotContent.texture)
+	# texture thing #if slotContent != null:
+		# texture thing #set_slot_texture(slotContent.texture)
 
 
 func _process(_delta: float) -> void:
 	slotHighlight()
+
+func updateTexture():
+	if slota.find_child("*",false):
+		textureSprite.texture = slota.get_child(0).texture
+	else:
+		textureSprite.texture = null
+		
 
 func get_slot():
 	#if inventory.slots.size() > slotId+1:
 	if inventory.get_children()[slotId].find_child("*",false):
 		slotContent = inventory.get_children()[slotId].get_child(0)
 
-func set_slot_texture(a):
-	if a != null:# and slotContent.texture != null:
-		textureSprite.texture = a 
+# texture thing #func set_slot_texture(a):
+# texture thing #	if a != null:# and slotContent.texture != null:
+# texture thing #		textureSprite.texture = a 
 
 
 func slotHighlight() -> void:
@@ -58,9 +67,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void: # runs on release
 		
 		data.reparent(inventory.slots[slotId])
 		#cursed_reparent.rpc(data,inventory.slots[slotId])
-		if textureSprite.texture != null:
+		# texture thing #if textureSprite.texture != null:
 			
-			Slots.get_child(idPrevSlot).get_child(2).get_child(0).get_child(0).texture = textureSprite.texture
+		# texture thing #	Slots.get_child(idPrevSlot).get_child(2).get_child(0).get_child(0).texture = textureSprite.texture
 
 			
 		if slotContent != null:
@@ -82,7 +91,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:  # runs on press
 	
 	
 	# actually turn it into the other node
-	textureSprite.texture = null
+	# texture thing #textureSprite.texture = null
 	
 	get_slot()
 	

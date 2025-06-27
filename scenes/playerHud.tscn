@@ -31,10 +31,11 @@ script = ExtResource("4_4es50")
 [node name="healthBarBG" type="Sprite2D" parent="Control"]
 texture_filter = 5
 position = Vector2(205, 1031)
-scale = Vector2(1.11552, 1.17511)
+scale = Vector2(1.116, 1.134)
 texture = ExtResource("1_bxty2")
 
 [node name="healthBar" type="TextureProgressBar" parent="Control"]
+texture_filter = 5
 layout_mode = 0
 offset_left = 22.0
 offset_top = 1004.0
