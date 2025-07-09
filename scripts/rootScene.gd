@@ -7,6 +7,8 @@ var tempInstance
 func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
+	
+	
 	#var a : int = 6
 	#print(6%a)
 	#print(4%a)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cndifwcy6jwe6"]
+
+[ext_resource type="Texture2D" uid="uid://ci3ajowl3ktgj" path="res://resources/textures/circle.svg" id="1_pg2rt"]
+
+[node name="Pickup" type="Node2D"]
+
+[node name="sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("1_pg2rt")
+
+[node name="icon" type="Sprite2D" parent="."]
+scale = Vector2(0.65, 0.65)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd73n5hd0n1qh"]
 
 [ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://scripts/bullet.gd" id="1_l5glv"]
-[ext_resource type="Texture2D" uid="uid://pm35mx6eiioi" path="res://textures/bullet.svg" id="2_eoqba"]
+[ext_resource type="Texture2D" uid="uid://pm35mx6eiioi" path="res://resources/textures/bullet.svg" id="2_eoqba"]
 [ext_resource type="PackedScene" uid="uid://ccy36qcnbo0dk" path="res://scenes/Components/AttackComponent.tscn" id="2_qncy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
@@ -13,7 +13,6 @@ script = ExtResource("1_l5glv")
 
 [node name="AttackComponent" parent="." instance=ExtResource("2_qncy5")]
 rotation = 1.5708
-attackDamage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
 shape = SubResource("RectangleShape2D_l5glv")

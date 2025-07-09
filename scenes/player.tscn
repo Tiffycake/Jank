@@ -1,18 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://3higeki8udsa"]
+[gd_scene load_steps=15 format=3 uid="uid://3higeki8udsa"]
 
 [ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://scripts/player.gd" id="1_smehm"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="2_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://ba2comoj2jbjy" path="res://scenes/playerHud.tscn" id="2_ur7pv"]
-[ext_resource type="Script" uid="uid://chstbdoytej6f" path="res://scripts/inventory.gd" id="2_y4r1p"]
+[ext_resource type="Script" uid="uid://dxy53bgkokdx0" path="res://scripts/inventory.gd" id="2_y4r1p"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://scenes/Components/HitboxComponent.tscn" id="3_fjrip"]
-[ext_resource type="PackedScene" uid="uid://rprte4yhjl7p" path="res://scenes/items/wallPlacer.tscn" id="3_ur7pv"]
-[ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/items/weapon.tscn" id="4_tuyoq"]
-[ext_resource type="PackedScene" uid="uid://odsgtbc0vey0" path="res://scenes/items/example_item.tscn" id="4_y4r1p"]
 [ext_resource type="Script" uid="uid://b1oc161a3c6uo" path="res://scripts/playerSprite.gd" id="6_fjrip"]
-[ext_resource type="Texture2D" uid="uid://b0beevi77dsmn" path="res://textures/gun.svg" id="7_3v2ag"]
-[ext_resource type="Texture2D" uid="uid://bs3hgkqylvrf7" path="res://textures/Player Skins/balls/balls generic.svg" id="7_ur7pv"]
-[ext_resource type="Texture2D" uid="uid://c6bvhyawqa7ck" path="res://textures/Player Skins/hands/hands generic.svg" id="9_y4r1p"]
-[ext_resource type="Texture2D" uid="uid://da2bhtdfgh6i7" path="res://textures/random textures/blueprintbase_512-893892667.png" id="11_jej6c"]
+[ext_resource type="Texture2D" uid="uid://bs3hgkqylvrf7" path="res://resources/textures/Player Skins/balls/balls generic.svg" id="7_ur7pv"]
+[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://scripts/ComponentScripts/ItemComponent.gd" id="8_y4r1p"]
+[ext_resource type="Resource" uid="uid://dpp708tku67u" path="res://resources/invItems/weapon.tres" id="9_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://c6bvhyawqa7ck" path="res://resources/textures/Player Skins/hands/hands generic.svg" id="9_y4r1p"]
+[ext_resource type="Resource" uid="uid://duqd864m7ui1l" path="res://resources/invItems/weapon1.tres" id="10_d2wvv"]
+[ext_resource type="Resource" uid="uid://dkbsecr3mbe0r" path="res://resources/invItems/wall_placer.tres" id="11_3v2ag"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1xral"]
 radius = 54.0
@@ -48,6 +47,7 @@ motion_mode = 1
 script = ExtResource("1_smehm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_ur7pv")
@@ -68,33 +68,13 @@ texture = ExtResource("9_y4r1p")
 [node name="HUD" parent="." instance=ExtResource("2_ur7pv")]
 visible = false
 
-[node name="Inventory" type="Node2D" parent="."]
-position = Vector2(80, 0)
-script = ExtResource("2_y4r1p")
-
-[node name="slot0" type="Node2D" parent="Inventory"]
-
-[node name="Weapon" parent="Inventory/slot0" instance=ExtResource("4_tuyoq")]
-visible = false
-texture = ExtResource("7_3v2ag")
-
-[node name="slot1" type="Node2D" parent="Inventory"]
-
-[node name="exampleItem" parent="Inventory/slot1" instance=ExtResource("4_y4r1p")]
-visible = false
-
-[node name="slot2" type="Node2D" parent="Inventory"]
-
-[node name="wallPlacer" parent="Inventory/slot2" instance=ExtResource("3_ur7pv")]
-visible = false
-texture = ExtResource("11_jej6c")
-
-[node name="slot3" type="Node2D" parent="Inventory"]
-
-[node name="slot4" type="Node2D" parent="Inventory"]
-
 [node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
 maxHealth = 100
+
+[node name="Inventory" type="Node2D" parent="."]
+position = Vector2(100, 0)
+script = ExtResource("2_y4r1p")
+_content_array = Array[ExtResource("8_y4r1p")]([ExtResource("9_d2wvv"), ExtResource("10_d2wvv"), ExtResource("11_3v2ag"), null, null])
 
 [node name="HitboxComponent" parent="." instance=ExtResource("3_fjrip")]
 

@@ -1,4 +1,4 @@
-extends invItem
+extends Item
 
 @export var color : Color
 # Called when the node enters the scene tree for the first time.

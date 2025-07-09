@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0xvbxopa5yrf"]
 
-[ext_resource type="Texture2D" uid="uid://b2tq2hcgw0uhu" path="res://textures/background.svg" id="1_fgl0d"]
+[ext_resource type="Texture2D" uid="uid://b2tq2hcgw0uhu" path="res://resources/textures/background.svg" id="1_fgl0d"]
 [ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://scripts/spawner.gd" id="2_8rtnk"]
 
 [node name="WorldMap" type="Node2D"]

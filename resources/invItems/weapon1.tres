@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://duqd864m7ui1l"]
+
+[ext_resource type="Texture2D" uid="uid://kvpss2onfgii" path="res://resources/textures/random textures/UncommonContainment.png" id="1_hxjkf"]
+[ext_resource type="PackedScene" uid="uid://hml8qyu1fbw4" path="res://scenes/items/new folder/weapon.tscn" id="2_aai83"]
+[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://scripts/ComponentScripts/ItemComponent.gd" id="3_eegkr"]
+
+[resource]
+script = ExtResource("3_eegkr")
+icon = ExtResource("1_hxjkf")
+nameId = "Gun"
+scene = ExtResource("2_aai83")
+initialized = false
+metadata/_custom_type_script = "uid://i0ebpvahkca5"

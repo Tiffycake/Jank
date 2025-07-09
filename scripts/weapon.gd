@@ -1,26 +1,33 @@
-extends invItem
-#class_name Weapon
+extends Item
+class_name Weapon
+
 
 var bulletPath = preload("res://scenes/bullet.tscn")
-var textureTemp = preload("res://textures/gun.svg")
+#var textureTemp = preload("res://textures/gun.svg")
 
-@onready var objectList: Node = $"../../../../../objectList"
-@onready var player: CharacterBody2D = $"../../.."
-@onready var playerSprite:  = $"../../../Sprite2D"
+@onready var objectList: Node = $"../../../../objectList"
+@onready var player: CharacterBody2D = $"../.."
+@onready var playerSprite:  = $"../../Sprite2D"
+@onready var weaponSprite:  = $"Sprite2D"
 @onready var timer: Timer = $Timer
 
+@export var weapon_stats : stat_sheet
 @onready var sound : AudioStreamPlayer2D = $sound
 
 var bulletId : int
 
-
-var bulletLifetime		: int = 60
-var bulletSpeed			: int = 2000 # projectile speed
-var atackDamage			: int = 10 # weaponAtackDamage
-var atackSpeed			: float = 5  # attacks per second
+var bulletLifetime		: int 
+var bulletSpeed			: int
+var atackDamage			: int 
+var atackSpeed			: float
 
 func _ready() -> void:
-	#texture = textureTemp
+	weaponSprite.texture	=   weapon_stats.weaponSprite
+	bulletLifetime		=   weapon_stats.bulletLifetime
+	bulletSpeed			=   weapon_stats.bulletSpeed
+	atackDamage			=   weapon_stats.atackDamage
+	atackSpeed			=   weapon_stats.atackSpeed 
+	
 	timer.wait_time = 1/atackSpeed
 	timer.one_shot = true
 	
@@ -30,11 +37,11 @@ func fire() -> void:
 	if timer.time_left == 0   :
 		spawn_bullet.rpc()
 
-func equiped() -> void:
+func equip() -> void:
 	super()
 	playerSprite.gunEquiped()
 	
-func unEquiped() -> void:
+func unequip() -> void:
 	super()
 	playerSprite.unarmed()
 	

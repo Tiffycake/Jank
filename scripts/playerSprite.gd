@@ -19,6 +19,7 @@ const unarmedState		: = Vector2(99.0,-128.0)
 		#b.append(a)
 	#return b
 
+
 func gunEquiped() -> void: 
 	hand1.position = gunEquipedState * Vector2(-1,1)
 	hand2.position = gunEquipedState 
@@ -38,7 +39,6 @@ func setSkin1(a1: Color):
 		changeBody(a1)
 		changeHands(a1)
 
- 
 func changeBody(a2: Color) -> void:
 	self_modulate = a2
 

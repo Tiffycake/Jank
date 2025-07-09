@@ -1,7 +1,7 @@
 extends CharacterBody2D 
 class_name Player
 
-
+var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}
 var speed: = 600
 var id : int
 @export var inputVel := Vector2.ZERO
@@ -18,7 +18,6 @@ var camera : Camera2D = Camera2D.new()
 
 #var inventory : = Inventory.new() # preload("res://invItems/Inventory.tres")
 #endregion
-
 #region scales
 const maxScale := 1.0
 const minScale := 0.75
@@ -54,20 +53,21 @@ func getInput():
 	if Input.is_action_just_released("srollUp") : 
 		#print("srollUp")
 		inventory.selectItem(inventory.selectedSlot-1)
+		
 	elif Input.is_action_just_released("srollDown"):
 		#print("srollDown") 
 		inventory.selectItem(inventory.selectedSlot+1)
 	
-	 
-	if attack == true and inventory.selectedItem != null :
-		if inventory.selectedItem.has_method("fire"):
-			inventory.selectedItem.fire()
+	
+	for i in inp_dic:
+		if Input.is_action_pressed(inp_dic[i]):
+			inventory.selectItem(i)
+		
 
-func handlePush():
-	for index in get_slide_collision_count():
-		var collision := get_slide_collision(index)
-		if(collision.get_collider() is Player):
-			collision.get_collider().pushVel = velocity
+	# TODO: rewrite attack thingie
+	if attack == true and inventory.selectedItem != null :
+		if inventory.selectedNode.has_method("fire"):
+			inventory.selectedNode.fire()
 
 func _physics_process(delta: float) -> void:
 	pushVel = lerp(pushVel, Vector2.ZERO, 1 - pow(pushResetScale, delta))
@@ -83,7 +83,6 @@ func squish(delta: float) -> void:
 		var collision := get_slide_collision(index)
 		if(collision.get_collider() is Player):
 			return
-			
 
 	if is_on_wall():
 		var angle_to_wall = rad_to_deg(inputDir.angle_to(get_wall_normal()))
@@ -97,6 +96,12 @@ func squish(delta: float) -> void:
 	else:
 		if(coolBox.scale.x < maxScale):
 			coolBox.scale = Vector2(coolBox.scale.x + delta * scale_factor, coolBox.scale.y + delta * scale_factor)
+
+func handlePush():
+	for index in get_slide_collision_count():
+		var collision := get_slide_collision(index)
+		if(collision.get_collider() is Player):
+			collision.get_collider().pushVel = velocity
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
@@ -132,6 +137,10 @@ func balls():
 		sprite.setSkin1(sprite.modulate+Color(0.1,0,0) )
 	 
 
+	for i in { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}:
+		#Input.is_action_pressed(i[])
+		print(i) # key 
+		print({ 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}[i])
 
 
 var counter : int = 0

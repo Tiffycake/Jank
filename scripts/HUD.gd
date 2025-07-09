@@ -6,7 +6,8 @@ extends CanvasLayer
 
 func _ready() -> void:
 	$"Unused".queue_free()
- 
-func _process(_delta: float) -> void:
-	for i in slots:
-		i.updateTexture()
+	
+
+#func _process(_delta: float) -> void:
+	#for i in slots:
+		#i.updateTexture()

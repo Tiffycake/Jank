@@ -1,17 +1,17 @@
-extends invItem
+extends Item
 
 const wallPath = preload("res://scenes/basic_wall.tscn")
 
-@onready var objectList: Node = $"../../../../../objectList"
+@onready var objectList: Node = $"../../../../objectList"
 @onready var timer: Timer = $Timer
-@onready var player: = $"../../.."
+@onready var player: = $"../.."
 
 #@onready var objectList: Node = $"../../../../objectList"
 #@onready var playerSprite:  = $"../../../Sprite2D"
 
 
 var atackSpeed : float = 1  # attacks per second
-var textureTemp : Texture2D = preload("res://textures/random textures/blueprintbase_512-893892667.png")
+#var textureTemp : Texture2D = preload("res://textures/random textures/blueprintbase_512-893892667.png")
 
 var wallId : int
 
@@ -32,7 +32,7 @@ func spawnWall(mousePos) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	texture = textureTemp 
+	#texture = textureTemp 
 	timer.wait_time = 1/atackSpeed
 	timer.one_shot = true	
 
