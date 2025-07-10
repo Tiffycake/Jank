@@ -20,7 +20,6 @@ kanban-plugin: board
 - [ ] ammo count
 - [ ] handling player deaths
 - [ ] make inventory slot movement rpc call
-- [ ] player nametag
 
 
 ## tiffy doing
@@ -34,6 +33,7 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
+- [ ] player nametag
 
 
 ## Done

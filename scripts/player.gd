@@ -15,6 +15,8 @@ var camera : Camera2D = Camera2D.new()
 @onready var sprite: Sprite2D = $"Sprite2D"
 @onready var HUD : = $HUD
 @onready var inventory : = $"Inventory"
+@onready var username: Label = $usernameHandler/username
+
 
 #var inventory : = Inventory.new() # preload("res://invItems/Inventory.tres")
 #endregion
@@ -37,7 +39,8 @@ var use      : bool
 
 func _ready() -> void: 
 	#inventory.selectItem(0)
-	sprite.setSkin(Globals.bodyColor, Globals.handsColor) 
+	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
+	username.text = Globals.username
 	if is_multiplayer_authority():
 		add_child(camera)
 		HUD.visible = true

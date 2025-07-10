@@ -7,6 +7,8 @@ var playerScene : PackedScene = preload("res://scenes/player.tscn")
 @onready var joinButton := $"joinButton"
 @onready var body_color: ColorPicker = $bodyColor
 @onready var hands_color: ColorPicker = $handsColor
+@onready var username: LineEdit = $username
+
 var objectList : Node
 const buttonScale := Vector2(0.3, 0.3)
 const buttonHoverScale := Vector2(0.32, 0.32)
@@ -14,8 +16,7 @@ const buttonHoverScale := Vector2(0.32, 0.32)
 	
 
 func hostButtonPressed(): 
-	Globals.bodyColor = body_color.color
-	Globals.handsColor = hands_color.color
+	updatePlayerInfo()
 	#print("hostButtonPressed")
 	peer.create_server(port)
 	multiplayer.multiplayer_peer = peer
@@ -25,8 +26,7 @@ func hostButtonPressed():
 	hide()
 
 func joinButtonPressed():
-	Globals.bodyColor = body_color.color
-	Globals.handsColor = hands_color.color 
+	updatePlayerInfo()
 	peer.create_client("localhost",port)
 	multiplayer.multiplayer_peer = peer
 	process_mode = Node.PROCESS_MODE_DISABLED
@@ -44,6 +44,11 @@ func tweenMaker(object,variant) -> Callable:
 		var tween = get_tree().create_tween()
 		tween.tween_property(object, "scale", variant, 0.1)
 	return outputFunc
+
+func updatePlayerInfo() -> void:
+	Globals.bodyColor = body_color.color
+	Globals.handsColor = hands_color.color
+	Globals.username = username.text
 
 func _ready() -> void:
 	hostButton.pressed.connect(hostButtonPressed)
