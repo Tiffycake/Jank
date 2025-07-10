@@ -64,6 +64,7 @@ func remove_item1(n:int):
 	
 func swap(a1: int,a2: int) -> void:
 	# fuck
+	# ps: yep
 	var b = _content_array[a1]
 	_content_array[a1] = _content_array[a2]
 	_content_array[a2] = b
