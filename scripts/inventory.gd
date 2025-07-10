@@ -10,32 +10,32 @@ var selectedItem : InvItem
 
 var selectedNode : Item
 
+func selectItem(n: int):		func_maker(_selectItem1,n)
+func remove_item(n: int):		func_maker(remove_item1,n)
+func add_item(item:InvItem):	func_maker(add_item1,item)
+
+func func_maker(function:Callable, variant: Variant ) -> Callable:
+	var outputFunc = func outputFunc(a):
+		function.rpc(a)
+	return outputFunc
+
 func _init() -> void: 
 	pass
-	#_content_array.resize(inv_size)
+	_content_array.resize(inv_size)
 	#_content_array.fill(null)
-	
-	#add_item1(temp_weapon)
-
-func func_maker( function:Callable) -> Callable: # , variant:Variant
-	var outputFunc = func outputFunc():
-		function.rpc(function) # what the frick is this 
-	return outputFunc          # please learn callables
 
 
-func selectItem(n: int) -> void:
+func selectItem4(n: int) -> void:
 	_selectItem1.rpc(n)
 
-func remove_item(n:int):
+func remove_item4(n:int):
 	remove_item1.rpc(n)
 
-func add_item(item:InvItem):
+func add_item4(item:InvItem):
 	add_item1.rpc(item)
-	
+
 func _ready() -> void:
-	var selectItem : Callable =  func_maker(_selectItem1)
-	var remove_item : Callable = func_maker(remove_item1)
-	var add_item : Callable =    func_maker(add_item1)
+	pass
 
 @rpc("any_peer", "call_local")
 func _selectItem1(n: int) -> void:

@@ -8,6 +8,7 @@ kanban-plugin: board
 
 - [ ] grid for building
 - [ ] work on particle component
+- [ ] [[damage types]]
 
 
 ## peak milla ideas
@@ -19,15 +20,18 @@ kanban-plugin: board
 
 - [ ] ammo count
 - [ ] handling player deaths
+<<<<<<< HEAD
 - [ ] make inventory slot movement rpc call
+=======
+- [ ] player nametag
+>>>>>>> af2ddd0 (explosion)
 
 
 ## tiffy doing
 
 - [ ] me :JunoShy:
-- [ ] inventory system 3rd remake
-- [x] make generic item component better
-- [x] make hud slots display texture
+- [ ] make generic item component better
+- [ ] improve inv system
 
 
 ## milla doing
@@ -44,6 +48,9 @@ kanban-plugin: board
 - [x] Hud slots
 - [x] make a generic item component
 - [x] player pushing :despair:
+- [x] inventory system 3rd remake
+- [x] make hud slots display texture
+- [x] make inventory slot movement rpc call
 
 
 ***
