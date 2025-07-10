@@ -20,11 +20,9 @@ kanban-plugin: board
 
 - [ ] ammo count
 - [ ] handling player deaths
-<<<<<<< HEAD
+	<<<<<<< HEAD
 - [ ] make inventory slot movement rpc call
-=======
-- [ ] player nametag
->>>>>>> af2ddd0 (explosion)
+	=======
 
 
 ## tiffy doing
@@ -37,7 +35,7 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
-- [ ] player nametag
+- [x] player nametag
 
 
 ## Done
@@ -51,6 +49,7 @@ kanban-plugin: board
 - [x] inventory system 3rd remake
 - [x] make hud slots display texture
 - [x] make inventory slot movement rpc call
+- [x] player nametag
 
 
 ***

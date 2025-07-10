@@ -5,7 +5,6 @@
 
 [node name="exampleItem" type="Node2D"]
 script = ExtResource("1_r1tsa")
-texture = ExtResource("2_dxdjd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.57079

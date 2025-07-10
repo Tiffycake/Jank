@@ -3,39 +3,25 @@ class_name Inventory
 #@export var inv1 : inv
 var selectedSlot : int = 0
 @export var _content_array : Array[InvItem]
-var inv_size : int = 5
+const inv_size : int = 5
 #var temp_weapon  : InvItem = ( preload("res://resources/invItems/weapon.tres") as InvItem )
 
 var selectedItem : InvItem
 
 var selectedNode : Item
 
-func selectItem(n: int):		func_maker(_selectItem1,n)
-func remove_item(n: int):		func_maker(remove_item1,n)
-func add_item(item:InvItem):	func_maker(add_item1,item)
-
-func func_maker(function:Callable, variant: Variant ) -> Callable:
-	var outputFunc = func outputFunc(a):
-		function.rpc(a)
-	return outputFunc
-
-func _init() -> void: 
+func selectItem(n: int):		_selectItem1.rpc(n)
+func remove_item(n: int):		remove_item1.rpc(n)
+func add_item(item:InvItem):	add_item1.rpc(item)
+ 
+func _init() -> void:
 	pass
 	_content_array.resize(inv_size)
 	#_content_array.fill(null)
 
-
-func selectItem4(n: int) -> void:
-	_selectItem1.rpc(n)
-
-func remove_item4(n:int):
-	remove_item1.rpc(n)
-
-func add_item4(item:InvItem):
-	add_item1.rpc(item)
-
+ 
 func _ready() -> void:
-	pass
+	selectItem(0)
 
 @rpc("any_peer", "call_local")
 func _selectItem1(n: int) -> void:
@@ -54,9 +40,11 @@ func _selectItem1(n: int) -> void:
 				selectedNode.equip()
 			else: 
 				selectedNode = selectedItem.scene.instantiate()
+				if selectedNode is Weapon:
+					selectedNode.weapon_stats = selectedItem.stats
 				selectedNode.name = str(n) # InvItem
 				add_child(selectedNode)
-				selectedNode.equip()
+				selectedNode.equip() 
 				selectedItem.initialized = true
 
 

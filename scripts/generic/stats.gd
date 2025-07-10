@@ -6,3 +6,4 @@ class_name stat_sheet
 @export var atackDamage			: int  # = 10 # weaponAtackDamage
 @export var atackSpeed			: float# = 5  # attacks per second
 @export var weaponSprite			: Texture2D
+@export var offset : Vector2

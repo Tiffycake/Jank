@@ -67,7 +67,7 @@ func getInput():
 			inventory.selectItem(i)
 		
 
-	# TODO: rewrite attack thingie
+	# TODO: rewrite attack thingie // which one ???
 	if attack == true and inventory.selectedItem != null :
 		if inventory.selectedNode.has_method("fire"):
 			inventory.selectedNode.fire()

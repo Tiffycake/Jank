@@ -48,8 +48,10 @@ func tweenMaker(object,variant) -> Callable:
 func updatePlayerInfo() -> void:
 	Globals.bodyColor = body_color.color
 	Globals.handsColor = hands_color.color
-	Globals.username = username.text
-
+	if username.text != "":
+		Globals.username = username.text
+	else:
+		Globals.username = ":3"
 func _ready() -> void:
 	hostButton.pressed.connect(hostButtonPressed)
 	joinButton.pressed.connect(joinButtonPressed)

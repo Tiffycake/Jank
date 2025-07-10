@@ -89,7 +89,12 @@ picker_shape = 1
 color_modes_visible = false
 presets_visible = false
 
-[node name="bodyText" type="RichTextLabel" parent="."]
+[node name="texts" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bodyText" type="RichTextLabel" parent="texts"]
 layout_mode = 0
 offset_left = 96.0
 offset_top = 41.0
@@ -101,7 +106,7 @@ text = "[wave amp=20.0 freq=5.0 connected=1]Body Color[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="handsText" type="RichTextLabel" parent="."]
+[node name="handsText" type="RichTextLabel" parent="texts"]
 layout_mode = 0
 offset_left = 416.0
 offset_top = 41.0
@@ -113,7 +118,8 @@ text = "[wave amp=20.0 freq=5.0 connected=1]Hands Color[/wave]"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="userText" type="RichTextLabel" parent="."]
+[node name="userText" type="RichTextLabel" parent="texts"]
+layout_mode = 0
 offset_left = 1455.0
 offset_top = 330.0
 offset_right = 1600.0

@@ -1,30 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://0uyiqscnhfx6"]
+[gd_scene load_steps=3 format=3 uid="uid://0uyiqscnhfx6"]
 
 [ext_resource type="Script" uid="uid://um2tckmdvn3" path="res://scripts/weapon.gd" id="1_xasec"]
-[ext_resource type="Script" uid="uid://hjfy1o8cf3ll" path="res://scripts/generic/stats.gd" id="2_k0op2"]
-[ext_resource type="Texture2D" uid="uid://c8njop1rykovf" path="res://resources/textures/zombs/CC-M4A1Weapon_29087.png" id="2_q5le8"]
 [ext_resource type="AudioStream" uid="uid://muw3tbxmvukv" path="res://resources/sounds/normal-hitclap.wav" id="3_bmw2d"]
-
-[sub_resource type="Resource" id="Resource_8akgp"]
-script = ExtResource("2_k0op2")
-bulletLifetime = 120
-bulletSpeed = 4000
-atackDamage = 1
-atackSpeed = 5.0
-weaponSprite = ExtResource("2_q5le8")
-metadata/_custom_type_script = "uid://hjfy1o8cf3ll"
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_xasec")
-weapon_stats = SubResource("Resource_8akgp")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9, 1)
 rotation = 1.57079
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_q5le8")
 offset = Vector2(0, -80)
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]

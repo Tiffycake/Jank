@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="stat_sheet" load_steps=3 format=3 uid="uid://bhe1d50rk66mm"]
+
+[ext_resource type="Script" uid="uid://hjfy1o8cf3ll" path="res://scripts/generic/stats.gd" id="1_yejvg"]
+[ext_resource type="Texture2D" uid="uid://b0beevi77dsmn" path="res://resources/textures/gun.svg" id="2_w4ljj"]
+
+[resource]
+script = ExtResource("1_yejvg")
+bulletLifetime = 200
+bulletSpeed = 1
+atackDamage = 90
+atackSpeed = 5.0
+weaponSprite = ExtResource("2_w4ljj")
+offset = Vector2(-50, 0)
+metadata/_custom_type_script = "uid://hjfy1o8cf3ll"

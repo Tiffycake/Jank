@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="stat_sheet" load_steps=3 format=3 uid="uid://btj665h43wvil"]
+
+[ext_resource type="Script" uid="uid://hjfy1o8cf3ll" path="res://scripts/generic/stats.gd" id="1_gurw8"]
+[ext_resource type="Texture2D" uid="uid://c8njop1rykovf" path="res://resources/textures/zombs/CC-M4A1Weapon_29087.png" id="2_pgqg0"]
+
+[resource]
+script = ExtResource("1_gurw8")
+bulletLifetime = 120
+bulletSpeed = 4000
+atackDamage = 1
+atackSpeed = 5.0
+weaponSprite = ExtResource("2_pgqg0")
+offset = Vector2(-9, 1)
+metadata/_custom_type_script = "uid://hjfy1o8cf3ll"
