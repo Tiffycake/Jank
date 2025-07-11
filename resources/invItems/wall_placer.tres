@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://scripts/ComponentScripts/ItemComponent.gd" id="3_t6lip"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_t6lip")
 icon = ExtResource("1_47cps")
-nameId = "Gun"
 scene = ExtResource("2_s3wiu")
 initialized = false
 metadata/_custom_type_script = "uid://i0ebpvahkca5"

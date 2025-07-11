@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://bhe1d50rk66mm" path="res://resources/invItems/stats/traper.tres" id="4_aai83"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_eegkr")
 icon = ExtResource("1_hxjkf")
 scene = ExtResource("2_hxjkf")
