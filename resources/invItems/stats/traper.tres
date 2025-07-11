@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0beevi77dsmn" path="res://resources/textures/gun.svg" id="2_w4ljj"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_yejvg")
 bulletLifetime = 200
 bulletSpeed = 1

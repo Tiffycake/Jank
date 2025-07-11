@@ -168,6 +168,36 @@
 			"y":-340,
 			"width":260,
 			"height":60
+		},
+		{
+			"id":"9ee2cd181622380f",
+			"type":"text",
+			"text":"stats  : stat_sheet",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-960,
+			"y":-820,
+			"width":260,
+			"height":60
+		},
+		{
+			"id":"57fcc7bc1799198b",
+			"type":"text",
+			"text":"\nbulletLifetime : int  \nbulletSpeed : int  \natackDamage : int  \natackSpeed : float\nweaponSprite : Texture2D\noffset : Vector2",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-960,
+			"y":-1100,
+			"width":260,
+			"height":190
+		},
+		{
+			"id":"0783390a05b09d18",
+			"type":"text",
+			"text":"6  ->  1\n5  ->  0\n4  ->  4\n3  ->  3\n2  ->  2\n1  ->  1\n0  ->  0 \n-1 ->  4\n-2 ->  3\n-3 ->  2\n-4 ->  1\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1560,
+			"y":-380,
+			"width":320,
+			"height":300
 		}
 	],
 	"edges":[
@@ -277,6 +307,33 @@
 			"fromSide":"right",
 			"toNode":"35bed3edce29133c",
 			"toSide":"left"
+		},
+		{
+			"id":"e6cae18aa0595ba9",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"de747e0f966adfe6",
+			"fromSide":"top",
+			"toNode":"9ee2cd181622380f",
+			"toSide":"bottom"
+		},
+		{
+			"id":"27cbe19b2fb70e0a",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"9ee2cd181622380f",
+			"fromSide":"top",
+			"toNode":"57fcc7bc1799198b",
+			"toSide":"bottom"
+		},
+		{
+			"id":"093b3b6542d0b97e",
+			"styleAttributes":{},
+			"toFloating":false,
+			"fromNode":"dec9682d1783643e",
+			"fromSide":"bottom",
+			"toNode":"0783390a05b09d18",
+			"toSide":"top"
 		}
 	],
 	"metadata":{

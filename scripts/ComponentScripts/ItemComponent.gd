@@ -13,5 +13,3 @@ class_name InvItem
 @export var stats  : stat_sheet
 
  
-## temp stuff
-var initialized : bool = false

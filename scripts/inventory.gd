@@ -10,6 +10,7 @@ var selectedItem : InvItem
 
 var selectedNode : Item
 
+func swap(a1: int,a2: int):		swap1.rpc(a1,a2)
 func selectItem(n: int):		_selectItem1.rpc(n)
 func remove_item(n: int):		remove_item1.rpc(n)
 func add_item(item:InvItem):	add_item1.rpc(item)
@@ -25,27 +26,26 @@ func _ready() -> void:
 
 @rpc("any_peer", "call_local")
 func _selectItem1(n: int) -> void:
-	# TODO fix this so it isn't broken
-	if n >= 0 and inv_size > n:
+	#if n >= 0 and inv_size > n: # TODO: replace this with a number normalizer DONE
+	n = n%5
+	if selectedNode != null:
+		selectedNode.unequip()
+	selectedSlot = n
+	selectedItem = _content_array[n]
+	
+	if selectedItem != null:
 		
-		if selectedNode != null:
-			selectedNode.unequip()
-		
-		selectedSlot = n
-		selectedItem = _content_array[n]
-		
-		if selectedItem != null:
-			if selectedItem.initialized:
-				selectedNode = get_node(str(n))
-				selectedNode.equip()
-			else: 
-				selectedNode = selectedItem.scene.instantiate()
-				if selectedNode is Weapon:
-					selectedNode.weapon_stats = selectedItem.stats
-				selectedNode.name = str(n) # InvItem
-				add_child(selectedNode)
-				selectedNode.equip() 
-				selectedItem.initialized = true
+		if find_child(str(n),false): #selectedItem.initialized:
+			selectedNode = get_node(str(n))
+			selectedNode.equip()
+		else:
+			selectedNode = selectedItem.scene.instantiate()
+			selectedNode.name = str(n)
+			if selectedNode is Weapon:
+				selectedNode.weapon_stats = selectedItem.stats 
+			add_child(selectedNode)
+			selectedNode.equip() 
+			#selectedItem.initialized = true
 
 
 func add_item1(item:InvItem): #item:InvItem
@@ -62,13 +62,11 @@ func remove_item1(n:int):
 	#selectItem(n)
 	
 	
-func swap(a1: int,a2: int) -> void:
-	# fuck
-	# ps: yep
-	var b = _content_array[a1]
+func swap1(a1: int,a2: int) -> void:
+	var b = _content_array[a1] # Array
 	_content_array[a1] = _content_array[a2]
 	_content_array[a2] = b
-	#selectItem() select a1
+	selectItem(a1) # select a1 
 
 
 func get_items() -> Array[InvItem]:
