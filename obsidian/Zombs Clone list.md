@@ -21,7 +21,7 @@ kanban-plugin: board
 - [ ] ammo count
 - [ ] handling player deaths
 	<<<<<<< HEAD
-- [ ] make inventory slot movement rpc call
+- [ ] [ ] make inventory slot movement rpc call
 	=======
 
 
@@ -36,6 +36,7 @@ kanban-plugin: board
 
 - [ ] me :JunoShy: ^nionpu
 - [x] player nametag
+- [ ] rewrite player as a rigid body
 
 
 ## Done

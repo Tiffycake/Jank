@@ -11,5 +11,4 @@ script = ExtResource("3_eegkr")
 icon = ExtResource("1_aai83")
 scene = ExtResource("2_hxjkf")
 stats = ExtResource("4_aai83")
-initialized = false
 metadata/_custom_type_script = "uid://i0ebpvahkca5"

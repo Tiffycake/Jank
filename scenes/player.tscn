@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3higeki8udsa"]
+[gd_scene load_steps=17 format=3 uid="uid://3higeki8udsa"]
 
 [ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://scripts/player.gd" id="1_smehm"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://scenes/Components/HealthComponent.tscn" id="2_tuyoq"]
@@ -40,8 +40,6 @@ properties/5/replication_mode = 1
 properties/6/path = NodePath("usernameHandler/username:text")
 properties/6/spawn = true
 properties/6/replication_mode = 2
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_f1ej7"]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -99,12 +97,3 @@ vertical_alignment = 1
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_tuyoq")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-scale = Vector2(5.89088, 5.89088)
-shape = SubResource("CircleShape2D_f1ej7")
-debug_color = Color(0.935039, 0.215821, 0.353976, 0.42)
