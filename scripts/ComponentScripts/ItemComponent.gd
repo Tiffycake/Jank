@@ -14,4 +14,4 @@ class_name InvItem
 
  
 ## temp stuff
-@export var initialized : bool = false
+var initialized : bool = false
