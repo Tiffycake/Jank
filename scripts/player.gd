@@ -4,9 +4,6 @@ class_name Player
 var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}
 var speed: = 600
 var id : int
-@export var inputVel := Vector2.ZERO
-@export var pushVel := Vector2.ZERO
-const pushResetScale := 0.000000001
 
 #region
 var camera : Camera2D = Camera2D.new()
@@ -51,7 +48,7 @@ func getInput():
 	attack = Input.is_action_pressed("leftClick")
 	use    = Input.is_action_pressed("rightClick")
 	inputDir = Input.get_vector("left","right","up","down")
-	inputVel = inputDir * speed
+	velocity = inputDir * speed
 	
 	if Input.is_action_just_released("srollUp") : 
 		#print("srollUp")
@@ -73,12 +70,9 @@ func getInput():
 			inventory.selectedNode.fire()
 
 func _physics_process(delta: float) -> void:
-	pushVel = lerp(pushVel, Vector2.ZERO, 1 - pow(pushResetScale, delta))
 	if is_multiplayer_authority():
 		getInput()
-	handlePush()
 	squish(delta)
-	velocity = inputVel + pushVel
 	move_and_slide()
 
 func squish(delta: float) -> void:
@@ -99,12 +93,6 @@ func squish(delta: float) -> void:
 	else:
 		if(coolBox.scale.x < maxScale):
 			coolBox.scale = Vector2(coolBox.scale.x + delta * scale_factor, coolBox.scale.y + delta * scale_factor)
-
-func handlePush():
-	for index in get_slide_collision_count():
-		var collision := get_slide_collision(index)
-		if(collision.get_collider() is Player):
-			collision.get_collider().pushVel = velocity
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
