@@ -63,6 +63,4 @@ func spawn_bullet():
 	bullet.name = "bullet " + str(bulletId)+ " " + str(player.name)
 	bulletId+=1
 	objectList.add_child(bullet)
-
-func _process(_delta: float) -> void:
-	pass
+ 

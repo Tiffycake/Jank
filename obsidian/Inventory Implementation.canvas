@@ -140,16 +140,6 @@
 			"height":60
 		},
 		{
-			"id":"dec9682d1783643e",
-			"type":"text",
-			"text":"if n >= 0 and inv_size > n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1560,
-			"y":-580,
-			"width":320,
-			"height":60
-		},
-		{
 			"id":"2b7b6e6670a95f2a",
 			"type":"text",
 			"text":"",
@@ -192,12 +182,32 @@
 		{
 			"id":"0783390a05b09d18",
 			"type":"text",
-			"text":"6  ->  1\n5  ->  0\n4  ->  4\n3  ->  3\n2  ->  2\n1  ->  1\n0  ->  0 \n-1 ->  4\n-2 ->  3\n-3 ->  2\n-4 ->  1\n",
+			"text":"10  ->  0\n9  ->  4\n8  ->  3\n7  ->  2\n6  ->  1\n5  ->  0\n4  ->  4\n3  ->  3\n2  ->  2\n1  ->  1\n0  ->  0 \n-1 ->  4\n-2 ->  3\n-3 ->  2\n-4 ->  1\n-5 ->  0\n-6 ->  4\n-7 ->  3\n-8 ->  2\n-9 ->  1\n-10 ->  0\n-11 ->  4\n",
 			"styleAttributes":{"textAlign":"center"},
 			"x":1560,
-			"y":-380,
+			"y":-420,
 			"width":320,
-			"height":300
+			"height":600
+		},
+		{
+			"id":"23ad831b4626f4f0",
+			"type":"text",
+			"text":"-10 : 0\n-9 : 1\n-8 : 2\n-7 : 3\n-6 : 4\n-5 : 0\n-4 : 1\n-3 : 2\n-2 : 3\n-1 : 4\n0 : 0\n1 : 1\n2 : 2\n3 : 3\n4 : 4\n5 : 0\n6 : 1\n7 : 2\n8 : 3\n9 : 4\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1920,
+			"y":-420,
+			"width":320,
+			"height":600
+		},
+		{
+			"id":"dec9682d1783643e",
+			"type":"text",
+			"text":"if n >= 0 and inv_size > n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1560,
+			"y":-520,
+			"width":320,
+			"height":60
 		}
 	],
 	"edges":[

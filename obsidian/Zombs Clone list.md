@@ -9,6 +9,7 @@ kanban-plugin: board
 - [ ] grid for building
 - [ ] work on particle component
 - [ ] [[damage types]]
+- [ ] save file (with serialization)
 
 
 ## peak milla ideas
@@ -19,10 +20,8 @@ kanban-plugin: board
 ## To-Do
 
 - [ ] ammo count
-- [ ] handling player deaths
-	<<<<<<< HEAD
-- [ ] [ ] make inventory slot movement rpc call
-	=======
+- [ ] player death/respawn
+- [ ] make inventory slot movement rpc call
 
 
 ## tiffy doing

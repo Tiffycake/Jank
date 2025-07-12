@@ -26,8 +26,7 @@ func _ready() -> void:
 
 @rpc("any_peer", "call_local")
 func _selectItem1(n: int) -> void:
-	#if n >= 0 and inv_size > n: # TODO: replace this with a number normalizer DONE
-	n = n%5
+	n = posmod(n,5)
 	if selectedNode != null:
 		selectedNode.unequip()
 	selectedSlot = n
@@ -35,7 +34,7 @@ func _selectItem1(n: int) -> void:
 	
 	if selectedItem != null:
 		
-		if find_child(str(n),false): #selectedItem.initialized:
+		if get_node(str(n)) != null: # this throws an error if the node isn't present
 			selectedNode = get_node(str(n))
 			selectedNode.equip()
 		else:
@@ -53,7 +52,7 @@ func add_item1(item:InvItem): #item:InvItem
 		print(_content_array[i])
 		if _content_array[i] == null:
 			_content_array.set(i,item)
-			#break
+			selectItem(i) # selects newly added item
 
 func remove_item1(n:int):
 	_content_array.set(n,null)
