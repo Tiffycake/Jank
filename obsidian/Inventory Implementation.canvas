@@ -120,46 +120,6 @@
 			"height":60
 		},
 		{
-			"id":"c84b3997549ffc8d",
-			"type":"text",
-			"text":"instantiate",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2720,
-			"y":-340,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"b59a6cb00048a47d",
-			"type":"text",
-			"text":"initialized",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2440,
-			"y":-580,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"2b7b6e6670a95f2a",
-			"type":"text",
-			"text":"",
-			"styleAttributes":{"textAlign":"center"},
-			"x":2720,
-			"y":-820,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"35bed3edce29133c",
-			"type":"text",
-			"text":"",
-			"styleAttributes":{"textAlign":"center"},
-			"x":3100,
-			"y":-340,
-			"width":260,
-			"height":60
-		},
-		{
 			"id":"9ee2cd181622380f",
 			"type":"text",
 			"text":"stats  : stat_sheet",
@@ -285,37 +245,6 @@
 			"fromNode":"5d443fc4ddda7037",
 			"fromSide":"right",
 			"toNode":"50acd87ace609e87",
-			"toSide":"left"
-		},
-		{
-			"id":"fa2ebe500ed59780",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromFloating":false,
-			"fromNode":"b59a6cb00048a47d",
-			"fromSide":"top",
-			"toNode":"2b7b6e6670a95f2a",
-			"toSide":"left",
-			"label":"True"
-		},
-		{
-			"id":"bc056fb0292ec472",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromFloating":false,
-			"fromNode":"b59a6cb00048a47d",
-			"fromSide":"bottom",
-			"toNode":"c84b3997549ffc8d",
-			"toSide":"left",
-			"label":"False"
-		},
-		{
-			"id":"9958aeed628bd5bc",
-			"styleAttributes":{},
-			"toFloating":false,
-			"fromNode":"c84b3997549ffc8d",
-			"fromSide":"right",
-			"toNode":"35bed3edce29133c",
 			"toSide":"left"
 		},
 		{

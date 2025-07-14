@@ -31,7 +31,6 @@ func updateTexture():
 		textureSprite.texture = slotContent.icon
 	else:
 		textureSprite.texture = null
-		
 
 func slotHighlight() -> void:
 	if inventory.selectedSlot == slotId:
@@ -41,3 +40,35 @@ func slotHighlight() -> void:
 		slot.show()
 		slotOutline.hide()
  
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool: # runs when hovering
+	return data is int
+
+func _get_drag_data(_at_position: Vector2) -> Variant:  # runs on press
+	slotContent = inventory._content_array[slotId]
+	if slotContent != null:
+#region preview thing
+		var previewTexture := TextureRect.new() 
+		var preview 	   := Control.new()
+		preview.add_child(previewTexture)
+		previewTexture.texture = slotContent.icon
+		textureSprite.texture = null # this is such a good idea
+		previewTexture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE 
+		previewTexture.size = Vector2(80,80)
+		previewTexture.position -= Vector2(40,40)
+		set_drag_preview(preview)  
+#endregion
+	 
+		return slotId
+	else:
+		return null
+
+func _drop_data(_at_position: Vector2, data: Variant) -> void: # runs on release
+
+	if data is int: # this beeing a int is a bad idea what are you doing tiffy
+		
+		
+		inventory.swap(data,slotId)
+
+		#if the other slot is null ??? uhh fcuking exxplode ????
+		
+		

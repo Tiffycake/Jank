@@ -6,17 +6,18 @@ var selectedSlot : int = 0
 const inv_size : int = 5
 #var temp_weapon  : InvItem = ( preload("res://resources/invItems/weapon.tres") as InvItem )
 
+var n : int
+
 var selectedItem : InvItem
 
 var selectedNode : Item
 
-func swap(a1: int,a2: int):		swap1.rpc(a1,a2)
-func selectItem(n: int):		_selectItem1.rpc(n)
-func remove_item(n: int):		remove_item1.rpc(n)
+func swap(a1: int,a2: int):	swap1.rpc(a1,a2)
+func selectItem(n1: int):		_selectItem1.rpc(n1)
+func remove_item(n1: int):	remove_item1.rpc(n1)
 func add_item(item:InvItem):	add_item1.rpc(item)
  
 func _init() -> void:
-	pass
 	_content_array.resize(inv_size)
 	#_content_array.fill(null)
 
@@ -25,10 +26,14 @@ func _ready() -> void:
 	selectItem(0)
 
 @rpc("any_peer", "call_local")
-func _selectItem1(n: int) -> void:
-	n = posmod(n,5)
+func _selectItem1(n1: int) -> void:
+	print(n1," input || mod ",posmod(n1,5))
+	
+	n = posmod(n1,5)
+	
 	if selectedNode != null:
 		selectedNode.unequip()
+		
 	selectedSlot = n
 	selectedItem = _content_array[n]
 	
@@ -38,15 +43,15 @@ func _selectItem1(n: int) -> void:
 			selectedNode = get_node(str(n))
 			selectedNode.equip()
 		else:
+			# spawn item scene 
 			selectedNode = selectedItem.scene.instantiate()
 			selectedNode.name = str(n)
 			if selectedNode is Weapon:
 				selectedNode.weapon_stats = selectedItem.stats 
 			add_child(selectedNode)
-			selectedNode.equip() 
-			#selectedItem.initialized = true
+			selectedNode.equip()
 
-
+@rpc("any_peer", "call_local")
 func add_item1(item:InvItem): #item:InvItem
 	for i in range(len(_content_array)):
 		print(_content_array[i])
@@ -54,17 +59,26 @@ func add_item1(item:InvItem): #item:InvItem
 			_content_array.set(i,item)
 			selectItem(i) # selects newly added item
 
-func remove_item1(n:int):
+@rpc("any_peer", "call_local")
+func remove_item1(n1:int):
 	_content_array.set(n,null)
 	# kills child named n
-	get_node(str(n)).queue_free()
+	get_node(str(n1)).queue_free()
 	#selectItem(n)
-	
-	
+
+@rpc("any_peer", "call_local")
 func swap1(a1: int,a2: int) -> void:
-	var b = _content_array[a1] # Array
+	var b1 = _content_array[a1] # Arrayc
 	_content_array[a1] = _content_array[a2]
-	_content_array[a2] = b
+	_content_array[a2] = b1
+	
+	if get_node(str(a1)) != null: # throws an error when node not present idk how to fix this
+		get_node(str(a1)).name = str(a2)
+	
+	if get_node(str(a2)) != null: # throws an error when node not present idk how to fix this
+		get_node(str(a2)).name = str(a1)
+	
+	
 	selectItem(a1) # select a1 
 
 

@@ -5,7 +5,7 @@ var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" 
 var speed: = 600
 var id : int
 
-#region
+#region Nodes
 var camera : Camera2D = Camera2D.new()
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
 @onready var objectList: Node = $"../../objectList"
