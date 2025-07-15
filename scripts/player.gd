@@ -17,7 +17,8 @@ var camera : Camera2D = Camera2D.new()
 
 #var inventory : = Inventory.new() # preload("res://invItems/Inventory.tres")
 #endregion
-#region scales
+#region 
+##region scales
 const maxScale := 1.0
 const minScale := 0.75
 const scale_factor := 3.5
@@ -27,10 +28,6 @@ var inputDir : Vector2
 var attack   : bool
 var use      : bool
 ##endregion
-##region slots
-
-
-#var slotList : Dictionary
 #endregion
 
 

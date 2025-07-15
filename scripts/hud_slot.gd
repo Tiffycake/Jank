@@ -27,7 +27,6 @@ func updateTexture():
 	slotContent = inventory._content_array[slotId]
 	
 	if slotContent != null:
-		#print(slotContent)
 		textureSprite.texture = slotContent.icon
 	else:
 		textureSprite.texture = null
@@ -47,17 +46,17 @@ func _get_drag_data(_at_position: Vector2) -> Variant:  # runs on press
 	slotContent = inventory._content_array[slotId]
 	if slotContent != null:
 #region preview thing
-		var previewTexture := TextureRect.new() 
-		var preview 	   := Control.new()
-		preview.add_child(previewTexture)
+		var previewTexture := TextureRect.new()
+		#var preview 	   := Control.new()
+		#preview.add_child(previewTexture)
 		previewTexture.texture = slotContent.icon
-		textureSprite.texture = null # this is such a good idea
+		#textureSprite.texture = null # this is such a good idea 
+		# it doesn't work bc updateTexture() updates every frame
 		previewTexture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE 
 		previewTexture.size = Vector2(80,80)
 		previewTexture.position -= Vector2(40,40)
-		set_drag_preview(preview)  
+		set_drag_preview(previewTexture)  
 #endregion
-	 
 		return slotId
 	else:
 		return null
