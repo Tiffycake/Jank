@@ -2,8 +2,8 @@ extends Node2D
 class_name Inventory
 #@export var inv1 : inv
 var selectedSlot : int = 0
-@export var _content_array : Array[InvItem]
 const inv_size : int = 5
+@export var _content_array : Array[InvItem]
 #var temp_weapon  : InvItem = ( preload("res://resources/invItems/weapon.tres") as InvItem )
 
 var n : int
@@ -39,7 +39,7 @@ func _selectItem1(n1: int) -> void:
 	
 	if selectedItem != null:
 		
-		if get_node(str(n)) != null: # this throws an error if the node isn't present
+		if get_node_or_null(str(n)) != null: 
 			selectedNode = get_node(str(n))
 			selectedNode.equip()
 		else:
@@ -68,18 +68,29 @@ func remove_item1(n1:int):
 
 @rpc("any_peer", "call_local")
 func swap1(a1: int,a2: int) -> void:
+	var node1 : Node
+	var node2 : Node
+	
+	# this function is funky in a bad way
 	var b1 = _content_array[a1] # Arrayc
 	_content_array[a1] = _content_array[a2]
 	_content_array[a2] = b1
 	
-	if get_node(str(a1)) != null: # throws an error when node not present idk how to fix this
-		get_node(str(a1)).name = str(a2)
+	node1 = get_node_or_null(str(a1))
+	if node1 != null: # OK WHAT ARE YOU DOING
+		node1.name = str(a2) + "temp"
+
+	node2 = get_node_or_null(str(a2))
+	if node2 != null: 
+		#node2 = get_node(str(a2))
+		node2.name = str(a1) #+ "temp" 
 	
-	if get_node(str(a2)) != null: # throws an error when node not present idk how to fix this
-		get_node(str(a2)).name = str(a1)
-	
-	
-	selectItem(a1) # select a1 
+	if node1 != null:
+		node1.name = str(a2)
+		
+	#if node2 != null:
+		#node2.name = str(a1)
+	selectItem(a2) # select a1 
 
 
 func get_items() -> Array[InvItem]:

@@ -70,7 +70,7 @@ visible = false
 [node name="Inventory" type="Node2D" parent="."]
 position = Vector2(100, 0)
 script = ExtResource("2_y4r1p")
-_content_array = Array[ExtResource("8_y4r1p")]([ExtResource("9_d2wvv"), ExtResource("10_d2wvv"), ExtResource("10_f1ej7"), ExtResource("9_d2wvv"), ExtResource("11_3v2ag")])
+_content_array = Array[ExtResource("8_y4r1p")]([ExtResource("9_d2wvv"), ExtResource("10_d2wvv"), ExtResource("10_f1ej7"), null, ExtResource("11_3v2ag")])
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
 maxHealth = 100
