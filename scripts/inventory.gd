@@ -9,11 +9,10 @@ const inv_size : int = 5
 var n : int
 
 var selectedItem : InvItem
-
 var selectedNode : Item
 
 func swap(a1: int,a2: int):	swap1.rpc(a1,a2)
-func selectItem(n1: int):		_selectItem1.rpc(n1)
+func selectItem(n1: int):	_selectItem1.rpc(n1)
 func remove_item(n1: int):	remove_item1.rpc(n1)
 func add_item(item:InvItem):	add_item1.rpc(item)
  

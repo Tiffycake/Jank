@@ -168,6 +168,16 @@
 			"y":-520,
 			"width":320,
 			"height":60
+		},
+		{
+			"id":"1695de0a1f2b5c82",
+			"type":"text",
+			"text":"inv size stats\nmess with actually inv size\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":160,
+			"y":-1600,
+			"width":260,
+			"height":320
 		}
 	],
 	"edges":[

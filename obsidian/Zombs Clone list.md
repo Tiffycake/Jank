@@ -10,6 +10,7 @@ kanban-plugin: board
 - [ ] work on particle component
 - [ ] [[damage types]]
 - [ ] save file (with serialization)
+- [ ] make texture updates signal based
 
 
 ## peak milla ideas
@@ -19,22 +20,19 @@ kanban-plugin: board
 
 ## To-Do
 
-- [ ] ammo count
 - [ ] player death/respawn
-- [ ] make inventory slot movement rpc call
+- [ ] ammo count
 
 
 ## tiffy doing
 
 - [ ] me :JunoShy:
 - [ ] make generic item component better
-- [ ] improve inv system
 
 
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
-- [x] player nametag
 - [ ] rewrite player as a rigid body
 
 
@@ -43,10 +41,13 @@ kanban-plugin: board
 **Complete**
 - [x] skin color picker (outer/inner layer + hands)
 - [x] revamping playertexture
+- [x] player nametag
 - [x] Hud slots
 - [x] make a generic item component
 - [x] player pushing :despair:
+- [x] improve inv system
 - [x] inventory system 3rd remake
+- [x] make inventory slot movement rpc call
 - [x] make hud slots display texture
 - [x] make inventory slot movement rpc call
 - [x] player nametag
