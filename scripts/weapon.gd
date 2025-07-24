@@ -10,22 +10,30 @@ var bulletPath = preload("res://scenes/bullet.tscn")
 @onready var weaponSprite:  = $"Sprite2D"
 @onready var timer: Timer = $Timer
 
-var weapon_stats : stat_sheet
 
 @onready var sound : AudioStreamPlayer2D = $sound
 
+#region New Code Region
+var weapon_stats : stat_sheet
+
 var bulletId : int
 
+var bulletCurCount		: int
+var bulletMaxCount		: int
 var bulletLifetime		: int
 var bulletSpeed			: int
 var atackDamage			: int
 var atackSpeed			: float
+#endregion
 
 func _ready() -> void:
+	
 	bulletLifetime		=   weapon_stats.bulletLifetime
 	bulletSpeed			=   weapon_stats.bulletSpeed
 	atackDamage			=   weapon_stats.atackDamage
 	atackSpeed			=   weapon_stats.atackSpeed
+	bulletMaxCount		=   weapon_stats.bulletMaxCount
+	bulletCurCount		=   weapon_stats.bulletMaxCount
 	
 	weaponSprite.texture  = weapon_stats.weaponSprite
 	weaponSprite.position = weapon_stats.offset
@@ -36,8 +44,12 @@ func _ready() -> void:
 	#playerSprite.gunEquiped()
 	
 func fire() -> void:
-	if timer.time_left == 0:
+	if timer.time_left == 0 and bulletCurCount > 0:
 		spawn_bullet.rpc()
+		bulletCurCount-=1
+
+func reload() -> void:
+	bulletCurCount = bulletMaxCount
 
 func equip() -> void:
 	super()

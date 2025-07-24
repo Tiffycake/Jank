@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=11 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://scripts/HUD.gd" id="1_maspd"]
 [ext_resource type="Texture2D" uid="uid://bdrpkqh4kbx2v" path="res://resources/textures/HUD elements/a/Screenshot_20250606_182749.png" id="1_qefu1"]
 [ext_resource type="Texture2D" uid="uid://bwoyg0dwj6e2b" path="res://resources/textures/HUD elements/healthBar.svg" id="3_ryf3e"]
 [ext_resource type="Script" uid="uid://b0jv1id6kh0fg" path="res://scripts/InventoryUI.gd" id="4_4es50"]
+[ext_resource type="Texture2D" uid="uid://cpif3pb3wkvky" path="res://resources/textures/HUD elements/a/mpv-shot0001.jpg" id="4_nqbc8"]
 [ext_resource type="PackedScene" uid="uid://chf34ya77hulb" path="res://scenes/hudSlot.tscn" id="5_rxypr"]
+[ext_resource type="Texture2D" uid="uid://cumdqn2x3yxov" path="res://resources/textures/zombs/sactx-0-2048x2048-Crunch-IconsUI-1b360a8c.png" id="7_7of6o"]
+[ext_resource type="LabelSettings" uid="uid://cadmyaswo6d3d" path="res://resources/misc/label_settings.tres" id="7_ccrdf"]
+[ext_resource type="LabelSettings" uid="uid://c3lbruinehu33" path="res://resources/misc/label_settings_2.tres" id="9_d8qfv"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_maspd")
@@ -14,6 +18,7 @@ script = ExtResource("1_maspd")
 visible = false
 
 [node name="healthBar" type="Sprite2D" parent="Unused"]
+visible = false
 position = Vector2(-13, 1023)
 texture = ExtResource("3_ryf3e")
 offset = Vector2(205, 0)
@@ -22,19 +27,28 @@ offset = Vector2(205, 0)
 position = Vector2(960, 540)
 texture = ExtResource("1_qefu1")
 
+[node name="refpic2" type="Sprite2D" parent="Unused"]
+position = Vector2(960, 540)
+texture = ExtResource("4_nqbc8")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 1
 script = ExtResource("4_4es50")
 
-[node name="healthBarBG" type="Sprite2D" parent="Control"]
+[node name="HealthBar" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBarBG" type="Sprite2D" parent="Control/HealthBar"]
 texture_filter = 5
 position = Vector2(205, 1031)
 scale = Vector2(1.116, 1.134)
 texture = ExtResource("1_bxty2")
 
-[node name="healthBar" type="TextureProgressBar" parent="Control"]
+[node name="HealthBar" type="TextureProgressBar" parent="Control/HealthBar"]
 texture_filter = 5
 layout_mode = 0
 offset_left = 22.0
@@ -44,13 +58,48 @@ offset_bottom = 1062.0
 value = 100.0
 texture_progress = ExtResource("3_ryf3e")
 
-[node name="healthNum" type="Label" parent="Control"]
+[node name="HealthNum" type="Label" parent="Control/HealthBar"]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 1019.0
+offset_top = 1022.0
 offset_right = 113.0
-offset_bottom = 1042.0
+offset_bottom = 1045.0
 text = "100 / 100"
+label_settings = ExtResource("7_ccrdf")
+
+[node name="AmmoCount" type="HBoxContainer" parent="Control"]
+layout_direction = 3
+layout_mode = 0
+offset_left = -357.0
+offset_top = 940.0
+offset_right = -294.0
+offset_bottom = 969.0
+
+[node name="Panel" type="Panel" parent="Control/AmmoCount"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Bullet" type="Sprite2D" parent="Control/AmmoCount/Panel"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_7of6o")
+centered = false
+
+[node name="spacer" type="Panel" parent="Control/AmmoCount"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+
+[node name="BulletCount2" type="Label" parent="Control/AmmoCount"]
+self_modulate = Color(1, 1, 1, 0.643137)
+layout_mode = 2
+text = "/23"
+label_settings = ExtResource("9_d8qfv")
+
+[node name="BulletCount" type="Label" parent="Control/AmmoCount"]
+layout_mode = 2
+text = "1"
+label_settings = ExtResource("9_d8qfv")
+horizontal_alignment = 1
 
 [node name="Slots" type="GridContainer" parent="Control"]
 layout_mode = 1

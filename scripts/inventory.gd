@@ -26,7 +26,7 @@ func _ready() -> void:
 
 @rpc("any_peer", "call_local")
 func _selectItem1(n1: int) -> void:
-	print(n1," input || mod ",posmod(n1,5))
+	#print(n1," input || mod ",posmod(n1,5))
 	
 	n = posmod(n1,5)
 	

@@ -66,6 +66,11 @@ func getInput():
 		if inventory.selectedNode.has_method("fire"):
 			inventory.selectedNode.fire()
 
+	
+	if use == true and inventory.selectedItem != null :
+		if inventory.selectedNode.has_method("reload"):
+			inventory.selectedNode.reload()
+
 func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
 		getInput()

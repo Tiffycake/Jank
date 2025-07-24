@@ -1,0 +1,1 @@
+aka refactor InvItem classes

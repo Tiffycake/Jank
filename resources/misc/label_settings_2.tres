@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c3lbruinehu33"]
+
+[ext_resource type="FontFile" uid="uid://c0go77ame0qmy" path="res://resources/textures/zombs/LilitaOne.ttf" id="1_eiqov"]
+
+[resource]
+resource_local_to_scene = true
+font = ExtResource("1_eiqov")
+font_size = 24
+shadow_color = Color(0, 0, 0, 1)

@@ -28,7 +28,7 @@ kanban-plugin: board
 ## tiffy doing
 
 - [ ] me :JunoShy:
-- [ ] make generic item component better
+- [ ] [[make generic item component better]]
 
 
 ## milla doing
