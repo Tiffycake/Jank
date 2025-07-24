@@ -6,11 +6,11 @@ kanban-plugin: board
 
 ## peak tiffy ideas
 
+- [ ] save file (with serialization)
 - [ ] grid for building
 - [ ] work on particle component
-- [ ] [[damage types]]
-- [ ] save file (with serialization)
 - [ ] make texture updates signal based
+- [ ] [[damage types]]
 
 
 ## peak milla ideas
@@ -22,6 +22,7 @@ kanban-plugin: board
 
 - [ ] player death/respawn
 - [ ] ammo count
+- [ ] drop/pick items
 
 
 ## tiffy doing
@@ -33,7 +34,7 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
-- [ ] rewrite player as a rigid body
+- [ ] [[rewrite player as a rigid body]]
 
 
 ## Done
