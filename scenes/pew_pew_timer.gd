@@ -1,5 +1,5 @@
 extends Control
-
+class_name PewPewTimer
 
 @onready var label: Label = $Label
 @onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar

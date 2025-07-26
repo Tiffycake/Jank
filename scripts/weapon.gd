@@ -10,7 +10,7 @@ var bulletPath = preload("res://scenes/bullet.tscn")
 @onready var weaponSprite:  = $"Sprite2D"
 @onready var timer:  Timer = $Timer
 @onready var reload_timer  :  Timer = $ReloadTimer
-@onready var PewPewTimer : = $"../../HUD/Control/PewPewTimer"
+@onready var pewPewTimer : PewPewTimer = $"../../HUD/Control/PewPewTimer"
 
 @onready var sound : AudioStreamPlayer2D = $sound
 
@@ -43,7 +43,7 @@ func _ready() -> void:
 	weaponSprite.position = weapon_stats.offset
 	
 	timer.wait_time = 1/atackSpeed
-	reload_timer.wait_time = weapon_stats.reloadTime
+	reload_timer.wait_time = weapon_stats.reloadTime # this keeps erroring
 	timer.one_shot = true
 	reload_timer.one_shot = true
 	#playerSprite.gunEquiped()
@@ -58,11 +58,11 @@ func reload() -> void:
 		on = false # disables firing
 		reload_timer.start()
 		print(reload_timer.wait_time)
-		PewPewTimer.startPewPew(reload_timer.wait_time)
+		pewPewTimer.startPewPew(reload_timer.wait_time)
 
 func refill_ammo() -> void:
 	bulletCurCount = bulletMaxCount
-	PewPewTimer.hide()
+	pewPewTimer.hide()
 	on = true # reenables firing
 
 

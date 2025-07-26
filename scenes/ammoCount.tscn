@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c26inunqq86yf"]
+
+[node name="AmmoCount" type="Control"]
+custom_minimum_size = Vector2(86, 36)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 86.0
+offset_bottom = 36.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 86.0
+offset_bottom = 36.0

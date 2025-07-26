@@ -8,9 +8,9 @@ kanban-plugin: board
 
 - [ ] save file (with serialization)
 - [ ] grid for building
-- [ ] work on particle component
 - [ ] make texture updates signal based
 - [ ] [[damage types]]
+- [ ] work on particle component
 
 
 ## peak milla ideas
@@ -21,7 +21,6 @@ kanban-plugin: board
 ## To-Do
 
 - [ ] player death/respawn
-- [ ] ammo count
 - [ ] drop/pick items
 
 
@@ -29,6 +28,7 @@ kanban-plugin: board
 
 - [ ] me :JunoShy:
 - [ ] [[make generic item component better]]
+- [x] ammo count
 
 
 ## milla doing
