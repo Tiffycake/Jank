@@ -10,6 +10,7 @@ var bulletPath = preload("res://scenes/bullet.tscn")
 @onready var weaponSprite:  = $"Sprite2D"
 @onready var timer:  Timer = $Timer
 @onready var reload_timer  :  Timer = $ReloadTimer
+@onready var PewPewTimer : = $"../../HUD/Control/PewPewTimer"
 
 @onready var sound : AudioStreamPlayer2D = $sound
 
@@ -46,7 +47,7 @@ func _ready() -> void:
 	timer.one_shot = true
 	reload_timer.one_shot = true
 	#playerSprite.gunEquiped()
-	
+
 func fire() -> void:
 	if timer.time_left == 0 and bulletCurCount > 0 and on:
 		spawn_bullet.rpc()
@@ -56,21 +57,23 @@ func reload() -> void:
 	if reload_timer.time_left == 0:
 		on = false # disables firing
 		reload_timer.start()
+		print(reload_timer.wait_time)
+		PewPewTimer.startPewPew(reload_timer.wait_time)
 
 func refill_ammo() -> void:
 	bulletCurCount = bulletMaxCount
+	PewPewTimer.hide()
 	on = true # reenables firing
 
 
 func equip() -> void:
 	super()
 	playerSprite.gunEquiped()
-	
+
 func unequip() -> void:
 	super()
 	playerSprite.unarmed()
-	
-	
+
 @rpc("any_peer", "call_local")
 func spawn_bullet():
 	sound.play()

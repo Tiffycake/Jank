@@ -40,7 +40,7 @@ func _ready() -> void:
 		HUD.visible = true
 
 func getInput(): # ref do smth 😭
-	# rewrite this fuckass funciton
+	# rewrite this fuckass funciton (more like clean it up ig)
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
 	attack = Input.is_action_pressed("leftClick")
@@ -49,15 +49,13 @@ func getInput(): # ref do smth 😭
 	velocity = inputDir * speed
 	
 	if Input.is_action_just_released("srollUp") : 
-		#print("srollUp")
 		inventory.selectItem(inventory.selectedSlot-1)
 		
 	elif Input.is_action_just_released("srollDown"):
-		#print("srollDown") 
 		inventory.selectItem(inventory.selectedSlot+1)
 	
 	
-	for i in inp_dic:
+	for i in inp_dic: # try reading this lmao 😭
 		if Input.is_action_pressed(inp_dic[i]):
 			inventory.selectItem(i)
 		
@@ -101,15 +99,6 @@ func squish(delta: float) -> void:
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
  
-
-#func getInv() -> void:#
-#	for i in get_children().slice(0,5):
-#		slotList.set(int(str(i.name)[-1]),i)
-
-
-		
-		#if selectedItem != null: #if  i == currentSlot and selectedItem != null: # str(slotList[i].name) == "Slot"+ str(currentSlot) 
-
 
 
 func _process(_delta: float) -> void:
