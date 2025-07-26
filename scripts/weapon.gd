@@ -8,10 +8,13 @@ var bulletPath = preload("res://scenes/bullet.tscn")
 @onready var player: CharacterBody2D = $"../.."
 @onready var playerSprite:  = $"../../Sprite2D"
 @onready var weaponSprite:  = $"Sprite2D"
-@onready var timer: Timer = $Timer
-
+@onready var timer:  Timer = $Timer
+@onready var reload_timer  :  Timer = $ReloadTimer
 
 @onready var sound : AudioStreamPlayer2D = $sound
+
+var on : bool = true
+
 
 #region New Code Region
 var weapon_stats : stat_sheet
@@ -27,7 +30,7 @@ var atackSpeed			: float
 #endregion
 
 func _ready() -> void:
-	
+	reload_timer.timeout.connect(refill_ammo)
 	bulletLifetime		=   weapon_stats.bulletLifetime
 	bulletSpeed			=   weapon_stats.bulletSpeed
 	atackDamage			=   weapon_stats.atackDamage
@@ -39,17 +42,25 @@ func _ready() -> void:
 	weaponSprite.position = weapon_stats.offset
 	
 	timer.wait_time = 1/atackSpeed
+	reload_timer.wait_time = weapon_stats.reloadTime
 	timer.one_shot = true
-	
+	reload_timer.one_shot = true
 	#playerSprite.gunEquiped()
 	
 func fire() -> void:
-	if timer.time_left == 0 and bulletCurCount > 0:
+	if timer.time_left == 0 and bulletCurCount > 0 and on:
 		spawn_bullet.rpc()
 		bulletCurCount-=1
 
 func reload() -> void:
+	if reload_timer.time_left == 0:
+		on = false # disables firing
+		reload_timer.start()
+
+func refill_ammo() -> void:
 	bulletCurCount = bulletMaxCount
+	on = true # reenables firing
+
 
 func equip() -> void:
 	super()

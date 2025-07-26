@@ -39,7 +39,8 @@ func _ready() -> void:
 		add_child(camera)
 		HUD.visible = true
 
-func getInput():
+func getInput(): # ref do smth 😭
+	# rewrite this fuckass funciton
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
 	attack = Input.is_action_pressed("leftClick")
@@ -62,6 +63,7 @@ func getInput():
 		
 
 	# TODO: rewrite attack thingie // which one ???
+	# what ???
 	if attack == true and inventory.selectedItem != null :
 		if inventory.selectedNode.has_method("fire"):
 			inventory.selectedNode.fire()
@@ -115,33 +117,3 @@ func _process(_delta: float) -> void:
 
 func die() -> void:
 	queue_free()
-
-
-
-
-
-	#self.tree_exited
-	#self.tree_exited.connect(die)
-
-"""balls.rpc()
-@rpc("any_peer", "call_local")
-func balls(): 
-	if sprite.modulate.r < 1:
-		sprite.setSkin1(sprite.modulate+Color(0.1,0,0) )
-	 
-
-	for i in { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}:
-		#Input.is_action_pressed(i[])
-		print(i) # key 
-		print({ 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}[i])
-
-
-var counter : int = 0
-func balls() -> void:
-	if counter == 60:
-		sprite.setSkin(Color(255,255,0))
-	elif counter == 120:
-		sprite.setSkin(Color(0,0,255))
-		counter = 0
-	counter+=1
-"""
