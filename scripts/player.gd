@@ -118,7 +118,3 @@ func _process(_delta: float) -> void:
 
 func die() -> void:
 	queue_free()
-
-
-func _on_multiplayer_synchronizer_synchronized() -> void:
-	pass
