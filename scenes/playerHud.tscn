@@ -22,6 +22,7 @@ font_size = 45
 script = ExtResource("1_maspd")
 
 [node name="Unused" type="Node2D" parent="."]
+visible = false
 
 [node name="healthBar" type="Sprite2D" parent="Unused"]
 visible = false
@@ -30,11 +31,11 @@ texture = ExtResource("3_ryf3e")
 offset = Vector2(205, 0)
 
 [node name="refpic" type="Sprite2D" parent="Unused"]
+visible = false
 position = Vector2(960, 540)
 texture = ExtResource("1_qefu1")
 
 [node name="refpic2" type="Sprite2D" parent="Unused"]
-visible = false
 position = Vector2(960, 540)
 texture = ExtResource("4_nqbc8")
 
@@ -182,7 +183,7 @@ custom_minimum_size = Vector2(82, 82)
 layout_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="Control"]
-layout_mode = 0
+layout_mode = 1
 offset_left = 1516.0
 offset_top = 897.0
 offset_right = 1891.0
@@ -190,13 +191,17 @@ offset_bottom = 933.0
 columns = 23
 
 [node name="AmmoCount" parent="Control/GridContainer" instance=ExtResource("14_kn30k")]
+custom_minimum_size = Vector2(91, 36)
 layout_mode = 2
 
 [node name="AmmoCount2" parent="Control/GridContainer" instance=ExtResource("14_kn30k")]
+custom_minimum_size = Vector2(91, 36)
 layout_mode = 2
 
 [node name="AmmoCount3" parent="Control/GridContainer" instance=ExtResource("14_kn30k")]
+custom_minimum_size = Vector2(91, 36)
 layout_mode = 2
 
 [node name="AmmoCount4" parent="Control/GridContainer" instance=ExtResource("14_kn30k")]
+custom_minimum_size = Vector2(91, 36)
 layout_mode = 2

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c26inunqq86yf"]
 
 [node name="AmmoCount" type="Control"]
-custom_minimum_size = Vector2(86, 36)
+custom_minimum_size = Vector2(92, 36)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 86.0
@@ -11,3 +11,17 @@ offset_bottom = 36.0
 layout_mode = 2
 offset_right = 86.0
 offset_bottom = 36.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 6.0
+offset_right = 77.0
+offset_bottom = 29.0
