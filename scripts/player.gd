@@ -4,6 +4,8 @@ class_name Player
 var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}
 var speed: = 600
 var id : int
+@export var inputVel := Vector2.ZERO
+@export var pushVel := Vector2.ZERO
 
 #region Nodes
 var camera : Camera2D = Camera2D.new()
@@ -46,7 +48,7 @@ func getInput(): # ref do smth 😭
 	attack = Input.is_action_pressed("leftClick")
 	use    = Input.is_action_pressed("rightClick")
 	inputDir = Input.get_vector("left","right","up","down")
-	velocity = inputDir * speed
+	inputVel = inputDir * speed
 	
 	if Input.is_action_just_released("srollUp") : 
 		inventory.selectItem(inventory.selectedSlot-1)
@@ -74,8 +76,18 @@ func getInput(): # ref do smth 😭
 func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
 		getInput()
+	velocity = inputVel + pushVel
+	push()
+	pushVel.x = move_toward(pushVel.x, 0, 5000 * delta)
+	pushVel.y = move_toward(pushVel.y, 0, 5000 * delta)
 	squish(delta)
 	move_and_slide()
+	
+func push():
+	for i in get_slide_collision_count():
+		var col := get_slide_collision(i)
+		if(col.get_collider() is Player):
+			col.get_collider().pushVel = velocity/5
 
 func squish(delta: float) -> void:
 	for index in get_slide_collision_count():
@@ -106,3 +118,7 @@ func _process(_delta: float) -> void:
 
 func die() -> void:
 	queue_free()
+
+
+func _on_multiplayer_synchronizer_synchronized() -> void:
+	pass

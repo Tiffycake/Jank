@@ -40,6 +40,12 @@ properties/5/replication_mode = 1
 properties/6/path = NodePath("usernameHandler/username:text")
 properties/6/spawn = true
 properties/6/replication_mode = 2
+properties/7/path = NodePath(".:inputVel")
+properties/7/spawn = true
+properties/7/replication_mode = 1
+properties/8/path = NodePath(".:pushVel")
+properties/8/spawn = true
+properties/8/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -98,3 +104,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_tuyoq")
+
+[connection signal="synchronized" from="MultiplayerSynchronizer" to="." method="_on_multiplayer_synchronizer_synchronized"]
