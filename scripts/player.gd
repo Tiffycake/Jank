@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}
+
 var speed: = 600
 var id : int
 @export var inputVel := Vector2.ZERO
@@ -42,7 +43,7 @@ func _ready() -> void:
 		HUD.visible = true
 
 func getInput(): # ref do smth 😭
-	# rewrite this fuckass funciton (more like clean it up ig)
+	# rewrite this fuckass funciton (more like clean it up!!)
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
 	attack = Input.is_action_pressed("leftClick")
@@ -110,11 +111,6 @@ func squish(delta: float) -> void:
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
- 
-
-
-func _process(_delta: float) -> void:
-	pass
 
 func die() -> void:
 	queue_free()

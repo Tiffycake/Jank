@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cpif3pb3wkvky" path="res://resources/textures/HUD elements/a/mpv-shot0001.jpg" id="4_nqbc8"]
 [ext_resource type="PackedScene" uid="uid://chf34ya77hulb" path="res://scenes/hudSlot.tscn" id="5_rxypr"]
 [ext_resource type="Texture2D" uid="uid://dayql0peiw41q" path="res://resources/textures/HUD elements/ball.svg" id="6_d8qfv"]
-[ext_resource type="Script" path="res://scenes/pew_pew_timer.gd" id="6_pve3o"]
+[ext_resource type="Script" uid="uid://7aggow60vq7h" path="res://scenes/pew_pew_timer.gd" id="6_pve3o"]
 [ext_resource type="Texture2D" uid="uid://cumdqn2x3yxov" path="res://resources/textures/zombs/sactx-0-2048x2048-Crunch-IconsUI-1b360a8c.png" id="7_7of6o"]
 [ext_resource type="LabelSettings" uid="uid://cadmyaswo6d3d" path="res://resources/misc/label_settings.tres" id="7_ccrdf"]
 [ext_resource type="Texture2D" uid="uid://c4cedbk273oag" path="res://resources/textures/HUD elements/inner ball.svg" id="7_kkonv"]

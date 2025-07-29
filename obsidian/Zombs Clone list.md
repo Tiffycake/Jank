@@ -11,6 +11,7 @@ kanban-plugin: board
 - [ ] make texture updates signal based
 - [ ] [[damage types]]
 - [ ] work on particle component
+- [ ] godot rpc
 
 
 ## peak milla ideas
