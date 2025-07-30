@@ -10,6 +10,9 @@ func _ready() -> void:
 func startPewPew(a : float):
 	show()
 	var pewpewtween = get_tree().create_tween() # Tween
-	label.text = str(a) + "s" 
+	
+	label.text = str(a) + "s"
+	
 	texture_progress_bar.value = 100
-	pewpewtween.tween_property(texture_progress_bar,"value",0,a) # PewPewTimer.
+	pewpewtween.tween_property(texture_progress_bar,"value",0,a) 
+	pewpewtween.tween_property(label,"text",str(0),a) 

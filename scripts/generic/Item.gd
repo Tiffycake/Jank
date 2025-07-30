@@ -1,6 +1,6 @@
 extends Node2D
 class_name Item
-
+## item instance
 
 
 func equip():

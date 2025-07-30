@@ -1,8 +1,8 @@
 extends Node2D
+# main root
 
 const mainMenu  : PackedScene = preload("res://scenes/main_menu.tscn")
 const WorldMap  : PackedScene = preload("res://scenes/WorldMap.tscn")
-#var tempInstance: Node  
 
 func _ready() -> void:
 	spawnNode(WorldMap)
