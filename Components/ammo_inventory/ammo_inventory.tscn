@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bccp86qgunv7a"]
+
+[ext_resource type="Script" uid="uid://bkv0e0p2jefxj" path="res://Components/ammo_inventory/ammo_inventory.gd" id="1_0iyox"]
+
+[node name="AmmoInventory" type="Node2D"]
+script = ExtResource("1_0iyox")

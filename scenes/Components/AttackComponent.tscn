@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccy36qcnbo0dk"]
-
-[ext_resource type="Script" uid="uid://owt3wcbjjgfp" path="res://scripts/ComponentScripts/AttackComponent.gd" id="1_bl78e"]
-
-[node name="AttackComponent" type="Area2D"]
-script = ExtResource("1_bl78e")
-attackDamage = 2

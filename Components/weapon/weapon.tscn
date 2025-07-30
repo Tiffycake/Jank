@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://0uyiqscnhfx6"]
+
+[ext_resource type="Script" uid="uid://um2tckmdvn3" path="res://Components/weapon/weapon.gd" id="1_qlv4w"]
+[ext_resource type="AudioStream" uid="uid://muw3tbxmvukv" path="res://resources/sounds/normal-hitclap.wav" id="2_e85vh"]
+[ext_resource type="PackedScene" uid="uid://dd73n5hd0n1qh" path="res://Components/bullet/bullet.tscn" id="2_fp264"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_qlv4w")
+bulletPath = ExtResource("2_fp264")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57079
+scale = Vector2(0.25, 0.25)
+offset = Vector2(0, -80)
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_e85vh")
+volume_db = -15.127
+pitch_scale = 2.98

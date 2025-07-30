@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=5 format=3 uid="uid://duqd864m7ui1l"]
 
 [ext_resource type="Texture2D" uid="uid://kvpss2onfgii" path="res://resources/textures/random textures/UncommonContainment.png" id="1_hxjkf"]
-[ext_resource type="PackedScene" uid="uid://0uyiqscnhfx6" path="res://scenes/items/weapon.tscn" id="2_hxjkf"]
-[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://scripts/ComponentScripts/ItemComponent.gd" id="3_eegkr"]
+[ext_resource type="PackedScene" uid="uid://0uyiqscnhfx6" path="res://Components/weapon/weapon.tscn" id="2_hxjkf"]
+[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://Components/Components/ItemComponent/ItemComponent.gd" id="3_eegkr"]
 [ext_resource type="Resource" uid="uid://bhe1d50rk66mm" path="res://resources/invItems/stats/traper.tres" id="4_aai83"]
 
 [resource]

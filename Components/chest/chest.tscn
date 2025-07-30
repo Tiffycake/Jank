@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://chxkv23icrdpd"]
+
+[ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://Components/Components/HealthComponent/HealthComponent.tscn" id="1_gqd3d"]
+[ext_resource type="Texture2D" uid="uid://baybfxrih4sra" path="res://resources/textures/Gold_Chest.png" id="1_oii8l"]
+[ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://Components/Components/HitBoxComponent/HitboxComponent.tscn" id="3_gqd3d"]
+[ext_resource type="PackedScene" uid="uid://d0flnyjdbb036" path="res://Components/shape_2d_cloner/shape_2d_cloner.tscn" id="4_yue2o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f043s"]
+size = Vector2(182, 113)
+
+[node name="Chest" type="StaticBody2D"]
+metadata/_edit_vertical_guides_ = [-150.0]
+metadata/_edit_horizontal_guides_ = [-140.0]
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_gqd3d")]
+
+[node name="Chest" type="Sprite2D" parent="."]
+texture = ExtResource("1_oii8l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_f043s")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_gqd3d")]
+
+[node name="colClonerComp" parent="." instance=ExtResource("4_yue2o")]

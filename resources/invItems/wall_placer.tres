@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=4 format=3 uid="uid://dkbsecr3mbe0r"]
 
 [ext_resource type="Texture2D" uid="uid://da2bhtdfgh6i7" path="res://resources/textures/random textures/blueprintbase_512-893892667.png" id="1_47cps"]
-[ext_resource type="PackedScene" uid="uid://rprte4yhjl7p" path="res://scenes/items/wallPlacer.tscn" id="2_s3wiu"]
-[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://scripts/ComponentScripts/ItemComponent.gd" id="3_t6lip"]
+[ext_resource type="PackedScene" uid="uid://rprte4yhjl7p" path="res://Components/wall_placer/wall_placer.tscn" id="2_s3wiu"]
+[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://Components/Components/ItemComponent/ItemComponent.gd" id="3_t6lip"]
 
 [resource]
 resource_local_to_scene = true

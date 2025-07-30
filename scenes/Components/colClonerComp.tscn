@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0flnyjdbb036"]
-
-[ext_resource type="Script" uid="uid://yae5jp0sfjn4" path="res://scripts/generic/generic_shape_2d_cloner.gd" id="1_mo8ir"]
-
-[node name="colClonerComp" type="Node2D"]
-script = ExtResource("1_mo8ir")
