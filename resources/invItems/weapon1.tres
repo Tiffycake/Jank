@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdvo085xtp1o8" path="res://resources/textures/zombs/CC-M4A1Weapon.png" id="1_aai83"]
 [ext_resource type="PackedScene" uid="uid://0uyiqscnhfx6" path="res://Components/weapon/weapon.tscn" id="2_hxjkf"]
-[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://Components/Components/ItemComponent/ItemComponent.gd" id="3_eegkr"]
+[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://Components/1 - Components/ItemComponent/ItemComponent.gd" id="3_eegkr"]
 [ext_resource type="Resource" uid="uid://403qpqwgrdde" path="res://resources/invItems/stats/ar2.tres" id="4_aai83"]
 
 [resource]

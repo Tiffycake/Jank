@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=17 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://Components/HUD/HUD.gd" id="1_maspd"]
@@ -13,6 +13,8 @@
 [ext_resource type="LabelSettings" uid="uid://cadmyaswo6d3d" path="res://resources/misc/label_settings.tres" id="7_ccrdf"]
 [ext_resource type="Texture2D" uid="uid://c4cedbk273oag" path="res://resources/textures/HUD elements/inner ball.svg" id="7_kkonv"]
 [ext_resource type="LabelSettings" uid="uid://c3lbruinehu33" path="res://resources/misc/label_settings_2.tres" id="9_d8qfv"]
+[ext_resource type="Script" uid="uid://dee0ls4be3d4i" path="res://Components/ammo_count/ammo_count.gd" id="14_b0d78"]
+[ext_resource type="PackedScene" uid="uid://c26inunqq86yf" path="res://Components/ammo_count/ammo_count.tscn" id="14_lwwil"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kn30k"]
 font_size = 45
@@ -21,7 +23,6 @@ font_size = 45
 script = ExtResource("1_maspd")
 
 [node name="Unused" type="Node2D" parent="."]
-visible = false
 
 [node name="healthBar" type="Sprite2D" parent="Unused"]
 visible = false
@@ -179,4 +180,28 @@ layout_mode = 2
 
 [node name="4" parent="Control/Slots" instance=ExtResource("5_rxypr")]
 custom_minimum_size = Vector2(82, 82)
+layout_mode = 2
+
+[node name="AmmoStorage" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1517.0
+offset_top = 897.0
+offset_right = 1897.0
+offset_bottom = 937.0
+script = ExtResource("14_b0d78")
+
+[node name="AmmoCount1" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
+custom_minimum_size = Vector2(92, 31)
+layout_mode = 2
+
+[node name="AmmoCount2" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
+custom_minimum_size = Vector2(92, 31)
+layout_mode = 2
+
+[node name="AmmoCount3" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
+custom_minimum_size = Vector2(92, 31)
+layout_mode = 2
+
+[node name="AmmoCount4" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
+custom_minimum_size = Vector2(92, 31)
 layout_mode = 2

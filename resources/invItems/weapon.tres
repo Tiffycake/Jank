@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=5 format=3 uid="uid://dpp708tku67u"]
 
-[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://Components/Components/ItemComponent/ItemComponent.gd" id="1_rlekn"]
+[ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://Components/1 - Components/ItemComponent/ItemComponent.gd" id="1_rlekn"]
 [ext_resource type="PackedScene" uid="uid://0uyiqscnhfx6" path="res://Components/weapon/weapon.tscn" id="2_b37ur"]
 [ext_resource type="Texture2D" uid="uid://cdvo085xtp1o8" path="res://resources/textures/zombs/CC-M4A1Weapon.png" id="2_me0is"]
 [ext_resource type="Resource" uid="uid://btj665h43wvil" path="res://resources/invItems/stats/ar1.tres" id="4_b37ur"]

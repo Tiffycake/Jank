@@ -9,10 +9,10 @@ var freeze : int # time frozen
 var burn : int   # burn time (burn is 3dmg/s)
 
 
-func killSelf(_area) -> void:
-	pass
+#func killSelf(_area) -> void:
+	#pass
 	#print(area)
 
 
-func _ready() -> void:
-	self.area_entered.connect(killSelf)
+#func _ready() -> void:
+	#self.area_entered.connect(killSelf)

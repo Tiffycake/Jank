@@ -12,6 +12,7 @@ extends Control
 @onready var bullet_count: Label = $AmmoCount/BulletCount
 @onready var bullet_max: Label = $AmmoCount/BulletCount2
 
+
 @onready var ammoCount: = $AmmoCount
 func _ready() -> void:
 	pass # Replace with function body.

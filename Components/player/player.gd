@@ -1,7 +1,9 @@
 extends CharacterBody2D 
 class_name Player
 
-var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}
+#var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}
+
+var inp_arr : PackedStringArray = ["slot0","slot1","slot2","slot3","slot4"]
 
 var speed: = 600
 var id : int
@@ -58,13 +60,14 @@ func getInput(): # ref do smth 😭
 		inventory.selectItem(inventory.selectedSlot+1)
 	
 	
-	for i in inp_dic: # try reading this lmao 😭
-		if Input.is_action_pressed(inp_dic[i]):
-			inventory.selectItem(i)
+	for i in range(len(inp_arr)): # try reading this lmao 😭
+		if Input.is_action_pressed(inp_arr[i]):
+			inventory.selectItem(inp_arr.find("slot"+str(i)))
 		
 
 	# TODO: rewrite attack thingie // which one ???
 	# what ???
+	# what 2 ???
 	if attack == true and inventory.selectedItem != null :
 		if inventory.selectedNode.has_method("fire"):
 			inventory.selectedNode.fire()

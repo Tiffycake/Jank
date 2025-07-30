@@ -14,5 +14,6 @@ func startPewPew(a : float):
 	label.text = str(a) + "s"
 	
 	texture_progress_bar.value = 100
-	pewpewtween.tween_property(texture_progress_bar,"value",0,a) 
-	pewpewtween.tween_property(label,"text",str(0),a) 
+	pewpewtween.tween_property(texture_progress_bar,"value",0,a)
+	
+	#pewpewtween.tween_property(label,"text",str(0),a) 

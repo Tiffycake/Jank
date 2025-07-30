@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/inventory2.gd" id="1_s887n"]
 [ext_resource type="PackedScene" path="res://scenes/items/new folder/weapon.tscn" id="2_g71ie"]
-[ext_resource type="Script" uid="uid://hjfy1o8cf3ll" path="res://z/stats.gd" id="3_sr8g6"]
+[ext_resource type="Script" uid="uid://hjfy1o8cf3ll" path="res://Components/player/stats.gd" id="3_sr8g6"]
 [ext_resource type="Texture2D" uid="uid://b0beevi77dsmn" path="res://resources/textures/gun.svg" id="4_p7iul"]
 [ext_resource type="PackedScene" uid="uid://odsgtbc0vey0" path="res://Components/example_item/example_item.tscn" id="5_td2ew"]
 [ext_resource type="PackedScene" uid="uid://rprte4yhjl7p" path="res://Components/wall_placer/wall_placer.tscn" id="6_ylenm"]

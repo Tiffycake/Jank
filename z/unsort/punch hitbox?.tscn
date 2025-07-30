@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkqiic16r3hwr"]
 
-[ext_resource type="PackedScene" uid="uid://ccy36qcnbo0dk" path="res://Components/Components/AttackComponent/AttackComponent.tscn" id="1_h4iky"]
+[ext_resource type="PackedScene" uid="uid://ccy36qcnbo0dk" path="res://Components/1 - Components/AttackComponent/AttackComponent.tscn" id="1_h4iky"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6wbc1"]
 radius = 64.0078
