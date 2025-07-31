@@ -26,3 +26,4 @@ texture = ExtResource("2_eoqba")
 
 [node name="Trail2D" parent="." instance=ExtResource("4_7rqx0")]
 top_level = true
+z_index = -2
