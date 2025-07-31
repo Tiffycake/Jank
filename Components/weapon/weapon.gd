@@ -4,6 +4,8 @@ class_name Weapon
 
 @export var bulletPath : PackedScene
 
+const SHOOTING_PARTICLES = preload("res://Components/shooting_particles/shooting_particles.tscn")
+
 @onready var objectList: Node = $"../../../../objectList"
 @onready var player: CharacterBody2D = $"../.."
 @onready var playerSprite:  = $"../../Sprite2D"
@@ -52,6 +54,9 @@ func fire() -> void:
 	if timer.time_left == 0 and bulletCurCount > 0 and on:
 		spawn_bullet.rpc()
 		bulletCurCount-=1
+		var pew := SHOOTING_PARTICLES.instantiate()
+		add_child(pew)
+		
 
 func reload() -> void:
 	if reload_timer.time_left == 0:
