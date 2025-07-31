@@ -1,32 +1,39 @@
+@tool
 extends Control
 
+##Hud element
+@export var ammo_count_scene : PackedScene 
+
+
+@onready var ammo_inv : ammo_inventory = $"../../../AmmoInventory"
+
+var nodes_arr : Dictionary[String,Node] 
 
 func _ready() -> void:
-	#var Global1 = Global.new()
-	
-	var b1 := "SMHL"
-	var b = Globals.loader("res://resources/textures/zombs/Bullets/" ,["small","shell","medium","heavy"], b1, "png")
-	print(b)
-	var a : Array[Node] = get_children()
+	var keys := ["small","medium","heavy","shell"]
+	var balls1 = Globals.loader("res://resources/textures/zombs/Bullets/" ,keys, "png")
+
 	var c : int = 0
-	#var d : Dictionary
-	
-	for i in a:	
-		var l  : TextureRect = a[c].get_child(1) # TODO
+
+	for i in keys:
+		var skibi = ammo_count_scene.instantiate()
+		add_child(skibi)
 		
-		l.texture = b[b1[c]]  # TextureRect
-		l.expand_mode = TextureRect.EXPAND_IGNORE_SIZE 
-		l.size = Vector2(40,40)
+		skibi.get_child(1).texture = balls1[i]
+		skibi.name = i
+		nodes_arr.set(i,skibi) # nice magic letters dipshit
+		
 		c+=1
-		
+ 
 
-func _process(_delta: float) -> void:
-	pass
-
+	ammo_inv.count_changed.connect(update_ammo)
 
 
-
-
+func update_ammo() -> void:
+	var ammo_counts : Dictionary = ammo_inv.ammo_counts
+	
+	for i in ammo_counts :
+		pass
 
 
 

@@ -1,3 +1,4 @@
+@tool
 extends Node
 #class_name Globals
 
@@ -6,13 +7,9 @@ var handsColor : Color
 var username : String 
 
 ## balls
-func loader(path: String, names: Array , keys: String ,extension: String ) -> Dictionary:
+func loader(path: String, names: Array ,extension: String ) -> Dictionary: # , keys: String 
 	var output_dict : Dictionary
-	var coun : int = 0
-	
 	for i in names:
-		
-		output_dict.set(keys[coun],load(path+names[coun]+"."+extension))
-		coun+=1
+		output_dict.set(i,load(path+i+"."+extension))
 	
 	return output_dict

@@ -23,6 +23,7 @@ font_size = 45
 script = ExtResource("1_maspd")
 
 [node name="Unused" type="Node2D" parent="."]
+visible = false
 
 [node name="healthBar" type="Sprite2D" parent="Unused"]
 visible = false
@@ -189,19 +190,4 @@ offset_top = 897.0
 offset_right = 1897.0
 offset_bottom = 937.0
 script = ExtResource("14_b0d78")
-
-[node name="AmmoCount1" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
-custom_minimum_size = Vector2(92, 31)
-layout_mode = 2
-
-[node name="AmmoCount2" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
-custom_minimum_size = Vector2(92, 31)
-layout_mode = 2
-
-[node name="AmmoCount3" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
-custom_minimum_size = Vector2(92, 31)
-layout_mode = 2
-
-[node name="AmmoCount4" parent="Control/AmmoStorage" instance=ExtResource("14_lwwil")]
-custom_minimum_size = Vector2(92, 31)
-layout_mode = 2
+ammo_count_scene = ExtResource("14_lwwil")

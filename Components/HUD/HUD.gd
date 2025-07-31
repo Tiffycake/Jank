@@ -5,6 +5,7 @@ extends CanvasLayer
 #@onready var slots: Array = $"Control/Slots".get_children()
 
 func _ready() -> void:
-	$"Unused".queue_free()
+	#pass
+	$"Unused".free()
 	
  
