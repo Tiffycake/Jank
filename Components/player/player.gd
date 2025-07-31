@@ -91,7 +91,7 @@ func push():
 	for i in get_slide_collision_count():
 		var col := get_slide_collision(i)
 		if(col.get_collider() is Player):
-			col.get_collider().pushVel = velocity/5
+			col.get_collider().pushVel = velocity/3
 
 func squish(delta: float) -> void:
 	for index in get_slide_collision_count():
