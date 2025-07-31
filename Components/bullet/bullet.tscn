@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd73n5hd0n1qh"]
+[gd_scene load_steps=6 format=3 uid="uid://dd73n5hd0n1qh"]
 
 [ext_resource type="Script" uid="uid://dm6nbvq8fbcdo" path="res://Components/bullet/bullet.gd" id="1_l5glv"]
 [ext_resource type="Texture2D" uid="uid://pm35mx6eiioi" path="res://resources/textures/bullet.svg" id="2_eoqba"]
 [ext_resource type="PackedScene" uid="uid://ccy36qcnbo0dk" path="res://Components/1 - Components/AttackComponent/AttackComponent.tscn" id="2_qncy5"]
+[ext_resource type="PackedScene" uid="uid://m1p4muy32g3r" path="res://Components/trail/trail_2d.tscn" id="4_7rqx0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5glv"]
 size = Vector2(63.9996, 104)
@@ -22,3 +23,6 @@ z_index = -1
 rotation = 1.5708
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("2_eoqba")
+
+[node name="Trail2D" parent="." instance=ExtResource("4_7rqx0")]
+top_level = true
