@@ -29,7 +29,8 @@ kanban-plugin: board
 
 - [ ] me :JunoShy:
 - [ ] [[make generic item component better]]
-- [x] ammo count
+- [ ] ammo storage
+- [ ] fix switching mid reload
 
 
 ## milla doing
@@ -45,6 +46,7 @@ kanban-plugin: board
 - [x] revamping playertexture
 - [x] player nametag
 - [x] Hud slots
+- [x] ammo count
 - [x] make a generic item component
 - [x] player pushing :despair:
 - [x] improve inv system

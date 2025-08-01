@@ -7,8 +7,8 @@
 script = ExtResource("1_mq4yo")
 bulletLifetime = 4000
 bulletMaxCount = 60
-bulletSpeed = 0
-atackDamage = 5
+bulletSpeed = 4000
+atackDamage = 1
 reloadTime = 0.0
 atackSpeed = 30.0
 weaponSprite = ExtResource("2_3a7fd")

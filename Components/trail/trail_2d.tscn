@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://ldia4bb3ijo7" path="res://Components/trail/trail_2d.gd" id="1_0soqm"]
 
 [sub_resource type="Curve" id="Curve_0soqm"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.87987, 0.991481), 0.0, 0.0, 0, 0, Vector2(1, 0), -27.4496, 0.0, 0, 0]
+point_count = 3
 
 [node name="Trail2D" type="Line2D"]
 show_behind_parent = true

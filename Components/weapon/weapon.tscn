@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://0uyiqscnhfx6"]
+[gd_scene load_steps=5 format=3 uid="uid://0uyiqscnhfx6"]
 
 [ext_resource type="Script" uid="uid://um2tckmdvn3" path="res://Components/weapon/weapon.gd" id="1_qlv4w"]
 [ext_resource type="AudioStream" uid="uid://muw3tbxmvukv" path="res://resources/sounds/normal-hitclap.wav" id="2_e85vh"]
 [ext_resource type="PackedScene" uid="uid://dd73n5hd0n1qh" path="res://Components/bullet/bullet.tscn" id="2_fp264"]
+[ext_resource type="PackedScene" uid="uid://byyri5mobc5s8" path="res://Components/shooting_particles/shooting_particles.tscn" id="3_tnnav"]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_qlv4w")
 bulletPath = ExtResource("2_fp264")
+SHOOTING_PARTICLES = ExtResource("3_tnnav")
 
 [node name="Timer" type="Timer" parent="."]
 
