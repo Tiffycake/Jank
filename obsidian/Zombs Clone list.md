@@ -31,6 +31,7 @@ kanban-plugin: board
 - [ ] [[make generic item component better]]
 - [ ] ammo storage
 - [ ] fix switching mid reload
+- [ ] [[fix switch item texture]]
 
 
 ## milla doing
