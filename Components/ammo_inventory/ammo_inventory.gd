@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 class_name ammo_inventory
 #small medium heavy shell
@@ -7,9 +6,9 @@ class_name ammo_inventory
 signal count_changed
 
 @export var ammo_counts : Dictionary = {"shell":200,"light":200,"medium":200,"heavy":200}
-@export var ammo_counts_old : Dictionary
+var ammo_counts_old : Dictionary
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	ammo_check()
 
 

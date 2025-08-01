@@ -1,4 +1,3 @@
-@tool
 extends Control
 
 ##Hud element
@@ -13,7 +12,6 @@ func _ready() -> void:
 	var keys := ["small","medium","heavy","shell"]
 	var balls1 = Globals.loader("res://resources/textures/zombs/Bullets/" ,keys, "png")
 
-	var c : int = 0
 
 	for i in keys:
 		var skibi = ammo_count_scene.instantiate()
@@ -23,7 +21,6 @@ func _ready() -> void:
 		skibi.name = i
 		nodes_arr.set(i,skibi) # nice magic letters dipshit
 		
-		c+=1
  
 
 	ammo_inv.count_changed.connect(update_ammo)
