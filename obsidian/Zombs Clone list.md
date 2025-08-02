@@ -37,7 +37,8 @@ kanban-plugin: board
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
-- [ ] [[rewrite player as a rigid body]]
+- [ ] more particle stuff
+- [ ] healthbar teehee :3c
 
 
 ## Done
