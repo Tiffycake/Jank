@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=18 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://Components/HUD/HUD.gd" id="1_maspd"]
@@ -13,6 +13,7 @@
 [ext_resource type="LabelSettings" uid="uid://cadmyaswo6d3d" path="res://resources/misc/label_settings.tres" id="7_ccrdf"]
 [ext_resource type="Texture2D" uid="uid://c4cedbk273oag" path="res://resources/textures/HUD elements/inner ball.svg" id="7_kkonv"]
 [ext_resource type="LabelSettings" uid="uid://c3lbruinehu33" path="res://resources/misc/label_settings_2.tres" id="9_d8qfv"]
+[ext_resource type="Texture2D" uid="uid://y14xrdlwph2m" path="res://resources/textures/HUD elements/healthBarBack.svg" id="10_n2a1q"]
 [ext_resource type="Script" uid="uid://dee0ls4be3d4i" path="res://Components/ammo_count/ammo_count.gd" id="14_b0d78"]
 [ext_resource type="PackedScene" uid="uid://c26inunqq86yf" path="res://Components/ammo_count/ammo_count.tscn" id="14_lwwil"]
 
@@ -99,6 +100,16 @@ texture_filter = 5
 position = Vector2(205, 1031)
 scale = Vector2(1.116, 1.134)
 texture = ExtResource("1_bxty2")
+
+[node name="HealthBarBack" type="TextureProgressBar" parent="Control/HealthBar"]
+texture_filter = 5
+layout_mode = 0
+offset_left = 22.0
+offset_top = 1004.0
+offset_right = 392.0
+offset_bottom = 1062.0
+value = 100.0
+texture_progress = ExtResource("10_n2a1q")
 
 [node name="HealthBar" type="TextureProgressBar" parent="Control/HealthBar"]
 texture_filter = 5
