@@ -1,15 +1,13 @@
 extends CharacterBody2D 
 class_name Player
 
-#var inp_dic : Dictionary[int,String] = { 0 : "slot0" , 1 : "slot1", 2 : "slot2" , 3 : "slot3", 4 : "slot4"}
 
-var inp_arr : PackedStringArray = ["slot0","slot1","slot2","slot3","slot4"]
-
+#region vector stuffss
 var speed: = 600
 var id : int
 @export var inputVel := Vector2.ZERO
 @export var pushVel := Vector2.ZERO
-
+#endregion
 #region Nodes
 var camera : Camera2D = Camera2D.new()
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
@@ -23,16 +21,15 @@ var camera : Camera2D = Camera2D.new()
 #var inventory : = Inventory.new() # preload("res://invItems/Inventory.tres")
 #endregion
 #region 
-##region scales
+var inp_arr : PackedStringArray = ["slot0","slot1","slot2","slot3","slot4"]
+
 const maxScale := 1.0
 const minScale := 0.75
 const scale_factor := 3.5
-##endregion
-##region inputs
+
 var inputDir : Vector2
 var attack   : bool
 var use      : bool
-##endregion
 #endregion
 
 
@@ -78,6 +75,7 @@ func getInput(): # ref do smth 😭
 			inventory.selectedNode.reload()
 
 func _physics_process(delta: float) -> void:
+	
 	if is_multiplayer_authority():
 		getInput()
 	velocity = inputVel + pushVel

@@ -22,7 +22,7 @@ func fire():
 
 @rpc("any_peer", "call_local")
 func spawnWall(mousePos) -> void:
-	var wall : StaticBody2D = wallPath.instantiate()
+	var wall : = wallPath.instantiate()
 	wall.position = mousePos # get_global_mouse_position()
 	wall.name =  "wall" + str(wallId) + " " + str(player.name)
 	wallId+=1

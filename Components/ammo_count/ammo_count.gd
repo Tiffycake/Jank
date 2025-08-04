@@ -6,14 +6,16 @@ extends Control
 
 @onready var ammo_inv : ammo_inventory = $"../../../AmmoInventory"
 
-var keys := ["small","medium","heavy","shell"]
+#var keys := ["small","medium","heavy","shell"]
+
 var nodes_arr : Dictionary[String,Node] 
 
 func _ready() -> void:
-	var icon_dic = Globals.loader("res://resources/textures/zombs/Bullets/" ,keys, "png")
+	
+	var icon_dic = Globals.resource_dict["bullets"]
 
 
-	for i in keys:
+	for i in icon_dic:
 		var skibi = ammo_count_scene.instantiate()
 		add_child(skibi)
 		
@@ -29,6 +31,6 @@ func _ready() -> void:
 func update_ammo() -> void:
 	var ammo_counts : Dictionary = ammo_inv.ammo_counts
 	
-	for i in keys :
+	for i in nodes_arr :
 		var a : Label = nodes_arr[i].get_node("Label")
 		a.text = str(ammo_counts[i])

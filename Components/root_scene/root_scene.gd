@@ -8,6 +8,10 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
 
+	#var a : = [1,2,3,4]
+	#var b : = [2,3,4,5]
+	#print(a+b)
+
 	#var a : = -12
 	#print( +a )
 

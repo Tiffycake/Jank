@@ -4,7 +4,6 @@ class_name Weapon
 
 #region New Code Region
 @export var bulletPath : PackedScene
-
 @export var SHOOTING_PARTICLES  : PackedScene
 
 @onready var objectList: Node = $"../../../../objectList"
@@ -34,6 +33,8 @@ var atackSpeed			: float
 
 #endregion
 
+var b : = Node2D.new()
+
 func _ready() -> void:
 	bulletLifetime		=   weapon_stats.bulletLifetime
 	bulletSpeed			=   weapon_stats.bulletSpeed
@@ -52,15 +53,16 @@ func _ready() -> void:
 
 	reload_timer.timeout.connect(refill_ammo)
 
+	add_child(b)
 
 func fire() -> void:
-	var a : bool = timer.time_left == 0 and bulletCurCount > 0 and on and ammo_inv_node.ammo_counts["medium"] > 0
-	if a:
+	var a : bool = bulletCurCount > 0 and ammo_inv_node.ammo_counts["medium"] > 0
+	if a  and timer.time_left == 0  and on:
 		spawn_bullet.rpc()
 		bulletCurCount -= 1
 		ammo_inv_node.ammo_counts["medium"] -= 1
-		var pew := SHOOTING_PARTICLES.instantiate()
-		add_child(pew)
+		
+		var pew := SHOOTING_PARTICLES.instantiate() ; b.add_child(pew)
 
 func reload() -> void:
 	if reload_timer.time_left == 0:

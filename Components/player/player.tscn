@@ -15,9 +15,7 @@
 [ext_resource type="Resource" uid="uid://dkbsecr3mbe0r" path="res://resources/invItems/wall_placer.tres" id="11_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://bccp86qgunv7a" path="res://Components/ammo_inventory/ammo_inventory.tscn" id="12_oprun"]
 [ext_resource type="Script" uid="uid://qdxrmqwrtjl6" path="res://Scripts/username_handler.gd" id="13_jej6c"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1xral"]
-radius = 54.0
+[ext_resource type="Shape2D" uid="uid://dloolvpnmf0y2" path="res://resources/misc/circleshape.tres" id="15_8sw5j"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tuyoq"]
 properties/0/path = NodePath(".:position")
@@ -87,10 +85,10 @@ maxHealth = 100
 [node name="HitboxComponent" parent="." instance=ExtResource("3_fjrip")]
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="HitboxComponent"]
-shape = SubResource("CircleShape2D_1xral")
+shape = ExtResource("15_8sw5j")
 
 [node name="CollisionBox2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_1xral")
+shape = ExtResource("15_8sw5j")
 
 [node name="usernameHandler" type="Node2D" parent="."]
 script = ExtResource("13_jej6c")

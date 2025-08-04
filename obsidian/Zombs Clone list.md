@@ -8,10 +8,8 @@ kanban-plugin: board
 
 - [ ] save file (with serialization)
 - [ ] grid for building
-- [ ] make texture updates signal based
-- [ ] [[damage types]]
-- [ ] work on particle component
 - [ ] godot rpc
+- [ ] [[damage types]]
 
 
 ## peak milla ideas
@@ -22,16 +20,16 @@ kanban-plugin: board
 ## To-Do
 
 - [ ] player death/respawn
-- [ ] drop/pick items
+- [ ] [[fix switch item texture]]
+- [ ] fix switching mid reload
 
 
 ## tiffy doing
 
 - [ ] me :JunoShy:
 - [ ] [[make generic item component better]]
-- [ ] ammo storage
-- [ ] fix switching mid reload
-- [ ] [[fix switch item texture]]
+- [ ] make the inv data driven or smth 😭
+- [ ] drop/pick items
 
 
 ## milla doing
@@ -39,6 +37,7 @@ kanban-plugin: board
 - [ ] me :JunoShy: ^nionpu
 - [ ] more particle stuff
 - [ ] healthbar teehee :3c
+- [x] work on particle component
 
 
 ## Done
@@ -51,6 +50,7 @@ kanban-plugin: board
 - [x] ammo count
 - [x] make a generic item component
 - [x] player pushing :despair:
+- [x] ammo storage
 - [x] improve inv system
 - [x] inventory system 3rd remake
 - [x] make inventory slot movement rpc call

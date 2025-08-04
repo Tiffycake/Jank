@@ -21,5 +21,6 @@ offset = Vector2(0, -80)
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_e85vh")
-volume_db = -15.127
-pitch_scale = 2.98
+volume_db = 0.631
+pitch_scale = 2.3
+attenuation = 0.683021
