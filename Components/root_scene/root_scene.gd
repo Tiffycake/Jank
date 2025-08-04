@@ -8,8 +8,12 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
 
-func _process(_delta: float) -> void:
-	pass
+	#var a : = -12
+	#print( +a )
+
+
+#func _process(_delta: float) -> void:
+	#pass
 
 
 
