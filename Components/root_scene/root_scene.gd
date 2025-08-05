@@ -7,7 +7,13 @@ extends Node2D
 func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
+	
+	for i in get_node("/root").get_children():
+		print(i)
 
+	
+	print(recursive_iter([[1,2],3,[4],[5,[6]]]))
+	
 	#var a : = [1,2,3,4]
 	#var b : = [2,3,4,5]
 	#print(a+b)
@@ -15,7 +21,15 @@ func _ready() -> void:
 	#var a : = -12
 	#print( +a )
 
+func recursive_iter(a):
+	if a is Array :
+		for i in a:
+			recursive_iter(i)
+	else:
+		return a
 
+
+ 
 #func _process(_delta: float) -> void:
 	#pass
 

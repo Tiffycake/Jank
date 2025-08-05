@@ -22,6 +22,7 @@ kanban-plugin: board
 - [ ] player death/respawn
 - [ ] [[fix switch item texture]]
 - [ ] fix switching mid reload
+- [ ] fix health bar beeing kinda funckled
 
 
 ## tiffy doing
@@ -30,6 +31,7 @@ kanban-plugin: board
 - [ ] [[make generic item component better]]
 - [ ] make the inv data driven or smth 😭
 - [ ] drop/pick items
+- [x] ammo pickups
 
 
 ## milla doing

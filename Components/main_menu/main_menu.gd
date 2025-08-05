@@ -31,27 +31,36 @@ func joinButtonPressed():
 	multiplayer.multiplayer_peer = peer
 	process_mode = Node.PROCESS_MODE_DISABLED
 	hide()
- 
+
+
 func spawnPlayer(id = 1):
-	var player = playerScene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
+	var player : Player = playerScene.instantiate(PackedScene.GEN_EDIT_STATE_INSTANCE)
 	player.name = str(id)
-	player.id = str(id)
+	player.id = id
 	objectList.call_deferred("add_child", player)  #mainScene
 	#player.add_child(playerList)
 
-func tweenMaker(object,variant) -> Callable:
-	var outputFunc = func outputFunc():
-		var tween = get_tree().create_tween()
-		tween.tween_property(object, "scale", variant, 0.1)
-	return outputFunc
 
 func updatePlayerInfo() -> void:
 	Globals.bodyColor = body_color.color
 	Globals.handsColor = hands_color.color
-	if username.text != "":
-		Globals.username = username.text
-	else:
-		Globals.username = ":3"
+	#if username.text != "":
+	Globals.username = username.text
+	#else:
+		#Globals.username = ":3"
+
+func respawn(playernode:Node):
+	var a : = get_node("/root/Node2D/WorldMap/objectList")
+	a.call_deferred("remove_child",playernode)
+
+	var balls : Callable = func ():
+		a.add_child(playernode)
+		playernode.get_node("HealthComponent")._ready()
+
+	get_tree().create_timer(1).timeout.connect(balls)
+
+
+
 func _ready() -> void:
 	hostButton.pressed.connect(hostButtonPressed)
 	joinButton.pressed.connect(joinButtonPressed)
@@ -62,3 +71,14 @@ func _ready() -> void:
 	joinButton.mouse_entered.connect(tweenMaker(joinButton,buttonHoverScale))
 	hostButton.mouse_exited.connect(tweenMaker(hostButton,buttonScale))
 	joinButton.mouse_exited.connect(tweenMaker(joinButton,buttonScale))
+
+func tweenMaker(object,variant) -> Callable:
+	var outputFunc = func outputFunc():
+		var tween = get_tree().create_tween()
+		tween.tween_property(object, "scale", variant, 0.1)
+	return outputFunc
+
+
+
+#func respawn(id):
+	#spawnPlayer(id)

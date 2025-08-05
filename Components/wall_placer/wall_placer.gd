@@ -26,6 +26,7 @@ func spawnWall(mousePos) -> void:
 	wall.position = mousePos # get_global_mouse_position()
 	wall.name =  "wall" + str(wallId) + " " + str(player.name)
 	wallId+=1
+	wall.content = ["medium",123]
 	objectList.add_child(wall)
 	timer.start()
 

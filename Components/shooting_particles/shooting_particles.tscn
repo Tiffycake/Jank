@@ -13,10 +13,8 @@ curve = SubResource("Curve_uym62")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d6awv"]
 particle_flag_align_y = true
 particle_flag_disable_z = true
-angle_min = -80.0
-angle_max = 80.0
 direction = Vector3(0, 1, 0)
-spread = 30.0
+spread = 0.0
 initial_velocity_min = 230.0
 initial_velocity_max = 270.0
 gravity = Vector3(0, 0, 0)
@@ -29,11 +27,9 @@ alpha_curve = SubResource("CurveTexture_v27e1")
 [node name="shooting_particles" type="GPUParticles2D"]
 process_mode = 3
 rotation = 3.14159
-emitting = false
 amount = 1
 texture = ExtResource("1_jkv2o")
 lifetime = 0.4
-one_shot = true
 randomness = 0.05
 process_material = SubResource("ParticleProcessMaterial_d6awv")
 script = ExtResource("2_uym62")

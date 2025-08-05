@@ -1,7 +1,6 @@
 extends CharacterBody2D 
 class_name Player
 
-
 #region vector stuffss
 var speed: = 600
 var id : int
@@ -16,9 +15,6 @@ var camera : Camera2D = Camera2D.new()
 @onready var HUD : = $HUD
 @onready var inventory : = $"Inventory"
 @onready var username: Label = $usernameHandler/username
-
-
-#var inventory : = Inventory.new() # preload("res://invItems/Inventory.tres")
 #endregion
 #region 
 var inp_arr : PackedStringArray = ["slot0","slot1","slot2","slot3","slot4"]
@@ -40,6 +36,9 @@ func _ready() -> void:
 	if is_multiplayer_authority():
 		add_child(camera)
 		HUD.visible = true
+
+	print( get_tree().root )
+
 
 func getInput(): # ref do smth 😭
 	# rewrite this fuckass funciton (more like clean it up!!)
@@ -111,7 +110,8 @@ func squish(delta: float) -> void:
 			coolBox.scale = Vector2(coolBox.scale.x + delta * scale_factor, coolBox.scale.y + delta * scale_factor)
 
 func _enter_tree() -> void:
-	set_multiplayer_authority(name.to_int())
+	set_multiplayer_authority(int(name))
 
 func die() -> void:
-	queue_free()
+	
+	get_node("/root/Node2D/MainMenu").respawn(self)

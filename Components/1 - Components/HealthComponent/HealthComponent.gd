@@ -13,9 +13,10 @@ func _ready() -> void:
 func damage(attack: AttackComponent):
 	if unbreakable == false:
 		health -= attack.attackDamage
+	
 	if health <= 0:
 		if $"..".has_method("die"):
-			$"..".die()# this is probs problematic//  it is lol
+			$"..".die()
 		else:
 			get_parent().queue_free()
 		#get_parent().queue_free()

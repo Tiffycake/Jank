@@ -140,6 +140,7 @@ offset_right = 1521.41
 offset_bottom = 425.0
 scale = Vector2(2.15811, 2.15811)
 theme_override_constants/minimum_character_width = 10
+text = ":3"
 placeholder_text = ":3"
 alignment = 1
 max_length = 15

@@ -1,10 +1,11 @@
-extends CanvasLayer
+extends Node2D
 # HUD
 #@onready var inventory : = $" ../../Inventory" # wow wtf is this
 						# HUD / player
 #@onready var slots: Array = $"Control/Slots".get_children()
 
 func _ready() -> void:
-	$"Unused".free()
+	
+	queue_free() # $"Unused".
 	
  
