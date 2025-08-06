@@ -2,7 +2,7 @@ extends Item
 class_name Weapon
 
 
-#region New Code Region
+#region a
 @export var bulletPath : PackedScene
 @export var SHOOTING_PARTICLES  : PackedScene
 
@@ -32,9 +32,10 @@ var bulletSpeed			: int
 var atackDamage			: int
 var atackSpeed			: float
 
+var particle_list : = Node2D.new()
+
 #endregion
 
-var b : = Node2D.new()
 
 func _ready() -> void:
 	bulletLifetime		=   weapon_stats.bulletLifetime
@@ -48,13 +49,13 @@ func _ready() -> void:
 	weaponSprite.position = weapon_stats.offset
 	
 	timer.wait_time = 1/atackSpeed
-	reload_timer.wait_time = weapon_stats.reloadTime # this keeps erroring
 	timer.one_shot = true
+	reload_timer.wait_time = weapon_stats.reloadTime # this keeps erroring
 	reload_timer.one_shot = true
 
 	reload_timer.timeout.connect(refill_ammo)
 
-	add_child(b)
+	add_child(particle_list)
 
 func fire() -> void:
 	var a : bool = bulletCurCount > 0 and ammo_inv_node.ammo_counts["medium"] > 0
@@ -63,7 +64,7 @@ func fire() -> void:
 		bulletCurCount -= 1
 		ammo_inv_node.ammo_counts["medium"] -= 1
 		
-		var pew := SHOOTING_PARTICLES.instantiate() ; b.add_child(pew)
+		var pew := SHOOTING_PARTICLES.instantiate() ; particle_list.add_child(pew)
 
 func reload() -> void:
 	if reload_timer.time_left == 0:

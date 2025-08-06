@@ -81,9 +81,16 @@ grow_vertical = 2
 label_settings = SubResource("LabelSettings_kn30k")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Control/PewPewTimer"]
-layout_mode = 0
-offset_right = 189.0
-offset_bottom = 189.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.5
+offset_top = -94.5
+offset_right = 94.5
+offset_bottom = 94.5
 value = 100.0
 fill_mode = 4
 radial_initial_angle = 360.0

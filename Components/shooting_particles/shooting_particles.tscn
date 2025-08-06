@@ -33,6 +33,7 @@ texture = ExtResource("1_jkv2o")
 lifetime = 0.4
 one_shot = true
 randomness = 0.05
+fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_d6awv")
 script = ExtResource("2_uym62")
 

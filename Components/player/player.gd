@@ -2,10 +2,9 @@ extends CharacterBody2D
 class_name Player
 
 #region vector stuffss
-var speed: = 600
-var id : int
 @export var inputVel := Vector2.ZERO
 @export var pushVel := Vector2.ZERO
+var inputDir : Vector2
 #endregion
 #region Nodes
 var camera : Camera2D = Camera2D.new()
@@ -17,13 +16,14 @@ var camera : Camera2D = Camera2D.new()
 @onready var username: Label = $usernameHandler/username
 #endregion
 #region 
+var speed: = 600
+var id : int
 var inp_arr : PackedStringArray = ["slot0","slot1","slot2","slot3","slot4"]
 
 const maxScale := 1.0
 const minScale := 0.75
 const scale_factor := 3.5
 
-var inputDir : Vector2
 var attack   : bool
 var use      : bool
 #endregion
