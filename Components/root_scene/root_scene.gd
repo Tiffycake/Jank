@@ -8,11 +8,9 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
 	
-	for i in get_node("/root").get_children():
-		print(i)
-
-	
-	print(recursive_iter([[1,2],3,[4],[5,[6]]]))
+	#for i in get_node("/root").get_children():
+		#print(i)
+	#print(recursive_iter([[1,2],3,[4],[5,[6]]]))
 	
 	#var a : = [1,2,3,4]
 	#var b : = [2,3,4,5]

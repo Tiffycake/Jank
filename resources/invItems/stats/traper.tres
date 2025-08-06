@@ -6,13 +6,13 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_yejvg")
-bulletLifetime = 200
+bulletLifetime = 0.0
 bulletMaxCount = 1
 bulletSpeed = 1
-atackDamage = 100
+atackDamage = 99
 reloadTime = 2.0
 atackSpeed = 5.0
-bulletType = "small"
 weaponSprite = ExtResource("2_w4ljj")
 offset = Vector2(-50, 0)
+bulletType = "small"
 metadata/_custom_type_script = "uid://hjfy1o8cf3ll"

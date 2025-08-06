@@ -1,7 +1,7 @@
 extends Node2D
 class_name HealthComponent
 
-@export var maxHealth : int
+@export var maxHealth : int  = 100
 var health : int 
 @export var unbreakable : bool = false
 
