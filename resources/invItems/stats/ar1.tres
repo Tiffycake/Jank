@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_gurw8")
-bulletLifetime = 120
+bulletLifetime = 3.0
 bulletMaxCount = 12
 bulletSpeed = 4000
 atackDamage = 1
