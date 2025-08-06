@@ -27,7 +27,7 @@ var bulletId : int
 
 var bulletCurCount		: int
 var bulletMaxCount		: int
-var bulletLifetime		: int
+var bulletLifetime		: float
 var bulletSpeed			: int
 var atackDamage			: int
 var atackSpeed			: float

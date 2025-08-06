@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_mq4yo")
-bulletLifetime = 4000
+bulletLifetime = 0.0
 bulletMaxCount = 60
 bulletSpeed = 4000
 atackDamage = 1

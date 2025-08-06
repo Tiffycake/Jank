@@ -9,7 +9,7 @@ var dir :float
 
 var speed        :int #= 1200
 var attackDamage :int  # = atkComp.attackDamage #= 1
-var lifetime     :int #= 600
+var lifetime     :float #= 600
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +25,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	velocity = Vector2(speed,0).rotated(dir) #+ player.velocity
 	move_and_slide()
-	if lifetime <= 0:
+	if lifetime <= 0.0:
 		self.queue_free() 
-	lifetime-=1
+	lifetime -= _delta
