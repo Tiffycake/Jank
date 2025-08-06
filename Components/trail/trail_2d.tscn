@@ -8,5 +8,6 @@ point_count = 3
 
 [node name="Trail2D" type="Line2D"]
 show_behind_parent = true
+top_level = true
 width_curve = SubResource("Curve_0soqm")
 script = ExtResource("1_0soqm")
