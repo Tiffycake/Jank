@@ -16,6 +16,7 @@ class_name Weapon
 @onready var pewPewTimer : PewPewTimer = $"../../HUD/Control/PewPewTimer"
 
 @onready var sound : AudioStreamPlayer2D = $sound
+@onready var sound_peak: AudioStreamPlayer2D = $sound_peak
 
 var on : bool = true
 
@@ -88,7 +89,8 @@ func unequip() -> void:
 
 @rpc("any_peer", "call_local")
 func spawn_bullet(): # oh my miku i know this is old but
-	sound.play()
+	#sound.play() :NecoALittleTrolling:
+	sound_peak.play()
 	var bullet = bulletPath.instantiate()
 	
 	var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
