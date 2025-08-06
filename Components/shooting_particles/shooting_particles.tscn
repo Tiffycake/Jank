@@ -27,9 +27,11 @@ alpha_curve = SubResource("CurveTexture_v27e1")
 [node name="shooting_particles" type="GPUParticles2D"]
 process_mode = 3
 rotation = 3.14159
+emitting = false
 amount = 1
 texture = ExtResource("1_jkv2o")
 lifetime = 0.4
+one_shot = true
 randomness = 0.05
 process_material = SubResource("ParticleProcessMaterial_d6awv")
 script = ExtResource("2_uym62")

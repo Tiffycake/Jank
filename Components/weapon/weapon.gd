@@ -71,7 +71,10 @@ func reload() -> void:
 		pewPewTimer.startPewPew(reload_timer.wait_time)
 
 func refill_ammo() -> void:
-	bulletCurCount = bulletMaxCount
+	var oopygoopy = ammo_inv_node.ammo_counts["medium"]
+	if oopygoopy >= bulletMaxCount:
+		bulletCurCount = bulletMaxCount
+	else: bulletCurCount = oopygoopy
 	pewPewTimer.hide()
 	on = true # reenables firing
 
