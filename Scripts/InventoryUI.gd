@@ -19,7 +19,10 @@ extends Control
 var tween_running : = false
 
 func _ready() -> void:
-	pass 
+	healthbar.max_value = healthComponent1.maxHealth
+	healthbar.value = healthComponent1.health
+	healthbar_back.value = healthbar.value
+	healthbar_back.max_value = healthbar.max_value
 	
 
 func _process(_delta: float) -> void:
@@ -27,7 +30,10 @@ func _process(_delta: float) -> void:
 	updateBullet()
 
 func updateHealth():
+	# we should maybe put these 2 in silly dedicated function :3
 	healthbar.max_value = healthComponent1.maxHealth
+	healthbar_back.max_value = healthbar.max_value
+	
 	healthbar.value = healthComponent1.health
 	healthNum.text = str(healthComponent1.health)+" / "+str(healthComponent1.maxHealth)
 	

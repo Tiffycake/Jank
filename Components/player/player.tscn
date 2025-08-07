@@ -80,7 +80,7 @@ _content_array = Array[ExtResource("8_y4r1p")]([ExtResource("9_d2wvv"), ExtResou
 [node name="AmmoInventory" parent="." instance=ExtResource("12_oprun")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
-maxHealth = 100
+maxHealth = 300
 
 [node name="HitboxComponent" parent="." instance=ExtResource("3_fjrip")]
 

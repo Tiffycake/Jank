@@ -6,7 +6,7 @@
 [resource]
 resource_local_to_scene = true
 script = ExtResource("1_yejvg")
-bulletLifetime = 0.0
+bulletLifetime = 3.0
 bulletMaxCount = 1
 bulletSpeed = 1
 atackDamage = 99
