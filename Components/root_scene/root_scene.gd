@@ -10,10 +10,9 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
 	
-	#print( b"4102" )
 	for i in a12.get_property_list():
-		if i["usage"] == 4102:
 			print(i)
+		#if i["usage"] == 4102: # terrible checking
 			
 			
 	#for i in get_node("/root").get_children():
