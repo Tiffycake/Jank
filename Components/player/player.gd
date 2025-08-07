@@ -37,7 +37,7 @@ func _ready() -> void:
 		add_child(camera)
 		HUD.visible = true
 
-	print( get_tree().root )
+	#print( get_tree().root )
 
 
 func getInput(): # ref do smth 😭

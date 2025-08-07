@@ -3,7 +3,7 @@ class_name Weapon
 
 
 #region a
-var weapon_stats : stat_sheet
+
 @export var bulletPath : PackedScene
 @export var SHOOTING_PARTICLES  : PackedScene
 
@@ -18,21 +18,26 @@ var weapon_stats : stat_sheet
 
 @onready var sound : AudioStreamPlayer2D = $sound
 @onready var sound_peak: AudioStreamPlayer2D = $sound_peak
+var particle_list : = Node2D.new()
+
 
 var on : bool = true
 
-#enum bulletType {small = "small", medium = "medium", heavy = "heavy", shell = "shell"}
+var weapon_stats : stat_sheet
+
+var bulletLifetime		: float  # = 60
+var bulletMaxCount		: int  # = 12
+var bulletSpeed			: int  # = 2000 # projectile speed
+var bulletSpread		: float
+var atackDamage			: int  # = 10 # weaponAtackDamage
+var atackSpeed			: float# = 5  # attacks per second
+var reloadTime			: float  # reload seconds
+var offset				: Vector2
+
 var bulletType : String
 var bulletId : int
-
 var bulletCurCount		: int
-var bulletMaxCount		: int
-var bulletLifetime		: float
-var bulletSpeed			: int
-var atackDamage			: int
-var atackSpeed			: float
 
-var particle_list : = Node2D.new()
 
 #endregion
 
@@ -92,6 +97,7 @@ func unequip() -> void:
 
 @rpc("any_peer", "call_local")
 func spawn_bullet(): # oh my miku i know this is old but
+	
 	#sound.play() :NecoALittleTrolling:
 	sound_peak.play()
 	var bullet = bulletPath.instantiate()
@@ -100,7 +106,7 @@ func spawn_bullet(): # oh my miku i know this is old but
 	attackComponent.attackDamage = atackDamage
 	
 	bullet.pos = self.global_position
-	bullet.dir = player.rotation
+	bullet.dir = player.rotation + deg_to_rad(bulletSpread *(randf()*2 -1))
 	bullet.rota = self.global_rotation
 	bullet.speed = bulletSpeed
 	bullet.lifetime = bulletLifetime

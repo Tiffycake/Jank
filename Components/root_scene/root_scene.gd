@@ -1,13 +1,21 @@
 extends Node2D
 # main root
 
-@export var mainMenu  : PackedScene 
-@export var WorldMap  : PackedScene 
+@export var mainMenu  : PackedScene
+@export var WorldMap  : PackedScene
+
+const a12 : stat_sheet = preload("res://resources/invItems/stats/ar3.tres")
 
 func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(mainMenu)
 	
+	#print( b"4102" )
+	for i in a12.get_property_list():
+		if i["usage"] == 4102:
+			print(i)
+			
+			
 	#for i in get_node("/root").get_children():
 		#print(i)
 	#print(recursive_iter([[1,2],3,[4],[5,[6]]]))
