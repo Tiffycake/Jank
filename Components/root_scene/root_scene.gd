@@ -1,20 +1,22 @@
 extends Node2D
 # main root
 
-@export var mainMenu  : PackedScene
+@export var MainMenu  : PackedScene
 @export var WorldMap  : PackedScene
 
 const a12 : stat_sheet = preload("res://resources/invItems/stats/ar3.tres")
 
 func _ready() -> void:
 	spawnNode(WorldMap)
-	spawnNode(mainMenu)
+	spawnNode(MainMenu)
 	
-	for i in a12.get_property_list():
-			print(i)
-		#if i["usage"] == 4102: # terrible checking
-			
-			
+	for asteroid_destroyer in a12.get_property_list(): 
+		if asteroid_destroyer["usage"] >= 4102: # terrible checking
+			print(asteroid_destroyer["name"], " : ", a12.get(asteroid_destroyer["name"]))
+	# script and Texture2D apearing TODO: fix 
+	#
+
+	
 	#for i in get_node("/root").get_children():
 		#print(i)
 	#print(recursive_iter([[1,2],3,[4],[5,[6]]]))

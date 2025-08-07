@@ -6,5 +6,5 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nlr2u")
-mainMenu = ExtResource("2_3t6sr")
+MainMenu = ExtResource("2_3t6sr")
 WorldMap = ExtResource("3_iapla")
