@@ -49,7 +49,8 @@ func _selectItem1(n1: int) -> void:
 				selectedNode.weapon_stats = selectedItem.stats 
 			add_child(selectedNode)
 			selectedNode.equip()
-
+	else:
+		selectedItem = null
 @rpc("any_peer", "call_local")
 func add_item1(item:InvItem): #item:InvItem
 	for i in range(len(_content_array)):

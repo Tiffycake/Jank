@@ -53,6 +53,7 @@ func reset_tween():
 	tween_running = false
   
 func updateBullet():
+	
 	if !(inventory.selectedNode is Weapon) or inventory.selectedNode == null:
 		ammoCount.hide()
 	else:
