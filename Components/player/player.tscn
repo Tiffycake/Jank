@@ -47,6 +47,7 @@ properties/8/spawn = true
 properties/8/replication_mode = 1
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.9, 0.9)
 motion_mode = 1
 script = ExtResource("1_smehm")
 

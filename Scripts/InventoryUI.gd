@@ -36,7 +36,9 @@ func updateHealth():
 	
 	healthbar.value = healthComponent1.health
 	healthNum.text = str(healthComponent1.health)+" / "+str(healthComponent1.maxHealth)
-	
+
+	#when mutltiple :3 instances occur with a lower interval then then 0.4 (the tween time)
+	# liek i think it kinda maybe tweaks idk :NecoALittleTrolling: 
 	if healthbar.value != healthbar_back.value and not tween_running:
 		tween_running = true # so true
 		var skibidi = get_tree().create_tween()

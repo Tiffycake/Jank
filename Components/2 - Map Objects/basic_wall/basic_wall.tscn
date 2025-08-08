@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b25toh0ur531x"]
 
 [ext_resource type="Texture2D" uid="uid://dkiyewyxegpxm" path="res://resources/textures/wall.svg" id="1_0yh7d"]
-[ext_resource type="Script" uid="uid://tulqf4cfnw2y" path="res://Components/basic_wall/basic_wall.gd" id="1_au13n"]
+[ext_resource type="Script" uid="uid://tulqf4cfnw2y" path="res://Components/2 - Map Objects/basic_wall/basic_wall.gd" id="1_eyjm3"]
 [ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://Components/1 - Components/HitBoxComponent/HitboxComponent.tscn" id="2_w2nnj"]
 [ext_resource type="PackedScene" uid="uid://d0flnyjdbb036" path="res://Components/shape_2d_cloner/shape_2d_cloner.tscn" id="3_n6x30"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://Components/1 - Components/HealthComponent/HealthComponent.tscn" id="4_n6x30"]
@@ -10,7 +10,7 @@
 size = Vector2(188, 188)
 
 [node name="BasicWall" type="StaticBody2D"]
-script = ExtResource("1_au13n")
+script = ExtResource("1_eyjm3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0yh7d")

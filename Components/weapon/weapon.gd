@@ -25,31 +25,18 @@ var on : bool = true
 
 var weapon_stats : stat_sheet
 
-#var bulletLifetime		: float  # = 60
-#var bulletMaxCount		: int  # = 12
-#var bulletSpeed			: int  # = 2000 # projectile speed
-#var bulletSpread		: float
-#var atackDamage			: int  # = 10 # weaponAtackDamage
-#var atackSpeed			: float# = 5  # attacks per second
-#var reloadTime			: float  # reload seconds
-#var offset				: Vector2
-#var bulletType : String
 
 var bulletId : int
+var bulletMaxCount		: int
 var bulletCurCount		: int
-
+ 
 
 #endregion
 
 
 func _ready() -> void:
-	#bulletLifetime		=	weapon_stats.bulletLifetime
-	#bulletSpeed			=	weapon_stats.bulletSpeed
-	#atackDamage			=	weapon_stats.atackDamage
-	#atackSpeed			=	weapon_stats.atackSpeed
-	#bulletMaxCount		=	weapon_stats.bulletMaxCount
-	#bulletCurCount		=	weapon_stats.bulletMaxCount
-	#bulletType			=	weapon_stats.bulletType
+	bulletMaxCount	=	weapon_stats.bulletMaxCount
+	bulletCurCount	=	weapon_stats.bulletMaxCount
 	
 	weaponSprite.texture  = weapon_stats.weaponSprite
 	weaponSprite.position = weapon_stats.offset
@@ -79,6 +66,7 @@ func reload() -> void:
 		pewPewTimer.startPewPew(reload_timer.wait_time)
 
 func refill_ammo() -> void:
+	
 	var oopygoopy = ammo_inv_node.ammo_counts[weapon_stats.bulletType]
 	if oopygoopy >= weapon_stats.bulletMaxCount:
 		bulletCurCount = weapon_stats.bulletMaxCount
@@ -114,3 +102,27 @@ func spawn_bullet(): # oh my miku i know this is old but
 	bulletId+=1
 	objectList.add_child(bullet)
  
+
+
+
+
+
+#region New Code Region
+
+	#bulletLifetime		=	weapon_stats.bulletLifetime
+	#bulletSpeed			=	weapon_stats.bulletSpeed
+	#atackDamage			=	weapon_stats.atackDamage
+	#atackSpeed			=	weapon_stats.atackSpeed
+	#bulletMaxCount		=	weapon_stats.bulletMaxCount
+	#bulletCurCount		=	weapon_stats.bulletMaxCount
+	#bulletType			=	weapon_stats.bulletType
+#var bulletLifetime		: float  # = 60
+#var bulletMaxCount		: int  # = 12
+#var bulletSpeed			: int  # = 2000 # projectile speed
+#var bulletSpread		: float
+#var atackDamage			: int  # = 10 # weaponAtackDamage
+#var atackSpeed			: float# = 5  # attacks per second
+#var reloadTime			: float  # reload seconds
+#var offset				: Vector2
+#var bulletType : String
+#endregion

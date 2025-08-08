@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3hqeh06xgi6r"]
+
+[ext_resource type="PackedScene" uid="uid://ds2sl57hiufie" path="res://Components/2 - Map Objects/long_wall/long_wall.tscn" id="1_052oe"]
+[ext_resource type="PackedScene" uid="uid://bwhbf510t8wga" path="res://Components/2 - Map Objects/square_wall/square_wall.tscn" id="2_1h1yx"]
+
+[node name="Walls" type="Node2D"]
+
+[node name="square" parent="." instance=ExtResource("2_1h1yx")]
+position = Vector2(745, 205)
+
+[node name="TopLane" type="Node2D" parent="."]
+position = Vector2(0, -3074)
+
+[node name="long" parent="TopLane" instance=ExtResource("1_052oe")]
+position = Vector2(271, -89)
+
+[node name="long2" parent="TopLane" instance=ExtResource("1_052oe")]
+position = Vector2(813, -89)
+
+[node name="long3" parent="TopLane" instance=ExtResource("1_052oe")]
+position = Vector2(1355, -89)
+
+[node name="long4" parent="TopLane" instance=ExtResource("1_052oe")]
+position = Vector2(1897, -89)
+
+[node name="BotLane" type="Node2D" parent="."]
+
+[node name="long" parent="BotLane" instance=ExtResource("1_052oe")]
+position = Vector2(271, -89)
+
+[node name="long2" parent="BotLane" instance=ExtResource("1_052oe")]
+position = Vector2(813, -89)
+
+[node name="long3" parent="BotLane" instance=ExtResource("1_052oe")]
+position = Vector2(1355, -89)
+
+[node name="long4" parent="BotLane" instance=ExtResource("1_052oe")]
+position = Vector2(1897, -89)
+
+[node name="LeftWall" type="Node2D" parent="."]
+
+[node name="long" parent="LeftWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -271)
+rotation = 1.57079
+
+[node name="long2" parent="LeftWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -813)
+rotation = 1.57079
+
+[node name="long3" parent="LeftWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -1355)
+rotation = 1.57079
+
+[node name="long4" parent="LeftWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -1897)
+rotation = 1.57079
+
+[node name="long5" parent="LeftWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -2439)
+rotation = 1.57079
+
+[node name="long6" parent="LeftWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -2981)
+rotation = 1.57079
+
+[node name="RightWall" type="Node2D" parent="."]
+position = Vector2(1990, 0)
+
+[node name="long" parent="RightWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -271)
+rotation = 1.57079
+
+[node name="long2" parent="RightWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -813)
+rotation = 1.57079
+
+[node name="long3" parent="RightWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -1355)
+rotation = 1.57079
+
+[node name="long4" parent="RightWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -1897)
+rotation = 1.57079
+
+[node name="long5" parent="RightWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -2439)
+rotation = 1.57079
+
+[node name="long6" parent="RightWall" instance=ExtResource("1_052oe")]
+position = Vector2(89, -2981)
+rotation = 1.57079
+
+[node name="long" parent="." instance=ExtResource("1_052oe")]
+position = Vector2(454, -1618)

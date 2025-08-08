@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwhbf510t8wga"]
+
+[ext_resource type="Script" uid="uid://tulqf4cfnw2y" path="res://Components/2 - Map Objects/basic_wall/basic_wall.gd" id="1_4po1h"]
+[ext_resource type="Texture2D" uid="uid://c1cpqtscya77x" path="res://resources/textures/zombs/walls/wall square.png" id="2_hcb1n"]
+[ext_resource type="PackedScene" uid="uid://c8xwid8c3180v" path="res://Components/1 - Components/HitBoxComponent/HitboxComponent.tscn" id="3_nci00"]
+[ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://Components/1 - Components/HealthComponent/HealthComponent.tscn" id="4_x1kyo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjtem"]
+size = Vector2(178, 178)
+
+[node name="BasicWall" type="StaticBody2D"]
+script = ExtResource("1_4po1h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.269119, 0.269119)
+texture = ExtResource("2_hcb1n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sjtem")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_nci00")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_sjtem")
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_x1kyo")]
+unbreakable = true

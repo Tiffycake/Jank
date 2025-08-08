@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brgpga4x72raw" path="res://Components/wall_placer/wall_placer.gd" id="1_q0jkr"]
 [ext_resource type="Texture2D" uid="uid://da2bhtdfgh6i7" path="res://resources/textures/random textures/blueprintbase_512-893892667.png" id="2_7iwla"]
-[ext_resource type="PackedScene" uid="uid://cndifwcy6jwe6" path="res://Components/pickup/pickup.tscn" id="2_fxae7"]
+[ext_resource type="PackedScene" uid="uid://bwhbf510t8wga" path="res://Components/2 - Map Objects/square_wall/square_wall.tscn" id="2_fxae7"]
 
 [node name="wallPlacer" type="Node2D"]
 script = ExtResource("1_q0jkr")

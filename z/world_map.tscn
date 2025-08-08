@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0xvbxopa5yrf"]
+[gd_scene load_steps=5 format=3 uid="uid://b0xvbxopa5yrf"]
 
 [ext_resource type="Texture2D" uid="uid://b2tq2hcgw0uhu" path="res://resources/textures/background.svg" id="1_fgl0d"]
 [ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://z/spawner.gd" id="2_8rtnk"]
 [ext_resource type="PackedScene" uid="uid://chxkv23icrdpd" path="res://Components/chest/chest.tscn" id="3_jylf2"]
+[ext_resource type="PackedScene" uid="uid://b3hqeh06xgi6r" path="res://Components/2 - Map Objects/Jank clash map.tscn" id="4_r7ivh"]
 
 [node name="WorldMap" type="Node2D"]
 
@@ -17,21 +18,25 @@ texture = ExtResource("1_fgl0d")
 centered = false
 offset = Vector2(1, 1)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(99, 292)
+[node name="MapObjects" type="Node2D" parent="."]
 
-[node name="chestSpawner" type="Button" parent="Node2D"]
+[node name="chestSpawner" type="Button" parent="MapObjects"]
 z_index = 1
 anchors_preset = -1
 anchor_left = 0.025
 anchor_top = -0.025
 anchor_right = 0.025
 anchor_bottom = -0.025
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 99.0
+offset_top = 292.0
+offset_right = 139.0
+offset_bottom = 332.0
 script = ExtResource("2_8rtnk")
 chest = ExtResource("3_jylf2")
 metadata/_edit_use_anchors_ = true
+
+[node name="Walls" parent="MapObjects" instance=ExtResource("4_r7ivh")]
+position = Vector2(-922, 1197)
 
 [node name="objectList" type="Node" parent="."]
 unique_name_in_owner = true

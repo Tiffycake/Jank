@@ -27,6 +27,14 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
+[file_customization]
+
+folder_colors={
+"res://Components/": "blue",
+"res://obsidian/": "purple",
+"res://resources/": "green"
+}
+
 [importer_defaults]
 
 animation_library={
