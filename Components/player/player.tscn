@@ -106,3 +106,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_tuyoq")
+
+[node name="Camera2D" type="Camera2D" parent="."]

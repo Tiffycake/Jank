@@ -7,7 +7,7 @@ class_name InvItem
 ## scene of the item 
 @export var scene  : PackedScene
 
-## scene of the item 
+## stats 
 @export var stats  : stat_sheet
  #very real name 
 #@export var nameId : String

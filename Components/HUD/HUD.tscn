@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=19 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://z/exploder.gd" id="1_maspd"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://y14xrdlwph2m" path="res://resources/textures/HUD elements/healthBarBack.svg" id="10_n2a1q"]
 [ext_resource type="Script" uid="uid://dee0ls4be3d4i" path="res://Components/ammo_count/ammo_count.gd" id="14_b0d78"]
 [ext_resource type="PackedScene" uid="uid://c26inunqq86yf" path="res://Components/ammo_count/ammo_count.tscn" id="14_lwwil"]
+[ext_resource type="Script" uid="uid://ctnqh8vxq5oj3" path="res://Components/v_slider.gd" id="17_s25er"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kn30k"]
 font_size = 45
@@ -208,3 +209,11 @@ offset_right = 1897.0
 offset_bottom = 937.0
 script = ExtResource("14_b0d78")
 ammo_count_scene = ExtResource("14_lwwil")
+
+[node name="VSlider" type="VSlider" parent="Control"]
+layout_mode = 0
+offset_left = 1403.0
+offset_top = 937.0
+offset_right = 1433.0
+offset_bottom = 1050.0
+script = ExtResource("17_s25er")

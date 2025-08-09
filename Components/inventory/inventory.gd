@@ -10,6 +10,7 @@ var n : int
 
 var selectedItem : InvItem
 var selectedNode : Item
+# TODO: add slot locking
 
 func swap(a1: int,a2: int):	swap1.rpc(a1,a2)
 func selectItem(n1: int):	_selectItem1.rpc(n1)
@@ -50,7 +51,9 @@ func _selectItem1(n1: int) -> void:
 			add_child(selectedNode)
 			selectedNode.equip()
 	else:
-		selectedItem = null
+		selectedNode = null
+		print ( selectedItem )
+
 @rpc("any_peer", "call_local")
 func add_item1(item:InvItem): #item:InvItem
 	for i in range(len(_content_array)):
@@ -68,11 +71,13 @@ func remove_item1(n1:int):
 
 @rpc("any_peer", "call_local")
 func swap1(a1: int,a2: int) -> void:
+	
 	var node1 : Node
 	var node2 : Node
 	
 	# this function is funky in a bad way
-	var b1 = _content_array[a1] # Arrayc
+	# at least its finished
+	var b1 = _content_array[a1] # Array
 	_content_array[a1] = _content_array[a2]
 	_content_array[a2] = b1
 	
@@ -82,20 +87,19 @@ func swap1(a1: int,a2: int) -> void:
 
 	node2 = get_node_or_null(str(a2))
 	if node2 != null: 
-		#node2 = get_node(str(a2))
-		node2.name = str(a1) #+ "temp" 
+		node2.name = str(a1) 
 	
 	if node1 != null:
 		node1.name = str(a2)
+		# i love jank
 		
-	#if node2 != null:
-		#node2.name = str(a1)
-	selectItem(a2) # select a1 
+	selectItem(a2)
 
 
 func get_items() -> Array[InvItem]:
 	return _content_array
 
+func get_item(n) -> InvItem:
+	return _content_array[n]
 
 	
-# TODO: add slot locking

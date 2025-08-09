@@ -7,7 +7,7 @@ class_name Player
 var inputDir : Vector2
 #endregion
 #region Nodes
-var camera : Camera2D = Camera2D.new()
+#var camera : Camera2D = Camera2D.new()
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
 @onready var objectList: Node = $"../../objectList"
 @onready var sprite: Sprite2D = $"Sprite2D"
@@ -30,11 +30,10 @@ var use      : bool
 
 
 func _ready() -> void: 
-	#inventory.selectItem(0)
 	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
 	username.text = Globals.username
 	if is_multiplayer_authority():
-		add_child(camera)
+		#add_child(camera)
 		HUD.visible = true
 
 	#print( get_tree().root )
@@ -113,5 +112,4 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(int(name))
 
 func die() -> void:
-	
 	get_node("/root/Node2D/MainMenu").respawn(self)
