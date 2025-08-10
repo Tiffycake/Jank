@@ -89,7 +89,8 @@ func spawn_bullet(): # oh my miku i know this is old but
 	sound_peak.play()
 	var bullet = bulletPath.instantiate()
 	
-	var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
+	#var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
+	var attackComponent : AttackComponent = bullet.get_node("AttackComponent")
 	attackComponent.attackDamage = weapon_stats.atackDamage
 	
 	bullet.pos = self.global_position

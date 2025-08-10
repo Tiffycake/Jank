@@ -10,6 +10,7 @@ func _ready() -> void:
 	hide()
 
 func startPewPew(a : float):
+	process_mode = Node.PROCESS_MODE_INHERIT
 	show()
 	reloadTime = a
 	
