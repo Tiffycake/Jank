@@ -99,7 +99,7 @@ func swap1(a1: int,a2: int) -> void:
 func get_items() -> Array[InvItem]:
 	return _content_array
 
-func get_item(n) -> InvItem:
-	return _content_array[n]
+func get_item(n1) -> InvItem:
+	return _content_array[n1]
 
 	
