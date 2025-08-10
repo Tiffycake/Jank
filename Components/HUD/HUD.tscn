@@ -217,3 +217,11 @@ offset_top = 937.0
 offset_right = 1433.0
 offset_bottom = 1050.0
 script = ExtResource("17_s25er")
+
+[node name="Label" type="Label" parent="Control/VSlider"]
+layout_mode = 0
+offset_left = -37.0
+offset_top = 41.0
+offset_right = 3.0
+offset_bottom = 64.0
+text = "1"
