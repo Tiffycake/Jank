@@ -90,5 +90,14 @@ rotation = 1.57079
 position = Vector2(89, -2981)
 rotation = 1.57079
 
-[node name="long" parent="." instance=ExtResource("1_052oe")]
-position = Vector2(454, -1618)
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -3252)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(0, -1629)
+
+[node name="long" parent="Node2D2" instance=ExtResource("1_052oe")]
+position = Vector2(450, 0)
+
+[node name="long2" parent="Node2D2" instance=ExtResource("1_052oe")]
+position = Vector2(1718, 0)

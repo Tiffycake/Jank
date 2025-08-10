@@ -109,14 +109,13 @@ func spawn_bullet(): # oh my miku i know this is old but
 
 
 #region New Code Region
-
-	#bulletLifetime		=	weapon_stats.bulletLifetime
-	#bulletSpeed			=	weapon_stats.bulletSpeed
-	#atackDamage			=	weapon_stats.atackDamage
-	#atackSpeed			=	weapon_stats.atackSpeed
-	#bulletMaxCount		=	weapon_stats.bulletMaxCount
-	#bulletCurCount		=	weapon_stats.bulletMaxCount
-	#bulletType			=	weapon_stats.bulletType
+#bulletLifetime		=	weapon_stats.bulletLifetime
+#bulletSpeed			=	weapon_stats.bulletSpeed
+#atackDamage			=	weapon_stats.atackDamage
+#atackSpeed			=	weapon_stats.atackSpeed
+#bulletMaxCount		=	weapon_stats.bulletMaxCount
+#bulletCurCount		=	weapon_stats.bulletMaxCount
+#bulletType			=	weapon_stats.bulletType
 #var bulletLifetime		: float  # = 60
 #var bulletMaxCount		: int  # = 12
 #var bulletSpeed			: int  # = 2000 # projectile speed

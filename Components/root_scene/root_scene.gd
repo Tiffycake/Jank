@@ -10,11 +10,13 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(MainMenu)
 	
-	for asteroid_destroyer in a12.get_property_list(): 
-		if asteroid_destroyer["usage"] >= 4102: # terrible checking
-			print(asteroid_destroyer["name"], " : ", a12.get(asteroid_destroyer["name"]))
+	for i in a12.get_property_list(): 
+		var a  : String = i["name"]
+		if i["usage"] >= 4102 and !( a in ["script","weaponSprite"]): # terrible checking
+			print(a, " : ", a12.get(i["name"]))
+			#a12.set()
 	# script and Texture2D apearing TODO: fix 
-	#
+	
 
 	
 	#for i in get_node("/root").get_children():

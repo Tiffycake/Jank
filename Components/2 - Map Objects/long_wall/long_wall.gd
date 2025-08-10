@@ -4,7 +4,7 @@ extends StaticBody2D
 var starting_scale : float
 
 func _ready() -> void:
-	starting_scale = sprite_2d.scale.x
+	starting_scale = (sprite_2d.scale.x + sprite_2d.scale.y)/2
 	sprite_2d.scale = Vector2(0.9,0.9) * starting_scale
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale", Vector2(1.1, 1.1) * starting_scale, 0.05)

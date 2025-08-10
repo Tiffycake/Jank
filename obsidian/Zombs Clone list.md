@@ -19,7 +19,6 @@ kanban-plugin: board
 
 ## To-Do
 
-- [ ] player death/respawn
 - [ ] [[fix switch item texture]]
 - [ ] fix switching mid reload
 - [ ] fix health bar beeing kinda funckled
@@ -31,14 +30,14 @@ kanban-plugin: board
 - [ ] [[make generic item component better]]
 - [ ] make the inv data driven or smth 😭
 - [ ] drop/pick items
-- [x] ammo pickups
+- [ ] player death/respawn
 
 
 ## milla doing
 
 - [ ] me :JunoShy: ^nionpu
 - [ ] more particle stuff
-- [ ] healthbar teehee :3c
+- [x] healthbar teehee :3c
 - [x] work on particle component
 
 
@@ -51,6 +50,7 @@ kanban-plugin: board
 - [x] Hud slots
 - [x] ammo count
 - [x] make a generic item component
+- [x] ammo pickups
 - [x] player pushing :despair:
 - [x] ammo storage
 - [x] improve inv system
