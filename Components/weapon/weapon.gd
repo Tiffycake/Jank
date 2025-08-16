@@ -19,6 +19,7 @@ class_name Weapon
 @onready var sound : AudioStreamPlayer2D = $sound
 @onready var sound_peak: AudioStreamPlayer2D = $sound_peak
 var particle_list : = Node2D.new()
+@onready var shoot_sprite: AnimatedSprite2D = $ShootSprite
 
 
 var on : bool = true
@@ -47,6 +48,7 @@ func _ready() -> void:
 	reload_timer.wait_time = weapon_stats.reloadTime # this keeps erroring
 	reload_timer.one_shot = true
 	reload_timer.timeout.connect(refill_ammo)
+	shoot_sprite.animation_finished.connect(hide_shoot_sprite)
 
 	add_child(particle_list)
 
@@ -87,6 +89,10 @@ func spawn_bullet(): # oh my miku i know this is old but
 	
 	#sound.play() :NecoALittleTrolling:
 	sound_peak.play()
+	
+	shoot_sprite.show()
+	shoot_sprite.play()
+	
 	var bullet = bulletPath.instantiate()
 	
 	#var attackComponent : AttackComponent = bullet.get_child(0) # "AttackComponent"
@@ -102,6 +108,9 @@ func spawn_bullet(): # oh my miku i know this is old but
 	bullet.name = "bullet " + str(bulletId)+ " " + str(player.name)
 	bulletId+=1
 	objectList.add_child(bullet)
+
+func hide_shoot_sprite():
+	shoot_sprite.hide()
  
 
 

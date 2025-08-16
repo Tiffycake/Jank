@@ -1,10 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://0uyiqscnhfx6"]
+[gd_scene load_steps=11 format=3 uid="uid://0uyiqscnhfx6"]
 
 [ext_resource type="Script" uid="uid://um2tckmdvn3" path="res://Components/weapon/weapon.gd" id="1_qlv4w"]
 [ext_resource type="AudioStream" uid="uid://muw3tbxmvukv" path="res://resources/sounds/normal-hitclap.wav" id="2_e85vh"]
 [ext_resource type="PackedScene" uid="uid://dd73n5hd0n1qh" path="res://Components/bullet/bullet.tscn" id="2_fp264"]
 [ext_resource type="PackedScene" uid="uid://byyri5mobc5s8" path="res://Components/shooting_particles/shooting_particles.tscn" id="3_tnnav"]
 [ext_resource type="AudioStream" uid="uid://camrp0rcy22me" path="res://resources/sounds/alien.wav" id="5_kuxwk"]
+[ext_resource type="Texture2D" uid="uid://8weim7nj1ix5" path="res://resources/textures/pewpew.png" id="6_24f2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_140gw"]
+atlas = ExtResource("6_24f2m")
+region = Rect2(0, 0, 252, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1yfx"]
+atlas = ExtResource("6_24f2m")
+region = Rect2(252, 0, 252, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtlvl"]
+atlas = ExtResource("6_24f2m")
+region = Rect2(504, 0, 252, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q31t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_140gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1yfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtlvl")
+}],
+"loop": false,
+"name": &"type1",
+"speed": 15.0
+}]
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource("1_qlv4w")
@@ -30,3 +60,14 @@ attenuation = 0.683021
 [node name="sound_peak" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("5_kuxwk")
+
+[node name="ShootSprite" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+visible = false
+self_modulate = Color(1, 0.7365, 0.49, 1)
+position = Vector2(126, 6)
+scale = Vector2(-0.648641, 0.648641)
+sprite_frames = SubResource("SpriteFrames_q31t5")
+animation = &"type1"
+frame = 2
+frame_progress = 1.0
