@@ -99,7 +99,7 @@ func spawn_bullet(): # oh my miku i know this is old but
 	var attackComponent : AttackComponent = bullet.get_node("AttackComponent")
 	attackComponent.attackDamage = weapon_stats.atackDamage
 	
-	bullet.pos = self.global_position
+	bullet.pos = self.global_position + Vector2(100,0) * rotation
 	bullet.dir = player.rotation + deg_to_rad(weapon_stats.bulletSpread *(randf()*2 -1))
 	bullet.rota = self.global_rotation
 	bullet.speed = weapon_stats.bulletSpeed
