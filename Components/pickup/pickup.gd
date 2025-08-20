@@ -14,7 +14,7 @@ func _ready() -> void:
 
 
 func collect(player : Player):
-	
+	print( "hello ??")
 	player.inventory.add_item(content)
 	queue_free()
 	# [ "bullet type" , ammo to add : int ]

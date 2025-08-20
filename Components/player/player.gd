@@ -48,7 +48,7 @@ func getInput(): # ref do smth 😭
 	use    = Input.is_action_pressed("rightClick")
 	inputDir = Input.get_vector("left","right","up","down")
 	inputVel = inputDir * speed
-	pickup = Input.is_action_just_released("pickup")
+	pickup = Input.is_action_pressed("pickup")
 	
 	if Input.is_action_just_released("srollUp") : 
 		inventory.selectItem(inventory.selectedSlot-1)

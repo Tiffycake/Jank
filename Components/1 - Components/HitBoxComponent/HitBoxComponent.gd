@@ -3,7 +3,7 @@ class_name HitboxComponent
 
 @onready var healthComponent : HealthComponent 
 
-@onready var player : = $".."
+@onready var player :  = $".." #Player
 
 func _ready() -> void:
 	self.area_entered.connect(onAreaEntered)
@@ -16,7 +16,7 @@ func onAreaEntered(area) -> void:
 	# this will become a switch statement i think
 	if area is AttackComponent:
 		area.get_parent().queue_free()
-		if healthComponent:
+		if healthComponent != null:
 			healthComponent.damage(area)
 	
 	elif area is Pickup and player.pickup:
