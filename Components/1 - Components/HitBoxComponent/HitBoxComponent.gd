@@ -3,7 +3,7 @@ class_name HitboxComponent
 
 @onready var healthComponent : HealthComponent 
 
-
+@onready var player : = $".."
 
 func _ready() -> void:
 	self.area_entered.connect(onAreaEntered)
@@ -19,8 +19,8 @@ func onAreaEntered(area) -> void:
 		if healthComponent:
 			healthComponent.damage(area)
 	
-	elif area is Pickup:
-		area.collect($"..")
+	elif area is Pickup and player.pickup:
+		area.collect(player)
 	
 
 #func _init() -> void:

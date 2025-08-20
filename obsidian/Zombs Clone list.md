@@ -10,6 +10,7 @@ kanban-plugin: board
 - [ ] grid for building
 - [ ] godot rpc
 - [ ] [[damage types]]
+- [ ] 99 nights in the forest lobby system
 
 
 ## peak milla ideas
@@ -22,15 +23,16 @@ kanban-plugin: board
 - [ ] [[fix switch item texture]]
 - [ ] fix switching mid reload
 - [ ] fix health bar beeing kinda funckled
+- [ ] [[fix the bullet spawning]]
 
 
 ## tiffy doing
 
-- [ ] me :JunoShy:
 - [ ] [[make generic item component better]]
+- [ ] me :JunoShy:
 - [ ] make the inv data driven or smth 😭
-- [ ] drop/pick items
 - [ ] player death/respawn
+- [ ] drop/pick items
 
 
 ## milla doing

@@ -23,7 +23,6 @@ func _ready() -> void:
 	healthbar.value = healthComponent1.health
 	healthbar_back.value = healthbar.value
 	healthbar_back.max_value = healthbar.max_value
-	
 
 func _process(_delta: float) -> void:
 	updateHealth()
@@ -47,14 +46,13 @@ func updateHealth():
 		skibidi.set_ease(Tween.EASE_OUT)
 		skibidi.tween_property(healthbar_back, "value", healthbar.value, 0.4)
 
-
 # go go my peak reseter
 func reset_tween():
 	tween_running = false
   
 func updateBullet():
 	
-	if !(inventory.selectedNode is Weapon) or inventory.selectedNode == null:
+	if inventory.selectedNode is not Weapon or inventory.selectedNode == null:
 		ammoCount.hide()
 	else:
 		ammoCount.show()

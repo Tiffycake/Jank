@@ -57,16 +57,25 @@ func _selectItem1(n1: int) -> void:
 @rpc("any_peer", "call_local")
 func add_item1(item:InvItem): #item:InvItem
 	for i in range(len(_content_array)):
-		print(_content_array[i])
+		#print(_content_array[i])
 		if _content_array[i] == null:
 			_content_array.set(i,item)
 			selectItem(i) # selects newly added item
 
 @rpc("any_peer", "call_local")
-func remove_item1(n1:int):
-	_content_array.set(n,null)
+func remove_item1(slotN:int):
+	
+	_content_array.set(slotN,null)
+	
 	# kills child named n
-	get_node(str(n1)).queue_free()
+	var a = get_node_or_null(str(slotN))
+	
+	if a != null:
+		a.unequip() 
+		a.call_deferred("queue_free")
+
+	if slotN == selectedSlot:
+		selectItem(slotN)
 	#selectItem(n)
 
 @rpc("any_peer", "call_local")
@@ -86,6 +95,7 @@ func swap1(a1: int,a2: int) -> void:
 		node1.name = str(a2) + "temp"
 
 	node2 = get_node_or_null(str(a2))
+	
 	if node2 != null: 
 		node2.name = str(a1) 
 	
@@ -99,7 +109,12 @@ func swap1(a1: int,a2: int) -> void:
 func get_items() -> Array[InvItem]:
 	return _content_array
 
-func get_item(n1) -> InvItem:
+func get_item(n1):
 	return _content_array[n1]
+	#match n2:
+		#1:
+			#return _content_array[n1]
+		#2:
+			#return get_node(str(n1))
 
 	

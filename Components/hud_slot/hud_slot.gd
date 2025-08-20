@@ -31,33 +31,38 @@ func slotHighlight() -> void:
 		slot.show()
 		slotOutline.hide()
 
-func _can_drop_data(_at_position: Vector2, data: Variant) -> bool: # runs when hovering
-	return data is int
-
 func _get_drag_data(_at_position: Vector2) -> Variant:  # runs on press
+#region preview thing
 	slotContent = inventory._content_array[slotId]
 	if slotContent != null:
-#region preview thing
 		var preview 	   := Control.new() # this exists so you can offset the prev texture
 		var previewTexture := TextureRect.new()
 		preview.add_child(previewTexture)
 		previewTexture.texture = slotContent.icon
 		#textureSprite.texture = null # this is such a good idea 
 		# it doesn't work bc updateTexture() updates every frame
-		# TODO: fix this 
+		# TODO: fix this
 		previewTexture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE 
 		previewTexture.size = Vector2(80,80)
 		previewTexture.position -= Vector2(40,40)
-		set_drag_preview(preview)  
+		set_drag_preview(preview)
+		textureSprite.hide()
+		preview.tree_exiting.connect(textureSpriteShow)
 #endregion
-		#return slotId
-	#else:
 	return slotId
+
+func textureSpriteShow():
+	textureSprite.show()
+
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool: # runs when hovering
+	return data is int
+
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void: # runs on release
 
 	if data is int: # this beeing a int is a bad idea what are you doing tiffy
 		
 		inventory.swap(data,slotId)
+		
 		#if the other slot is null ??? uhh fcuking exxplode ????
 		#SKIBIDI

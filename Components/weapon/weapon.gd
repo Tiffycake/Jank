@@ -8,7 +8,7 @@ class_name Weapon
 @export var SHOOTING_PARTICLES  : PackedScene
 
 @onready var objectList: Node = $"../../../../objectList"
-@onready var player: CharacterBody2D = $"../.."
+@onready var player: Player = $"../.."
 @onready var playerSprite:  = $"../../Sprite2D"
 @onready var ammo_inv_node : ammo_inventory = $"../../AmmoInventory"
 @onready var weaponSprite:  = $"Sprite2D"
@@ -27,7 +27,7 @@ var on : bool = true
 var weapon_stats : stat_sheet
 
 
-var bulletId : int
+var bulletId				: int
 var bulletMaxCount		: int
 var bulletCurCount		: int
  
@@ -91,6 +91,7 @@ func spawn_bullet(): # oh my miku i know this is old but
 	sound_peak.play()
 	
 	shoot_sprite.show()
+	
 	shoot_sprite.play()
 	
 	var bullet = bulletPath.instantiate()
@@ -99,7 +100,11 @@ func spawn_bullet(): # oh my miku i know this is old but
 	var attackComponent : AttackComponent = bullet.get_node("AttackComponent")
 	attackComponent.attackDamage = weapon_stats.atackDamage
 	
-	bullet.pos = self.global_position + Vector2(100,0) * rotation
+	
+	#bullet.pos = self.global_position #+ player.get_real_velocity()#.rotated(global_rotation)
+	bullet.pos = self.global_position + Vector2(50,0).rotated(global_rotation)
+
+	
 	bullet.dir = player.rotation + deg_to_rad(weapon_stats.bulletSpread *(randf()*2 -1))
 	bullet.rota = self.global_rotation
 	bullet.speed = weapon_stats.bulletSpeed

@@ -12,7 +12,7 @@ var inputDir : Vector2
 @onready var objectList: Node = $"../../objectList"
 @onready var sprite: Sprite2D = $"Sprite2D"
 @onready var HUD : = $HUD
-@onready var inventory : = $"Inventory"
+@onready var inventory : Inventory = $"Inventory"
 @onready var username: Label = $usernameHandler/username
 #endregion
 #region 
@@ -24,8 +24,9 @@ const maxScale := 1.0
 const minScale := 0.75
 const scale_factor := 3.5
 
-var attack   : bool
-var use      : bool
+var attack	: bool
+var use		: bool
+var pickup	: bool
 #endregion
 
 
@@ -47,6 +48,7 @@ func getInput(): # ref do smth 😭
 	use    = Input.is_action_pressed("rightClick")
 	inputDir = Input.get_vector("left","right","up","down")
 	inputVel = inputDir * speed
+	pickup = Input.is_action_just_released("pickup")
 	
 	if Input.is_action_just_released("srollUp") : 
 		inventory.selectItem(inventory.selectedSlot-1)

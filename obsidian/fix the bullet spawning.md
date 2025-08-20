@@ -1,0 +1,1 @@
+currently the bullet is spawning "late" as in it spawns on the place where a bullet should spawn had it been fired ~1 frame earlier

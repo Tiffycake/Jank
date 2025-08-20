@@ -4,16 +4,17 @@ extends Node2D
 @export var MainMenu  : PackedScene
 @export var WorldMap  : PackedScene
 
-const a12 : stat_sheet = preload("res://resources/invItems/stats/ar3.tres")
+#const a12 : stat_sheet = preload("res://resources/invItems/stats/ar3.tres")
 
 func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(MainMenu)
 	
-	for i in a12.get_property_list(): 
-		var a  : String = i["name"]
-		if i["usage"] >= 4102 and !( a in ["script","weaponSprite"]): # terrible checking
-			print(a, " : ", a12.get(i["name"]))
+	#for i in a12.get_property_list(): 
+		#var a  : String = i["name"]
+		#if i["usage"] >= 4102 and !( a in ["script","weaponSprite"]): # terrible checking
+			#print(a, " : ", a12.get(i["name"]))
+			
 			#a12.set()
 	# script and Texture2D apearing TODO: fix 
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=21 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://z/exploder.gd" id="1_maspd"]
@@ -7,10 +7,12 @@
 [ext_resource type="Script" uid="uid://b0jv1id6kh0fg" path="res://Scripts/InventoryUI.gd" id="4_4es50"]
 [ext_resource type="Texture2D" uid="uid://cpif3pb3wkvky" path="res://resources/textures/HUD elements/a/mpv-shot0001.jpg" id="4_nqbc8"]
 [ext_resource type="PackedScene" uid="uid://chf34ya77hulb" path="res://Components/hud_slot/hud_slot.tscn" id="5_rxypr"]
+[ext_resource type="Script" uid="uid://d10ibjydgojx6" path="res://z/panel.gd" id="6_bfkx1"]
 [ext_resource type="Texture2D" uid="uid://dayql0peiw41q" path="res://resources/textures/HUD elements/ball.svg" id="6_d8qfv"]
 [ext_resource type="Script" uid="uid://7aggow60vq7h" path="res://z/pew_pew_timer.gd" id="6_pve3o"]
 [ext_resource type="Texture2D" uid="uid://cumdqn2x3yxov" path="res://resources/textures/zombs/sactx-0-2048x2048-Crunch-IconsUI-1b360a8c.png" id="7_7of6o"]
 [ext_resource type="LabelSettings" uid="uid://cadmyaswo6d3d" path="res://resources/misc/label_settings.tres" id="7_ccrdf"]
+[ext_resource type="PackedScene" uid="uid://cndifwcy6jwe6" path="res://Components/pickup/pickup.tscn" id="7_h3mv8"]
 [ext_resource type="Texture2D" uid="uid://c4cedbk273oag" path="res://resources/textures/HUD elements/inner ball.svg" id="7_kkonv"]
 [ext_resource type="LabelSettings" uid="uid://c3lbruinehu33" path="res://resources/misc/label_settings_2.tres" id="9_d8qfv"]
 [ext_resource type="Texture2D" uid="uid://y14xrdlwph2m" path="res://resources/textures/HUD elements/healthBarBack.svg" id="10_n2a1q"]
@@ -49,6 +51,14 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 script = ExtResource("4_4es50")
+
+[node name="Panel" type="Panel" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("6_bfkx1")
+pickup = ExtResource("7_h3mv8")
 
 [node name="PewPewTimer" type="Control" parent="Control"]
 layout_mode = 1
