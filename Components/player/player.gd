@@ -10,6 +10,7 @@ var inputDir : Vector2
 #var camera : Camera2D = Camera2D.new()
 @onready var coolBox : CollisionShape2D  = $"CollisionBox2D" # :sunglasses:
 @onready var objectList: Node = $"../../objectList"
+@onready var hitbox : HitboxComponent = $"HitboxComponent"
 @onready var sprite: Sprite2D = $"Sprite2D"
 @onready var HUD : = $HUD
 @onready var inventory : Inventory = $"Inventory"
@@ -29,6 +30,7 @@ var use		: bool
 var pickup	: bool
 #endregion
 
+var pickup_timer : Timer = Timer.new()
 
 func _ready() -> void: 
 	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
@@ -36,19 +38,23 @@ func _ready() -> void:
 	if is_multiplayer_authority():
 		#add_child(camera)
 		HUD.visible = true
-
+	
 	#print( get_tree().root )
-
+	
+	add_child(pickup_timer)
+	pickup_timer.one_shot = true
+	pickup_timer.wait_time = 0.1
 
 func getInput(): # ref do smth 😭
 	# rewrite this fuckass funciton (more like clean it up!!)
+	# no, actually rewrite it 😭
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
 	attack = Input.is_action_pressed("leftClick")
 	use    = Input.is_action_pressed("rightClick")
+	pickup = Input.is_action_pressed("pickup")
 	inputDir = Input.get_vector("left","right","up","down")
 	inputVel = inputDir * speed
-	pickup = Input.is_action_pressed("pickup")
 	
 	if Input.is_action_just_released("srollUp") : 
 		inventory.selectItem(inventory.selectedSlot-1)
@@ -60,18 +66,21 @@ func getInput(): # ref do smth 😭
 	for i in range(len(inp_arr)): # try reading this lmao 😭
 		if Input.is_action_pressed(inp_arr[i]):
 			inventory.selectItem(inp_arr.find("slot"+str(i)))
-		
+	
+	if pickup and  (pickup_timer.is_stopped) :
+		hitbox.eat_thingies()
+		pickup_timer.start()
 
 	# TODO: rewrite attack thingie // which one ???
 	# what ???
 	# what 2 ???
-	if attack == true and inventory.selectedItem != null :
-		if inventory.selectedNode.has_method("fire"):
+	# what 3 ???
+	# ohhhhhh
+	if inventory.selectedItem != null:
+		if attack and inventory.selectedNode.has_method("fire"):
 			inventory.selectedNode.fire()
-
-	
-	if use == true and inventory.selectedItem != null :
-		if inventory.selectedNode.has_method("reload"):
+		
+		elif use and inventory.selectedNode.has_method("reload"):
 			inventory.selectedNode.reload()
 
 func _physics_process(delta: float) -> void:
@@ -84,7 +93,8 @@ func _physics_process(delta: float) -> void:
 	pushVel.y = move_toward(pushVel.y, 0, 5000 * delta)
 	squish(delta)
 	move_and_slide()
-	
+
+
 func push():
 	for i in get_slide_collision_count():
 		var col := get_slide_collision(i)

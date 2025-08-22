@@ -13,9 +13,16 @@ func _ready() -> void:
 	# holy jank
 
 
+	#if has_overlapping_areas():
+		#get_overlapping_areas().get(0)
+		#
+		#if area is Pickup and player.pickup:
+		#area.collect(player)
+		
 func collect(player : Player):
-	print( "hello ??")
+	#print( "hello ??")
 	player.inventory.add_item(content)
+	content = null
 	queue_free()
 	# [ "bullet type" , ammo to add : int ]
 	

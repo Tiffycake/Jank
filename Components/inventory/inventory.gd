@@ -12,11 +12,6 @@ var selectedItem : InvItem
 var selectedNode : Item
 # TODO: add slot locking
 
-func swap(a1: int,a2: int):	swap1.rpc(a1,a2)
-func selectItem(n1: int):	_selectItem1.rpc(n1)
-func remove_item(n1: int):	remove_item1.rpc(n1)
-func add_item(item:InvItem):	add_item1.rpc(item)
- 
 func _init() -> void:
 	_content_array.resize(inv_size)
 	#_content_array.fill(null)
@@ -25,8 +20,13 @@ func _init() -> void:
 func _ready() -> void:
 	selectItem(0)
 
-@rpc("any_peer", "call_local")
-func _selectItem1(n1: int) -> void:
+#func swap(a1: int,a2: int):	swap1.rpc(a1,a2)
+#func selectItem(n1: int):	_selectItem1.rpc(n1)
+#func remove_item(n1: int):	remove_item1.rpc(n1)
+#func add_item(item:InvItem):	add_item1.rpc(item)
+ 
+#@rpc("authority", "call_local")
+func selectItem(n1: int) -> void:
 	#print(n1," input || mod ",posmod(n1,5))
 	
 	n = posmod(n1,5)
@@ -54,16 +54,16 @@ func _selectItem1(n1: int) -> void:
 		selectedNode = null
 		print ( selectedItem )
 
-@rpc("any_peer", "call_local")
-func add_item1(item:InvItem): #item:InvItem
+#@rpc("authority", "call_local")
+func add_item(item:InvItem): #item:InvItem
 	for i in range(len(_content_array)):
 		#print(_content_array[i])
 		if _content_array[i] == null:
 			_content_array.set(i,item)
 			selectItem(i) # selects newly added item
 
-@rpc("any_peer", "call_local")
-func remove_item1(slotN:int):
+#@rpc("authority", "call_local")
+func remove_item(slotN:int):
 	
 	_content_array.set(slotN,null)
 	
@@ -78,8 +78,8 @@ func remove_item1(slotN:int):
 		selectItem(slotN)
 	#selectItem(n)
 
-@rpc("any_peer", "call_local")
-func swap1(a1: int,a2: int) -> void:
+#@rpc("authority", "call_local")
+func swap(a1: int,a2: int) -> void:
 	
 	var node1 : Node
 	var node2 : Node

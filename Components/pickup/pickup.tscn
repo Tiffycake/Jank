@@ -5,15 +5,26 @@
 [ext_resource type="Texture2D" uid="uid://ci3ajowl3ktgj" path="res://resources/textures/circle.svg" id="3_yr0g0"]
 
 [node name="Area2D" type="Area2D"]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_ktbi0")
 
 [node name="sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.65, 0.65)
 texture = ExtResource("3_yr0g0")
 
-[node name="icon" type="Sprite2D" parent="."]
-scale = Vector2(0.424242, 0.424242)
+[node name="icon" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(33, 33)
+expand_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.5, 0.5)
 shape = ExtResource("2_4un5h")

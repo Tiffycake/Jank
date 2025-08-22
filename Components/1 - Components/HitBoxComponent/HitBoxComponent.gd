@@ -18,11 +18,14 @@ func onAreaEntered(area) -> void:
 		area.get_parent().queue_free()
 		if healthComponent != null:
 			healthComponent.damage(area)
-	
-	elif area is Pickup and player.pickup:
-		area.collect(player)
-	
 
+
+func eat_thingies() -> void:
+	if has_overlapping_areas():
+		var a1 = get_overlapping_areas().get(0)
+		if a1 is Pickup:
+			a1.call_deferred("collect",player)
+			#a.collect(player)
 #func _init() -> void:
 	#collision_layer = 2
 	#collision_mask = 0

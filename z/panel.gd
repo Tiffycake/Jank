@@ -17,16 +17,21 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool: # runs when h
 
 
 func _drop_data(at_position: Vector2, data: Variant) -> void: # runs on release
+	skibidi.rpc(data,at_position)
 
+
+@rpc("any_peer","call_local")
+func skibidi(data,at_position):
 	#explode item at slot n and spawn the item in world
 	var a = inventory.get_item(data)
-	
-	inventory.remove_item(data)
-	var b  : = pickup.instantiate()
-	b.position = player.position
-	b.content = a
-	
-	object_list.add_child(b)
+	if a != null:
+		
+		inventory.remove_item(data)
+		var b  : = pickup.instantiate()
+		b.position = player.position
+		b.content = a
+		
+		object_list.add_child(b)
 	
 	# spawn pickup with a data at _at_position
 	
