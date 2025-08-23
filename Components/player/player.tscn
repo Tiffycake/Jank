@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3higeki8udsa"]
+[gd_scene load_steps=17 format=3 uid="uid://3higeki8udsa"]
 
 [ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://Components/player/player.gd" id="1_smehm"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://Components/1 - Components/HealthComponent/HealthComponent.tscn" id="2_tuyoq"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://i0ebpvahkca5" path="res://Components/1 - Components/ItemComponent/ItemComponent.gd" id="8_y4r1p"]
 [ext_resource type="Resource" uid="uid://dpp708tku67u" path="res://resources/invItems/weapon.tres" id="9_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://c6bvhyawqa7ck" path="res://resources/textures/Player Skins/hands/hands generic.svg" id="9_y4r1p"]
-[ext_resource type="Resource" uid="uid://duqd864m7ui1l" path="res://resources/invItems/trapper.tres" id="10_d2wvv"]
 [ext_resource type="Resource" uid="uid://7ut2ts68hn2q" path="res://resources/invItems/weapon1.tres" id="10_f1ej7"]
 [ext_resource type="Resource" uid="uid://dkbsecr3mbe0r" path="res://resources/invItems/wall_placer.tres" id="11_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://bccp86qgunv7a" path="res://Components/ammo_inventory/ammo_inventory.tscn" id="12_oprun"]
@@ -76,7 +75,7 @@ visible = false
 [node name="Inventory" type="Node2D" parent="."]
 position = Vector2(100, 0)
 script = ExtResource("2_y4r1p")
-_content_array = Array[ExtResource("8_y4r1p")]([ExtResource("9_d2wvv"), ExtResource("10_d2wvv"), ExtResource("10_f1ej7"), null, ExtResource("11_3v2ag")])
+content_array = Array[ExtResource("8_y4r1p")]([ExtResource("10_f1ej7"), ExtResource("9_d2wvv"), ExtResource("9_d2wvv"), null, ExtResource("11_3v2ag")])
 
 [node name="AmmoInventory" parent="." instance=ExtResource("12_oprun")]
 

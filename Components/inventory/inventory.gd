@@ -3,18 +3,20 @@ class_name Inventory
 #@export var inv1 : inv
 var selectedSlot : int = 0
 const inv_size : int = 5
-@export var _content_array : Array[InvItem]
+@export var content_array : Array[InvItem]
+var _content_array : Array[InvItem]
 #var temp_weapon  : InvItem = ( preload("res://resources/invItems/weapon.tres") as InvItem )
 
 var n : int
-
 var selectedItem : InvItem
 var selectedNode : Item
+
 # TODO: add slot locking
 
 func _init() -> void:
+	_content_array = content_array.duplicate()
+	
 	_content_array.resize(inv_size)
-	_content_array = _content_array.duplicate()
 	
 	#_content_array.fill(null)
 
