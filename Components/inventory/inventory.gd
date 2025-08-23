@@ -14,6 +14,8 @@ var selectedNode : Item
 
 func _init() -> void:
 	_content_array.resize(inv_size)
+	_content_array = _content_array.duplicate()
+	
 	#_content_array.fill(null)
 
  
