@@ -30,7 +30,7 @@ func skibidi(data,at_position):
 		inventory.remove_item(data)
 		var b  : = pickup.instantiate()
 		var pos = player.mouse_pos
-		if player.position.distance_to(player.mouse_pos) > MAX_DROP_DISTANCE : pos = player.global_position + player.mouse_pos.normalized() * MAX_DROP_DISTANCE
+		if player.global_position.distance_to(player.mouse_pos) > MAX_DROP_DISTANCE : pos = player.global_position + (player.mouse_pos - player.global_position).normalized() * MAX_DROP_DISTANCE
 		b.position = pos
 		b.content = a
 		object_list.add_child(b)
