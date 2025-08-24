@@ -1,9 +1,9 @@
 extends Node2D
 class_name Inventory
-#@export var inv1 : inv
+
 var selectedSlot : int = 0
-const inv_size : int = 5
-@export var content_array : Array[InvItem]
+var inv_size : int = 5
+@export var contenta_array : Array[InvItem]
 var _content_array : Array[InvItem]
 #var temp_weapon  : InvItem = ( preload("res://resources/invItems/weapon.tres") as InvItem )
 
@@ -14,7 +14,6 @@ var selectedNode : Item
 # TODO: add slot locking
 
 func _init() -> void:
-	_content_array = content_array.duplicate()
 	
 	_content_array.resize(inv_size)
 	
@@ -22,12 +21,13 @@ func _init() -> void:
 
  
 func _ready() -> void:
+	_content_array = contenta_array.duplicate()
 	selectItem(0)
 
-#func swap(a1: int,a2: int):	swap1.rpc(a1,a2)
-#func selectItem(n1: int):	_selectItem1.rpc(n1)
-#func remove_item(n1: int):	remove_item1.rpc(n1)
-#func add_item(item:InvItem):	add_item1.rpc(item)
+#func swap(a1: int,a2: int):		swap1.rpc(a1,a2)
+#func selectItem(n1: int):		_selectItem1.rpc(n1)
+#func remove_item(n1: int):		remove_item1.rpc(n1)
+#func add_item(item:InvItem): 	add_item1.rpc(item)
  
 #@rpc("authority", "call_local")
 func selectItem(n1: int) -> void:

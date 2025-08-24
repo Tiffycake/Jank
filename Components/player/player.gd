@@ -25,9 +25,9 @@ const maxScale := 1.0
 const minScale := 0.75
 const scale_factor := 3.5
 
-var attack	: bool
-var use		: bool
-var pickup	: bool
+var attack_action	: bool
+var use_action		: bool
+var pickup_action	: bool
 #endregion
 
 var pickup_timer : Timer = Timer.new()
@@ -48,11 +48,12 @@ func _ready() -> void:
 func getInput(): # ref do smth 😭
 	# rewrite this fuckass funciton (more like clean it up!!)
 	# no, actually rewrite it 😭
+	# release me :LunaCry:
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
-	attack = Input.is_action_pressed("leftClick")
-	use    = Input.is_action_pressed("rightClick")
-	pickup = Input.is_action_pressed("pickup")
+	attack_action = Input.is_action_pressed("leftClick")
+	use_action    = Input.is_action_pressed("rightClick")
+	pickup_action = Input.is_action_pressed("pickup")
 	inputDir = Input.get_vector("left","right","up","down")
 	inputVel = inputDir * speed
 	
@@ -67,33 +68,30 @@ func getInput(): # ref do smth 😭
 		if Input.is_action_pressed(inp_arr[i]):
 			inventory.selectItem(inp_arr.find("slot"+str(i)))
 	
-	if pickup and  (pickup_timer.is_stopped) :
+	pickup()
+
+	if inventory.selectedItem != null:
+		if attack_action and inventory.selectedNode.has_method("fire"):
+			inventory.selectedNode.fire()
+		
+		elif use_action and inventory.selectedNode.has_method("reload"):
+			inventory.selectedNode.reload()
+
+func pickup():
+	if pickup_action and pickup_timer.time_left == 0 :
 		hitbox.eat_thingies()
 		pickup_timer.start()
 
-	# TODO: rewrite attack thingie // which one ???
-	# what ???
-	# what 2 ???
-	# what 3 ???
-	# ohhhhhh
-	if inventory.selectedItem != null:
-		if attack and inventory.selectedNode.has_method("fire"):
-			inventory.selectedNode.fire()
-		
-		elif use and inventory.selectedNode.has_method("reload"):
-			inventory.selectedNode.reload()
-
 func _physics_process(delta: float) -> void:
-	
 	if is_multiplayer_authority():
 		getInput()
+	
 	velocity = inputVel + pushVel
 	push()
 	pushVel.x = move_toward(pushVel.x, 0, 5000 * delta)
 	pushVel.y = move_toward(pushVel.y, 0, 5000 * delta)
 	squish(delta)
 	move_and_slide()
-
 
 func push():
 	for i in get_slide_collision_count():

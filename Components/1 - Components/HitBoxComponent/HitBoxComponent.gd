@@ -21,11 +21,17 @@ func onAreaEntered(area) -> void:
 
 
 func eat_thingies() -> void:
+	bollas.rpc()
+
+@rpc("any_peer","call_local")
+func bollas():
 	if has_overlapping_areas():
 		var a1 = get_overlapping_areas().get(0)
 		if a1 is Pickup:
 			a1.call_deferred("collect",player)
 			#a.collect(player)
+			
+			
 #func _init() -> void:
 	#collision_layer = 2
 	#collision_mask = 0

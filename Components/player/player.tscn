@@ -75,7 +75,7 @@ visible = false
 [node name="Inventory" type="Node2D" parent="."]
 position = Vector2(100, 0)
 script = ExtResource("2_y4r1p")
-content_array = Array[ExtResource("8_y4r1p")]([ExtResource("10_f1ej7"), ExtResource("9_d2wvv"), ExtResource("9_d2wvv"), null, ExtResource("11_3v2ag")])
+contenta_array = Array[ExtResource("8_y4r1p")]([ExtResource("10_f1ej7"), ExtResource("9_d2wvv"), ExtResource("9_d2wvv"), null, ExtResource("11_3v2ag")])
 
 [node name="AmmoInventory" parent="." instance=ExtResource("12_oprun")]
 
