@@ -15,6 +15,8 @@ var inputDir : Vector2
 @onready var HUD : = $HUD
 @onready var inventory : Inventory = $"Inventory"
 @onready var username: Label = $usernameHandler/username
+@onready var camera_2d: Camera2D = $Camera2D
+
 #endregion
 #region 
 var speed: = 600
@@ -38,12 +40,15 @@ func _ready() -> void:
 	if is_multiplayer_authority():
 		#add_child(camera)
 		HUD.visible = true
+	else:
+		camera_2d.queue_free()
 	
 	#print( get_tree().root )
 	
 	add_child(pickup_timer)
 	pickup_timer.one_shot = true
 	pickup_timer.wait_time = 0.1
+	
 
 func getInput(): # ref do smth 😭
 	# rewrite this fuckass funciton (more like clean it up!!)
