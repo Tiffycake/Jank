@@ -64,7 +64,8 @@ func add_item(item:InvItem): #item:InvItem
 		#print(_content_array[i])
 		if _content_array[i] == null:
 			_content_array.set(i,item)
-			selectItem(i) # selects newly added item
+			selectItem(i)
+			return # :NecoALittleTrolling:
 
 #@rpc("authority", "call_local")
 func remove_item(slotN:int):
