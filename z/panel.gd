@@ -7,6 +7,7 @@ extends Panel
 @onready var object_list :  = $"../../../.."
 @export var pickup : PackedScene
 
+const MAX_DROP_DISTANCE = 150
 
 func _ready() -> void:
 	pass
@@ -28,9 +29,10 @@ func skibidi(data,at_position):
 		
 		inventory.remove_item(data)
 		var b  : = pickup.instantiate()
-		b.position = player.position
+		var pos = player.mouse_pos
+		if player.position.distance_to(player.mouse_pos) > MAX_DROP_DISTANCE : pos = player.global_position + player.mouse_pos.normalized() * MAX_DROP_DISTANCE
+		b.position = pos
 		b.content = a
-		
 		object_list.add_child(b)
 	
 	# spawn pickup with a data at _at_position

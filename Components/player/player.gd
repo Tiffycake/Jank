@@ -30,6 +30,7 @@ const scale_factor := 3.5
 var attack_action	: bool
 var use_action		: bool
 var pickup_action	: bool
+var mouse_pos : Vector2
 #endregion
 
 var pickup_timer : Timer = Timer.new()
@@ -56,6 +57,7 @@ func getInput(): # ref do smth 😭
 	# release me :LunaCry:
 	if DisplayServer.window_is_focused():
 		look_at(get_global_mouse_position())
+		mouse_pos = get_global_mouse_position()
 	attack_action = Input.is_action_pressed("leftClick")
 	use_action    = Input.is_action_pressed("rightClick")
 	pickup_action = Input.is_action_pressed("pickup")
