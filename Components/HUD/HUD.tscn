@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
-[ext_resource type="Script" path="res://z/exploder.gd" id="1_maspd"]
+[ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://z/exploder.gd" id="1_maspd"]
 [ext_resource type="Texture2D" uid="uid://bdrpkqh4kbx2v" path="res://resources/textures/HUD elements/a/Screenshot_20250606_182749.png" id="1_qefu1"]
 [ext_resource type="Texture2D" uid="uid://bwoyg0dwj6e2b" path="res://resources/textures/HUD elements/healthBar.svg" id="3_ryf3e"]
 [ext_resource type="Script" uid="uid://b0jv1id6kh0fg" path="res://Scripts/InventoryUI.gd" id="4_4es50"]

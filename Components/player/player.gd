@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 #region vector stuffss
+var mouse_pos : Vector2
 @export var inputVel := Vector2.ZERO
 @export var pushVel := Vector2.ZERO
 var inputDir : Vector2
@@ -27,13 +28,13 @@ const maxScale := 1.0
 const minScale := 0.75
 const scale_factor := 3.5
 
+const MAX_DROP_DISTANCE = 150
+
 var attack_action	: bool
 var use_action		: bool
 var pickup_action	: bool
-var mouse_pos : Vector2
 #endregion
 
-var pickup_timer : Timer = Timer.new()
 
 func _ready() -> void: 
 	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
@@ -46,9 +47,6 @@ func _ready() -> void:
 	
 	#print( get_tree().root )
 	
-	add_child(pickup_timer)
-	pickup_timer.one_shot = true
-	pickup_timer.wait_time = 0.1
 	
 
 func getInput(): # ref do smth 😭
@@ -75,7 +73,7 @@ func getInput(): # ref do smth 😭
 		if Input.is_action_pressed(inp_arr[i]):
 			inventory.selectItem(inp_arr.find("slot"+str(i)))
 	
-	pickup()
+	hitbox.eat_thingies()
 
 	if inventory.selectedItem != null:
 		if attack_action and inventory.selectedNode.has_method("fire"):
@@ -84,10 +82,6 @@ func getInput(): # ref do smth 😭
 		elif use_action and inventory.selectedNode.has_method("reload"):
 			inventory.selectedNode.reload()
 
-func pickup():
-	if pickup_action and pickup_timer.time_left == 0 :
-		hitbox.eat_thingies()
-		pickup_timer.start()
 
 func _physics_process(delta: float) -> void:
 	if is_multiplayer_authority():
@@ -130,3 +124,15 @@ func _enter_tree() -> void:
 
 func die() -> void:
 	get_node("/root/Node2D/MainMenu").respawn(self)
+
+#var pickup_timer : Timer = Timer.new()
+#func pickup():
+	#if pickup_action and pickup_timer.time_left == 0 :
+		#hitbox.eat_thingies()
+		#pickup_timer.start()
+
+
+
+	#add_child(pickup_timer)
+	#pickup_timer.one_shot = true
+	#pickup_timer.wait_time = 0.1

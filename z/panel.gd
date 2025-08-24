@@ -7,7 +7,6 @@ extends Panel
 @onready var object_list :  = $"../../../.."
 @export var pickup : PackedScene
 
-const MAX_DROP_DISTANCE = 150
 
 func _ready() -> void:
 	pass
@@ -25,12 +24,18 @@ func _drop_data(at_position: Vector2, data: Variant) -> void: # runs on release
 func skibidi(data,at_position):
 	#explode item at slot n and spawn the item in world
 	var a = inventory.get_item(data)
+	
 	if a != null:
 		
 		inventory.remove_item(data)
 		var b  : = pickup.instantiate()
-		var pos = player.mouse_pos
-		if player.global_position.distance_to(player.mouse_pos) > MAX_DROP_DISTANCE : pos = player.global_position + (player.mouse_pos - player.global_position).normalized() * MAX_DROP_DISTANCE
+		#var pos = player.mouse_pos
+		var si : Node2D = get_node("/root/Node2D")
+		var pos :  = si.get_global_mouse_position()
+		
+		if player.global_position.distance_to(pos) > player.MAX_DROP_DISTANCE : 
+			pos = player.global_position + (pos - player.global_position).normalized() * player.MAX_DROP_DISTANCE
+		
 		b.position = pos
 		b.content = a
 		object_list.add_child(b)
