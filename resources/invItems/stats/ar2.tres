@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="stat_sheet" load_steps=3 format=3 uid="uid://403qpqwgrdde"]
+[gd_resource type="Resource" script_class="stat_sheet" load_steps=2 format=3 uid="uid://403qpqwgrdde"]
 
 [ext_resource type="Script" uid="uid://hjfy1o8cf3ll" path="res://Components/player/stats.gd" id="1_mq4yo"]
-[ext_resource type="Texture2D" uid="uid://c8njop1rykovf" path="res://resources/textures/zombs/CC-M4A1Weapon_29087.png" id="2_3a7fd"]
 
 [resource]
 script = ExtResource("1_mq4yo")
@@ -12,7 +11,6 @@ bulletSpread = -1.0
 atackDamage = 1
 atackSpeed = 30.0
 reloadTime = 0.1
-offset = Vector2(-9, 1)
-weaponSprite = ExtResource("2_3a7fd")
 bulletType = "medium"
+offset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://hjfy1o8cf3ll"

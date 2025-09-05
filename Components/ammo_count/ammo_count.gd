@@ -22,8 +22,6 @@ func _ready() -> void:
 		skibi.get_child(1).texture = icon_dic[i]
 		skibi.name = i
 		nodes_arr.set(i,skibi) # nice magic letters dipshit
-		
- 
 
 	ammo_inv.count_changed.connect(update_ammo)
 

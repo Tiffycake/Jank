@@ -1,28 +1,34 @@
 extends Area2D
 class_name Pickup
 
-var content : InvItem
+var content 
 
 @onready var icon := $"icon"
 
+var type : String
+
 func _ready() -> void:
+	if content is InvItem:
+		type = "InvItem"
+		icon.texture = content.icon
+	elif content is Array:
+		type = "Array"
+		icon.texture = Globals.resource_dict["bullets"][content[0]]
 	
-	icon.texture = content.icon
 	
-	#icon.texture = Globals.resource_dict["bullets"][content[0]]
+	
+	#
 	# holy jank
 
-
-	#if has_overlapping_areas():
-		#get_overlapping_areas().get(0)
-		#
-		#if area is Pickup and player.pickup:
-		#area.collect(player)
 		
 func collect(player : Player):
-	#print( "hello ??")
-	player.inventory.add_item(content)
-	content = null
+	match (icon) :
+		"InvItem":
+			player.inventory.add_item(content)
+		"Array":
+			var ammo : Dictionary = player.get_node("AmmoInventory").ammo_counts
+			ammo[content[0]] += content[1]
+	
 	queue_free()
 	# [ "bullet type" , ammo to add : int ]
 	

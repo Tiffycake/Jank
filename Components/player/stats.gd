@@ -9,6 +9,7 @@ class_name stat_sheet
 @export var atackDamage			: int  # = 10 # weaponAtackDamage
 @export var atackSpeed			: float# = 5  # attacks per second
 @export var reloadTime			: float  = 2  # reload seconds
+@export_enum("small", "medium", "heavy", "shell") var bulletType : String # what are we doing
+
 @export var offset				: Vector2
 @export var weaponSprite		: Texture2D
-@export_enum("small", "medium", "heavy", "shell") var bulletType : String # what are we doing

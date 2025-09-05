@@ -29,6 +29,7 @@ const minScale := 0.75
 const scale_factor := 3.5
 
 const MAX_DROP_DISTANCE = 150
+var default_zoom = 0.664
 
 var attack_action	: bool
 var use_action		: bool
@@ -42,12 +43,11 @@ func _ready() -> void:
 	if is_multiplayer_authority():
 		#add_child(camera)
 		HUD.visible = true
+		camera_2d.zoom = Vector2(default_zoom,default_zoom)
 	else:
 		camera_2d.queue_free()
 	
 	#print( get_tree().root )
-	
-	
 
 func getInput(): # ref do smth 😭
 	# rewrite this fuckass funciton (more like clean it up!!)
@@ -72,8 +72,8 @@ func getInput(): # ref do smth 😭
 	for i in range(len(inp_arr)): # try reading this lmao 😭
 		if Input.is_action_pressed(inp_arr[i]):
 			inventory.selectItem(inp_arr.find("slot"+str(i)))
-	
-	hitbox.eat_thingies()
+	if pickup_action:
+		hitbox.eat_thingies()
 
 	if inventory.selectedItem != null:
 		if attack_action and inventory.selectedNode.has_method("fire"):

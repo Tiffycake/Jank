@@ -15,10 +15,8 @@ func _ready() -> void:
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool: # runs when hovering
 	return data is int
 
-
 func _drop_data(at_position: Vector2, data: Variant) -> void: # runs on release
 	skibidi.rpc(data,at_position)
-
 
 @rpc("any_peer","call_local")
 func skibidi(data,at_position):

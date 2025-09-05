@@ -50,6 +50,7 @@ func updatePlayerInfo() -> void:
 		#Globals.username = ":3"
 
 func respawn(playernode:Node):
+	
 	var a : = get_node("/root/Node2D/WorldMap/objectList")
 	a.call_deferred("remove_child",playernode)
 

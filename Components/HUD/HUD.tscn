@@ -1,15 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=22 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
-[ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://z/exploder.gd" id="1_maspd"]
+[ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://Scripts/exploder.gd" id="1_maspd"]
 [ext_resource type="Texture2D" uid="uid://bdrpkqh4kbx2v" path="res://resources/textures/HUD elements/a/Screenshot_20250606_182749.png" id="1_qefu1"]
 [ext_resource type="Texture2D" uid="uid://bwoyg0dwj6e2b" path="res://resources/textures/HUD elements/healthBar.svg" id="3_ryf3e"]
 [ext_resource type="Script" uid="uid://b0jv1id6kh0fg" path="res://Scripts/InventoryUI.gd" id="4_4es50"]
 [ext_resource type="Texture2D" uid="uid://cpif3pb3wkvky" path="res://resources/textures/HUD elements/a/mpv-shot0001.jpg" id="4_nqbc8"]
 [ext_resource type="PackedScene" uid="uid://chf34ya77hulb" path="res://Components/hud_slot/hud_slot.tscn" id="5_rxypr"]
-[ext_resource type="Script" uid="uid://d10ibjydgojx6" path="res://z/panel.gd" id="6_bfkx1"]
+[ext_resource type="Script" uid="uid://d10ibjydgojx6" path="res://Scripts/panel.gd" id="6_bfkx1"]
 [ext_resource type="Texture2D" uid="uid://dayql0peiw41q" path="res://resources/textures/HUD elements/ball.svg" id="6_d8qfv"]
-[ext_resource type="Script" uid="uid://7aggow60vq7h" path="res://z/pew_pew_timer.gd" id="6_pve3o"]
+[ext_resource type="Script" uid="uid://7aggow60vq7h" path="res://Scripts/pew_pew_timer.gd" id="6_pve3o"]
 [ext_resource type="Texture2D" uid="uid://cumdqn2x3yxov" path="res://resources/textures/zombs/sactx-0-2048x2048-Crunch-IconsUI-1b360a8c.png" id="7_7of6o"]
 [ext_resource type="LabelSettings" uid="uid://cadmyaswo6d3d" path="res://resources/misc/label_settings.tres" id="7_ccrdf"]
 [ext_resource type="PackedScene" uid="uid://cndifwcy6jwe6" path="res://Components/pickup/pickup.tscn" id="7_h3mv8"]
@@ -18,7 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://y14xrdlwph2m" path="res://resources/textures/HUD elements/healthBarBack.svg" id="10_n2a1q"]
 [ext_resource type="Script" uid="uid://dee0ls4be3d4i" path="res://Components/ammo_count/ammo_count.gd" id="14_b0d78"]
 [ext_resource type="PackedScene" uid="uid://c26inunqq86yf" path="res://Components/ammo_count/ammo_count.tscn" id="14_lwwil"]
-[ext_resource type="Script" uid="uid://ctnqh8vxq5oj3" path="res://Components/v_slider.gd" id="17_s25er"]
+[ext_resource type="Script" uid="uid://ctnqh8vxq5oj3" path="res://Scripts/v_slider.gd" id="17_s25er"]
+[ext_resource type="Script" uid="uid://d2k4adypv4poa" path="res://Scripts/tooltip_debug.gd" id="20_sxbk7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kn30k"]
 font_size = 45
@@ -235,3 +236,11 @@ offset_top = 41.0
 offset_right = 3.0
 offset_bottom = 64.0
 text = "1"
+
+[node name="tooltip_debug" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 705.0
+offset_right = 311.0
+offset_bottom = 930.0
+script = ExtResource("20_sxbk7")

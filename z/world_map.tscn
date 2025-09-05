@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0xvbxopa5yrf"]
 
 [ext_resource type="Texture2D" uid="uid://b2tq2hcgw0uhu" path="res://resources/textures/background.svg" id="1_fgl0d"]
-[ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://z/spawner.gd" id="2_8rtnk"]
+[ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://Scripts/spawner.gd" id="2_8rtnk"]
 [ext_resource type="PackedScene" uid="uid://chxkv23icrdpd" path="res://Components/chest/chest.tscn" id="3_jylf2"]
 [ext_resource type="PackedScene" uid="uid://b3hqeh06xgi6r" path="res://Components/2 - Map Objects/Jank clash map.tscn" id="4_r7ivh"]
 

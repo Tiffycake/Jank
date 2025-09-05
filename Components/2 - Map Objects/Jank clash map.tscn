@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://da4ij0gbgkn61" path="res://resources/textures/HUD elements/a/mpv-shot0002.jpg" id="1_4dgsf"]
 [ext_resource type="PackedScene" uid="uid://ds2sl57hiufie" path="res://Components/2 - Map Objects/long_wall/long_wall.tscn" id="1_052oe"]
 [ext_resource type="PackedScene" uid="uid://bwhbf510t8wga" path="res://Components/2 - Map Objects/square_wall/square_wall.tscn" id="2_1h1yx"]
-[ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://z/exploder.gd" id="2_4dgsf"]
+[ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://Scripts/exploder.gd" id="2_4dgsf"]
 
 [node name="Walls" type="Node2D"]
 scale = Vector2(0.9, 0.9)

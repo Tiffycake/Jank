@@ -2,8 +2,7 @@ extends Node2D
 # main root
 
 @export var MainMenu  : PackedScene
-@export var WorldMap  : PackedScene
-
+@export var WorldMap  : PackedScene 
 #const a12 : stat_sheet = preload("res://resources/invItems/stats/ar3.tres")
 
 func _ready() -> void:
