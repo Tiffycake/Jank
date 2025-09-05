@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func damage(attack: AttackComponent):
-	if unbreakable == false:
+	if !unbreakable:
 		health -= attack.attackDamage
 	
 	if health <= 0:

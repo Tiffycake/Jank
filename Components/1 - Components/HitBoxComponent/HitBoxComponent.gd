@@ -30,8 +30,9 @@ func bollas():
 		if a1 is Pickup:
 			a1.call_deferred("collect",player)
 			#a.collect(player)
-			
-			
+
+
+
 #func _init() -> void:
 	#collision_layer = 2
 	#collision_mask = 0

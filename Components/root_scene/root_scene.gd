@@ -9,6 +9,8 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(MainMenu)
 	
+	#TYPE_BOOL
+	#bool.TYPE_BOOL
 	#for i in a12.get_property_list(): 
 		#var a  : String = i["name"]
 		#if i["usage"] >= 4102 and !( a in ["script","weaponSprite"]): # terrible checking

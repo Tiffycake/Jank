@@ -19,7 +19,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void: # runs on release
 	skibidi.rpc(data,at_position)
 
 @rpc("any_peer","call_local")
-func skibidi(data,at_position):
+func skibidi(data,_at_position):
 	#explode item at slot n and spawn the item in world
 	var a = inventory.get_item(data)
 	

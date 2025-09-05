@@ -2,6 +2,12 @@ extends Label
 @onready var player : Player = $"../../.."
 @onready var inventory : Inventory = $"../../../Inventory"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#text = str(inventory.selectedItem.stats.s )
-	text = Globals.bolasa(inventory.selectedItem.stats)
+	
+	if inventory.selectedItem and inventory.selectedItem.get("stats"):
+		
+		text = Globals.bolasa(inventory.selectedItem.stats)
+		
+	else:
+		text = ""
