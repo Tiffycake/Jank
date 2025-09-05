@@ -30,7 +30,7 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 	
 	var content_array	: Array[Dictionary] = resource.get_property_list()
 	var prop_list		: Array[Dictionary] = script.get_script_property_list()
-	var out_list			: Array[Dictionary]
+	var out_list			: Array#[Dictionary]
 	
 	
 	#run_once(content_array,prety_print,1)
@@ -49,7 +49,7 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 	#for i in content_array:
 		#if i["name"] in reals:
 	for i in reals:
-		out_list.append (resource.get(i))
+		out_list.append(resource.get(i))
 
 	return out_list
 
@@ -61,7 +61,7 @@ func bolasa(sheet : stat_sheet):
 	var content_array = get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"])
 	run_once(content_array,prety_print,1)
 	for i in content_array:
-		tooltip += str(i)
+		tooltip += str(i) + "\n"
 	#run_once( get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"]) , prety_print ,1)
 	#for i in sheet.get_property_list(): # get_property_list 
 		#tooltip += a + " : " + str(sheet.get(a)) + "\n"

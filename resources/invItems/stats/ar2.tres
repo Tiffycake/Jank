@@ -13,6 +13,6 @@ atackDamage = 1
 atackSpeed = 30.0
 reloadTime = 0.1
 bulletType = "medium"
-offset = Vector2(1, -5)
+offset = Vector2(-5, 1)
 weaponSprite = ExtResource("2_mq4yo")
 metadata/_custom_type_script = "uid://hjfy1o8cf3ll"
