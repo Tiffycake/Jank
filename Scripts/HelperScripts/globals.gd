@@ -60,6 +60,8 @@ func bolasa(sheet : stat_sheet):
 		#tooltip += str(a) + " : " + str(sheet.get(a)) + "\n"
 	var content_array = get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"])
 	run_once(content_array,prety_print,1)
+	
+	
 	for i in content_array:
 		tooltip += str(i) + "\n"
 	#run_once( get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"]) , prety_print ,1)
