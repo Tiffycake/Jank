@@ -1,6 +1,39 @@
 {
 	"nodes":[
 		{
+			"id":"1695de0a1f2b5c82",
+			"type":"text",
+			"text":"inv size stats\nmess with actually inv size\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":160,
+			"y":-1600,
+			"width":260,
+			"height":320
+		},
+		{
+			"id":"5d443fc4ddda7037",
+			"type":"text",
+			"text":"Item",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-120,
+			"y":-940,
+			"width":260,
+			"height":60,
+			"color":"6"
+		},
+		{
+			"id":"50acd87ace609e87",
+			"type":"text",
+			"text":"is always the top node's class",
+			"styleAttributes":{
+				"textAlign":null
+			},
+			"x":200,
+			"y":-940,
+			"width":260,
+			"height":60
+		},
+		{
 			"id":"42e4d45863e99dc7",
 			"type":"text",
 			"text":"texture : Texture2D",
@@ -31,15 +64,24 @@
 			"height":60
 		},
 		{
-			"id":"09fdcc35e7dfd3c0",
+			"id":"9ee2cd181622380f",
 			"type":"text",
-			"text":"Inventory : Array\\[InvItem\\]",
+			"text":"stats  : stat_sheet",
 			"styleAttributes":{"textAlign":"center"},
-			"x":-400,
-			"y":-300,
+			"x":-960,
+			"y":-820,
 			"width":260,
-			"height":60,
-			"color":"6"
+			"height":60
+		},
+		{
+			"id":"57fcc7bc1799198b",
+			"type":"text",
+			"text":"\nbulletLifetime : int  \nbulletSpeed : int  \natackDamage : int  \natackSpeed : float\nweaponSprite : Texture2D\noffset : Vector2",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-960,
+			"y":-1100,
+			"width":260,
+			"height":190
 		},
 		{
 			"id":"de747e0f966adfe6",
@@ -62,6 +104,47 @@
 			"width":110,
 			"height":60,
 			"color":"1"
+		},
+		{
+			"id":"dec9682d1783643e",
+			"type":"text",
+			"text":"if n >= 0 and inv_size > n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1560,
+			"y":-520,
+			"width":320,
+			"height":60
+		},
+		{
+			"id":"0783390a05b09d18",
+			"type":"text",
+			"text":"10  ->  0\n9  ->  4\n8  ->  3\n7  ->  2\n6  ->  1\n5  ->  0\n4  ->  4\n3  ->  3\n2  ->  2\n1  ->  1\n0  ->  0 \n-1 ->  4\n-2 ->  3\n-3 ->  2\n-4 ->  1\n-5 ->  0\n-6 ->  4\n-7 ->  3\n-8 ->  2\n-9 ->  1\n-10 ->  0\n-11 ->  4\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1560,
+			"y":-420,
+			"width":320,
+			"height":600
+		},
+		{
+			"id":"23ad831b4626f4f0",
+			"type":"text",
+			"text":"-10 : 0\n-9 : 1\n-8 : 2\n-7 : 3\n-6 : 4\n-5 : 0\n-4 : 1\n-3 : 2\n-2 : 3\n-1 : 4\n0 : 0\n1 : 1\n2 : 2\n3 : 3\n4 : 4\n5 : 0\n6 : 1\n7 : 2\n8 : 3\n9 : 4\n",
+			"styleAttributes":{"textAlign":"center"},
+			"x":1920,
+			"y":-420,
+			"width":320,
+			"height":600
+		},
+		{
+			"id":"09fdcc35e7dfd3c0",
+			"type":"text",
+			"text":"Inventory : Array\\[InvItem\\]",
+			"styleAttributes":{"textAlign":"center"},
+			"x":-400,
+			"y":-300,
+			"width":260,
+			"height":60,
+			"color":"6"
 		},
 		{
 			"id":"8c07efe42fce24ed",
@@ -95,89 +178,6 @@
 			"width":260,
 			"height":60,
 			"color":"1"
-		},
-		{
-			"id":"5d443fc4ddda7037",
-			"type":"text",
-			"text":"Item",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-120,
-			"y":-940,
-			"width":260,
-			"height":60,
-			"color":"6"
-		},
-		{
-			"id":"50acd87ace609e87",
-			"type":"text",
-			"text":"is always the top node's class",
-			"styleAttributes":{
-				"textAlign":null
-			},
-			"x":200,
-			"y":-940,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"9ee2cd181622380f",
-			"type":"text",
-			"text":"stats  : stat_sheet",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-960,
-			"y":-820,
-			"width":260,
-			"height":60
-		},
-		{
-			"id":"57fcc7bc1799198b",
-			"type":"text",
-			"text":"\nbulletLifetime : int  \nbulletSpeed : int  \natackDamage : int  \natackSpeed : float\nweaponSprite : Texture2D\noffset : Vector2",
-			"styleAttributes":{"textAlign":"center"},
-			"x":-960,
-			"y":-1100,
-			"width":260,
-			"height":190
-		},
-		{
-			"id":"0783390a05b09d18",
-			"type":"text",
-			"text":"10  ->  0\n9  ->  4\n8  ->  3\n7  ->  2\n6  ->  1\n5  ->  0\n4  ->  4\n3  ->  3\n2  ->  2\n1  ->  1\n0  ->  0 \n-1 ->  4\n-2 ->  3\n-3 ->  2\n-4 ->  1\n-5 ->  0\n-6 ->  4\n-7 ->  3\n-8 ->  2\n-9 ->  1\n-10 ->  0\n-11 ->  4\n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1560,
-			"y":-420,
-			"width":320,
-			"height":600
-		},
-		{
-			"id":"23ad831b4626f4f0",
-			"type":"text",
-			"text":"-10 : 0\n-9 : 1\n-8 : 2\n-7 : 3\n-6 : 4\n-5 : 0\n-4 : 1\n-3 : 2\n-2 : 3\n-1 : 4\n0 : 0\n1 : 1\n2 : 2\n3 : 3\n4 : 4\n5 : 0\n6 : 1\n7 : 2\n8 : 3\n9 : 4\n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1920,
-			"y":-420,
-			"width":320,
-			"height":600
-		},
-		{
-			"id":"dec9682d1783643e",
-			"type":"text",
-			"text":"if n >= 0 and inv_size > n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":1560,
-			"y":-520,
-			"width":320,
-			"height":60
-		},
-		{
-			"id":"1695de0a1f2b5c82",
-			"type":"text",
-			"text":"inv size stats\nmess with actually inv size\n",
-			"styleAttributes":{"textAlign":"center"},
-			"x":160,
-			"y":-1600,
-			"width":260,
-			"height":320
 		}
 	],
 	"edges":[

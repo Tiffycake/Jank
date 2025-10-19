@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 class_name ammo_inventory
 #small medium heavy shell
 #S M H L

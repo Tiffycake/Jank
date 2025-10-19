@@ -28,7 +28,7 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 	
 	var script		: Script = resource.get_script()
 	
-	var content_array	: Array[Dictionary] = resource.get_property_list()
+	var _content_array	: Array[Dictionary] = resource.get_property_list()
 	var prop_list		: Array[Dictionary] = script.get_script_property_list()
 	var out_list			: Array#[Dictionary]
 	

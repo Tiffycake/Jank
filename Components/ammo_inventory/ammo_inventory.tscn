@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://bkv0e0p2jefxj" path="res://Components/ammo_inventory/ammo_inventory.gd" id="1_0iyox"]
 
-[node name="AmmoInventory" type="Node2D"]
+[node name="AmmoInventory" type="Node"]
 script = ExtResource("1_0iyox")

@@ -9,6 +9,8 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(MainMenu)
 	
+	
+	
 	#TYPE_BOOL
 	#bool.TYPE_BOOL
 	#for i in a12.get_property_list(): 
@@ -32,12 +34,15 @@ func _ready() -> void:
 	#var a : = -12
 	#print( +a )
 
+
 func recursive_iter(a):
 	if a is Array :
 		for i in a:
 			recursive_iter(i)
 	else:
 		return a
+
+
 
 
  

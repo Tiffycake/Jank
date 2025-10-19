@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cmf6rqg5iey5x"]
+
+[node name="Cursor" type="Node2D"]
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(-28, 0, 28, 0)
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(0, -28, 0, 28)

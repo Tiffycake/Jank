@@ -13,7 +13,7 @@ config_version=5
 config/name="Jank"
 config/tags=PackedStringArray("bad", "clone", "gay")
 run/main_scene="uid://db5w42b661dqp"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=240
 config/icon="res://resources/textures/icon.svg"
 

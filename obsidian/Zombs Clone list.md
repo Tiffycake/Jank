@@ -73,6 +73,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false],"metadata-keys":[{"metadataKey":"aasd","label":"balls","shouldHideLabel":false,"containsMarkdown":false}]}
 ```
 %%
