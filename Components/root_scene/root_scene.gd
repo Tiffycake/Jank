@@ -9,7 +9,10 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(MainMenu)
 	
-	
+	Engine.max_fps = 165
+	var v := DisplayServer.VSyncMode.VSYNC_ADAPTIVE
+	# VSYNC_ADAPTIVE VSYNC_MAILBOX VSYNC_ENABLED VSYNC_DISABLED
+	DisplayServer.window_set_vsync_mode(v)
 	
 	#TYPE_BOOL
 	#bool.TYPE_BOOL

@@ -1,9 +1,16 @@
-[gd_scene format=3 uid="uid://cmf6rqg5iey5x"]
+[gd_scene load_steps=2 format=3 uid="uid://cmf6rqg5iey5x"]
 
-[node name="Cursor" type="Node2D"]
+[ext_resource type="Script" uid="uid://dli51w7tl6d4u" path="res://Components/Cursor/cursor.gd" id="1_s5dm5"]
+
+[node name="Cursor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s5dm5")
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(-28, 0, 28, 0)
 
 [node name="Line2D2" type="Line2D" parent="."]
+visible = false
 points = PackedVector2Array(0, -28, 0, 28)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ba2comoj2jbjy"]
+[gd_scene load_steps=23 format=3 uid="uid://ba2comoj2jbjy"]
 
 [ext_resource type="Texture2D" uid="uid://db4ucfjai44ex" path="res://resources/textures/HUD elements/healthBarBG.svg" id="1_bxty2"]
 [ext_resource type="Script" uid="uid://cviltlgpung0i" path="res://Scripts/exploder.gd" id="1_maspd"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c26inunqq86yf" path="res://Components/ammo_count/ammo_count.tscn" id="14_lwwil"]
 [ext_resource type="Script" uid="uid://ctnqh8vxq5oj3" path="res://Scripts/v_slider.gd" id="17_s25er"]
 [ext_resource type="Script" uid="uid://d2k4adypv4poa" path="res://Scripts/tooltip_debug.gd" id="20_sxbk7"]
+[ext_resource type="PackedScene" uid="uid://cmf6rqg5iey5x" path="res://Components/Cursor/cursor.tscn" id="21_eijci"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kn30k"]
 font_size = 45
@@ -244,3 +245,6 @@ offset_top = 705.0
 offset_right = 311.0
 offset_bottom = 930.0
 script = ExtResource("20_sxbk7")
+
+[node name="Cursor" parent="Control" instance=ExtResource("21_eijci")]
+layout_mode = 0

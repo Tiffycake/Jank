@@ -14,7 +14,6 @@ config/name="Jank"
 config/tags=PackedStringArray("bad", "clone", "gay")
 run/main_scene="uid://db5w42b661dqp"
 config/features=PackedStringArray("4.5", "Forward Plus")
-run/max_fps=240
 config/icon="res://resources/textures/icon.svg"
 
 [autoload]
@@ -26,7 +25,6 @@ Globals="*res://Scripts/HelperScripts/globals.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
-window/vsync/vsync_mode=0
 
 [file_customization]
 
