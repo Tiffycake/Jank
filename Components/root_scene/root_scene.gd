@@ -9,10 +9,16 @@ func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(MainMenu)
 	
-	Engine.max_fps = 165
-	var v := DisplayServer.VSyncMode.VSYNC_ADAPTIVE
-	# VSYNC_ADAPTIVE VSYNC_MAILBOX VSYNC_ENABLED VSYNC_DISABLED
-	DisplayServer.window_set_vsync_mode(v)
+	
+	
+	
+	# fps shennanigans
+	
+	#VSYNC_ADAPTIVE VSYNC_MAILBOX VSYNC_ENABLED VSYNC_DISABLED
+	
+	#Engine.max_fps = 165
+	#var v := DisplayServer.VSyncMode.VSYNC_ADAPTIVE
+	#DisplayServer.window_set_vsync_mode(v)
 	
 	#TYPE_BOOL
 	#bool.TYPE_BOOL
@@ -37,7 +43,7 @@ func _ready() -> void:
 	#var a : = -12
 	#print( +a )
 
-
+# wtf 
 func recursive_iter(a):
 	if a is Array :
 		for i in a:
