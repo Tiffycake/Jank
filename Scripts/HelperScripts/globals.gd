@@ -31,16 +31,18 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 	#run_once("\n",print,3)
 	#run_once(prop_list,prety_print,2)
 	 
-	var reals : Array
+	#var reals : Array
 	
 	for i in prop_list:
-		if i["name"] in filter:
-			pass #prop_list.erase(i)
-		else:
-			reals.append(i["name"])
+		var name1 : String = i["name"]
+		
+		if !(name1 in filter):
+			out_list.append(resource.get(name1))
+		#else:
+			#pass #prop_list.erase(i)
 	
-	for i in reals:
-		out_list.append(resource.get(i))
+	#for i in reals:
+		#out_list.append(resource.get(i))
 
 	return out_list
 
