@@ -16,12 +16,6 @@ var real_dic : Dictionary
 func _ready() -> void:
 	resource_loader("res://resources/textures/zombs/Bullets/" , ["small","medium","heavy","shell"], "png","bullets")
 
-func run_once(variant:Variant , callable:Callable, num:int): # this is so smart
-	
-	if ! (real_dic.has(num)):
-		callable.call(variant)
-		real_dic.set(num,num)
-
 func get_relevant_property_list(resource : Resource, filter : Array ):
 	#var is_blacklist : bool = true 
 	# if blacklist is false just  [[ filter = reals ]]
@@ -30,7 +24,7 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 	
 	var _content_array	: Array[Dictionary] = resource.get_property_list()
 	var prop_list		: Array[Dictionary] = script.get_script_property_list()
-	var out_list			: Array#[Dictionary]
+	var out_list		: Array#[Dictionary]
 	
 	
 	#run_once(content_array,prety_print,1)
@@ -41,13 +35,10 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 	
 	for i in prop_list:
 		if i["name"] in filter:
-			pass
-			#prop_list.erase(i)
+			pass #prop_list.erase(i)
 		else:
 			reals.append(i["name"])
 	
-	#for i in content_array:
-		#if i["name"] in reals:
 	for i in reals:
 		out_list.append(resource.get(i))
 
@@ -58,8 +49,9 @@ func bolasa(sheet : stat_sheet):
 	
 	#for a in get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"]):
 		#tooltip += str(a) + " : " + str(sheet.get(a)) + "\n"
+	
 	var content_array = get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"])
-	run_once(content_array,prety_print,1)
+	#run_once(content_array,prety_print,1)
 	
 	
 	for i in content_array:
@@ -81,3 +73,9 @@ func resource_loader(path: String ,names: Array ,extension: String ,key: String)
 func prety_print(args):
 	for i in args:
 		print (i)
+
+#func run_once(variant:Variant , callable:Callable, num:int): # this is so smart
+	#
+	#if ! (real_dic.has(num)):
+		#callable.call(variant)
+		#real_dic.set(num,num)

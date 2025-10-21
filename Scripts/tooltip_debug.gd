@@ -3,11 +3,11 @@ extends Label
 @onready var inventory : Inventory = $"../../../Inventory"
 
 func _process(_delta: float) -> void:
-	#text = str(inventory.selectedItem.stats.s )
-	
-	if inventory.selectedItem and inventory.selectedItem.get("stats"):
+	#text = str(a1.stats.s )
+	var a1 = inventory.selectedItem
+	if a1 and a1.get("stats"): # this might be jank
 		
-		text = Globals.bolasa(inventory.selectedItem.stats)
+		text = Globals.bolasa(a1.stats)
 		
 	else:
 		text = ""
