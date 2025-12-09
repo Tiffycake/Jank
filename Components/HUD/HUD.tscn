@@ -46,6 +46,21 @@ texture = ExtResource("1_qefu1")
 position = Vector2(960, 540)
 texture = ExtResource("4_nqbc8")
 
+[node name="VSlider" type="VSlider" parent="Unused"]
+offset_left = 1403.0
+offset_top = 937.0
+offset_right = 1433.0
+offset_bottom = 1050.0
+script = ExtResource("17_s25er")
+
+[node name="Label" type="Label" parent="Unused/VSlider"]
+layout_mode = 0
+offset_left = -37.0
+offset_top = 41.0
+offset_right = 3.0
+offset_bottom = 64.0
+text = "1"
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -221,22 +236,6 @@ offset_right = 1897.0
 offset_bottom = 937.0
 script = ExtResource("14_b0d78")
 ammo_count_scene = ExtResource("14_lwwil")
-
-[node name="VSlider" type="VSlider" parent="Control"]
-layout_mode = 0
-offset_left = 1403.0
-offset_top = 937.0
-offset_right = 1433.0
-offset_bottom = 1050.0
-script = ExtResource("17_s25er")
-
-[node name="Label" type="Label" parent="Control/VSlider"]
-layout_mode = 0
-offset_left = -37.0
-offset_top = 41.0
-offset_right = 3.0
-offset_bottom = 64.0
-text = "1"
 
 [node name="tooltip_debug" type="Label" parent="Control"]
 layout_mode = 0

@@ -7,7 +7,6 @@ var username : String
 var resource_dict : Dictionary 
 
 
-var real_dic : Dictionary 
 
 # funny ideas
 # Callable.create()
@@ -31,8 +30,6 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 	#run_once("\n",print,3)
 	#run_once(prop_list,prety_print,2)
 	 
-	#var reals : Array
-	
 	for i in prop_list:
 		var name1 : String = i["name"]
 		
@@ -41,12 +38,10 @@ func get_relevant_property_list(resource : Resource, filter : Array ):
 		#else:
 			#pass #prop_list.erase(i)
 	
-	#for i in reals:
-		#out_list.append(resource.get(i))
 
 	return out_list
 
-func bolasa(sheet : stat_sheet):
+func bolasa(sheet : stat_sheet): # turns a stat sheet into a string list of the key and value pairs
 	var tooltip : String = ""
 	
 	#for a in get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"]):
@@ -54,7 +49,6 @@ func bolasa(sheet : stat_sheet):
 	
 	var content_array = get_relevant_property_list(sheet,["offset","weaponSprite","stats.gd"])
 	#run_once(content_array,prety_print,1)
-	
 	
 	for i in content_array:
 		tooltip += str(i) + "\n"
@@ -72,10 +66,21 @@ func resource_loader(path: String ,names: Array ,extension: String ,key: String)
 	
 	#return output_dict
 
+# wtf 
+func recursive_iter(a):
+	if a is Array :
+		for i in a:
+			recursive_iter(i)
+	else:
+		return a
+		
+		
+		
 func prety_print(args):
 	for i in args:
 		print (i)
 
+#var real_dic : Dictionary
 #func run_once(variant:Variant , callable:Callable, num:int): # this is so smart
 	#
 	#if ! (real_dic.has(num)):

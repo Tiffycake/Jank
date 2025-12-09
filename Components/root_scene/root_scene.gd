@@ -43,13 +43,6 @@ func _ready() -> void:
 	#var a : = -12
 	#print( +a )
 
-# wtf 
-func recursive_iter(a):
-	if a is Array :
-		for i in a:
-			recursive_iter(i)
-	else:
-		return a
 
 
 
