@@ -38,6 +38,7 @@ var pickup_action	: bool
 
 
 func _ready() -> void: 
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	sprite.setSkin(Globals.bodyColor, Globals.handsColor)
 	username.text = Globals.username
 	if is_multiplayer_authority():
