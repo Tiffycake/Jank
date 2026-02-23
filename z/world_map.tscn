@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dcd40ksp5guco" path="res://Scripts/spawner.gd" id="2_8rtnk"]
 [ext_resource type="PackedScene" uid="uid://chxkv23icrdpd" path="res://Components/chest/chest.tscn" id="3_jylf2"]
 [ext_resource type="PackedScene" uid="uid://b3hqeh06xgi6r" path="res://Components/2 - Map Objects/Jank clash map.tscn" id="4_r7ivh"]
+[ext_resource type="PackedScene" uid="uid://cpd8oivs4eqrp" path="res://3d renderer/3d renderer.tscn" id="5_fh07p"]
 
 [node name="WorldMap" type="Node2D" unique_id=1459795372]
 
@@ -37,6 +38,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Walls" parent="MapObjects" unique_id=738798936 instance=ExtResource("4_r7ivh")]
 position = Vector2(-922, 1197)
+
+[node name="Migu" parent="MapObjects" unique_id=66458423 instance=ExtResource("5_fh07p")]
+position = Vector2(468, 353)
+rotation = -1.5707964
 
 [node name="objectList" type="Node" parent="." unique_id=354061854]
 unique_name_in_owner = true

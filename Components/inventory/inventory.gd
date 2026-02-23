@@ -56,7 +56,7 @@ func selectItem(n1: int) -> void:
 			selectedNode.equip()
 	else:
 		selectedNode = null
-		print ( selectedItem )
+		#print ( selectedItem )
 
 #@rpc("authority", "call_local")
 func add_item(item:InvItem): #item:InvItem

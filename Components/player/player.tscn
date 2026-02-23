@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3higeki8udsa"]
+[gd_scene format=3 uid="uid://3higeki8udsa"]
 
 [ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://Components/player/player.gd" id="1_smehm"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://Components/1 - Components/HealthComponent/HealthComponent.tscn" id="2_tuyoq"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://bccp86qgunv7a" path="res://Components/ammo_inventory/ammo_inventory.tscn" id="12_oprun"]
 [ext_resource type="Script" uid="uid://qdxrmqwrtjl6" path="res://Scripts/username_handler.gd" id="13_jej6c"]
 [ext_resource type="Shape2D" uid="uid://dloolvpnmf0y2" path="res://resources/misc/circleshape.tres" id="15_8sw5j"]
-[ext_resource type="PackedScene" uid="uid://cpd8oivs4eqrp" path="res://3d renderer/3d renderer.tscn" id="16_8sw5j"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tuyoq"]
 properties/0/path = NodePath(".:position")
@@ -46,55 +45,55 @@ properties/8/path = NodePath(".:pushVel")
 properties/8/spawn = true
 properties/8/replication_mode = 1
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=66647458]
 scale = Vector2(0.9, 0.9)
 motion_mode = 1
 script = ExtResource("1_smehm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1808030497]
 z_index = 1
 rotation = 1.5708
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_ur7pv")
 script = ExtResource("6_fjrip")
 
-[node name="hand1" type="Sprite2D" parent="Sprite2D"]
+[node name="hand1" type="Sprite2D" parent="Sprite2D" unique_id=1609435450]
 z_index = -1
 position = Vector2(-99, -128)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_y4r1p")
 
-[node name="hand2" type="Sprite2D" parent="Sprite2D"]
+[node name="hand2" type="Sprite2D" parent="Sprite2D" unique_id=780188257]
 z_index = -1
 position = Vector2(99, -128)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_y4r1p")
 
-[node name="HUD" parent="." instance=ExtResource("2_ur7pv")]
+[node name="HUD" parent="." unique_id=1200852003 instance=ExtResource("2_ur7pv")]
 visible = false
 
-[node name="Inventory" type="Node2D" parent="."]
+[node name="Inventory" type="Node2D" parent="." unique_id=1165887016]
 position = Vector2(100, 0)
 script = ExtResource("2_y4r1p")
 contenta_array = Array[ExtResource("8_y4r1p")]([ExtResource("10_f1ej7"), ExtResource("9_d2wvv"), ExtResource("9_d2wvv"), null, ExtResource("11_3v2ag")])
 
-[node name="AmmoInventory" parent="." instance=ExtResource("12_oprun")]
+[node name="AmmoInventory" parent="." unique_id=626146024 instance=ExtResource("12_oprun")]
 
-[node name="HealthComponent" parent="." instance=ExtResource("2_tuyoq")]
+[node name="HealthComponent" parent="." unique_id=128948757 instance=ExtResource("2_tuyoq")]
 maxHealth = 300
 
-[node name="HitboxComponent" parent="." instance=ExtResource("3_fjrip")]
+[node name="HitboxComponent" parent="." unique_id=876432376 instance=ExtResource("3_fjrip")]
 
-[node name="CollisionBox2D" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="CollisionBox2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=952364707]
 shape = ExtResource("15_8sw5j")
 
-[node name="CollisionBox2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox2D" type="CollisionShape2D" parent="." unique_id=1506426640]
 shape = ExtResource("15_8sw5j")
 
-[node name="usernameHandler" type="Node2D" parent="."]
+[node name="usernameHandler" type="Node2D" parent="." unique_id=1443054026]
 script = ExtResource("13_jej6c")
 
-[node name="username" type="Label" parent="usernameHandler"]
+[node name="username" type="Label" parent="usernameHandler" unique_id=2131044666]
 offset_left = -152.0
 offset_top = -134.0
 offset_right = 148.0
@@ -104,11 +103,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=371297311]
 replication_config = SubResource("SceneReplicationConfig_tuyoq")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="Node2D" parent="." instance=ExtResource("16_8sw5j")]
-position = Vector2(96.66667, -1.1111112)
-scale = Vector2(1.1111112, 1.1111112)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=840733048]
