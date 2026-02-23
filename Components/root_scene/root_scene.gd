@@ -2,15 +2,16 @@ extends Node2D
 # main root
 
 @export var MainMenu  : PackedScene
-@export var WorldMap  : PackedScene 
+@export var WorldMap  : PackedScene
+var appl = StatCalc.new()
+
 #const a12 : stat_sheet = preload("res://resources/invItems/stats/ar3.tres")
 
 func _ready() -> void:
 	spawnNode(WorldMap)
 	spawnNode(MainMenu)
 	
-	
-	
+	print("balls: ", appl.apply(2,[2],[1.01,1.01]))
 	
 	# fps shennanigans
 	

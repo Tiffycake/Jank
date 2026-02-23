@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://3higeki8udsa"]
+[gd_scene load_steps=18 format=3 uid="uid://3higeki8udsa"]
 
 [ext_resource type="Script" uid="uid://dcjv1chnyxs37" path="res://Components/player/player.gd" id="1_smehm"]
 [ext_resource type="PackedScene" uid="uid://ccc3gjo600wnd" path="res://Components/1 - Components/HealthComponent/HealthComponent.tscn" id="2_tuyoq"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bccp86qgunv7a" path="res://Components/ammo_inventory/ammo_inventory.tscn" id="12_oprun"]
 [ext_resource type="Script" uid="uid://qdxrmqwrtjl6" path="res://Scripts/username_handler.gd" id="13_jej6c"]
 [ext_resource type="Shape2D" uid="uid://dloolvpnmf0y2" path="res://resources/misc/circleshape.tres" id="15_8sw5j"]
+[ext_resource type="PackedScene" uid="uid://cpd8oivs4eqrp" path="res://3d renderer/3d renderer.tscn" id="16_8sw5j"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tuyoq"]
 properties/0/path = NodePath(".:position")
@@ -107,3 +108,7 @@ metadata/_edit_use_anchors_ = true
 replication_config = SubResource("SceneReplicationConfig_tuyoq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" parent="." instance=ExtResource("16_8sw5j")]
+position = Vector2(96.66667, -1.1111112)
+scale = Vector2(1.1111112, 1.1111112)
